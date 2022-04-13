@@ -11,9 +11,6 @@ export default function CaseStudies() {
         setLoading(false);
     }, []);
 
-    // useEffect(() => {
-    //     window.triggerScroll();
-    // }, []);
     return loading ? null : (
         <Layout activePage="insights" fixedNav={true} >
             <SideButton />

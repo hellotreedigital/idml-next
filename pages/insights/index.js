@@ -24,6 +24,8 @@ export default function Insights(props) {
     const socialMedia = props.insightsData.social_media;
     const footerLogos = props.insightsData.footer_logos;
     const footerContactIcons = props.insightsData.footer_contact_icons;
+    const serviceTitles = props.insightsData.services_titles;
+    const industriesTitles = props.insightsData.industries_titles;
 
     useEffect(() => {
         triggerScroll();
@@ -31,7 +33,7 @@ export default function Insights(props) {
     }, [insights, loading]);
 
     return loading ? null : (
-        <Layout activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons}>
+        <Layout activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
             {
                 insights ?
                     <>

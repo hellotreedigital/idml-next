@@ -25,6 +25,8 @@ export default function Contact(props) {
     const socialMedia = props.contactData.social_media;
     const footerLogos = props.contactData.footer_logos;
     const footerContactIcons = props.contactData.footer_contact_icons;
+    const serviceTitles = props.contactData.services_titles;
+    const industriesTitles = props.contactData.industries_titles;
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -88,7 +90,7 @@ export default function Contact(props) {
 
 
     return (
-        <Layout activePage="contact" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons}>
+        <Layout activePage="contact" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles}  industriesTitles={industriesTitles}>
             {
                 contactSettings ?
                     <>

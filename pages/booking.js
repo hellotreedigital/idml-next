@@ -12,10 +12,13 @@ export default function Booking(props) {
     const { triggerScroll, calcMinHeight } = useContext(GlobalState);
     const bookingSettings = props.bookingData.page_items.book_consultation_settings;
     const countriesList = props.bookingData.page_items.countries_list;
+    
     const menuItems = props.bookingData.fixed_titles;
     const socialMedia = props.bookingData.social_media;
     const footerLogos = props.bookingData.footer_logos;
     const footerContactIcons = props.bookingData.footer_contact_icons;
+    const serviceTitles = props.bookingData.services_titles;
+    const industriesTitles = props.bookingData.industries_titles;
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -42,8 +45,7 @@ export default function Booking(props) {
         triggerScroll();
         calcMinHeight();
         setLoading(false);
-    }, [countriesList, bookingSettings, loading]);
-
+    }, [countriesList, bookingSettings, loading]); 
 
     const submitForm = (e) => {
         e.preventDefault();
@@ -78,7 +80,7 @@ export default function Booking(props) {
 
 
     return loading ? null : (
-        <Layout fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons}>
+        <Layout fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons}  serviceTitles={serviceTitles}  industriesTitles={industriesTitles}>
             {
                 bookingSettings ?
                     <div className="min-height-js">

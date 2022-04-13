@@ -21,6 +21,8 @@ export default function News(props) {
     const socialMedia = props.insightsNewsSingleData.social_media;
     const footerLogos = props.insightsNewsSingleData.footer_logos;
     const footerContactIcons = props.insightsNewsSingleData.footer_contact_icons;
+    const serviceTitles = props.insightsNewsSingleData.services_titles;
+    const industriesTitles = props.insightsNewsSingleData.industries_titles;
 
     const [loading, setLoading] = useState(true);
     const { triggerScroll } = useContext(GlobalState);
@@ -32,7 +34,7 @@ export default function News(props) {
 
 
     return loading ? null : (
-        <Layout activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons}>
+        <Layout activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
             <SideButton />
 
             {

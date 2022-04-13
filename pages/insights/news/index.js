@@ -15,6 +15,8 @@ export default function News(props) {
     const socialMedia = props.insightsNewsData.social_media;
     const footerLogos = props.insightsNewsData.footer_logos;
     const footerContactIcons = props.insightsNewsData.footer_contact_icons;
+    const serviceTitles = props.insightsNewsSingleData.services_titles;
+    const industriesTitles = props.insightsNewsSingleData.industries_titles;
 
     const insightsSettings = props.insightsNewsData.page_items.insights_settings;
     const paginatedNews = props.insightsNewsData.page_items.paginated_news;
@@ -25,7 +27,7 @@ export default function News(props) {
     }, [loading]);
 
     return loading ? null : (
-        <Layout activePage="insights" fixedNav={true}  menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons}>
+        <Layout activePage="insights" fixedNav={true}  menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
             <SideButton />
             {
                 insightsSettings ?

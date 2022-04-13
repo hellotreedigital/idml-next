@@ -11,11 +11,13 @@ export default function Services(props) {
     const categorySettings = props.serviceCategoryData.page_items.services_setting;
     const categories = props.serviceCategoryData.page_items.single_category.services;
     const singleCat = props.serviceCategoryData.page_items.single_category;
+    const serviceTitles = props.serviceCategoryData.services_titles;
 
     const menuItems = props.serviceCategoryData.fixed_titles;
     const socialMedia = props.serviceCategoryData.social_media;
     const footerLogos = props.serviceCategoryData.footer_logos;
     const footerContactIcons = props.serviceCategoryData.footer_contact_icons;
+    const industriesTitles = props.serviceCategoryData.industries_titles;
 
     useEffect(() => {
         triggerScroll();
@@ -24,7 +26,7 @@ export default function Services(props) {
 
     return (
         <div>
-            <Layout fixedNav={true} activePage="services" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons}>
+            <Layout fixedNav={true} activePage="services" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles}  industriesTitles={industriesTitles}>
                 <SideButton />
                 {
                     categorySettings ?

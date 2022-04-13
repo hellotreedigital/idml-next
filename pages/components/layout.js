@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Layout(props) {
@@ -45,21 +46,37 @@ export default function Layout(props) {
                         <div className="dropdown me-xl-5 me-lg-4 h-100 d-flex align-items-center">
                             <a className={"menu " + (props.activePage === "services" ? " active" : "") + (props.activePage === "services" && headerScroll ? "header-scroll active" : "")} href="/services">{props.menuItems?.services}</a>
                             <div className="dropdown-content">
-                                <a href={"/services/" + 1} className="mb-2 mt-2">Operations</a>
-                                <a href={"/services/" + 1} className="mb-2 mt-2">Strategy</a>
-                                <a href={"/services/" + 1} className="mb-2 mt-2">Innovation</a>
-                                <a href={"/services/" + 1} className="mb-2 mt-2">Project management</a>
-                                <a href={"/services/" + 1} className="mb-2 mt-2">Intellectual property</a>
-                                <a href={"/services/" + 1} className="mb-2 mt-2">Sales and Marketing</a>
-                                <a href={"/services/" + 1} className="mb-2 mt-2">Finance</a>
+                                {props.serviceTitles ?
+                                    props.serviceTitles.map(serviceTitle =>
+                                        <>
+                                            <Link href={"services/" + serviceTitle.slug} >
+                                                <a className="mb-2 mt-2">
+                                                    {serviceTitle?.title}
+                                                </a>
+                                            </Link>
+                                        </>
+                                    )
+                                    :
+                                    null
+                                }
                             </div>
                         </div>
                         <div className="dropdown me-xl-5 me-lg-4 h-100 d-flex align-items-center">
                             <a className={"menu " + (props.activePage === "industries" ? " active" : "") + (props.activePage === "industries" && headerScroll ? "header-scroll active" : "")} href="/industries">{props.menuItems?.industries}</a>
                             <div className="dropdown-content">
-                                <a href={"/industries/" + 1} className="mb-2">Tobacco</a>
-                                <a href={"/industries/" + 1} className="mb-2">INVNT</a>
-                                <a href={"/industries/" + 1} className="mb-2">FMCG</a>
+                                {props.industriesTitles ?
+                                    props.industriesTitles.map(industryTitle =>
+                                        <>
+                                            <Link href={"industries/" + industryTitle.slug} >
+                                                <a className="mb-2 mt-2">
+                                                    {industryTitle?.title}
+                                                </a>
+                                            </Link>
+                                        </>
+                                    )
+                                    :
+                                    null
+                                }
                             </div>
                         </div>
                         <div className="me-xl-5 me-lg-4 h-100 d-flex align-items-center">

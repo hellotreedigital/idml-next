@@ -19,6 +19,8 @@ export default function caseStudies(props) {
     const socialMedia = props.insightsCaseStudiesSingleData.social_media;
     const footerLogos = props.insightsCaseStudiesSingleData.footer_logos;
     const footerContactIcons = props.insightsCaseStudiesSingleData.footer_contact_icons;
+    const serviceTitles = props.insightsCaseStudiesSingleData.services_titles;
+    const industriesTitles = props.insightsCaseStudiesSingleData.industries_titles;
 
     const [loading, setLoading] = useState(true);
     const { triggerScroll } = useContext(GlobalState);
@@ -30,7 +32,7 @@ export default function caseStudies(props) {
 
 
     return loading ? null : (
-        <Layout activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons}>
+        <Layout activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
             <SideButton />
             {
                 insightsSettings && (

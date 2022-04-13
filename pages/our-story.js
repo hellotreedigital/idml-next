@@ -16,8 +16,6 @@ export default function OurStory(props) {
 
     const [popupOpen, setPopupOpen] = useState(null);
 
-    const [popupTitle, setPopupTitle] = useState(null);
-
     const { triggerScroll } = useContext(GlobalState);
 
     const storySettings = props.ourStoryData.page_items.story_settings;
@@ -27,13 +25,14 @@ export default function OurStory(props) {
     const companyList = props.ourStoryData.page_items.companies_list;
     const teamList = props.ourStoryData.page_items.team_list;
     const mapLegend = props.ourStoryData.page_items.map_legend;
+    const mapPinnedLocoations = props.ourStoryData.page_items.map_pinned_locations;
 
-
-    // function popupClick(team) {
-    //     // console.log(team);
-    //     setPopupOpen(team);
-    //     setPopupTitle(team.title);
-    // }
+    const menuItems = props.ourStoryData.fixed_titles;
+    const socialMedia = props.ourStoryData.social_media;
+    const footerLogos = props.ourStoryData.footer_logos;
+    const footerContactIcons = props.ourStoryData.footer_contact_icons;
+    const serviceTitles = props.ourStoryData.services_titles;
+    const industriesTitles = props.ourStoryData.industries_titles;
 
     useEffect(() => {
         triggerScroll();
@@ -43,7 +42,7 @@ export default function OurStory(props) {
 
     return (
 
-        <Layout fixedNav={false} activePage="our-story">
+        <Layout fixedNav={false} activePage="our-story" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
             {
                 storySettings ?
                     <>
@@ -510,17 +509,17 @@ export default function OurStory(props) {
                                             <SwiperSlide key={index}>
                                                 <div className="team-section shadow position-relative" onClick={() => setPopupOpen(team)}>
                                                     <div className="ratio team-ratio">
-                                                        <img src="../img/temp-images/ceo.jpg" alt="ceo" />
+                                                        <img src={team.image} alt="ceo" />
                                                     </div>
                                                     <div className="team-position py-3">
-                                                        <h4 className="mb-2">{team.image}</h4>
+                                                        <h4 className="mb-2">{team.name}</h4>
                                                         <h5>{team.position}</h5>
                                                         <p className="mobile-read-more underline mb-0">{storySettings.read_more}</p>
 
                                                     </div>
                                                     <div className="team-position-hover">
                                                         <div className="content">
-                                                            <h4 className="mb-2">{team.image}</h4>
+                                                            <h4 className="mb-2">{team.name}</h4>
                                                             <h5 className="mb-3">{team.small_description}</h5>
                                                             <p className="underline">{storySettings.read_more}</p>
                                                         </div>
@@ -567,15 +566,16 @@ export default function OurStory(props) {
                                     <div className="row side-map align-items-end d-md-flex d-block ">
                                         <div className="col-auto align-items-sm-start d-sm-flex   align-items-lg-center d-lg-block align-items-md-center d-md-block">
                                             {mapLegend ?
-
-                                                <div className="row align-items-center pb-4" animate="left">
-                                                    <div className="col-md-4 col-auto justify-content-md-center justify-content-start d-flex pb-sm-3">
-                                                        <img className="side-icon" src="../img/temp-images/home-logo.svg" alt="side-icon" />
+                                                mapLegend.map(map =>
+                                                    <div className="row align-items-center pb-4" animate="left">
+                                                        <div className="col-md-4 col-auto justify-content-md-center justify-content-start d-flex pb-sm-3">
+                                                            <img className="side-icon" src={map.full_path_icon} alt="side-icon" />
+                                                        </div>
+                                                        <div className="col-md-8 col-auto">
+                                                            <p className="mb-0">{map.title}</p>
+                                                        </div>
                                                     </div>
-                                                    <div className="col-md-8 col-auto">
-                                                        <p className="mb-0">Our Offices</p>
-                                                    </div>
-                                                </div>
+                                                )
                                                 :
                                                 null
                                             }
@@ -585,18 +585,14 @@ export default function OurStory(props) {
                                                 <div className="ratio map-ratio">
                                                     <img src={storySettings.map_image} alt="map" />
                                                 </div>
-                                                <div className="position-absolute pin-1">
-                                                    <img className="pins" src="../img/temp-images/red.svg" alt="pin" />
-                                                </div>
-                                                <div className="position-absolute pin-2">
-                                                    <img className="pins" src="../img/temp-images/blue.svg" alt="pin" />
-                                                </div>
-                                                <div className="position-absolute pin-3">
-                                                    <img className="pins" src="../img/temp-images/black.svg" alt="pin" />
-                                                </div>
-                                                <div className="position-absolute pin-4">
-                                                    <img className="pins" src="../img/temp-images/home-pin.svg" alt="pin" />
-                                                </div>
+                                                {
+                                                    mapPinnedLocoations ?
+                                                        mapPinnedLocoations.map((pinLocation, index) =>
+                                                            <img className="position-absolute pins" src={pinLocation.operations_map_legend.full_path_icon} alt="pin" style={{ top: pinLocation.y + '%', left: pinLocation.x + '%' }} />
+                                                        )
+                                                        :
+                                                        null
+                                                }
                                             </div>
                                         </div>
                                     </div>

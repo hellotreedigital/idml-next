@@ -15,6 +15,8 @@ export default function CaseStudies(props) {
     const socialMedia = props.insightsCaseStudiesData.social_media;
     const footerLogos = props.insightsCaseStudiesData.footer_logos;
     const footerContactIcons = props.insightsCaseStudiesData.footer_contact_icons;
+    const serviceTitles = props.insightsCaseStudiesSingleData.services_titles;
+    const industriesTitles = props.insightsCaseStudiesSingleData.industries_titles;
 
     const insightsSettings = props.insightsCaseStudiesData.page_items.insights_settings;
     const paginatedInsights = props.insightsCaseStudiesData.page_items.paginated_case_studies;
@@ -26,7 +28,7 @@ export default function CaseStudies(props) {
     
 
     return loading ? null : (
-        <Layout activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons}>
+        <Layout activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons}  serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
             <SideButton />
 
             {

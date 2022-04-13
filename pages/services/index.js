@@ -17,6 +17,9 @@ export default function Services(props) {
     const socialMedia = props.servicesData.social_media;
     const footerLogos = props.servicesData.footer_logos;
     const footerContactIcons = props.servicesData.footer_contact_icons;
+    const serviceTitles = props.servicesData.services_titles;
+    const industriesTitles = props.servicesData.industries_titles;
+    
 
     useEffect(() => {
         triggerScroll();
@@ -24,7 +27,7 @@ export default function Services(props) {
     }, []);
 
     return (
-        <Layout activePage="services" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons}>
+        <Layout activePage="services" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles}  industriesTitles={industriesTitles}>
             {
                 serviceSetting ?
                     <Banner
