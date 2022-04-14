@@ -1,10 +1,10 @@
 import axios from "axios";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
-import GlobalState from "../../components/GlobalState";
-import Layout from "../../components/layout";
-import NewsSection from "../../components/NewsSection";
-import SideButton from "../../components/SideButton";
+import GlobalState from "../../../GlobalState";
+import Layout from "../../../components/layout";
+import NewsSection from "../../../components/NewsSection";
+import SideButton from "../../../components/SideButton";
 
 export default function News(props) {
 

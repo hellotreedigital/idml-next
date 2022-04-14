@@ -1,8 +1,8 @@
-import SideButton from "../components/SideButton";
-import Banner from "../components/Banner";
+import SideButton from "../../components/SideButton";
+import Banner from "../../components/Banner";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
-import Layout from "../components/layout";
+import Layout from "../../components/layout";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay } from 'swiper';
 
@@ -14,7 +14,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination } from "swiper";
-import GlobalState from "../components/GlobalState";
+import GlobalState from "../../GlobalState";
 
 // const brands = [
 //     {
