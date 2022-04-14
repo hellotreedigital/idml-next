@@ -48,7 +48,7 @@ export default function Products(props) {
 
 
     return loading ? null : (
-        <Layout activePage="products" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles}  industriesTitles={industriesTitles}>
+        <Layout activePage="products" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
             {
                 productsSetting ?
                     <Banner
@@ -158,10 +158,10 @@ export default function Products(props) {
                                                                                     className="mySwiper2"
                                                                                 >
                                                                                     {
-                                                                                        product.full_path_images.map(image =>
+                                                                                        product.product_images.map(imageProduct =>
                                                                                             <SwiperSlide>
                                                                                                 <div className="ratio product-ratio">
-                                                                                                    <img className="pb-4" src={image} alt="product" />
+                                                                                                    <img className="pb-4" src={imageProduct.image} alt="product" />
                                                                                                 </div>
                                                                                             </SwiperSlide>
                                                                                         )
@@ -179,7 +179,7 @@ export default function Products(props) {
                                                                                     className="mySwiper"
                                                                                 >
                                                                                     {
-                                                                                        product.full_path_images.map(image =>
+                                                                                        product.product_images.map(productColor =>
                                                                                             <SwiperSlide>
                                                                                                 <div className="d-flex justify-content-center me-lg-3">
                                                                                                     <div className="color-1 mx-3"></div>
