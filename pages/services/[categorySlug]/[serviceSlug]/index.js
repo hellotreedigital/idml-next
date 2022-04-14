@@ -1,9 +1,9 @@
-import Layout from "../../../components/layout";
+import Layout from "../../../../components/layout";
 import { useContext, useEffect } from "react";
-import Section from "../../../components/Section";
-import SideButton from "../../../components/SideButton";
+import Section from "../../../../components/Section";
+import SideButton from "../../../../components/SideButton";
 import axios from "axios";
-import GlobalState from "../../../components/GlobalState";
+import GlobalState from "../../../../GlobalState";
 
 export default function SingleService(props) {
 

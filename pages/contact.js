@@ -1,13 +1,13 @@
 import { useContext, useEffect, useState } from "react";
-import Banner from "./components/Banner";
-import Layout from "./components/layout";
-import SideButton from "./components/SideButton";
+import Banner from "../components/Banner";
+import Layout from "../components/layout";
+import SideButton from "../components/SideButton";
 
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
 import Select from 'react-select'
 import axios from "axios";
-import GlobalState from "./components/GlobalState";
+import GlobalState from "../GlobalState";
 
 
 const options = [

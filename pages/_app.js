@@ -1,7 +1,7 @@
 import '../styles/main.css';
 import "../styles/bootstrap.min.css";
 import { useEffect, useState } from "react";
-import GlobalState from "../pages/components/GlobalState";
+import GlobalState from "../GlobalState";
 import Router from 'next/router';
 import axios from 'axios';
 

@@ -1,6 +1,6 @@
-import Layout from "./components/layout";
-import SideButton from "./components/SideButton";
-import Banner from "./components/Banner";
+import Layout from "../components/layout";
+import SideButton from "../components/SideButton";
+import Banner from "../components/Banner";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import VisibilitySensor from 'react-visibility-sensor';
@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
-import GlobalState from "./components/GlobalState";
+import GlobalState from "../GlobalState";
 
 export default function OurStory(props) {
 

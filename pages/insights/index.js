@@ -1,14 +1,14 @@
 import { useContext, useEffect, useState } from "react";
 
-import Banner from "../components/Banner";
-import Layout from "../components/layout";
-import NewsSection from "../components/NewsSection";
-import SideButton from "../components/SideButton";
+import Banner from "../../components/Banner";
+import Layout from "../../components/layout";
+import NewsSection from "../../components/NewsSection";
+import SideButton from "../../components/SideButton";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
-import GlobalState from "../components/GlobalState";
+import GlobalState from "../../GlobalState";
 import axios from "axios";
 import Link from "next/link";
 

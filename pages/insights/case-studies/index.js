@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from "react";
-import Layout from "../../components/layout";
-import NewsSection from "../../components/NewsSection";
-import SideButton from "../../components/SideButton";
+import Layout from "../../../components/layout";
+import NewsSection from "../../../components/NewsSection";
+import SideButton from "../../../components/SideButton";
 import axios from "axios";
 import Link from "next/link";
-import GlobalState from "../../components/GlobalState";
+import GlobalState from "../../../GlobalState";
 
 export default function CaseStudies(props) {
 

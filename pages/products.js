@@ -1,6 +1,6 @@
-import Banner from "./components/Banner";
-import Layout from "./components/layout";
-import SideButton from "./components/SideButton";
+import Banner from "../components/Banner";
+import Layout from "../components/layout";
+import SideButton from "../components/SideButton";
 import Link from "next/link";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,7 +13,7 @@ import "swiper/css";
 
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
-import GlobalState from "./components/GlobalState";
+import GlobalState from "../GlobalState";
 
 export default function Products(props) {
 
