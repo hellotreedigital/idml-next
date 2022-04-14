@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Section(props) {
     return (
         <div className="container" animate="left">
@@ -7,20 +9,20 @@ export default function Section(props) {
                     <p className="home-small-paragraph mb-4" animate="left">{props.subtitle}</p>
                     {
                         props.button === "1" ?
-                            <a href="/booking">
+                            <Link href="/booking">
                                 <button className="button blue-button mt-4 remove-padding shadow">
                                     {props.label}
                                 </button>
-                            </a>
+                            </Link>
                             :
                             null}
                     {
                         props.button === "2" ?
-                            <a href="/contact">
+                            <Link href="/contact">
                                 <button className="button blue-button  shadow">
                                     {props.label}
                                 </button>
-                            </a>
+                            </Link>
                             :
                             null}
                 </div>

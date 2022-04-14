@@ -77,8 +77,8 @@ export default function CaseStudies(props) {
                         </div>
                         <div className="row justify-content-center gx-5">
                             {
-                                paginatedInsights.data.map(paginatedInsight =>
-                                    <div className="col-lg-4 col-md-6 col-sm-6 pb-5">
+                                paginatedInsights.data.map((paginatedInsight, index) =>
+                                    <div className="col-lg-4 col-md-6 col-sm-6 pb-5" key={index}>
                                         <Link href={"/insights/case-studies/" + paginatedInsight.slug}>
                                             <a>
                                                 <NewsSection

@@ -1,6 +1,7 @@
 import Banner from "./components/Banner";
 import Layout from "./components/Layout";
 import SideButton from "./components/SideButton";
+import Link from "next/link";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, Thumbs } from "swiper";
@@ -31,7 +32,7 @@ export default function Products(props) {
     const productsCategories = props.productsData.page_items.products_categories;
     const [productsItems, setProductsItems] = useState(null)
 
-    const [youtubePopup, setYoutubePopup] = useState(false);
+    const [youtubePopup, setYoutubePopup] = useState(null);
     const [loading, setLoading] = useState(true);
 
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -41,6 +42,7 @@ export default function Products(props) {
     }
 
     useEffect(() => {
+        triggerScroll();
         setLoading(false)
         setProductsItems(productsCategories[0])
     }, [productsCategories]);
@@ -94,10 +96,10 @@ export default function Products(props) {
                                     >
                                         {
                                             productsCategories.map((productCategory, index) =>
-                                                <SwiperSlide key={index} onClick={() => logoClick(productCategory)}>
-                                                    <div className="text-center px-3">
+                                                <SwiperSlide key={index} >
+                                                    <div className="text-center px-3" onClick={() => logoClick(productCategory)}>
                                                         <div className="ratio ratio-1x1">
-                                                            <img className="brand-image active" src={productCategory.logo} alt="brand" />
+                                                            <img className={"brand-image" + (productCategory === productsItems ? " active" : " ")} src={productCategory.logo} alt="brand" />
                                                         </div>
                                                     </div>
                                                 </SwiperSlide>
@@ -109,7 +111,7 @@ export default function Products(props) {
                         </div>
 
                         {
-                            productsItems ?
+                            productsItems && (
                                 <div className=" position-relative" animate="right">
                                     <div className="">
                                         <div className=" justify-content-end d-flex">
@@ -153,9 +155,9 @@ export default function Products(props) {
                                                                                     loop={true}
                                                                                     spaceBetween={10}
                                                                                     navigation={true}
-                                                                                    thumbs={{ swiper: thumbsSwiper?.$el ? thumbsSwiper : null }}
+                                                                                    thumbs={{ swiper: (thumbsSwiper?.$el && thumbsSwiper?.slidesPerView) ? thumbsSwiper : null }}
                                                                                     modules={[FreeMode, Navigation, Thumbs]}
-                                                                                    className="mySwiper2"
+                                                                                    className="mySwiper2 pe-lg-2"
                                                                                 >
                                                                                     {
                                                                                         product.product_images.map(imageProduct =>
@@ -167,7 +169,6 @@ export default function Products(props) {
                                                                                         )
                                                                                     }
                                                                                 </Swiper>
-
 
                                                                                 <Swiper
                                                                                     onSwiper={setThumbsSwiper}
@@ -182,7 +183,7 @@ export default function Products(props) {
                                                                                         product.product_images.map(productColor =>
                                                                                             <SwiperSlide>
                                                                                                 <div className="d-flex justify-content-center me-lg-3">
-                                                                                                    <div className="color-1 mx-3"></div>
+                                                                                                    <div className=" " style={{ color: productColor.color, backgroundColor: productColor.color, width: '30px', height: '30px', borderRadius: '6px' }}></div>
                                                                                                 </div>
                                                                                             </SwiperSlide>
                                                                                         )
@@ -203,9 +204,13 @@ export default function Products(props) {
                                                                                 </div>
                                                                                 <div className="d-flex justify-content-lg-start justify-content-center">
                                                                                     <div className="me-3">
-                                                                                        <button className="button blue-button visit-mobile">VISIT WEBSITE</button>
+                                                                                        <Link href={product.website_url}>
+                                                                                            <a target="_blank" rel="noreferrer">
+                                                                                                <button className="button blue-button visit-mobile">{product.website_button}</button>
+                                                                                            </a>
+                                                                                        </Link>
                                                                                     </div>
-                                                                                    <button className="button youtube-button" onClick={() => setYoutubePopup(true)}>video</button>
+                                                                                    <button className="button youtube-button" onClick={() => setYoutubePopup(product)}>{product.product_button}</button>
                                                                                 </div>
                                                                                 <p className="pt-5">{product.description}</p>
                                                                             </div>
@@ -216,14 +221,11 @@ export default function Products(props) {
                                                         </SwiperSlide>
                                                     </div>
                                                 )
-
                                             }
-
                                         </Swiper>
                                     </div>
                                 </div>
-                                :
-                                null
+                            )
                         }
                         {
                             productsItems?.description ?
@@ -244,10 +246,10 @@ export default function Products(props) {
                             youtubePopup && (
                                 <div className={"youtube-popup" + (youtubePopup ? " " : " fade-out")}>
                                     <div className="modal-window position-relative">
-                                        <div className="cancel-button stop-video" onClick={() => setYoutubePopup(false)}>
+                                        <div className="cancel-button stop-video" onClick={() => setYoutubePopup(null)}>
                                             <img src="../img/images/x-button.svg" alt="" />
                                         </div>
-                                        <iframe className="youtube-borders mw-100" width="900" height="500" src="https://www.youtube.com/embed/UqzKEMqKwf0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        <iframe className="youtube-borders mw-100" width="900" height="500" src={youtubePopup.product_video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                     </div>
                                 </div>
                             )

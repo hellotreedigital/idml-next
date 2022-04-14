@@ -5,6 +5,10 @@ html {
     cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
 }
 
+.hi span{
+    display: none;
+}
+
 body {
     font-family: 'SF Pro Display' !important;
     overflow-x: hidden;
@@ -4022,6 +4026,8 @@ div.four:before {
 
 /* svg animation */
 
+/* svg animation */
+
 .cls-1 {
     opacity: 0.8;
 }
@@ -4066,7 +4072,7 @@ div.four:before {
     fill: none;
     stroke: #000;
     stroke-miterlimit: 10;
-    strokeWidth: 7px;
+    stroke-width: 7px;
 }
 
 .think-blue svg {
@@ -4177,6 +4183,7 @@ div.four:before {
     stroke-dasharray: 2000;
     stroke-dashoffset: 2000;
 }
+
 
 .cancel-button {
     position: absolute;

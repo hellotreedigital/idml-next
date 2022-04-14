@@ -83,8 +83,8 @@ export default function News(props) {
 
                         <div className="row justify-content-center gx-5">
                             {
-                                paginatedNews.data.map(paginatedNew => (
-                                    <div className="col-lg-4 col-md-6 col-sm-6 pb-5">
+                                paginatedNews.data.map((paginatedNew, index) => (
+                                    <div className="col-lg-4 col-md-6 col-sm-6 pb-5" key={index}>
                                         <Link href={"/insights/news/" + paginatedNew.slug}>
                                             <a>
                                                 <NewsSection

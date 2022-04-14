@@ -48,7 +48,7 @@ export default function Industries(props) {
                                             <div className="d-none d-sm-flex">
                                                 <button onClick={() => window.history.back()} className="button back-button d-flex align-items-center shadow">
                                                     <svg className="arrow-back" xmlns="http://www.w3.org/2000/svg" width="8.136" height="12.964" viewBox="0 0 8.136 12.964">
-                                                        <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" stroke-linecap="round" stroke-width="2" />
+                                                        <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" strokeLinecap="round" strokeWidth="2" />
                                                     </svg>
                                                     <p className="mb-0 ms-2">{industriesSettings?.back_button}</p>
                                                 </button>
@@ -56,7 +56,7 @@ export default function Industries(props) {
                                             <div className=" d-block d-sm-none">
                                                 <button onClick={() => window.history.back()} className="back-button-border">
                                                     <svg className="arrow-back" xmlns="http://www.w3.org/2000/svg" width="8.136" height="12.964" viewBox="0 0 8.136 12.964">
-                                                        <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" stroke-linecap="round" stroke-width="2" />
+                                                        <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" strokeLinecap="round" strokeWidth="2" />
                                                     </svg>
                                                 </button>
                                             </div>
@@ -82,8 +82,8 @@ export default function Industries(props) {
                         <div className="container " animate="right">
                             <div className="row justify-content-center">
                                 {
-                                    singleIndustry?.products_list?.map(product =>
-                                        <div className="col-lg-2 col-md-4 col-sm-6 pb-5" >
+                                    singleIndustry?.products_list?.map((product, index) =>
+                                        <div className="col-lg-2 col-md-4 col-sm-6 pb-5" key={index}>
                                             <div className="single-industry position-relative" onClick={() => popupClick(product)}>
                                                 <div className="ratio industy-square">
                                                     <div className="square"></div>
@@ -109,8 +109,8 @@ export default function Industries(props) {
                                     <div className="row justify-content-center text-center">
                                         {
                                             clientsList ?
-                                            clientsList.map(clientList =>
-                                                    <div className="col-lg-auto col-md-3  col-6 mb-5 mx-lg-3">
+                                            clientsList.map((clientList, index) =>
+                                                    <div className="col-lg-auto col-md-3  col-6 mb-5 mx-lg-3" key={index}>
                                                         <div>
                                                             <img className="brand-image-default" src={clientList.full_path_logo} alt="brand" />
                                                         </div>
@@ -140,8 +140,8 @@ export default function Industries(props) {
                                             <g id="Group_3342" data-name="Group 3342" transform="translate(-1096 -228)">
                                                 <path id="Rectangle_267" data-name="Rectangle 267" d="M0,0H12A37,37,0,0,1,49,37v0a0,0,0,0,1,0,0H27.75A27.75,27.75,0,0,1,0,9.25V0A0,0,0,0,1,0,0Z" transform="translate(1096 228)" fill="#14334a" />
                                                 <g id="Group_3054" data-name="Group 3054" transform="translate(214.465 49.965)">
-                                                    <line id="Line_8" data-name="Line 8" x2="9.07" y2="9.07" transform="translate(900.5 193.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2" />
-                                                    <line id="Line_9" data-name="Line 9" x1="9.07" y2="9.07" transform="translate(900.5 193.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2" />
+                                                    <line id="Line_8" data-name="Line 8" x2="9.07" y2="9.07" transform="translate(900.5 193.5)" fill="none" stroke="#fff" strokeLinecap="round" strokeWidth="2" />
+                                                    <line id="Line_9" data-name="Line 9" x1="9.07" y2="9.07" transform="translate(900.5 193.5)" fill="none" stroke="#fff" strokeLinecap="round" strokeWidth="2" />
                                                 </g>
                                             </g>
                                         </svg>

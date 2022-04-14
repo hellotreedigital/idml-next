@@ -29,27 +29,41 @@ export default function Layout(props) {
             <div className={"container-fluid navbar-items py-3" + (headerScroll ? " header-scroll" : " ") + (props.fixedNav ? " header-scroll" : " ")}>
                 <div className="row mx-lg-3">
                     <div className="col">
-                        <a href="/">
+                        <Link href="/">
                             <img src="/img/images/logo.svg" alt="logo" />
-                        </a>
+                        </Link>
                     </div>
                     <div className="col-auto d-lg-flex d-none">
                         <div className="me-xl-5 me-lg-4 h-100 d-flex align-items-center">
-                            <a className={"menu " + (props.activePage === "home" ? " active" : "") + (props.activePage === "home" && headerScroll ? "header-scroll active" : "")} href="/">{props.menuItems?.home}</a>
+                            <Link href="/">
+                                <a className={"menu " + (props.activePage === "home" ? " active" : "") + (props.activePage === "home" && headerScroll ? "header-scroll active" : "")}>
+                                    {props.menuItems?.home}
+                                </a>
+                            </Link>
                         </div>
                         <div className="me-xl-5 me-lg-4 h-100 d-flex align-items-center">
-                            <a className={"menu " + (props.activePage === "our-story" ? " active" : "") + (props.activePage === "our-story" && headerScroll ? "header-scroll active" : "")} href="/our-story">{props.menuItems ? props.menuItems['our-story'] : ''}</a>
+                            <Link href="/our-story">
+                                <a className={"menu " + (props.activePage === "our-story" ? " active" : "") + (props.activePage === "our-story" && headerScroll ? "header-scroll active" : "")}>
+                                    {props.menuItems ? props.menuItems['our-story'] : ''}
+                                </a>
+                            </Link>
                         </div>
                         <div className="me-xl-5 me-lg-4 h-100 d-flex align-items-center">
-                            <a className={"menu " + (props.activePage === "products" ? " active" : "") + (props.activePage === "products" && headerScroll ? "header-scroll active" : "")} href="/products">{props.menuItems?.products}</a>
+                            <Link href="/products">
+                                <a className={"menu " + (props.activePage === "products" ? " active" : "") + (props.activePage === "products" && headerScroll ? "header-scroll active" : "")} >
+                                    {props.menuItems?.products}
+                                </a>
+                            </Link>
                         </div>
                         <div className="dropdown me-xl-5 me-lg-4 h-100 d-flex align-items-center">
-                            <a className={"menu " + (props.activePage === "services" ? " active" : "") + (props.activePage === "services" && headerScroll ? "header-scroll active" : "")} href="/services">{props.menuItems?.services}</a>
+                            <Link href="/services">
+                                <a className={"menu " + (props.activePage === "services" ? " active" : "") + (props.activePage === "services" && headerScroll ? "header-scroll active" : "")}>{props.menuItems?.services}</a>
+                            </Link>
                             <div className="dropdown-content">
                                 {props.serviceTitles ?
-                                    props.serviceTitles.map(serviceTitle =>
+                                    props.serviceTitles.map((serviceTitle, index) =>
                                         <>
-                                            <Link href={"services/" + serviceTitle.slug} >
+                                            <Link href={"services/" + serviceTitle.slug} key={index}>
                                                 <a className="mb-2 mt-2">
                                                     {serviceTitle?.title}
                                                 </a>
@@ -62,12 +76,16 @@ export default function Layout(props) {
                             </div>
                         </div>
                         <div className="dropdown me-xl-5 me-lg-4 h-100 d-flex align-items-center">
-                            <a className={"menu " + (props.activePage === "industries" ? " active" : "") + (props.activePage === "industries" && headerScroll ? "header-scroll active" : "")} href="/industries">{props.menuItems?.industries}</a>
+                            <Link href="/industries">
+                                <a className={"menu " + (props.activePage === "industries" ? " active" : "") + (props.activePage === "industries" && headerScroll ? "header-scroll active" : "")} >
+                                    {props.menuItems?.industries}
+                                </a>
+                            </Link>
                             <div className="dropdown-content">
                                 {props.industriesTitles ?
-                                    props.industriesTitles.map(industryTitle =>
+                                    props.industriesTitles.map((industryTitle, index) =>
                                         <>
-                                            <Link href={"industries/" + industryTitle.slug} >
+                                            <Link href={"industries/" + industryTitle.slug} key={index}>
                                                 <a className="mb-2 mt-2">
                                                     {industryTitle?.title}
                                                 </a>
@@ -80,10 +98,18 @@ export default function Layout(props) {
                             </div>
                         </div>
                         <div className="me-xl-5 me-lg-4 h-100 d-flex align-items-center">
-                            <a className={"menu " + (props.activePage === "insights" ? " active" : "") + (props.activePage === "insights" && headerScroll ? "header-scroll active" : "")} href="/insights">{props.menuItems?.insights}</a>
+                            <Link href="/insights">
+                                <a className={"menu " + (props.activePage === "insights" ? " active" : "") + (props.activePage === "insights" && headerScroll ? "header-scroll active" : "")}>
+                                    {props.menuItems?.insights}
+                                </a>
+                            </Link>
                         </div>
                         <div className="me-xl-5 me-lg-4 h-100 d-flex align-items-center">
-                            <a className={"menu " + (props.activePage === "contact" ? " active" : "") + (props.activePage === "contact" && headerScroll ? "header-scroll active" : "")} href="/contact">{props.menuItems ? props.menuItems['contact-us'] : ''}</a>
+                            <Link href="/contact">
+                                <a className={"menu " + (props.activePage === "contact" ? " active" : "") + (props.activePage === "contact" && headerScroll ? "header-scroll active" : "")}>
+                                    {props.menuItems ? props.menuItems['contact-us'] : ''}
+                                </a>
+                            </Link>
                         </div>
                     </div>
                     <div className="col-auto d-lg-none d-flex align-self-center" onClick={burgerClick}>
@@ -113,45 +139,91 @@ export default function Layout(props) {
                     <div className="flex-grow-1 d-flex flex-column justify-content-center">
                         <div className="row align-items-center justify-content-center text-center d-flex flex-column">
                             <div className="pb-3">
-                                <a className="burger-menu" href="/">{props.menuItems?.home}</a>
+                                <Link href="/">
+                                    <a className="burger-menu">
+                                        {props.menuItems?.home}
+                                    </a>
+                                </Link>
                             </div>
                             <div className="pb-3">
-                                <a className="burger-menu" href="/our-story">{props.menuItems ? props.menuItems['our-story'] : ''}</a>
+                                <Link href="/our-story">
+                                    <a className="burger-menu" >
+                                        {props.menuItems ? props.menuItems['our-story'] : ''}
+                                    </a>
+                                </Link>
                             </div>
                             <div className="pb-3">
-                                <a className="burger-menu" href="/products">{props.menuItems?.products}</a>
+                                <Link href="/products">
+                                    <a className="burger-menu">
+                                        {props.menuItems?.products}
+                                    </a>
+                                </Link>
                             </div>
                             <div className="dropdown pb-4">
-                                {/* <a onClick={dropdownSlide} href="#" className="burger-menu" >SERVICES</a> */}
                                 <div className="mb-3">
-                                    <a href="/services" className="burger-menu" >{props.menuItems?.services}</a>
+                                    <Link href="/services">
+                                        <a className="burger-menu" >
+                                            {props.menuItems?.services}
+                                        </a>
+                                    </Link>
                                 </div>
-                                {/* <div className={" mobile-dropdown" + (dropdownOpen ? "" : " remove")}> */}
+
                                 <div className="mobile-dropdown d-grid">
-                                    <a href={"/services/" + 1}>Operations</a>
-                                    <a href={"/services/" + 1}>Strategy</a>
-                                    <a href={"/services/" + 1}>Innovation</a>
-                                    <a href={"/services/" + 1}>Project management</a>
-                                    <a href={"/services/" + 1}>Intellectual property</a>
-                                    <a href={"/services/" + 1}>Sales and Marketing</a>
-                                    <a href={"/services/" + 1}>Finance</a>
+                                    {props.serviceTitles ?
+                                        props.serviceTitles.map((serviceTitle, index) =>
+                                            <>
+                                                <Link href={"services/" + serviceTitle.slug} key={index}>
+                                                    <a>
+                                                        {serviceTitle?.title}
+                                                    </a>
+                                                </Link>
+
+                                            </>
+                                        )
+                                        :
+                                        null
+                                    }
+
                                 </div>
                             </div>
+
                             <div className="dropdown pb-3">
                                 <div className="mb-3">
-                                    <a className="burger-menu" href="/industries">{props.menuItems?.industries}</a>
+                                    <Link href="/industries">
+                                        <a className="burger-menu">
+                                            {props.menuItems?.industries}
+                                        </a>
+                                    </Link>
                                 </div>
                                 <div className="mobile-dropdown d-grid">
-                                    <a href="/industries/1">Tobacco</a>
-                                    <a href="/industries/1">INVNT</a>
-                                    <a href="/industries/1">FMCG</a>
+                                    {props.industriesTitles ?
+                                        props.industriesTitles.map((industryTitle, index) =>
+                                            <>
+                                                <Link href={"industries/" + industryTitle.slug} key={index}>
+                                                    <a>
+                                                        {industryTitle?.title}
+                                                    </a>
+                                                </Link>
+                                            </>
+                                        )
+                                        :
+                                        null
+                                    }
                                 </div>
                             </div>
                             <div className="pb-3">
-                                <a className="burger-menu" href="/insights">{props.menuItems?.insights}</a>
+                                <Link href="/insights">
+                                    <a className="burger-menu">
+                                        {props.menuItems?.insights}
+                                    </a>
+                                </Link>
                             </div>
                             <div className="pb-3">
-                                <a className="burger-menu" href="/contact">{props.menuItems ? props.menuItems['contact-us'] : ''}</a>
+                                <Link href="/contact" >
+                                    <a className="burger-menu">
+                                        {props.menuItems ? props.menuItems['contact-us'] : ''}
+                                    </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -179,8 +251,8 @@ export default function Layout(props) {
                                         <div className="d-none d-lg-block">
                                             {
                                                 props?.footerContactIcons ?
-                                                    props.footerContactIcons.map(footerContactIcon =>
-                                                        <a target="_blank" rel="noreferrer" href={footerContactIcon.url}>
+                                                    props.footerContactIcons.map((footerContactIcon, index) =>
+                                                        <a href={footerContactIcon.url} target="_blank" rel="noreferrer" key={index}>
                                                             <img className="social-icon me-3" src={footerContactIcon.icon} alt="icon" />
                                                         </a>
                                                     )
@@ -194,8 +266,8 @@ export default function Layout(props) {
                                         <div className="d-block d-lg-none pb-3">
                                             {
                                                 props?.footerContactIcons ?
-                                                    props.footerContactIcons.map(footerContactIcon =>
-                                                        <a target="_blank" rel="noreferrer" href={footerContactIcon.url}>
+                                                    props.footerContactIcons.map((footerContactIcon, index) =>
+                                                        <a target="_blank" rel="noreferrer" href={footerContactIcon.url} key={index}>
                                                             <img className="social-icon me-3" src={footerContactIcon.icon} alt="icon" />
                                                         </a>
                                                     )
@@ -207,32 +279,48 @@ export default function Layout(props) {
                                             <div className="row justify-content-center">
                                                 <div className="col-4">
                                                     <div className="mb-4">
-                                                        <a className={"mobile-footer" + (props.activePage === "our-story" ? " active" : "")} href="/our-story">{props.menuItems ? props.menuItems['our-story'] : ''}</a>
+                                                        <Link href="/our-story">
+                                                            <a className={"mobile-footer" + (props.activePage === "our-story" ? " active" : "")}>
+                                                                {props.menuItems ? props.menuItems['our-story'] : ''}
+                                                            </a>
+                                                        </Link>
                                                     </div>
                                                     <div className="mb-4">
-                                                        <a className={"mobile-footer" + (props.activePage === "products" ? " active" : "")} href="/products">{props.menuItems?.products}</a>
+                                                        <Link href="/products">
+                                                            <a className={"mobile-footer" + (props.activePage === "products" ? " active" : "")} >
+                                                                {props.menuItems?.products}
+                                                            </a>
+                                                        </Link>
                                                     </div>
                                                     <div className="mb-4">
-                                                        <a className={"mobile-footer" + (props.activePage === "services" ? " active" : "")} href="/services">{props.menuItems?.services}</a>
+                                                        <Link href="/services">
+                                                            <a className={"mobile-footer" + (props.activePage === "services" ? " active" : "")}>{props.menuItems?.services}</a>
+                                                        </Link>
                                                     </div>
                                                 </div>
                                                 <div className="col-4">
                                                     <div className="mb-4">
-                                                        <a className={"mobile-footer" + (props.activePage === "industries" ? " active" : "")} href="/industries">{props.menuItems?.industries}</a>
+                                                        <Link href="/industries">
+                                                            <a className={"mobile-footer" + (props.activePage === "industries" ? " active" : "")} > {props.menuItems?.industries}</a>
+                                                        </Link>
                                                     </div>
                                                     <div className="mb-4">
-                                                        <a className={"mobile-footer" + (props.activePage === "insights" ? " active" : "")} href="/insights">{props.menuItems?.insights}</a>
+                                                        <Link href="/insights">
+                                                            <a className={"mobile-footer" + (props.activePage === "insights" ? " active" : "")} >{props.menuItems?.insights}</a>
+                                                        </Link>
                                                     </div>
                                                     <div className="mb-4">
-                                                        <a className={"mobile-footer" + (props.activePage === "contact" ? " active" : "")} href="/contact">{props.menuItems ? props.menuItems['contact-us'] : ''}</a>
+                                                        <Link href="/contact">
+                                                            <a className={"mobile-footer" + (props.activePage === "contact" ? " active" : "")} >{props.menuItems ? props.menuItems['contact-us'] : ''}</a>
+                                                        </Link>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div className="">
                                                 {
                                                     props.socialMedia ?
-                                                        props.socialMedia.map(social =>
-                                                            <a target="_blank" rel="noreferrer" href={social.url}>
+                                                        props.socialMedia.map((social, index) =>
+                                                            <a target="_blank" rel="noreferrer" href={social.url} key={index}>
                                                                 <img className="social-icon invert me-3" src={social.icon} alt="icon" />
                                                             </a>
                                                         )
@@ -243,8 +331,8 @@ export default function Layout(props) {
                                             <div className="pt-4">
                                                 {
                                                     props?.footerLogos ?
-                                                        props.footerLogos.map(footerLogo =>
-                                                            <img className="mx-3 invert" src={footerLogo.logo} alt="logo" />
+                                                        props.footerLogos.map((footerLogo, index) =>
+                                                            <img className="mx-3 invert" src={footerLogo.logo} alt="logo" key={index} />
                                                         )
                                                         :
                                                         null
@@ -261,13 +349,25 @@ export default function Layout(props) {
                                 <div className="col-lg-3 d-block">
                                     <div className="d-grid">
                                         <div className="mb-3">
-                                            <a className={"footer-link" + (props.activePage === "our-story" ? " active" : "")} href="/our-story">{props.menuItems ? props.menuItems['our-story'] : ''}</a>
+                                            <Link href="/our-story">
+                                                <a className={"footer-link" + (props.activePage === "our-story" ? " active" : "")}>
+                                                    {props.menuItems ? props.menuItems['our-story'] : ''}
+                                                </a>
+                                            </Link>
                                         </div>
                                         <div className="mb-3">
-                                            <a className={"footer-link" + (props.activePage === "products" ? " active" : "")} href="/products">{props.menuItems?.products}</a>
+                                            <Link href="/products">
+                                                <a className={"footer-link" + (props.activePage === "products" ? " active" : "")}>
+                                                    {props.menuItems?.products}
+                                                </a>
+                                            </Link>
                                         </div>
                                         <div>
-                                            <a className={"footer-link" + (props.activePage === "services" ? " active" : "")} href="/services">{props.menuItems?.services}</a>
+                                            <Link href="/services">
+                                                <a className={"footer-link" + (props.activePage === "services" ? " active" : "")}>
+                                                    {props.menuItems?.services}
+                                                </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -275,13 +375,23 @@ export default function Layout(props) {
                                 <div className="col-lg-3 d-block">
                                     <div className="d-grid">
                                         <div className="mb-3">
-                                            <a className={"footer-link" + (props.activePage === "industries" ? " active" : "")} href="/industries">{props.menuItems?.industries}</a>
+                                            <Link href="/industries">
+                                                <a className={"footer-link" + (props.activePage === "industries" ? " active" : "")} >
+                                                    {props.menuItems?.industries}
+                                                </a>
+                                            </Link>
                                         </div>
                                         <div className="mb-3">
-                                            <a className={"footer-link" + (props.activePage === "insights" ? " active" : "")} href="/insights">{props.menuItems?.insights}</a>
+                                            <Link href="/insights">
+                                                <a className={"footer-link" + (props.activePage === "insights" ? " active" : "")} >
+                                                    {props.menuItems?.insights}
+                                                </a>
+                                            </Link>
                                         </div>
                                         <div>
-                                            <a className={"footer-link" + (props.activePage === "contact" ? " active" : "")} href="/contact">{props.menuItems ? props.menuItems['contact-us'] : ''}</a>
+                                            <Link href="/contact">
+                                                <a className={"footer-link" + (props.activePage === "contact" ? " active" : "")}>{props.menuItems ? props.menuItems['contact-us'] : ''}</a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -291,8 +401,8 @@ export default function Layout(props) {
                                     <div className="d-flex pb-3 text-center">
                                         {
                                             props?.footerLogos ?
-                                                props.footerLogos.map(footerLogo =>
-                                                    <img className="ms-3" src={footerLogo.logo} alt="logo" />
+                                                props.footerLogos.map((footerLogo, index) =>
+                                                    <img className="ms-3" src={footerLogo.logo} alt="logo" key={index} />
                                                 )
                                                 :
                                                 null
@@ -302,8 +412,8 @@ export default function Layout(props) {
                                     <div className="d-flex">
                                         {
                                             props.socialMedia ?
-                                                props.socialMedia.map(social =>
-                                                    <a target="_blank" rel="noreferrer" href={social.url}>
+                                                props.socialMedia.map((social, index) =>
+                                                    <a target="_blank" rel="noreferrer" href={social.url} key={index}>
                                                         <img className="social-icon ms-3" src={social.icon} alt="icon" />
                                                     </a>
                                                 )

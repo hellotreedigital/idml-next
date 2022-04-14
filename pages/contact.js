@@ -90,7 +90,7 @@ export default function Contact(props) {
 
 
     return (
-        <Layout activePage="contact" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles}  industriesTitles={industriesTitles}>
+        <Layout activePage="contact" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
             {
                 contactSettings ?
                     <>
@@ -104,8 +104,8 @@ export default function Contact(props) {
                                 <div className="row py-lg-5 pt-5">
                                     {
                                         contactOffices ?
-                                            contactOffices.map(contactOffice =>
-                                                <div className="col-lg-6 col-md-12 d-flex justify-content-center mb-4  ">
+                                            contactOffices.map((contactOffice, index) =>
+                                                <div className="col-lg-6 col-md-12 d-flex justify-content-center mb-4  " key={index}>
                                                     <div className="row mb-4 mb-lg-0">
                                                         <div className="col-lg-6 col-md-6 justify-content-center pb-md-0 pb-3">
                                                             <iframe title="map" className="maps" src={contactOffice.map_url} loading="lazy" />
@@ -121,7 +121,7 @@ export default function Contact(props) {
 
                                                                 <div className="d-flex align-items-center mb-3">
                                                                     <img className="me-3 social-contact-icon" src={contactSettings.office_location_icon} alt="icon" />
-                                                                    <a className="underlined" target="_blank" href={contactOffice.location_url}>{contactOffice.location}</a>
+                                                                    <a rel="noreferrer" className="underlined" target="_blank" href={contactOffice.location_url}>{contactOffice.location}</a>
                                                                 </div>
 
                                                                 <div className="d-flex align-items-center">

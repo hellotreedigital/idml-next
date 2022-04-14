@@ -167,8 +167,8 @@ export default function Industries(props) {
                                 <h2 className="mb-4">{industriesSettings.clients_title}</h2>
                                 {
                                     clientsTagsTitles ?
-                                        clientsTagsTitles.map(clientTag =>
-                                            <div className="col-auto" onClick={() => clientClick(clientTag.id)}>
+                                        clientsTagsTitles.map((clientTag, index) =>
+                                            <div className="col-auto" onClick={() => clientClick(clientTag.id)} key={index}>
                                                 <p className={"filter-pills " + (!filterId ? 'active' : '')}>{clientTag.title}</p>
                                             </div>
                                         )
@@ -182,14 +182,14 @@ export default function Industries(props) {
                                     <div className="row justify-content-center text-center">
                                         {
                                             clientsList ?
-                                                clientsList.map((clientList, index) => (
+                                                clientsList.map((clientList, index1) => (
                                                     clientList.clients_tags.map((tag, index) =>
                                                         <>
                                                             {
                                                                 // !!(!filterId || filterId === brand.filterId) && (
                                                                 clientList.id === tag.id && (
-                                                                    <div className="col-lg-2 col-md-3 col-sm-4 col-6 my-4" key={index}>
-                                                                        <div className="circle-on-hover position-relative">
+                                                                    <div className="col-lg-2 col-md-3 col-sm-4 col-6 my-4" key={index} >
+                                                                        <div className="circle-on-hover position-relative" key={index1}>
                                                                             <div className="ratio ratio-1x1">
                                                                                 <img className="brand-image-industry" src={clientList.full_path_logo} alt="brand" />
                                                                             </div>
