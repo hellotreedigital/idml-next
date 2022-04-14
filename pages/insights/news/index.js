@@ -15,8 +15,8 @@ export default function News(props) {
     const socialMedia = props.insightsNewsData.social_media;
     const footerLogos = props.insightsNewsData.footer_logos;
     const footerContactIcons = props.insightsNewsData.footer_contact_icons;
-    const serviceTitles = props.insightsNewsSingleData.services_titles;
-    const industriesTitles = props.insightsNewsSingleData.industries_titles;
+    const serviceTitles = props.insightsNewsData.services_titles;
+    const industriesTitles = props.insightsNewsData.industries_titles;
 
     const insightsSettings = props.insightsNewsData.page_items.insights_settings;
     const paginatedNews = props.insightsNewsData.page_items.paginated_news;

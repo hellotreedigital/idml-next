@@ -15,8 +15,8 @@ export default function CaseStudies(props) {
     const socialMedia = props.insightsCaseStudiesData.social_media;
     const footerLogos = props.insightsCaseStudiesData.footer_logos;
     const footerContactIcons = props.insightsCaseStudiesData.footer_contact_icons;
-    const serviceTitles = props.insightsCaseStudiesSingleData.services_titles;
-    const industriesTitles = props.insightsCaseStudiesSingleData.industries_titles;
+    const serviceTitles = props.insightsCaseStudiesData.services_titles;
+    const industriesTitles = props.insightsCaseStudiesData.industries_titles;
 
     const insightsSettings = props.insightsCaseStudiesData.page_items.insights_settings;
     const paginatedInsights = props.insightsCaseStudiesData.page_items.paginated_case_studies;
