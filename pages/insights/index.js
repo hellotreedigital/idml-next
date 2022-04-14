@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 
 import Banner from "../components/Banner";
-import Layout from "../components/Layout";
+import Layout from "../components/layout";
 import NewsSection from "../components/NewsSection";
 import SideButton from "../components/SideButton";
 import { Swiper, SwiperSlide } from "swiper/react";

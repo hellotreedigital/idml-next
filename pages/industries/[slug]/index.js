@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import GlobalState from "../../components/GlobalState";
-import Layout from "../../components/Layout";
+import Layout from "../../components/layout";
 import SideButton from "../../components/SideButton";
 import axios from "axios";
 
