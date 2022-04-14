@@ -131,7 +131,6 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
     const { categorySlug, serviceSlug } = context.params;
     const serviceCategoryData = await axios.get("/services/" + categorySlug + "/" + serviceSlug);
-    console.log(serviceCategoryData)
 
     return {
         props: {

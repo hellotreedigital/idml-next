@@ -264,7 +264,6 @@ export default function Products(props) {
 
 export async function getStaticProps() {
     const productsData = await axios.get("/products");
-    console.log(productsData.data);
     return {
         props: {
             productsData: productsData.data,

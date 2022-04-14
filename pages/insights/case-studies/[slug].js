@@ -23,6 +23,8 @@ export default function CaseStudies(props) {
         setLoading(false);
     }, [loading]);
 
+  
+
 
     return loading ? null : (
         <Layout activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>

@@ -190,7 +190,6 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
     const { slug } = context.params;
     const industriesData = await axios.get("/industries/" + slug);
-    console.log(industriesData.data)
 
     return {
         props: {
