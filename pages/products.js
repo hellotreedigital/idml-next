@@ -1,5 +1,5 @@
 import Banner from "./components/Banner";
-import Layout from "./components/Layout";
+import Layout from "./components/layout";
 import SideButton from "./components/SideButton";
 import Link from "next/link";
 

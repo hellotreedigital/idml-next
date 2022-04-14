@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import Banner from "../components/Banner";
-import Layout from "../components/Layout";
+import Layout from "../components/layout";
 import SideButton from "../components/SideButton";
 import BluePill from "../components/BluePill";
 import GlobalState from "../components/GlobalState";

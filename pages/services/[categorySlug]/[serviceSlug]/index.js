@@ -1,4 +1,4 @@
-import Layout from "../../../components/Layout";
+import Layout from "../../../components/layout";
 import { useContext, useEffect } from "react";
 import Section from "../../../components/Section";
 import SideButton from "../../../components/SideButton";

@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import Layout from "../../components/Layout";
+import Layout from "../../components/layout";
 import NewsSection from "../../components/NewsSection";
 import SideButton from "../../components/SideButton";
 import axios from "axios";
