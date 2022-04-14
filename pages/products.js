@@ -160,8 +160,8 @@ export default function Products(props) {
                                                                                     className="mySwiper2 pe-lg-2"
                                                                                 >
                                                                                     {
-                                                                                        product.product_images.map(imageProduct =>
-                                                                                            <SwiperSlide>
+                                                                                        product.product_images.map((imageProduct, index) =>
+                                                                                            <SwiperSlide key={index}>
                                                                                                 <div className="ratio product-ratio">
                                                                                                     <img className="pb-4" src={imageProduct.image} alt="product" />
                                                                                                 </div>
@@ -180,8 +180,8 @@ export default function Products(props) {
                                                                                     className="mySwiper"
                                                                                 >
                                                                                     {
-                                                                                        product.product_images.map(productColor =>
-                                                                                            <SwiperSlide>
+                                                                                        product.product_images.map((productColor,index) =>
+                                                                                            <SwiperSlide key={index}>
                                                                                                 <div className="d-flex justify-content-center me-lg-3">
                                                                                                     <div className=" " style={{ color: productColor.color, backgroundColor: productColor.color, width: '30px', height: '30px', borderRadius: '6px' }}></div>
                                                                                                 </div>
@@ -249,7 +249,7 @@ export default function Products(props) {
                                         <div className="cancel-button stop-video" onClick={() => setYoutubePopup(null)}>
                                             <img src="../img/images/x-button.svg" alt="" />
                                         </div>
-                                        <iframe className="youtube-borders mw-100" width="900" height="500" src={youtubePopup.product_video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        <iframe className="youtube-borders mw-100" width="900" height="500" src={youtubePopup.product_video} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                                     </div>
                                 </div>
                             )

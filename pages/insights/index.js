@@ -87,9 +87,9 @@ export default function Insights(props) {
                                 >
                                     {
                                         insightsNews ?
-                                            insightsNews.map(insightNews =>
+                                            insightsNews.map((insightNews, index) =>
 
-                                                <SwiperSlide>
+                                                <SwiperSlide key={index}>
                                                     <a href={"/insights/news/" + insightNews.slug}>
                                                         <NewsSection
                                                             title={insightNews.title}

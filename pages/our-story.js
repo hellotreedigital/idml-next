@@ -470,7 +470,7 @@ export default function OurStory(props) {
                                         {
                                             teamList ?
                                                 teamList.map((team, index) =>
-                                                    <div className="col-lg-3 col-md-6 col-sm-6 mb-5" onClick={() => setPopupOpen(team)} key={team.id}>
+                                                    <div className="col-lg-3 col-md-6 col-sm-6 mb-5" onClick={() => setPopupOpen(team)} key={index}>
                                                         <div className="team-section shadow position-relative">
                                                             <div className="ratio team-ratio">
                                                                 <img src={team.image} alt="ceo" />
@@ -566,8 +566,8 @@ export default function OurStory(props) {
                                     <div className="row side-map align-items-end d-md-flex d-block ">
                                         <div className="col-auto align-items-sm-start d-sm-flex   align-items-lg-center d-lg-block align-items-md-center d-md-block">
                                             {mapLegend ?
-                                                mapLegend.map(map =>
-                                                    <div className="row align-items-center pb-4" animate="left">
+                                                mapLegend.map((map, index) =>
+                                                    <div className="row align-items-center pb-4" animate="left" key={index}>
                                                         <div className="col-md-4 col-auto justify-content-md-center justify-content-start d-flex pb-sm-3">
                                                             <img className="side-icon" src={map.full_path_icon} alt="side-icon" />
                                                         </div>
@@ -588,7 +588,7 @@ export default function OurStory(props) {
                                                 {
                                                     mapPinnedLocoations ?
                                                         mapPinnedLocoations.map((pinLocation, index) =>
-                                                            <img className="position-absolute pins" src={pinLocation.operations_map_legend.full_path_icon} alt="pin" style={{ top: pinLocation.y + '%', left: pinLocation.x + '%' }} />
+                                                            <img className="position-absolute pins" src={pinLocation.operations_map_legend.full_path_icon} alt="pin" style={{ top: pinLocation.y + '%', left: pinLocation.x + '%' }} key={index} />
                                                         )
                                                         :
                                                         null

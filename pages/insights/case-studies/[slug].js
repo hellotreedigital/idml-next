@@ -4,13 +4,6 @@ import GlobalState from "../../components/GlobalState";
 import Layout from "../../components/layout";
 import SideButton from "../../components/SideButton";
 
-
-// import Link from "next/link";
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import "swiper/css";
-// import "swiper/css/pagination";
-// import { Pagination } from "swiper";
-
 export default function caseStudies(props) {
 
     const insightsSettings = props.insightsCaseStudiesSingleData.page_items.insights_settings;

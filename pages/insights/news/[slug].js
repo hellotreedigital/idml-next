@@ -172,8 +172,8 @@ export default function News(props) {
                                         }}
                                     >
                                         {
-                                            latestNews.map(latestNew =>
-                                                <SwiperSlide>
+                                            latestNews.map((latestNew, index) =>
+                                                <SwiperSlide key={index}>
                                                     <Link href={"/insights/news/" + latestNew.slug}>
                                                         <a>
                                                             <div className="pb-5">

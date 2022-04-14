@@ -78,8 +78,8 @@ export default function Services(props) {
                                 <div className="row pb-lg-5 justify-content-center">
                                     {
                                         categories ?
-                                            categories.map(category =>
-                                                <div className="col-lg-4 col-md-6 col-sm-6 pb-5">
+                                            categories.map((category, index) =>
+                                                <div className="col-lg-4 col-md-6 col-sm-6 pb-5" key={index}>
                                                     <a href={"/services/" + singleCat?.slug + "/" + category.slug}>
                                                         <div className="service-section shadow position-relative">
                                                             <div className="ratio team-ratio">
