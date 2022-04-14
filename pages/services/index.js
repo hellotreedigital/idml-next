@@ -28,6 +28,7 @@ export default function Services(props) {
 
     return (
         <Layout activePage="services" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles}  industriesTitles={industriesTitles}>
+          
             {
                 serviceSetting ?
                     <Banner
