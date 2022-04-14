@@ -46,7 +46,9 @@ export default function OurStory(props) {
             {
                 storySettings ?
                     <>
-                        <SideButton />
+                        <SideButton
+                            title={menuItems['book-a-consultation']}
+                        />
                         <Banner
                             banner={storySettings.image}
                             title={storySettings.title}

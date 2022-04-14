@@ -26,8 +26,10 @@ export default function SingleService(props) {
     }, []);
 
     return (
-        <Layout fixedNav={true} activePage="services" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles}  industriesTitles={industriesTitles}>
-            <SideButton />
+        <Layout fixedNav={true} activePage="services" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+            <SideButton
+                title={menuItems['book-a-consultation']}
+            />
             {
                 singleServiceItems ?
                     <>

@@ -16,57 +16,6 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import GlobalState from "../../GlobalState";
 
-// const brands = [
-//     {
-//         url: '../img/temp-images/brand1.png',
-//         fiterId: 1
-//     },
-//     {
-//         url: '../img/temp-images/brand2.png',
-//         fiterId: 2
-//     },
-//     {
-//         url: '../img/temp-images/brand3.png',
-//         fiterId: 3
-//     },
-//     {
-//         url: '../img/temp-images/brand4.png',
-//         fiterId: 1
-//     },
-//     {
-//         url: '../img/temp-images/brand5.png',
-//         fiterId: 1
-//     },
-//     {
-//         url: '../img/temp-images/brand6.png',
-//         fiterId: 1
-//     },
-//     {
-//         url: '../img/temp-images/brand7.png',
-//         fiterId: 1
-//     },
-//     {
-//         url: '../img/temp-images/brand8.png',
-//         fiterId: 1
-//     },
-//     {
-//         url: '../img/temp-images/brand1.png',
-//         fiterId: 1
-//     },
-//     {
-//         url: '../img/temp-images/brand2.png',
-//         fiterId: 1
-//     },
-//     {
-//         url: '../img/temp-images/brand3.png',
-//         fiterId: 1
-//     },
-//     {
-//         url: '../img/temp-images/brand4.png',
-//         fiterId: 1
-//     },
-// ];
-
 export default function Industries(props) {
 
     SwiperCore.use([Autoplay])
@@ -86,20 +35,42 @@ export default function Industries(props) {
     const allIndustries = props.industriesData.page_items.all_industries;
     const clientsTagsTitles = props.industriesData.page_items.clients_tags_titles;
 
-    const [clientsList, setClientsList] = useState();
-    // const clientsList = props.industriesData.page_items.clients_list;
+    const clientsList = props.industriesData.page_items.clients_list;
     const testimonialsList = props.industriesData.page_items.testimonials_list;
-
+    const [clientsListFilter, setClientsListFilter] = useState();
+    const [currentFilter, setCurrentFilter] = useState();
 
     function ageVerificationClick(industry) {
         setAgeVerificationPopup(industry)
     }
 
     function clientClick(clientTag) {
-        setFilterId(clientTag);
-        setClientsList(clientTag);
+        setCurrentFilter(clientTag);
 
     }
+
+    useEffect(() => {
+        if (clientsList?.length > 1 && currentFilter) {
+            let filtered = [];
+            clientsList.forEach(singleClient => {
+                if (singleClient.clients_tags.length > 0) {
+                    singleClient.clients_tags.forEach(singleTag => {
+                        if (singleTag.slug == currentFilter) {
+                            filtered = [...filtered, singleClient]
+                        }
+                    })
+
+                }
+            })
+            setClientsListFilter(filtered)
+        }
+    }, [clientsList, currentFilter]);
+
+    useEffect(() => {
+        // console.log(clientsTagsTitles[0].slug)
+       setCurrentFilter(clientsTagsTitles[0].slug);
+
+    }, [clientsTagsTitles]);
 
     useEffect(() => {
         triggerScroll();
@@ -116,7 +87,9 @@ export default function Industries(props) {
                             title={industriesSettings.title}
                         />
 
-                        <SideButton />
+                        <SideButton
+                            title={menuItems['book-a-consultation']}
+                        />
 
                         <div className="pt-lg-5" animate="left">
                             <div className="pt-5">
@@ -168,8 +141,8 @@ export default function Industries(props) {
                                 {
                                     clientsTagsTitles ?
                                         clientsTagsTitles.map((clientTag, index) =>
-                                            <div className="col-auto" onClick={() => clientClick(clientTag.id)} key={index}>
-                                                <p className={"filter-pills " + (!filterId ? 'active' : '')}>{clientTag.title}</p>
+                                            <div className="col-auto" onClick={() => clientClick(clientTag.slug)} key={index}>
+                                                <p className={"filter-pills " + ((clientTag.slug === currentFilter) ? ' active' : '')}>{clientTag.title}</p>
                                             </div>
                                         )
                                         :
@@ -181,31 +154,22 @@ export default function Industries(props) {
                                 <div className="col-lg-10 ">
                                     <div className="row justify-content-center text-center">
                                         {
-                                            clientsList ?
-                                                clientsList.map((clientList, index1) => (
-                                                    clientList.clients_tags.map((tag, index) =>
-                                                        <>
-                                                            {
-                                                                // !!(!filterId || filterId === brand.filterId) && (
-                                                                clientList.id === tag.id && (
-                                                                    <div className="col-lg-2 col-md-3 col-sm-4 col-6 my-4" key={index} >
-                                                                        <div className="circle-on-hover position-relative" key={index1}>
-                                                                            <div className="ratio ratio-1x1">
-                                                                                <img className="brand-image-industry" src={clientList.full_path_logo} alt="brand" />
-                                                                            </div>
-                                                                            <div className="circle-overlay"></div>
-                                                                            <div className="text-on-circle-overlay text-center">
-                                                                                <h2 className="mb-3">{clientList.title}</h2>
-                                                                                <p className="mb-0">{clientList.info}</p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                )
-                                                                // )
-                                                            }
-                                                        </>
-                                                    ))
-                                                )
+                                            clientsListFilter?.length > 0 ?
+                                                clientsListFilter.map((clientList, index) => (
+                                                    <div className="col-lg-2 col-md-3 col-sm-4 col-6 my-4" key={index}>
+                                                        <div className="circle-on-hover position-relative">
+                                                            <div className="ratio ratio-1x1">
+                                                                <img className="brand-image-industry" src={clientList.full_path_logo} alt="brand" />
+                                                            </div>
+                                                            <div className="circle-overlay"></div>
+                                                            <div className="text-on-circle-overlay text-center">
+                                                                <h2 className="mb-3">{clientList.title}</h2>
+                                                                <p className="mb-0">{clientList.info}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                ))
+                                                // )
                                                 :
                                                 null
                                         }

@@ -36,7 +36,9 @@ export default function Industries(props) {
 
     return (
         <Layout fixedNav={true} activePage="industries" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
-            <SideButton />
+            <SideButton
+                title={menuItems['book-a-consultation']}
+            />
             {
                 singleIndustry ?
                     <>
@@ -109,7 +111,7 @@ export default function Industries(props) {
                                     <div className="row justify-content-center text-center">
                                         {
                                             clientsList ?
-                                            clientsList.map((clientList, index) =>
+                                                clientsList.map((clientList, index) =>
                                                     <div className="col-lg-auto col-md-3  col-6 mb-5 mx-lg-3" key={index}>
                                                         <div>
                                                             <img className="brand-image-default" src={clientList.full_path_logo} alt="brand" />

@@ -19,7 +19,7 @@ export default function Services(props) {
     const footerContactIcons = props.servicesData.footer_contact_icons;
     const serviceTitles = props.servicesData.services_titles;
     const industriesTitles = props.servicesData.industries_titles;
-    
+
 
     useEffect(() => {
         triggerScroll();
@@ -27,8 +27,8 @@ export default function Services(props) {
     }, []);
 
     return (
-        <Layout activePage="services" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles}  industriesTitles={industriesTitles}>
-          
+        <Layout activePage="services" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+
             {
                 serviceSetting ?
                     <Banner
@@ -39,7 +39,9 @@ export default function Services(props) {
                     null
             }
 
-            <SideButton />
+            <SideButton
+                title={menuItems['book-a-consultation']}
+            />
             <div className="py-lg-5"></div>
             <div className="py-5">
                 <div className="container py-lg-5">

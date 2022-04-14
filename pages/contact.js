@@ -98,7 +98,9 @@ export default function Contact(props) {
                             banner={contactSettings.image}
                             title={contactSettings.title}
                         />
-                        <SideButton />
+                        <SideButton
+                            title={menuItems['book-a-consultation']}
+                        />
                         <div className="py-lg-5">
                             <div className="container contact-us py-5" animate="left">
                                 <div className="row py-lg-5 pt-5">

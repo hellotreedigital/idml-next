@@ -60,7 +60,9 @@ export default function Products(props) {
                     :
                     null
             }
-            <SideButton />
+            <SideButton
+                title={menuItems['book-a-consultation']}
+            />
             <div className="py-lg-3"></div>
             {
                 productsCategories ?
@@ -180,7 +182,7 @@ export default function Products(props) {
                                                                                     className="mySwiper"
                                                                                 >
                                                                                     {
-                                                                                        product.product_images.map((productColor,index) =>
+                                                                                        product.product_images.map((productColor, index) =>
                                                                                             <SwiperSlide key={index}>
                                                                                                 <div className="d-flex justify-content-center me-lg-3">
                                                                                                     <div className=" " style={{ color: productColor.color, backgroundColor: productColor.color, width: '30px', height: '30px', borderRadius: '6px' }}></div>

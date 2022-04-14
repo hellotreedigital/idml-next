@@ -23,12 +23,14 @@ export default function CaseStudies(props) {
         setLoading(false);
     }, [loading]);
 
-  
+
 
 
     return loading ? null : (
         <Layout activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
-            <SideButton />
+            <SideButton
+                title={menuItems['book-a-consultation']}
+            />
             {
                 insightsSettings && (
                     <div className="pt-lg-5">
@@ -83,10 +85,10 @@ export default function CaseStudies(props) {
                         <div className="row pt-sm-4 pt-4" animate="right">
                             <h2 className="mb-4 title-inside-page">{singleCase.section_title}</h2>
                             <div className="col-lg-7 col-md-7 oder-lg-2 order-1">
-                               
-                            <div dangerouslySetInnerHTML={{ __html: singleCase.section_text }} />
 
-                            <div dangerouslySetInnerHTML={{ __html: singleCase.last_text }} />
+                                <div dangerouslySetInnerHTML={{ __html: singleCase.section_text }} />
+
+                                <div dangerouslySetInnerHTML={{ __html: singleCase.last_text }} />
                             </div>
 
                             <div className="col-lg-5 col-md-5 oder-lg-1 order-2 pb-4">

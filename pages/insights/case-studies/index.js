@@ -21,15 +21,40 @@ export default function CaseStudies(props) {
     const insightsSettings = props.insightsCaseStudiesData.page_items.insights_settings;
     const paginatedInsights = props.insightsCaseStudiesData.page_items.paginated_case_studies;
 
+    const [caseStudies, setCaseStudies] = useState({});
+
+    const [page, setPage] = useState(1);
+    const [maxPages, setMaxPages] = useState([]);
+    const [oldPage, setOldPage] = useState(1);
+
     useEffect(() => {
         triggerScroll();
         setLoading(false);
     }, [loading]);
-    
+
+    useEffect(() => {
+        let dbPage = page === oldPage ? 1 : page;
+        axios.get('/insights/case-studies?page=' + dbPage).then(res => {
+            setCaseStudies(res.data.page_items.paginated_case_studies.data);
+            setPage(res.data.page_items.paginated_case_studies.current_page);
+            setOldPage(res.data.page_items.paginated_case_studies.current_page);
+            var foo = [];
+            for (var i = 0; i < res.data.page_items.paginated_case_studies.last_page; i++) {
+                foo.push(i + 1);
+            }
+            setMaxPages(foo);
+            console.log(foo);
+        });
+
+
+    }, [page]);
+
 
     return loading ? null : (
-        <Layout activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons}  serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
-            <SideButton />
+        <Layout activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+            <SideButton
+                title={menuItems['book-a-consultation']}
+            />
 
             {
                 insightsSettings && (
@@ -77,23 +102,26 @@ export default function CaseStudies(props) {
                         </div>
                         <div className="row justify-content-center gx-5">
                             {
-                                paginatedInsights.data.map((paginatedInsight, index) =>
-                                    <div className="col-lg-4 col-md-6 col-sm-6 pb-5" key={index}>
-                                        <Link href={"/insights/case-studies/" + paginatedInsight.slug}>
-                                            <a>
-                                                <NewsSection
-                                                    title={paginatedInsight.title}
-                                                    image={paginatedInsight.image}
-                                                    description={paginatedInsight.small_text}
-                                                    button={insightsSettings?.read_more}
-                                                />
-                                            </a>
-                                        </Link>
-                                    </div>
-                                )
+                                caseStudies?.length > 0 ?
+                                    caseStudies?.map((paginatedInsight, index) =>
+                                        <div className="col-lg-4 col-md-6 col-sm-6 pb-5" key={index}>
+                                            <Link href={"/insights/case-studies/" + paginatedInsight.slug}>
+                                                <a>
+                                                    <NewsSection
+                                                        title={paginatedInsight.title}
+                                                        image={paginatedInsight.image}
+                                                        description={paginatedInsight.small_text}
+                                                        button={insightsSettings?.read_more}
+                                                    />
+                                                </a>
+                                            </Link>
+                                        </div>
+                                    )
+                                    :
+                                    null
                             }
 
-                            <div className=" text-center align-items-center justify-content-center d-flex pb-5">
+                            {/* <div className=" text-center align-items-center justify-content-center d-flex pb-5">
                                 <button className="button pagination-number active mx-1">
                                     1
                                 </button>
@@ -106,7 +134,46 @@ export default function CaseStudies(props) {
                                 <button className="button pagination-arrow mx-1">
                                     <img className="my-2" src="../img/images/next.svg" alt="news" />
                                 </button>
-                            </div>
+                            </div> */}
+
+                            {
+                                maxPages.length > 0 ?
+                                    <div className="pagination d-flex justify-content-center align-items-center pt-5">
+                                        {
+                                            page > 1 ?
+                                                <div>
+                                                    <img onClick={() => setPage(page - 1)} className="pagination-arrow rotate-180 ms-2" src="/assets/images/pagination-arrow.svg" alt="arrow" />
+                                                </div>
+                                                :
+                                                null
+                                        }
+                                        {
+                                            maxPages.map((singlePage, index) => (
+                                                <p className={(index + 1) === page ? 'ms-2 mb-0 active-pagination' : 'ms-2 mb-0'} key={index} onClick={() => setPage(index + 1)}>{(index + 1)}</p>
+                                            ))
+                                        }
+                                        {
+                                            page < maxPages?.length ?
+                                                <div>
+                                                    <img onClick={() => setPage(page + 1)} className="pagination-arrow ms-2" src="/assets/images/pagination-arrow.svg" alt="arrow" />
+                                                </div>
+                                                :
+                                                null
+                                        }
+                                    </div>
+                                    :
+                                    null
+                            }
+
+
+
+
+
+
+
+
+
+
 
                         </div>
                     </div>

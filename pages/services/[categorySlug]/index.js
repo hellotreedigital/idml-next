@@ -26,8 +26,10 @@ export default function Services(props) {
 
     return (
         <div>
-            <Layout fixedNav={true} activePage="services" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles}  industriesTitles={industriesTitles}>
-                <SideButton />
+            <Layout fixedNav={true} activePage="services" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+                <SideButton
+                    title={menuItems['book-a-consultation']}
+                />
                 {
                     categorySettings ?
                         <div className="min-height-js pt-lg-5" animate="up">

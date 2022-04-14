@@ -21,14 +21,17 @@ export default function News(props) {
     const insightsSettings = props.insightsNewsData.page_items.insights_settings;
     const paginatedNews = props.insightsNewsData.page_items.paginated_news;
 
+
     useEffect(() => {
         triggerScroll();
         setLoading(false);
     }, [loading]);
 
     return loading ? null : (
-        <Layout activePage="insights" fixedNav={true}  menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
-            <SideButton />
+        <Layout activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+            <SideButton
+                title={menuItems['book-a-consultation']}
+            />
             {
                 insightsSettings ?
                     <div className="pt-lg-5">
@@ -101,7 +104,9 @@ export default function News(props) {
                             }
 
                             <div className=" text-center align-items-center justify-content-center d-flex pb-5">
-
+                                <button className="button pagination-arrow mx-1">
+                                    <img className="my-2" src="../img/images/prev.svg" alt="news" />
+                                </button>
                                 <button className="button pagination-number active mx-1">
                                     1
                                 </button>

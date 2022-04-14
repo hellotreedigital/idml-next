@@ -42,7 +42,9 @@ export default function Insights(props) {
                             title={insights.title}
                         />
 
-                        <SideButton />
+                        <SideButton
+                            title={menuItems['book-a-consultation']}
+                        />
 
                         <div className="container-md py-lg-5" animate="right">
                             <div className="row justify-content-center text-center pt-5">

@@ -46,7 +46,9 @@ export default function Home(props) {
 
   return loading ? null : (
     <Layout activePage="home" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
-      <SideButton />
+      <SideButton
+        title={menuItems['book-a-consultation']}
+      />
       {homeSettings ?
         <>
           <div className="position-relative">
@@ -375,7 +377,7 @@ export default function Home(props) {
                   null
               }
               <div className="pt-5 text-center">
-                <Link  href="/news">
+                <Link href="/news">
                   <a>
                     <button className="button blue-button shadow">
                       {homeSettings.view_all}

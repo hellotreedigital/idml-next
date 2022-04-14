@@ -35,7 +35,9 @@ export default function News(props) {
 
     return loading ? null : (
         <Layout activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
-            <SideButton />
+            <SideButton
+                title={menuItems['book-a-consultation']}
+            />
 
             {
                 insightsSettings && (
