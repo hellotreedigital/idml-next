@@ -2,7 +2,7 @@ import SideButton from "../components/SideButton";
 import Banner from "../components/Banner";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
-import Layout from "../components/Layout";
+import Layout from "../components/layout";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay } from 'swiper';
 
