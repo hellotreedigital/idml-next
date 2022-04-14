@@ -23,7 +23,6 @@ export default function Services(props) {
 
     useEffect(() => {
         triggerScroll();
-        calcMinHeight();
     }, []);
 
     return (
