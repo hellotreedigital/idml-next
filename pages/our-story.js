@@ -195,7 +195,7 @@ export default function OurStory(props) {
                                                     {
                                                         pillarsList ?
                                                             pillarsList.map((pillar, index) =>
-                                                                <div className="col-lg-3 col-md-6 col-sm-6 col-11 pt-lg-0 pt-4" index={index}>
+                                                                <div className="col-lg-3 col-md-6 col-sm-6 col-11 pt-lg-0 pt-4" key={index}>
                                                                     <div className="bg-color py-4 text-center p-2">
                                                                         <h3>{pillar.title}</h3>
                                                                         <div className="justify-content-center d-flex">

@@ -243,9 +243,11 @@ export default function Layout(props) {
                             <div className="background-blue py-lg-5 py-4">
                                 <div className="row justify-content-center justify-content-lg-start  align-items-center position-relative">
                                     <div className="col-lg-3 ">
-                                        <a href="/">
-                                            <img src="/img/images/logo-footer.svg" alt="logo" />
-                                        </a>
+                                        <Link href="/">
+                                            <a>
+                                                <img src="/img/images/logo-footer.svg" alt="logo" />
+                                            </a>
+                                        </Link>
                                     </div>
                                     <div className="col-lg-6 col-md-5 col-sm-8 col-9">
                                         <div className="d-none d-lg-block">

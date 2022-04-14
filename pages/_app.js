@@ -58,7 +58,7 @@ function MyApp({ Component, pageProps }) {
   }
 
   function calcMinHeight() {
-    document.querySelector('.min-height-js')?.style.minHeight = (window.innerHeight - document.querySelector('.footer').clientHeight) + "px";
+    document.querySelector('.min-height-js').style.minHeight = (window.innerHeight - document.querySelector('.footer').clientHeight) + "px";
   }
  
   useEffect(() => {

@@ -131,8 +131,8 @@ export default function Products(props) {
                                             className="products-swiper">
                                             {
                                                 productsItems.products.map((product, index) =>
-                                                    <div>
-                                                        <SwiperSlide key={index}>
+                                                    <div key={index}>
+                                                        <SwiperSlide >
                                                             <div className="row align-items-center">
                                                                 <div className="col-lg-5 ">
                                                                     <div className="product-bg position-relative py-5">

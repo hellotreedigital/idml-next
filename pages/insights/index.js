@@ -160,9 +160,9 @@ export default function Insights(props) {
 
                                     {
                                         insightsCaseStudies ?
-                                            insightsCaseStudies.map(insightCaseStudies =>
+                                            insightsCaseStudies.map((insightCaseStudies, index) =>
 
-                                                <SwiperSlide>
+                                                <SwiperSlide key={index}>
                                                     <a href={"/insights/case-studies/" + insightCaseStudies.slug}>
                                                         <NewsSection
                                                             title={insightCaseStudies.title}

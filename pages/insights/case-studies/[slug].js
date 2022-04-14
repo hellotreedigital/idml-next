@@ -4,7 +4,7 @@ import GlobalState from "../../components/GlobalState";
 import Layout from "../../components/layout";
 import SideButton from "../../components/SideButton";
 
-export default function caseStudies(props) {
+export default function CaseStudies(props) {
 
     const insightsSettings = props.insightsCaseStudiesSingleData.page_items.insights_settings;
     const singleCase = props.insightsCaseStudiesSingleData.page_items.single_case_study;
