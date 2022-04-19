@@ -60,7 +60,7 @@ export default function CaseStudies(props) {
                 insightsSettings && (
                     <div className="pt-lg-5">
                         <div className="pt-5">
-                            <div className="container pt-5" animate="up">
+                            <div className="container pt-5" >
                                 <div className="row align-items-center mb-4 pt-5">
                                     <div className="col-xxl-auto col-lg-1 col-auto">
                                         <div className=" d-none d-sm-block">
@@ -97,7 +97,7 @@ export default function CaseStudies(props) {
 
             {
                 paginatedInsights && (
-                    <div className="container pt-lg-5" animate="left">
+                    <div className="container pt-lg-5"  >
                         <div className="row justify-content-center text-center ">
                         </div>
                         <div className="row justify-content-center gx-5">

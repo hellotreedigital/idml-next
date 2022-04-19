@@ -64,7 +64,7 @@ export default function News(props) {
                 insightsSettings ?
                     <div className="pt-lg-5">
                         <div className="pt-5">
-                            <div className="container pt-5" animate="up">
+                            <div className="container pt-5" >
                                 <div className="row  align-items-center mb-4 pt-5">
                                     <div className="col-2">
                                         <div className=" d-none d-sm-flex">
@@ -110,7 +110,7 @@ export default function News(props) {
 
             {
                 paginatedNews ?
-                    <div className="container pt-lg-5" animate="left">
+                    <div className="container pt-lg-5"  >
 
                         <div className="row justify-content-center gx-5">
                             {

@@ -2,11 +2,11 @@ import Link from "next/link";
 
 export default function Section(props) {
     return (
-        <div className="container" animate="left">
+        <div className="container">
             <div className="row">
                 <div className="col-12 pb-5">
-                    <h2 className="mb-4" animate="left">{props.title}</h2>
-                    <p className="home-small-paragraph mb-4" animate="left">{props.subtitle}</p>
+                    <h2 className="mb-4">{props.title}</h2>
+                    <p className="home-small-paragraph mb-4">{props.subtitle}</p>
                     {
                         props.button === "1" ?
                             <Link href="/booking">

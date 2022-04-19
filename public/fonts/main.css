@@ -3990,35 +3990,35 @@ div.four:before {
     opacity: 1;
 }
 
-[animate="left"] {
+[ ] {
     transform: translateX(-300px);
 }
 
-[animate="left"].show {
+[ ].show {
     transform: translateX(0);
 }
 
-[animate="right"] {
+[ ] {
     transform: translateX(300px);
 }
 
-[animate="right"].show {
+[ ].show {
     transform: translateX(0);
 }
 
-[animate="up"] {
+[] {
     transform: translateY(-300px);
 }
 
-[animate="up"].show {
+[].show {
     transform: translateY(0);
 }
 
-[animate="down"] {
+[ ] {
     transform: translateY(300px);
 }
 
-[animate="down"].show {
+[ ].show {
     transform: translateY(0);
 }
 

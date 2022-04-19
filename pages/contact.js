@@ -101,7 +101,7 @@ export default function Contact(props) {
                             title={menuItems['book-a-consultation']}
                         />
                         <div className="py-lg-5">
-                            <div className="container contact-us py-5" animate="left">
+                            <div className="container contact-us py-5"  >
                                 <div className="row py-lg-5 pt-5">
                                     {
                                         contactOffices ?
@@ -147,17 +147,17 @@ export default function Contact(props) {
                                             <div className="col-lg-10 col-12">
                                                 <div className="row justify-content-center text-center mx-5 py-5">
                                                     <h3 className="mb-5">{contactSettings.form_title}</h3>
-                                                    <div className="col-lg-6" animate="left">
+                                                    <div className="col-lg-6"  >
                                                         <div className="mb-4 text-start">
                                                             <input className="booking-form w-100" placeholder={contactSettings.name_placeholder} value={name} onChange={e => setName(e.target.value)} />
                                                         </div>
                                                     </div>
-                                                    <div className="col-lg-6" animate="right">
+                                                    <div className="col-lg-6"  >
                                                         <div className="mb-4 text-start">
                                                             <input className="booking-form w-100" placeholder={contactSettings.email_placeholder} value={email} onChange={e => setEmail(e.target.value)} />
                                                         </div>
                                                     </div>
-                                                    <div className="col-lg-6" animate="left">
+                                                    <div className="col-lg-6"  >
                                                         <div className="mb-4 text-start">
                                                             <PhoneInput
                                                                 placeholder={contactSettings.phone_placeholder}
@@ -166,7 +166,7 @@ export default function Contact(props) {
                                                             />
                                                         </div>
                                                     </div>
-                                                    <div className="col-lg-6 location-input" animate="right">
+                                                    <div className="col-lg-6 location-input"  >
                                                         <div className="mb-4 text-start ">
                                                             <Select
                                                                 classNamePrefix="location-select"
@@ -177,7 +177,7 @@ export default function Contact(props) {
                                                             />
                                                         </div>
                                                     </div>
-                                                    <div className="col-12" animate="left">
+                                                    <div className="col-12"  >
                                                         <div className="mb-4 text-start">
                                                             <textarea className="booking-form w-100" placeholder={contactSettings.message_placeholder} value={message} onChange={e => setMessage(e.target.value)} />
                                                         </div>

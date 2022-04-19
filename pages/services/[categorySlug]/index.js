@@ -32,7 +32,7 @@ export default function Services(props) {
                 />
                 {
                     categorySettings ?
-                        <div className="min-height-js pt-lg-5" animate="up">
+                        <div className="min-height-js pt-lg-5" >
                             <div className="pt-5">
                                 <div className="container pt-5" >
                                     <div className="row align-items-center py-5">

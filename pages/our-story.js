@@ -62,7 +62,7 @@ export default function OurStory(props) {
                                 {
                                     storyList ?
                                         storyList.map((story, index) =>
-                                            <div className={"row py-lg-5 pb-5 align-items-center" + (index % 2 === 0 ? "" : " flex-row-reverse d-flex fix-alignment")} key={index} animate="left">
+                                            <div className={"row py-lg-5 pb-5 align-items-center" + (index % 2 === 0 ? "" : " flex-row-reverse d-flex fix-alignment")} key={index}  >
                                                 <div className="col-xxl-8 col-lg-7 col-md-7 col-sm-7">
                                                     <div className={"me-lg-5 pe-lg-5" + (index % 2 === 0 ? "" : " ms-lg-5 ps-lg-5")}>
                                                         <h2 className="mb-4">{story.title}</h2>
@@ -87,10 +87,10 @@ export default function OurStory(props) {
                             <div className="counter-background py-md-5 pt-5" >
                                 <div className="container">
                                     <div className="row mb-5" >
-                                        <h3 animate="up">{storySettings.numbers_section_title}</h3>
+                                        <h3 >{storySettings.numbers_section_title}</h3>
                                     </div>
                                     <div className="row justify-content-between">
-                                        <div className="col-md-auto col-6 mb-md-0 mb-5 counter-number" animate="up">
+                                        <div className="col-md-auto col-6 mb-md-0 mb-5 counter-number" >
                                             <CountUp
                                                 start={2000}
                                                 end={storySettings.first_number_value}
@@ -107,7 +107,7 @@ export default function OurStory(props) {
                                             <h4>{storySettings.first_number_title}</h4>
                                         </div>
 
-                                        <div className="col-md-auto col-6 mb-md-0 mb-5 counter-number" animate="up">
+                                        <div className="col-md-auto col-6 mb-md-0 mb-5 counter-number" >
                                             <div className="d-flex align-items-baseline">
                                                 <CountUp
                                                     start={0}
@@ -129,7 +129,7 @@ export default function OurStory(props) {
                                             <h4>{storySettings.second_number_title}</h4>
                                         </div>
 
-                                        <div className="col-md-auto col-6 mb-md-0 mb-5 counter-number" animate="up">
+                                        <div className="col-md-auto col-6 mb-md-0 mb-5 counter-number" >
                                             <div className="d-flex align-items-baseline">
                                                 <CountUp
                                                     start={0}
@@ -151,7 +151,7 @@ export default function OurStory(props) {
                                             <h4>{storySettings.third_number_title}</h4>
                                         </div>
 
-                                        <div className="col-md-auto col-6 mb-md-0 mb-5 counter-number" animate="up">
+                                        <div className="col-md-auto col-6 mb-md-0 mb-5 counter-number" >
                                             <CountUp
                                                 start={0}
                                                 end={storySettings.fourth_number_value}
@@ -176,7 +176,7 @@ export default function OurStory(props) {
                             <div className="pb-lg-5">
                                 <div className="pb-5">
                                     <div className="container pillars">
-                                        <div className="row justify-content-center text-center pb-5" animate="left">
+                                        <div className="row justify-content-center text-center pb-5"  >
                                             <div className="col-lg-10 ">
                                                 <h2 className="mb-4">{storySettings.pillars_title}</h2>
                                                 <h3>{storySettings.pillars_subtitle}</h3>
@@ -219,7 +219,7 @@ export default function OurStory(props) {
                             </div>
                         </div>
 
-                        <div className="container company-history " animate="up">
+                        <div className="container company-history " >
                             <div className="row justify-content-center text-center pb-5">
                                 <div className="col-lg-10 ">
                                     <h2 className="mb-4">{storySettings.history_title}</h2>
@@ -227,7 +227,7 @@ export default function OurStory(props) {
                                 </div>
                             </div>
 
-                            <div className="row justify-content-center" animate="down">
+                            <div className="row justify-content-center"  >
                                 <div className="col-lg-10">
                                     {
                                         historyList ?
@@ -329,14 +329,14 @@ export default function OurStory(props) {
 
                         <div className="pb-xxl-5">
                             <div className="container company-history pt-lg-5 ">
-                                <div className="row justify-content-center text-center pb-5" animate="up">
+                                <div className="row justify-content-center text-center pb-5" >
                                     <div className="col-lg-10 ">
                                         <h2 className="mb-4">{storySettings.group_title}</h2>
                                         <p className="mb-0">{storySettings.group_text}</p>
                                     </div>
                                 </div>
 
-                                <div className="position-relative " animate="down">
+                                <div className="position-relative "  >
                                     <div className="part-1">
                                         <div className="part-2">
                                             <div className="part-3">
@@ -427,7 +427,7 @@ export default function OurStory(props) {
                                         <img src={storySettings.ceo_image} alt="ceo" />
                                     </div>
                                     <div className="container position-relative">
-                                        <div className=" d-block d-md-none mt-md-5 mt-3" animate="right">
+                                        <div className=" d-block d-md-none mt-md-5 mt-3"  >
                                             <div className="">
                                                 <div className="ceo-ratio-mobile pt-5">
                                                     <img src={storySettings.ceo_image} alt="ceo" />
@@ -439,7 +439,7 @@ export default function OurStory(props) {
                                                 <div className=" py-5 " >
                                                     <div className="container">
                                                         <div className="row  justify-content-center justify-content-md-start">
-                                                            <div className="col-lg-11 col-md-7 col-12 " animate="left">
+                                                            <div className="col-lg-11 col-md-7 col-12 "  >
                                                                 <h2 className="mb-4 pt-1">{storySettings.ceo_title}</h2>
                                                                 <p>{storySettings.ceo_message}</p>
                                                                 <div className="text-end me-1">
@@ -468,7 +468,7 @@ export default function OurStory(props) {
                                     <div className="text-center pt-lg-5 mt-lg-4" >
                                         <h2 className="mb-4">{storySettings.team_title}</h2>
                                     </div>
-                                    <div className="row justify-content-center pb-lg-5" animate="right">
+                                    <div className="row justify-content-center pb-lg-5"  >
                                         {
                                             teamList ?
                                                 teamList.map((team, index) =>
@@ -500,7 +500,7 @@ export default function OurStory(props) {
                             </div>
                         </div>
 
-                        <div className="py-5 d-sm-none d-block " animate="right">
+                        <div className="py-5 d-sm-none d-block "  >
                             <div className="text-center">
                                 <h2 className="mb-4">{storySettings.team_title}</h2>
                             </div>
@@ -542,7 +542,7 @@ export default function OurStory(props) {
                                 </div>
                                 <div className="container">
                                     <div className="row what-is-idml">
-                                        <div className="col-lg-8 col-md-7 col-sm-12 col-12  py-5 " animate="left">
+                                        <div className="col-lg-8 col-md-7 col-sm-12 col-12  py-5 "  >
                                             <div className="pe-md-5 ms-md-0 ms-5">
                                                 <h2 className="mb-4">{storySettings.idml_title}</h2>
                                                 <p>{storySettings.idml_text}</p>
@@ -560,7 +560,7 @@ export default function OurStory(props) {
                         </div>
 
                         <div className="container ">
-                            <div className="row operations  py-lg-5" animate="right">
+                            <div className="row operations  py-lg-5"  >
                                 <div className="col-lg-11 pb-5 ">
                                     <h2 className="mb-4 text-center">{storySettings.operations_title}</h2>
                                     <p className="mb-5 text-center">{storySettings.subtitle}</p>
@@ -569,7 +569,7 @@ export default function OurStory(props) {
                                         <div className="col-auto align-items-sm-start d-sm-flex   align-items-lg-center d-lg-block align-items-md-center d-md-block">
                                             {mapLegend ?
                                                 mapLegend.map((map, index) =>
-                                                    <div className="row align-items-center pb-4" animate="left" key={index}>
+                                                    <div className="row align-items-center pb-4"   key={index}>
                                                         <div className="col-md-4 col-auto justify-content-md-center justify-content-start d-flex pb-sm-3">
                                                             <img className="side-icon" src={map.full_path_icon} alt="side-icon" />
                                                         </div>

@@ -42,7 +42,7 @@ export default function Industries(props) {
             {
                 singleIndustry ?
                     <>
-                        <div className="pt-lg-5" animate="left">
+                        <div className="pt-lg-5"  >
                             <div className="pt-5">
                                 <div className="container pt-5" >
                                     <div className="row align-items-center py-5">
@@ -81,7 +81,7 @@ export default function Industries(props) {
                             </div>
                         </div>
 
-                        <div className="container " animate="right">
+                        <div className="container "  >
                             <div className="row justify-content-center">
                                 {
                                     singleIndustry?.products_list?.map((product, index) =>
@@ -101,7 +101,7 @@ export default function Industries(props) {
                             </div>
                         </div>
 
-                        <div className="container py-lg-5 pt-5" animate="left">
+                        <div className="container py-lg-5 pt-5"  >
                             <div className="row justify-content-center d-flex text-center mb-4">
                                 <h2 className="mb-4">{industriesSettings.clients_title}</h2>
                             </div>
@@ -126,7 +126,7 @@ export default function Industries(props) {
                             </div>
                         </div>
 
-                        <div className="container pb-5" animate="down">
+                        <div className="container pb-5"  >
                             <div className="row justify-content-center text-center py-5">
                                 <div className="col-lg-10 disclaimer mx-lg-5 px-xxl-5">
                                     <p>{singleIndustry.last_text}</p>

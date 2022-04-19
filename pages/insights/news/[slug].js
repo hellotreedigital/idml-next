@@ -44,7 +44,7 @@ export default function News(props) {
                     <>
                         <div className="pt-lg-5">
                             <div className="pt-5">
-                                <div className="container pt-5" animate="left">
+                                <div className="container pt-5"  >
                                     <div className="row  align-items-center  pt-5">
                                         <div className="col-xxl-auto col-lg-1 col-auto add-absolute">
                                             <div className=" d-none d-sm-block">
@@ -83,7 +83,7 @@ export default function News(props) {
                         </div>
 
                         <div className="container single-news-page">
-                            <div className="row  align-items-center" animate="right">
+                            <div className="row  align-items-center"  >
                                 <div className="col-lg-5 col-md-6 mb-4 mb-md-0">
                                     <div className="ratio single-news">
                                         <img src={singleNew.first_image} alt="news" />
@@ -98,7 +98,7 @@ export default function News(props) {
                                     <div className="py-4 mb-0" dangerouslySetInnerHTML={{ __html: singleNew.text_between }} />
                                 </div>
                             </div>
-                            <div className="row  align-items-center mb-4" animate="right">
+                            <div className="row  align-items-center mb-4"  >
                                 <div className="col-lg-6 col-md-6 col-sm-6 pb-4 ">
                                     <div className="ratio single-news-image">
                                         <img src={singleNew.second_image} alt="news" />
@@ -114,7 +114,7 @@ export default function News(props) {
                                 </div>
                             </div>
 
-                            <div className="row  align-items-center mb-4 pb-5" animate="left">
+                            <div className="row  align-items-center mb-4 pb-5"  >
                                 <div className="text-center latest">
                                     <h3>{insightsSettings.share_text}</h3>
                                 </div>
@@ -137,7 +137,7 @@ export default function News(props) {
                                 </div>
                             </div>
 
-                            <div className="pb-lg-5" animate="right">
+                            <div className="pb-lg-5"  >
                                 <div className="row justify-content-center  align-items-center mb-4 pb-5">
                                     <div className="text-center latest">
                                         <h3 className="mb-4">LATEST NEWS</h3>

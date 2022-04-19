@@ -67,7 +67,7 @@ export default function Products(props) {
             {
                 productsCategories ?
                     <>
-                        <div className="container py-5" animate="left">
+                        <div className="container py-5" >
                             <div className="row justify-content-center">
                                 <div className="col-lg-9 ">
                                     <Swiper className="mySwiper py-5"
@@ -115,7 +115,7 @@ export default function Products(props) {
                         {
                             productsItems && (
                                 productsItems.products.length < 0 ? null :
-                                    <div className=" position-relative" animate="right">
+                                    <div className=" position-relative"  >
                                         <div className="">
                                             <div className=" justify-content-end d-flex">
                                                 <div className="swiper-button-prev">

@@ -46,7 +46,7 @@ export default function Insights(props) {
                             title={menuItems['book-a-consultation']}
                         />
 
-                        <div className="container-md py-lg-5" animate="right">
+                        <div className="container-md py-lg-5"  >
                             <div className="row justify-content-center text-center pt-5">
                                 <div className="col-lg-8 pb-4">
                                     <h2 className="mb-0">{insights.news_title}</h2>
@@ -118,7 +118,7 @@ export default function Insights(props) {
                             </div>
                         </div>
 
-                        <div className="container-md py-lg-5" animate="right">
+                        <div className="container-md py-lg-5"  >
                             <div className="row justify-content-center text-center pt-5">
                                 <div className="col-lg-8 pb-4">
                                     <h2 className="mb-0">{insights.case_studies_title}</h2>

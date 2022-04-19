@@ -35,7 +35,7 @@ export default function CaseStudies(props) {
                 insightsSettings && (
                     <div className="pt-lg-5">
                         <div className="pt-5">
-                            <div className="container pt-5" animate="left">
+                            <div className="container pt-5"  >
                                 <div className="row align-items-center  pt-5 mb-4">
                                     <div className="col-xxl-auto col-lg-1 col-auto add-absolute">
                                         <div className=" d-none d-sm-block">
@@ -75,14 +75,14 @@ export default function CaseStudies(props) {
             {
                 singleCase && (
                     <div className="container single-study">
-                        <div className="row" animate="left">
+                        <div className="row"  >
                             <div className="col-12">
                                 <div dangerouslySetInnerHTML={{ __html: singleCase.small_text }} />
 
                                 <div dangerouslySetInnerHTML={{ __html: singleCase.subtitle }} />
                             </div>
                         </div>
-                        <div className="row pt-sm-4 pt-4" animate="right">
+                        <div className="row pt-sm-4 pt-4"  >
                             <h2 className="mb-4 title-inside-page">{singleCase.section_title}</h2>
                             <div className="col-lg-7 col-md-7 oder-lg-2 order-1">
 
@@ -97,7 +97,7 @@ export default function CaseStudies(props) {
                                 </div>
                             </div>
                         </div>
-                        <div className="row pb-lg-5" animate="left">
+                        <div className="row pb-lg-5"  >
                             <div className="col-12 pb-5">
                                 {/* <p className="mb-0">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet</p>
                                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem.</p> */}

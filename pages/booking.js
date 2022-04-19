@@ -9,7 +9,7 @@ import GlobalState from "../GlobalState";
 
 export default function Booking(props) {
 
-    const { triggerScroll, calcMinHeight } = useContext(GlobalState);
+    const { triggerScroll} = useContext(GlobalState);
     const bookingSettings = props.bookingData.page_items.book_consultation_settings;
     const countriesList = props.bookingData.page_items.countries_list;
     
@@ -43,7 +43,6 @@ export default function Booking(props) {
         });
         setCountriesOptions(newCountries);
         triggerScroll();
-        calcMinHeight();
         setLoading(false);
     }, [countriesList, bookingSettings, loading]); 
 
@@ -87,22 +86,22 @@ export default function Booking(props) {
                         <div className="py-lg-5">
                             <div className="py-5">
                                 <div className="py-5">
-                                    <div className="container py-5" animate="up">
+                                    <div className="container py-5" >
                                         <form onSubmit={submitForm} className="row py-5">
-                                            <div className="text-center" animate="up">
+                                            <div className="text-center" >
                                                 <h2 className="mb-4">{bookingSettings.title}</h2>
                                             </div>
-                                            <div className="col-lg-6 col-md-6" animate="left">
+                                            <div className="col-lg-6 col-md-6"  >
                                                 <div className="mb-4">
                                                     <input className="contact-form w-100" placeholder={bookingSettings.name_palceholder} value={name} onChange={e => setName(e.target.value)} />
                                                 </div>
                                             </div>
-                                            <div className="col-lg-6 col-md-6" animate="right">
+                                            <div className="col-lg-6 col-md-6"  >
                                                 <div className="mb-4">
                                                     <input className="contact-form w-100" placeholder={bookingSettings.email_placeholder} value={email} onChange={e => setEmail(e.target.value)} />
                                                 </div>
                                             </div>
-                                            <div className="col-lg-6 col-md-6" animate="left">
+                                            <div className="col-lg-6 col-md-6"  >
                                                 <div className="mb-4">
                                                     <div className="booking-phone">
                                                         <PhoneInput
@@ -113,7 +112,7 @@ export default function Booking(props) {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="col-lg-6 col-md-6 location-input" animate="right">
+                                            <div className="col-lg-6 col-md-6 location-input"  >
                                                 <div className="mb-4">
                                                     <Select
                                                         Select classNamePrefix="location-select-booking"
@@ -124,7 +123,7 @@ export default function Booking(props) {
                                                     />
                                                 </div>
                                             </div>
-                                            <div className="col-12" animate="left">
+                                            <div className="col-12"  >
                                                 <div className="mb-4">
                                                     <textarea rows="4" className="contact-form w-100" placeholder={bookingSettings.message_placeholder} value={message} onChange={e => setMessage(e.target.value)} />
                                                 </div>

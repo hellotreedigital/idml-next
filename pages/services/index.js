@@ -49,7 +49,7 @@ export default function Services(props) {
                         {
                             serviceCategories ?
                                 serviceCategories.map((serviceCategory, index) =>
-                                    <div className="col-lg-3 col-md-6 col-sm-6 pb-5" animate="left" key={index}>
+                                    <div className="col-lg-3 col-md-6 col-sm-6 pb-5"   key={index}>
                                         <Link href={"/services/" + serviceCategory.slug}>
                                             <a>
                                                 <BluePill title={serviceCategory.title} icon={serviceCategory.icon} readMore={serviceSetting.read_more} />

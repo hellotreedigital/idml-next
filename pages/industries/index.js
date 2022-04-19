@@ -1,4 +1,5 @@
 import SideButton from "../../components/SideButton";
+import VerificationPopup from "../../components/VerificationPopup";
 import Banner from "../../components/Banner";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
@@ -46,7 +47,6 @@ export default function Industries(props) {
 
     function clientClick(clientTag) {
         setCurrentFilter(clientTag);
-
     }
 
     useEffect(() => {
@@ -91,7 +91,7 @@ export default function Industries(props) {
                             title={menuItems['book-a-consultation']}
                         />
 
-                        <div className="pt-lg-5" animate="left">
+                        <div className="pt-lg-5"  >
                             <div className="pt-5">
                                 <div className="container pt-5">
                                     <div className="row  pt-5 justify-content-center">
@@ -135,7 +135,7 @@ export default function Industries(props) {
                             </div>
                         </div>
 
-                        <div className="container py-lg-5 pb-5" animate="right">
+                        <div className="container py-lg-5 pb-5"  >
                             <div className="row  justify-content-center d-flex text-center mb-4 gx-3">
                                 <h2 className="mb-4">{industriesSettings.clients_title}</h2>
                                 {
@@ -179,7 +179,7 @@ export default function Industries(props) {
                         </div>
 
                         <div className="pb-lg-5">
-                            <div className="container py-lg-5 pb-5" animate="left">
+                            <div className="container py-lg-5 pb-5"  >
                                 <div className="row  justify-content-center d-flex text-center mb-4">
                                     <h2 className="mb-0">{industriesSettings.testimonials_title}</h2>
                                 </div>
@@ -251,44 +251,15 @@ export default function Industries(props) {
                             ageVerificationPopup ?
                                 <div className={"team-popup " + (ageVerificationPopup ? " " : " fade-out")}>
                                     <div className="modal-window team-member change-color position-relative">
-                                        <div className="row ">
-                                            <div className="col-lg-10 col-md-10 col-sm-10 col-11">
-                                                <div className="popup-age change-color">
-                                                    <div className="close-svg" onClick={() => setAgeVerificationPopup(false)}>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="49" height="37" viewBox="0 0 49 37">
-                                                            <g id="Group_3342" data-name="Group 3342" transform="translate(-1096 -228)">
-                                                                <path id="Rectangle_267" data-name="Rectangle 267" d="M0,0H12A37,37,0,0,1,49,37v0a0,0,0,0,1,0,0H27.75A27.75,27.75,0,0,1,0,9.25V0A0,0,0,0,1,0,0Z" transform="translate(1096 228)" fill="#14334a" />
-                                                                <g id="Group_3054" data-name="Group 3054" transform="translate(214.465 49.965)">
-                                                                    <line id="Line_8" data-name="Line 8" x2="9.07" y2="9.07" transform="translate(900.5 193.5)" fill="none" stroke="#fff" strokeLinecap="round" strokeWidth="2" />
-                                                                    <line id="Line_9" data-name="Line 9" x1="9.07" y2="9.07" transform="translate(900.5 193.5)" fill="none" stroke="#fff" strokeLinecap="round" strokeWidth="2" />
-                                                                </g>
-                                                            </g>
-                                                        </svg>
-                                                    </div>
-                                                    <div className="row justify-content-center py-5 gx-5">
-                                                        <div className="col-lg-12 col-md-10 text-center">
-                                                            <img src={ageVerificationPopup.popup_image} alt="age" />
-                                                            <div className="py-4">
-                                                                <h3 className="mb-2">{ageVerificationPopup.popup_title}</h3>
-                                                                <h4 className="mb-0">{ageVerificationPopup.popup_text}</h4>
-                                                            </div>
-                                                            <div className="row justify-content-center p-3">
-                                                                <div className="col-lg-4 col-md-4">
-                                                                    <Link href={"industries/" + ageVerificationPopup.slug}>
-                                                                        <a>
-                                                                            <div className="button blue-button verification-button  fix-padding shadow">{ageVerificationPopup.first_popup_button}</div>
-                                                                        </a>
-                                                                    </Link>
-                                                                </div>
-                                                                <div className="col-lg-4 col-md-4 pt-md-0 pt-3">
-                                                                    <div onClick={() => setAgeVerificationPopup(false)} className="button white-button verification-button add-border shadow">{ageVerificationPopup.second_popup_button}</div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <VerificationPopup
+                                            image={ageVerificationPopup.popup_image}
+                                            title={ageVerificationPopup.popup_title}
+                                            text={ageVerificationPopup.popup_text}
+                                            slug={ageVerificationPopup.slug}
+                                            button={ageVerificationPopup.first_popup_button}
+                                            secondButton={ageVerificationPopup.second_popup_button}
+                                            ageClick={() => setAgeVerificationPopup(null)}
+                                        />
                                     </div>
                                 </div>
                                 :

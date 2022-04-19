@@ -276,13 +276,13 @@ a {
     border-radius: 7px;
 }
 
-.dropdown-content a {
+.dropdown-content a, .dropdown-content p {
     color: #fff;
     font-weight: 600;
     transition: all 0.5s;
 }
 
-.dropdown-content a:hover {
+.dropdown-content a:hover, .dropdown-content p:hover {
     color: #14334A;
 }
 
@@ -1925,7 +1925,7 @@ div.part-3:before {
 }
 
 .add-space {
-    padding-bottom: 60px;
+    padding-bottom: 100px;
 }
 
 .popup-age {
@@ -3985,7 +3985,7 @@ div.four:before {
 
 
 /* Animation */
-
+/* 
 [animate] {
     transition: transform 1s 0.5s, opacity 1s 0.5s;
     opacity: 0;
@@ -3995,41 +3995,41 @@ div.four:before {
     opacity: 1;
 }
 
-[animate="left"] {
+[ ] {
     transform: translateX(-300px);
 }
 
-[animate="left"].show {
+[ ].show {
     transform: translateX(0);
 }
 
-[animate="right"] {
+[ ] {
     transform: translateX(300px);
 }
 
-[animate="right"].show {
+[ ].show {
     transform: translateX(0);
 }
 
-[animate="up"] {
+[] {
     transform: translateY(-300px);
 }
 
-[animate="up"].show {
+[].show {
     transform: translateY(0);
 }
 
-[animate="down"] {
+[ ] {
     transform: translateY(300px);
 }
 
-[animate="down"].show {
+[ ].show {
     transform: translateY(0);
 }
 
 .no-transition-delay {
     transition-delay: 0s;
-}
+} */
 
 
 /* svg animation */

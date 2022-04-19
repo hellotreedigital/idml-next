@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import VerificationPopup from "./VerificationPopup";
 
 export default function Layout(props) {
+    const [ageVerificationPopup, setAgeVerificationPopup] = useState(null);
     const [headerScroll, setHeaderScroll] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -10,6 +12,10 @@ export default function Layout(props) {
     }
     function closeMenu() {
         setMobileMenuOpen(false)
+    }
+
+    function ageVerificationClick(industryTitle) {
+        setAgeVerificationPopup(industryTitle)
     }
 
     useEffect(() => {
@@ -84,13 +90,17 @@ export default function Layout(props) {
                             <div className="dropdown-content">
                                 {props.industriesTitles ?
                                     props.industriesTitles.map((industryTitle, index) =>
-                                        <>
+                                        industryTitle.with_popup === 1 ?
+                                            <p className="mb-0" onClick={() => ageVerificationClick(industryTitle)}>
+                                                {industryTitle?.title}
+                                            </p>
+
+                                            :
                                             <Link href={"industries/" + industryTitle.slug} key={index}>
                                                 <a className="mb-2 mt-2">
                                                     {industryTitle?.title}
                                                 </a>
                                             </Link>
-                                        </>
                                     )
                                     :
                                     null
@@ -197,14 +207,20 @@ export default function Layout(props) {
                                 </div>
                                 <div className="mobile-dropdown d-grid">
                                     {props.industriesTitles ?
+
                                         props.industriesTitles.map((industryTitle, index) =>
-                                            <>
+                                            industryTitle.with_popup === 1 ?
+
+                                                <p className="mb-0" onClick={() => ageVerificationClick(industryTitle)}>
+                                                    {industryTitle?.title}
+                                                </p>
+                                                :
                                                 <Link href={"industries/" + industryTitle.slug} key={index}>
                                                     <a>
                                                         {industryTitle?.title}
                                                     </a>
                                                 </Link>
-                                            </>
+
                                         )
                                         :
                                         null
@@ -430,6 +446,25 @@ export default function Layout(props) {
                     </div>
                 </div>
             </div>
+
+            {
+                ageVerificationPopup ?
+                    <div className={"team-popup " + (ageVerificationPopup ? " " : " fade-out")}>
+                        <div className="modal-window team-member change-color position-relative">
+                            <VerificationPopup
+                                image={ageVerificationPopup.popup_image}
+                                title={ageVerificationPopup.popup_title}
+                                text={ageVerificationPopup.popup_text}
+                                slug={ageVerificationPopup.slug}
+                                button={ageVerificationPopup.first_popup_button}
+                                secondButton={ageVerificationPopup.second_popup_button}
+                                ageClick={() => setAgeVerificationPopup(null)}
+                            />
+                        </div>
+                    </div>
+                    :
+                    null
+            }
         </>
     )
 }

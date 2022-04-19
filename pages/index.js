@@ -12,10 +12,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import SwiperCore, { Autoplay } from 'swiper';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import GlobalState from "../GlobalState";
 
 export default function Home(props) {
 
+  const { triggerScroll} = useContext(GlobalState);
   const menuItems = props.homeData.fixed_titles;
   const socialMedia = props.homeData.social_media;
   const footerLogos = props.homeData.footer_logos;
@@ -37,7 +39,8 @@ export default function Home(props) {
 
   useEffect(() => {
     setLoading(false);
-  }, []);
+    triggerScroll();
+  }, [loading]);
 
   function scrollTop() {
     const element = document.getElementById("home-section-1")
@@ -166,7 +169,7 @@ export default function Home(props) {
 
           <div className="position-relative pt-5" id="home-section-1">
             <div className="background-sections">
-              <img src="/assets/images/test1.svg" alt="" />
+              <img src="../img/images/test1.svg" alt="" />
             </div>
             <div className="container py-5">
               <div className="row justify-content-center text-center ">
@@ -177,7 +180,7 @@ export default function Home(props) {
               </div>
             </div>
 
-            <div className="container pt-5" animate="right">
+            <div className="container pt-5">
               <div className="row justify-content-center text-center ">
                 <div className="col-lg-8 pb-4" >
                   <h2 className="mb-0">{homeSettings.process_title}</h2>
@@ -205,7 +208,7 @@ export default function Home(props) {
             </div>
             {
               homeSettings ?
-                <div className="container py-5" animate="left">
+                <div className="container py-5">
                   <div className="row justify-content-center text-center ">
                     <div className="col-lg-8">
                       <h2 className="pb-4 mb-0">{homeSettings.about_us_title}</h2>
@@ -239,7 +242,7 @@ export default function Home(props) {
             </div>
           </div>
 
-          <div className="py-5" animate="right" >
+          <div className="py-5" >
             <div className="row justify-content-center  align-items-center pb-3" >
               <div className="col-lg-12">
                 <div className="d-flex text-center justify-content-center">
@@ -302,7 +305,7 @@ export default function Home(props) {
 
           {
             homeSettings ?
-              <div className="container pt-5" animate="left">
+              <div className="container pt-5">
                 <div className="row justify-content-center text-center ">
                   <div className="col-lg-8 pb-4" >
                     <h2 className="mb-0">{homeSettings.industries_title}</h2>
@@ -332,7 +335,7 @@ export default function Home(props) {
 
           {
             homeSettings ?
-              <div className="container pt-5" animate="right">
+              <div className="container pt-5">
                 <div className="row justify-content-center text-center ">
                   <div className="col-lg-8 pb-4">
                     <h2 className="mb-0">{homeSettings.news_title}</h2>
@@ -402,7 +405,7 @@ export default function Home(props) {
           {
             homeSettings ?
               <>
-                <div className="container pt-5" animate="left">
+                <div className="container pt-5">
                   <div className="row  justify-content-center  align-items-center ">
                     <div className="col-lg-12 col-md-8 col-sm-12 col-12" >
                       <div className="d-flex text-center justify-content-center">
