@@ -135,7 +135,7 @@ export default function CaseStudies(props) {
 
                                         {
                                             maxPages.map((page, index) => (
-                                                <div className="mx-1">
+                                                <div className="mx-1" key={index}>
                                                     <button className={"button pagination-number " + ((index + 1) === page ? 'mb-0 active' : 'mb-0')} key={index} onClick={() => setPage(index + 1)}>{(index + 1)}</button>
                                                 </div>
                                             ))
