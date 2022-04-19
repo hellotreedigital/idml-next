@@ -203,5 +203,6 @@ export async function getStaticProps() {
         props: {
             insightsData: insightsData.data,
         },
+        revalidate: 10,
     };
 }

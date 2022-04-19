@@ -38,33 +38,29 @@ export default function Services(props) {
                                     <div className="row align-items-center py-5">
                                         <div className="col-xxl-auto col-lg-1 col-auto">
                                             <div className=" d-none d-sm-flex">
-                                                <a href="/service-categories">
-                                                    <div className="button back-button d-flex align-items-center shadow">
-                                                        <svg className="arrow-back" xmlns="http://www.w3.org/2000/svg" width="8.136" height="12.964" viewBox="0 0 8.136 12.964">
-                                                            <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" strokeLinecap="round" strokeWidth="2" />
-                                                        </svg>
-                                                        <p className="mb-0 ms-2">{categorySettings.back_button}</p>
-                                                    </div>
-                                                </a>
+
+                                                <div onClick={() => window.history.back()}  className="button back-button d-flex align-items-center shadow">
+                                                    <svg className="arrow-back" xmlns="http://www.w3.org/2000/svg" width="8.136" height="12.964" viewBox="0 0 8.136 12.964">
+                                                        <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" strokeLinecap="round" strokeWidth="2" />
+                                                    </svg>
+                                                    <p className="mb-0 ms-2">{categorySettings.back_button}</p>
+                                                </div>
+
                                             </div>
                                             <div className="d-block d-sm-none">
-                                                <button className="back-button-border">
-                                                    <a href="/service-categories">
-                                                        <svg className="arrow-back " xmlns="http://www.w3.org/2000/svg" width="8.136" height="12.964" viewBox="0 0 8.136 12.964">
-                                                            <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" strokeLinecap="round" strokeWidth="2" />
-                                                        </svg>
-                                                    </a>
+                                                <button onClick={() => window.history.back()}  className="back-button-border">
+                                                    <svg className="arrow-back " xmlns="http://www.w3.org/2000/svg" width="8.136" height="12.964" viewBox="0 0 8.136 12.964">
+                                                        <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" strokeLinecap="round" strokeWidth="2" />
+                                                    </svg>
                                                 </button>
                                             </div>
                                         </div>
 
                                         <div className="col">
                                             <div className="d-flex text-center justify-content-center">
-                                                <a href="/service-categories">
-                                                    <div className="d-flex align-items-center">
-                                                        <h2 className="mb-0 service-title-page">{singleCat?.title}</h2>
-                                                    </div>
-                                                </a>
+                                                <div className="d-flex align-items-center">
+                                                    <h2 className="mb-0 service-title-page">{singleCat?.title}</h2>
+                                                </div>
                                             </div>
                                         </div>
                                         <div className="col-xxl-auto col-lg-1 col-auto"></div>
@@ -140,5 +136,6 @@ export async function getStaticProps(context) {
         props: {
             serviceCategoryData: serviceCategoryData.data,
         },
+        revalidate: 10,
     };
 }

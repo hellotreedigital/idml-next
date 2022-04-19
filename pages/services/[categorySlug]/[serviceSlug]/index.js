@@ -7,7 +7,7 @@ import GlobalState from "../../../../GlobalState";
 
 export default function SingleService(props) {
 
-    const { triggerScroll, calcMinHeight } = useContext(GlobalState);
+    const { triggerScroll } = useContext(GlobalState);
 
     const menuItems = props.serviceCategoryData.fixed_titles;
     const socialMedia = props.serviceCategoryData.social_media;
@@ -21,7 +21,6 @@ export default function SingleService(props) {
     const industriesTitles = props.serviceCategoryData.industries_titles;
 
     useEffect(() => {
-        calcMinHeight();
         triggerScroll();
     }, []);
 
@@ -138,5 +137,6 @@ export async function getStaticProps(context) {
         props: {
             serviceCategoryData: serviceCategoryData.data,
         },
+        revalidate: 10,
     };
 }

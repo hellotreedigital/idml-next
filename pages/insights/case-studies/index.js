@@ -121,22 +121,40 @@ export default function CaseStudies(props) {
                                     null
                             }
 
-                            {/* <div className=" text-center align-items-center justify-content-center d-flex pb-5">
-                                <button className="button pagination-number active mx-1">
-                                    1
-                                </button>
-                                <button className="button pagination-number mx-1">
-                                    2
-                                </button>
-                                <button className="button pagination-number mx-1">
-                                    3
-                                </button>
-                                <button className="button pagination-arrow mx-1">
-                                    <img className="my-2" src="../img/images/next.svg" alt="news" />
-                                </button>
-                            </div> */}
-
                             {
+                                maxPages.length > 0 ?
+                                    <div className=" text-center align-items-center justify-content-center d-flex pb-5">
+                                        {
+                                            page > 1 ?
+                                                <button onClick={() => setPage(page - 1)} className="button pagination-arrow mx-1">
+                                                    <img className="my-2" src="../img/images/prev.svg" alt="news" />
+                                                </button>
+                                                :
+                                                null
+                                        }
+
+                                        {
+                                            maxPages.map((page, index) => (
+                                                <div className="mx-1">
+                                                    <button className={"button pagination-number " + ((index + 1) === page ? 'mb-0 active' : 'mb-0')} key={index} onClick={() => setPage(index + 1)}>{(index + 1)}</button>
+                                                </div>
+                                            ))
+                                        }
+                                        {
+                                            page < maxPages?.length ?
+                                                <button onClick={() => setPage(page + 1)} className="button pagination-arrow mx-1">
+                                                    <img className="my-2" src="../img/images/next.svg" alt="news" />
+                                                </button>
+                                                :
+                                                null
+                                        }
+
+                                    </div>
+                                    :
+                                    null
+                            }
+
+                            {/* {
                                 maxPages.length > 0 ?
                                     <div className="pagination d-flex justify-content-center align-items-center pt-5">
                                         {
@@ -163,18 +181,7 @@ export default function CaseStudies(props) {
                                     </div>
                                     :
                                     null
-                            }
-
-
-
-
-
-
-
-
-
-
-
+                            } */}
                         </div>
                     </div>
                 )
@@ -190,5 +197,6 @@ export async function getStaticProps(context) {
         props: {
             insightsCaseStudiesData: insightsCaseStudiesData.data,
         },
+        revalidate: 10,
     };
 }

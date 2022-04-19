@@ -235,5 +235,6 @@ export async function getStaticProps(context) {
         props: {
             insightsNewsSingleData: insightsNewsSingleData.data,
         },
+        revalidate: 10,
     };
 }

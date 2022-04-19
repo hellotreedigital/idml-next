@@ -645,5 +645,6 @@ export async function getStaticProps() {
         props: {
             ourStoryData: ourStoryData.data,
         },
+        revalidate: 10,
     };
 }

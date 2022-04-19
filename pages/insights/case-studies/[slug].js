@@ -135,5 +135,6 @@ export async function getStaticProps(context) {
         props: {
             insightsCaseStudiesSingleData: insightsCaseStudiesSingleData.data,
         },
+        revalidate: 10,
     };
 }

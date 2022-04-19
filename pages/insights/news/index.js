@@ -21,6 +21,34 @@ export default function News(props) {
     const insightsSettings = props.insightsNewsData.page_items.insights_settings;
     const paginatedNews = props.insightsNewsData.page_items.paginated_news;
 
+    const [news, setNews] = useState({});
+
+    const [page, setPage] = useState(1);
+    const [maxPages, setMaxPages] = useState([]);
+    const [oldPage, setOldPage] = useState(1);
+
+    useEffect(() => {
+        triggerScroll();
+        setLoading(false);
+    }, [loading]);
+
+    useEffect(() => {
+        let dbPage = page === oldPage ? 1 : page;
+        axios.get('/insights/news?page=' + dbPage).then(res => {
+            setNews(res.data.page_items.paginated_news.data);
+            setPage(res.data.page_items.paginated_news.current_page);
+            setOldPage(res.data.page_items.paginated_news.current_page);
+            var foo = [];
+            for (var i = 0; i < res.data.page_items.paginated_news.last_page; i++) {
+                foo.push(i + 1);
+            }
+            setMaxPages(foo);
+            // console.log(foo);
+        });
+
+
+    }, [page]);
+
 
     useEffect(() => {
         triggerScroll();
@@ -86,46 +114,66 @@ export default function News(props) {
 
                         <div className="row justify-content-center gx-5">
                             {
-                                paginatedNews.data.map((paginatedNew, index) => (
-                                    <div className="col-lg-4 col-md-6 col-sm-6 pb-5" key={index}>
-                                        <Link href={"/insights/news/" + paginatedNew.slug}>
-                                            <a>
-                                                <NewsSection
-                                                    title={paginatedNew.title}
-                                                    date={paginatedNew.date_formatted}
-                                                    image={paginatedNew.first_image}
-                                                    description={paginatedNew.small_description}
-                                                    button={insightsSettings?.read_more}
-                                                />
-                                            </a>
-                                        </Link>
-                                    </div>
-                                ))
+                                news?.length > 0 ?
+                                    news.map((paginatedNew, index) => (
+                                        <div className="col-lg-4 col-md-6 col-sm-6 pb-5" key={index}>
+                                            <Link href={"/insights/news/" + paginatedNew.slug}>
+                                                <a>
+                                                    <NewsSection
+                                                        title={paginatedNew.title}
+                                                        date={paginatedNew.date_formatted}
+                                                        image={paginatedNew.first_image}
+                                                        description={paginatedNew.small_description}
+                                                        button={insightsSettings?.read_more}
+                                                    />
+                                                </a>
+                                            </Link>
+                                        </div>
+                                    ))
+                                    :
+                                    null
                             }
-
-                            <div className=" text-center align-items-center justify-content-center d-flex pb-5">
-                                <button className="button pagination-arrow mx-1">
-                                    <img className="my-2" src="../img/images/prev.svg" alt="news" />
-                                </button>
-                                <button className="button pagination-number active mx-1">
-                                    1
-                                </button>
-                                <button className="button pagination-number mx-1">
-                                    2
-                                </button>
-                                <button className="button pagination-number mx-1">
-                                    3
-                                </button>
-                                <button className="button pagination-arrow mx-1">
-                                    <img className="my-2" src="../img/images/next.svg" alt="news" />
-                                </button>
-                            </div>
                         </div>
                     </div>
                     :
                     null
             }
-        </Layout>
+
+            {
+                maxPages.length > 0 ?
+                    <div className=" text-center align-items-center justify-content-center d-flex pb-5">
+                        {
+                            page > 1 ?
+                                <button onClick={() => setPage(page - 1)} className="button pagination-arrow mx-1">
+                                    <img className="my-2" src="../img/images/prev.svg" alt="news" />
+                                </button>
+                                :
+                                null
+                        }
+
+                        {
+                            maxPages.map((page, index) => (
+                                <div className="mx-1">
+                                    <button className={"button pagination-number " + ((index + 1) === page ? 'mb-0 active' : 'mb-0')} key={index} onClick={() => setPage(index + 1)}>{(index + 1)}</button>
+                                </div>
+                            ))
+                        }
+
+                        {
+                            page < maxPages?.length ?
+                                <button onClick={() => setPage(page + 1)} className="button pagination-arrow mx-1">
+                                    <img className="my-2" src="../img/images/next.svg" alt="news" />
+                                </button>
+                                :
+                                null
+                        }
+
+                    </div>
+                    :
+                    null
+            }
+
+        </Layout >
     )
 }
 
@@ -136,5 +184,6 @@ export async function getStaticProps(context) {
         props: {
             insightsNewsData: insightsNewsData.data,
         },
+        revalidate: 10,
     };
 }

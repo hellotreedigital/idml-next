@@ -20,7 +20,7 @@ export default function NewsSection(props) {
                         </div>
                         <p>{props.description}</p>
                     </div>
-                    <a className="underlined-link" href={props.button_link}>{props.button}</a>
+                    <a className="underlined-link" >{props.button}</a>
                 </div>
             </div>
         </div>

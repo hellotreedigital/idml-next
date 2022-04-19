@@ -68,7 +68,7 @@ export default function Industries(props) {
 
     useEffect(() => {
         // console.log(clientsTagsTitles[0].slug)
-       setCurrentFilter(clientsTagsTitles[0].slug);
+        setCurrentFilter(clientsTagsTitles[0].slug);
 
     }, [clientsTagsTitles]);
 
@@ -307,5 +307,6 @@ export async function getStaticProps() {
         props: {
             industriesData: industriesData.data,
         },
+        revalidate: 10,
     };
 }

@@ -270,5 +270,6 @@ export async function getStaticProps() {
         props: {
             bookingData: bookingData.data,
         },
+        revalidate: 10,
     };
 }

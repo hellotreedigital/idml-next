@@ -5,7 +5,7 @@ html {
     cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
 }
 
-.hi span {
+.hi span{
     display: none;
 }
 
@@ -1409,7 +1409,6 @@ div.part-3:before {
 .mySwiper4 {
     justify-content: center;
 }
-
 .swiper-button-prev.fix-arrow-mobile-prev img {
     display: none;
 }
@@ -3575,10 +3574,6 @@ div.four:before {
         transform: rotate(-30deg);
         width: 31%;
     }
-
-    .Typist {
-        font-size: 1.25rem !important;
-    }
 }
 
 
@@ -4251,17 +4246,10 @@ div.four:before {
     display: none;
 }
 
-.Typist {
-    color: #fff;
-    font-size: 1.5rem;
-}
-
-/* fonts */
-
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-Black.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-Black.woff') format('woff');
+    src: url('SFProDisplay-Black.woff2') format('woff2'),
+        url('SFProDisplay-Black.woff') format('woff');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -4269,8 +4257,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-Black.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-Black.woff') format('woff');
+    src: url('SFProDisplay-Black.woff2') format('woff2'),
+        url('SFProDisplay-Black.woff') format('woff');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -4278,8 +4266,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-Black.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-Black.woff') format('woff');
+    src: url('SFProDisplay-Black.woff2') format('woff2'),
+        url('SFProDisplay-Black.woff') format('woff');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -4287,8 +4275,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-BlackItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-BlackItalic.woff') format('woff');
+    src: url('SFProDisplay-BlackItalic.woff2') format('woff2'),
+        url('SFProDisplay-BlackItalic.woff') format('woff');
     font-weight: 900;
     font-style: italic;
     font-display: swap;
@@ -4296,8 +4284,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-BlackItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-BlackItalic.woff') format('woff');
+    src: url('SFProDisplay-BlackItalic.woff2') format('woff2'),
+        url('SFProDisplay-BlackItalic.woff') format('woff');
     font-weight: 900;
     font-style: italic;
     font-display: swap;
@@ -4305,8 +4293,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-BlackItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-BlackItalic.woff') format('woff');
+    src: url('SFProDisplay-BlackItalic.woff2') format('woff2'),
+        url('SFProDisplay-BlackItalic.woff') format('woff');
     font-weight: 900;
     font-style: italic;
     font-display: swap;
@@ -4314,8 +4302,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-Bold.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-Bold.woff') format('woff');
+    src: url('SFProDisplay-Bold.woff2') format('woff2'),
+        url('SFProDisplay-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -4323,8 +4311,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-BoldItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-BoldItalic.woff') format('woff');
+    src: url('SFProDisplay-BoldItalic.woff2') format('woff2'),
+        url('SFProDisplay-BoldItalic.woff') format('woff');
     font-weight: bold;
     font-style: italic;
     font-display: swap;
@@ -4332,8 +4320,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-Bold.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-Bold.woff') format('woff');
+    src: url('SFProDisplay-Bold.woff2') format('woff2'),
+        url('SFProDisplay-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -4341,8 +4329,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-Bold.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-Bold.woff') format('woff');
+    src: url('SFProDisplay-Bold.woff2') format('woff2'),
+        url('SFProDisplay-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -4350,8 +4338,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-BoldItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-BoldItalic.woff') format('woff');
+    src: url('SFProDisplay-BoldItalic.woff2') format('woff2'),
+        url('SFProDisplay-BoldItalic.woff') format('woff');
     font-weight: bold;
     font-style: italic;
     font-display: swap;
@@ -4359,8 +4347,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-BoldItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-BoldItalic.woff') format('woff');
+    src: url('SFProDisplay-BoldItalic.woff2') format('woff2'),
+        url('SFProDisplay-BoldItalic.woff') format('woff');
     font-weight: bold;
     font-style: italic;
     font-display: swap;
@@ -4368,8 +4356,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-Heavy.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-Heavy.woff') format('woff');
+    src: url('SFProDisplay-Heavy.woff2') format('woff2'),
+        url('SFProDisplay-Heavy.woff') format('woff');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -4377,8 +4365,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-Heavy.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-Heavy.woff') format('woff');
+    src: url('SFProDisplay-Heavy.woff2') format('woff2'),
+        url('SFProDisplay-Heavy.woff') format('woff');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -4386,8 +4374,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-Heavy.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-Heavy.woff') format('woff');
+    src: url('SFProDisplay-Heavy.woff2') format('woff2'),
+        url('SFProDisplay-Heavy.woff') format('woff');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -4395,8 +4383,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-HeavyItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-HeavyItalic.woff') format('woff');
+    src: url('SFProDisplay-HeavyItalic.woff2') format('woff2'),
+        url('SFProDisplay-HeavyItalic.woff') format('woff');
     font-weight: 900;
     font-style: italic;
     font-display: swap;
@@ -4404,8 +4392,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-HeavyItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-HeavyItalic.woff') format('woff');
+    src: url('SFProDisplay-HeavyItalic.woff2') format('woff2'),
+        url('SFProDisplay-HeavyItalic.woff') format('woff');
     font-weight: 900;
     font-style: italic;
     font-display: swap;
@@ -4413,8 +4401,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-HeavyItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-HeavyItalic.woff') format('woff');
+    src: url('SFProDisplay-HeavyItalic.woff2') format('woff2'),
+        url('SFProDisplay-HeavyItalic.woff') format('woff');
     font-weight: 900;
     font-style: italic;
     font-display: swap;
@@ -4422,8 +4410,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-Light.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-Light.woff') format('woff');
+    src: url('SFProDisplay-Light.woff2') format('woff2'),
+        url('SFProDisplay-Light.woff') format('woff');
     font-weight: 200;
     font-style: normal;
     font-display: swap;
@@ -4431,8 +4419,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-Light.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-Light.woff') format('woff');
+    src: url('SFProDisplay-Light.woff2') format('woff2'),
+        url('SFProDisplay-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -4440,8 +4428,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-Light.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-Light.woff') format('woff');
+    src: url('SFProDisplay-Light.woff2') format('woff2'),
+        url('SFProDisplay-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -4449,8 +4437,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-Light.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-Light.woff') format('woff');
+    src: url('SFProDisplay-Light.woff2') format('woff2'),
+        url('SFProDisplay-Light.woff') format('woff');
     font-weight: 200;
     font-style: normal;
     font-display: swap;
@@ -4458,8 +4446,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-LightItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-LightItalic.woff') format('woff');
+    src: url('SFProDisplay-LightItalic.woff2') format('woff2'),
+        url('SFProDisplay-LightItalic.woff') format('woff');
     font-weight: 300;
     font-style: italic;
     font-display: swap;
@@ -4467,8 +4455,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-LightItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-LightItalic.woff') format('woff');
+    src: url('SFProDisplay-LightItalic.woff2') format('woff2'),
+        url('SFProDisplay-LightItalic.woff') format('woff');
     font-weight: 200;
     font-style: italic;
     font-display: swap;
@@ -4476,8 +4464,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-LightItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-LightItalic.woff') format('woff');
+    src: url('SFProDisplay-LightItalic.woff2') format('woff2'),
+        url('SFProDisplay-LightItalic.woff') format('woff');
     font-weight: 200;
     font-style: italic;
     font-display: swap;
@@ -4485,8 +4473,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-Medium.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-Medium.woff') format('woff');
+    src: url('SFProDisplay-Medium.woff2') format('woff2'),
+        url('SFProDisplay-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -4494,8 +4482,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-Medium.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-Medium.woff') format('woff');
+    src: url('SFProDisplay-Medium.woff2') format('woff2'),
+        url('SFProDisplay-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -4503,8 +4491,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-Medium.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-Medium.woff') format('woff');
+    src: url('SFProDisplay-Medium.woff2') format('woff2'),
+        url('SFProDisplay-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -4512,8 +4500,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-MediumItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-MediumItalic.woff') format('woff');
+    src: url('SFProDisplay-MediumItalic.woff2') format('woff2'),
+        url('SFProDisplay-MediumItalic.woff') format('woff');
     font-weight: 500;
     font-style: italic;
     font-display: swap;
@@ -4521,8 +4509,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-MediumItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-MediumItalic.woff') format('woff');
+    src: url('SFProDisplay-MediumItalic.woff2') format('woff2'),
+        url('SFProDisplay-MediumItalic.woff') format('woff');
     font-weight: 500;
     font-style: italic;
     font-display: swap;
@@ -4530,8 +4518,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-Regular.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-Regular.woff') format('woff');
+    src: url('SFProDisplay-Regular.woff2') format('woff2'),
+        url('SFProDisplay-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -4539,8 +4527,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-MediumItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-MediumItalic.woff') format('woff');
+    src: url('SFProDisplay-MediumItalic.woff2') format('woff2'),
+        url('SFProDisplay-MediumItalic.woff') format('woff');
     font-weight: 500;
     font-style: italic;
     font-display: swap;
@@ -4548,8 +4536,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-Regular.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-Regular.woff') format('woff');
+    src: url('SFProDisplay-Regular.woff2') format('woff2'),
+        url('SFProDisplay-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -4557,8 +4545,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-RegularItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-RegularItalic.woff') format('woff');
+    src: url('SFProDisplay-RegularItalic.woff2') format('woff2'),
+        url('SFProDisplay-RegularItalic.woff') format('woff');
     font-weight: normal;
     font-style: italic;
     font-display: swap;
@@ -4566,8 +4554,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-RegularItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-RegularItalic.woff') format('woff');
+    src: url('SFProDisplay-RegularItalic.woff2') format('woff2'),
+        url('SFProDisplay-RegularItalic.woff') format('woff');
     font-weight: normal;
     font-style: italic;
     font-display: swap;
@@ -4575,8 +4563,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-RegularItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-RegularItalic.woff') format('woff');
+    src: url('SFProDisplay-RegularItalic.woff2') format('woff2'),
+        url('SFProDisplay-RegularItalic.woff') format('woff');
     font-weight: normal;
     font-style: italic;
     font-display: swap;
@@ -4584,8 +4572,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-Regular.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-Regular.woff') format('woff');
+    src: url('SFProDisplay-Regular.woff2') format('woff2'),
+        url('SFProDisplay-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -4593,8 +4581,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-Semibold.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-Semibold.woff') format('woff');
+    src: url('SFProDisplay-Semibold.woff2') format('woff2'),
+        url('SFProDisplay-Semibold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -4602,8 +4590,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-Semibold.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-Semibold.woff') format('woff');
+    src: url('SFProDisplay-Semibold.woff2') format('woff2'),
+        url('SFProDisplay-Semibold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -4611,8 +4599,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-Semibold.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-Semibold.woff') format('woff');
+    src: url('SFProDisplay-Semibold.woff2') format('woff2'),
+        url('SFProDisplay-Semibold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -4620,8 +4608,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-Light.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-Light.woff') format('woff');
+    src: url('SFProText-Light.woff2') format('woff2'),
+        url('SFProText-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -4629,8 +4617,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-LightItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-LightItalic.woff') format('woff');
+    src: url('SFProText-LightItalic.woff2') format('woff2'),
+        url('SFProText-LightItalic.woff') format('woff');
     font-weight: 200;
     font-style: italic;
     font-display: swap;
@@ -4638,8 +4626,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-LightItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-LightItalic.woff') format('woff');
+    src: url('SFProText-LightItalic.woff2') format('woff2'),
+        url('SFProText-LightItalic.woff') format('woff');
     font-weight: 200;
     font-style: italic;
     font-display: swap;
@@ -4647,8 +4635,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-LightItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-LightItalic.woff') format('woff');
+    src: url('SFProText-LightItalic.woff2') format('woff2'),
+        url('SFProText-LightItalic.woff') format('woff');
     font-weight: 300;
     font-style: italic;
     font-display: swap;
@@ -4656,8 +4644,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-Medium.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-Medium.woff') format('woff');
+    src: url('SFProText-Medium.woff2') format('woff2'),
+        url('SFProText-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -4665,8 +4653,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-Medium.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-Medium.woff') format('woff');
+    src: url('SFProText-Medium.woff2') format('woff2'),
+        url('SFProText-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -4674,8 +4662,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-Medium.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-Medium.woff') format('woff');
+    src: url('SFProText-Medium.woff2') format('woff2'),
+        url('SFProText-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -4683,8 +4671,8 @@ div.four:before {
 
 @font-face {
     font-family: 'sf_pro_textmedium';
-    src: url('/styles/fonts/sf_pro_textmedium.woff2') format('woff2'),
-        url('/styles/fonts/sf_pro_textmedium.woff') format('woff');
+    src: url('sf_pro_textmedium.woff2') format('woff2'),
+        url('sf_pro_textmedium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -4692,8 +4680,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-MediumItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-MediumItalic.woff') format('woff');
+    src: url('SFProText-MediumItalic.woff2') format('woff2'),
+        url('SFProText-MediumItalic.woff') format('woff');
     font-weight: 500;
     font-style: italic;
     font-display: swap;
@@ -4701,8 +4689,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-MediumItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-MediumItalic.woff') format('woff');
+    src: url('SFProText-MediumItalic.woff2') format('woff2'),
+        url('SFProText-MediumItalic.woff') format('woff');
     font-weight: 500;
     font-style: italic;
     font-display: swap;
@@ -4710,8 +4698,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-MediumItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-MediumItalic.woff') format('woff');
+    src: url('SFProText-MediumItalic.woff2') format('woff2'),
+        url('SFProText-MediumItalic.woff') format('woff');
     font-weight: 500;
     font-style: italic;
     font-display: swap;
@@ -4719,8 +4707,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-Regular.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-Regular.woff') format('woff');
+    src: url('SFProText-Regular.woff2') format('woff2'),
+        url('SFProText-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -4728,8 +4716,8 @@ div.four:before {
 
 @font-face {
     font-family: 'sf_pro_textregular';
-    src: url('/styles/fonts/sf_pro_textregular.woff2') format('woff2'),
-        url('/styles/fonts/sf_pro_textregular.woff') format('woff');
+    src: url('sf_pro_textregular.woff2') format('woff2'),
+        url('sf_pro_textregular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -4737,8 +4725,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-Regular.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-Regular.woff') format('woff');
+    src: url('SFProText-Regular.woff2') format('woff2'),
+        url('SFProText-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -4746,8 +4734,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-Regular.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-Regular.woff') format('woff');
+    src: url('SFProText-Regular.woff2') format('woff2'),
+        url('SFProText-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -4755,8 +4743,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-RegularItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-RegularItalic.woff') format('woff');
+    src: url('SFProText-RegularItalic.woff2') format('woff2'),
+        url('SFProText-RegularItalic.woff') format('woff');
     font-weight: normal;
     font-style: italic;
     font-display: swap;
@@ -4764,8 +4752,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-RegularItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-RegularItalic.woff') format('woff');
+    src: url('SFProText-RegularItalic.woff2') format('woff2'),
+        url('SFProText-RegularItalic.woff') format('woff');
     font-weight: normal;
     font-style: italic;
     font-display: swap;
@@ -4773,8 +4761,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-RegularItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-RegularItalic.woff') format('woff');
+    src: url('SFProText-RegularItalic.woff2') format('woff2'),
+        url('SFProText-RegularItalic.woff') format('woff');
     font-weight: normal;
     font-style: italic;
     font-display: swap;
@@ -4782,8 +4770,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-Semibold.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-Semibold.woff') format('woff');
+    src: url('SFProText-Semibold.woff2') format('woff2'),
+        url('SFProText-Semibold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -4791,8 +4779,8 @@ div.four:before {
 
 @font-face {
     font-family: 'sf_pro_textsemibold';
-    src: url('/styles/fonts/sf_pro_textsemibold.woff2') format('woff2'),
-        url('/styles/fonts/sf_pro_textsemibold.woff') format('woff');
+    src: url('sf_pro_textsemibold.woff2') format('woff2'),
+        url('sf_pro_textsemibold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -4800,8 +4788,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-Semibold.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-Semibold.woff') format('woff');
+    src: url('SFProText-Semibold.woff2') format('woff2'),
+        url('SFProText-Semibold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -4809,8 +4797,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-SemiboldItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-SemiboldItalic.woff') format('woff');
+    src: url('SFProText-SemiboldItalic.woff2') format('woff2'),
+        url('SFProText-SemiboldItalic.woff') format('woff');
     font-weight: 600;
     font-style: italic;
     font-display: swap;
@@ -4818,8 +4806,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-Semibold.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-Semibold.woff') format('woff');
+    src: url('SFProText-Semibold.woff2') format('woff2'),
+        url('SFProText-Semibold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -4827,8 +4815,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-SemiboldItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-SemiboldItalic.woff') format('woff');
+    src: url('SFProText-SemiboldItalic.woff2') format('woff2'),
+        url('SFProText-SemiboldItalic.woff') format('woff');
     font-weight: 600;
     font-style: italic;
     font-display: swap;
@@ -4836,8 +4824,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-SemiboldItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-SemiboldItalic.woff') format('woff');
+    src: url('SFProText-SemiboldItalic.woff2') format('woff2'),
+        url('SFProText-SemiboldItalic.woff') format('woff');
     font-weight: 600;
     font-style: italic;
     font-display: swap;
@@ -4845,8 +4833,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-SemiboldItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-SemiboldItalic.woff') format('woff');
+    src: url('SFProDisplay-SemiboldItalic.woff2') format('woff2'),
+        url('SFProDisplay-SemiboldItalic.woff') format('woff');
     font-weight: 600;
     font-style: italic;
     font-display: swap;
@@ -4854,8 +4842,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-SemiboldItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-SemiboldItalic.woff') format('woff');
+    src: url('SFProDisplay-SemiboldItalic.woff2') format('woff2'),
+        url('SFProDisplay-SemiboldItalic.woff') format('woff');
     font-weight: 600;
     font-style: italic;
     font-display: swap;
@@ -4863,8 +4851,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-Thin.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-Thin.woff') format('woff');
+    src: url('SFProDisplay-Thin.woff2') format('woff2'),
+        url('SFProDisplay-Thin.woff') format('woff');
     font-weight: 100;
     font-style: normal;
     font-display: swap;
@@ -4872,8 +4860,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-Thin.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-Thin.woff') format('woff');
+    src: url('SFProDisplay-Thin.woff2') format('woff2'),
+        url('SFProDisplay-Thin.woff') format('woff');
     font-weight: 100;
     font-style: normal;
     font-display: swap;
@@ -4881,8 +4869,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-Thin.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-Thin.woff') format('woff');
+    src: url('SFProDisplay-Thin.woff2') format('woff2'),
+        url('SFProDisplay-Thin.woff') format('woff');
     font-weight: 100;
     font-style: normal;
     font-display: swap;
@@ -4890,8 +4878,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-ThinItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-ThinItalic.woff') format('woff');
+    src: url('SFProDisplay-ThinItalic.woff2') format('woff2'),
+        url('SFProDisplay-ThinItalic.woff') format('woff');
     font-weight: 100;
     font-style: italic;
     font-display: swap;
@@ -4899,8 +4887,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-ThinItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-ThinItalic.woff') format('woff');
+    src: url('SFProDisplay-ThinItalic.woff2') format('woff2'),
+        url('SFProDisplay-ThinItalic.woff') format('woff');
     font-weight: 100;
     font-style: italic;
     font-display: swap;
@@ -4908,8 +4896,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-ThinItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-ThinItalic.woff') format('woff');
+    src: url('SFProDisplay-ThinItalic.woff2') format('woff2'),
+        url('SFProDisplay-ThinItalic.woff') format('woff');
     font-weight: 100;
     font-style: italic;
     font-display: swap;
@@ -4917,8 +4905,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-Ultralight.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-Ultralight.woff') format('woff');
+    src: url('SFProDisplay-Ultralight.woff2') format('woff2'),
+        url('SFProDisplay-Ultralight.woff') format('woff');
     font-weight: 200;
     font-style: normal;
     font-display: swap;
@@ -4926,8 +4914,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-Ultralight.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-Ultralight.woff') format('woff');
+    src: url('SFProDisplay-Ultralight.woff2') format('woff2'),
+        url('SFProDisplay-Ultralight.woff') format('woff');
     font-weight: 200;
     font-style: normal;
     font-display: swap;
@@ -4935,8 +4923,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-Ultralight.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-Ultralight.woff') format('woff');
+    src: url('SFProDisplay-Ultralight.woff2') format('woff2'),
+        url('SFProDisplay-Ultralight.woff') format('woff');
     font-weight: 100;
     font-style: normal;
     font-display: swap;
@@ -4944,8 +4932,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-UltralightItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-UltralightItalic.woff') format('woff');
+    src: url('SFProDisplay-UltralightItalic.woff2') format('woff2'),
+        url('SFProDisplay-UltralightItalic.woff') format('woff');
     font-weight: 200;
     font-style: italic;
     font-display: swap;
@@ -4953,8 +4941,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-UltralightItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-UltralightItalic.woff') format('woff');
+    src: url('SFProDisplay-UltralightItalic.woff2') format('woff2'),
+        url('SFProDisplay-UltralightItalic.woff') format('woff');
     font-weight: 200;
     font-style: italic;
     font-display: swap;
@@ -4962,8 +4950,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('/styles/fonts/SFProDisplay-UltralightItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProDisplay-UltralightItalic.woff') format('woff');
+    src: url('SFProDisplay-UltralightItalic.woff2') format('woff2'),
+        url('SFProDisplay-UltralightItalic.woff') format('woff');
     font-weight: 100;
     font-style: italic;
     font-display: swap;
@@ -4971,8 +4959,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-Bold.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-Bold.woff') format('woff');
+    src: url('SFProText-Bold.woff2') format('woff2'),
+        url('SFProText-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -4980,8 +4968,8 @@ div.four:before {
 
 @font-face {
     font-family: 'sf_pro_textbold';
-    src: url('/styles/fonts/sf_pro_textbold.woff2') format('woff2'),
-        url('/styles/fonts/sf_pro_textbold.woff') format('woff');
+    src: url('sf_pro_textbold.woff2') format('woff2'),
+        url('sf_pro_textbold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -4989,8 +4977,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-Bold.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-Bold.woff') format('woff');
+    src: url('SFProText-Bold.woff2') format('woff2'),
+        url('SFProText-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -4998,8 +4986,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-Bold.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-Bold.woff') format('woff');
+    src: url('SFProText-Bold.woff2') format('woff2'),
+        url('SFProText-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -5007,17 +4995,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-BoldItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-BoldItalic.woff') format('woff');
-    font-weight: bold;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-BoldItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-BoldItalic.woff') format('woff');
+    src: url('SFProText-BoldItalic.woff2') format('woff2'),
+        url('SFProText-BoldItalic.woff') format('woff');
     font-weight: bold;
     font-style: italic;
     font-display: swap;
@@ -5025,8 +5004,17 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-Heavy.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-Heavy.woff') format('woff');
+    src: url('SFProText-BoldItalic.woff2') format('woff2'),
+        url('SFProText-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('SFProText-Heavy.woff2') format('woff2'),
+        url('SFProText-Heavy.woff') format('woff');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -5034,8 +5022,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-Heavy.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-Heavy.woff') format('woff');
+    src: url('SFProText-Heavy.woff2') format('woff2'),
+        url('SFProText-Heavy.woff') format('woff');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -5043,8 +5031,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-Heavy.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-Heavy.woff') format('woff');
+    src: url('SFProText-Heavy.woff2') format('woff2'),
+        url('SFProText-Heavy.woff') format('woff');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -5052,8 +5040,8 @@ div.four:before {
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url('/styles/fonts/SFProText-BoldItalic.woff2') format('woff2'),
-        url('/styles/fonts/SFProText-BoldItalic.woff') format('woff');
+    src: url('SFProText-BoldItalic.woff2') format('woff2'),
+        url('SFProText-BoldItalic.woff') format('woff');
     font-weight: bold;
     font-style: italic;
     font-display: swap;
@@ -5061,8 +5049,8 @@ div.four:before {
 
 @font-face {
     font-family: 'sf_pro_textheavy';
-    src: url('/styles/fonts/sf_pro_textheavy.woff2') format('woff2'),
-        url('/styles/fonts/sf_pro_textheavy.woff') format('woff');
+    src: url('sf_pro_textheavy.woff2') format('woff2'),
+        url('sf_pro_textheavy.woff') format('woff');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -5070,8 +5058,8 @@ div.four:before {
 
 @font-face {
     font-family: 'Raleway';
-    src: url('/styles/fonts/Raleway-Thin.woff2') format('woff2'),
-        url('/styles/fonts/Raleway-Thin.woff') format('woff');
+    src: url('Raleway-Thin.woff2') format('woff2'),
+        url('Raleway-Thin.woff') format('woff');
     font-weight: 100;
     font-style: normal;
     font-display: swap;
@@ -5079,8 +5067,8 @@ div.four:before {
 
 @font-face {
     font-family: 'Raleway';
-    src: url('/styles/fonts/Raleway-Bold.woff2') format('woff2'),
-        url('/styles/fonts/Raleway-Bold.woff') format('woff');
+    src: url('Raleway-Bold.woff2') format('woff2'),
+        url('Raleway-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -5088,9 +5076,10 @@ div.four:before {
 
 @font-face {
     font-family: 'Raleway';
-    src: url('/styles/fonts/Raleway-ThinItalic.woff2') format('woff2'),
-        url('/styles/fonts/Raleway-ThinItalic.woff') format('woff');
+    src: url('Raleway-ThinItalic.woff2') format('woff2'),
+        url('Raleway-ThinItalic.woff') format('woff');
     font-weight: 100;
     font-style: italic;
     font-display: swap;
 }
+

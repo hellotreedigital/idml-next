@@ -114,119 +114,121 @@ export default function Products(props) {
 
                         {
                             productsItems && (
-                                <div className=" position-relative" animate="right">
-                                    <div className="">
-                                        <div className=" justify-content-end d-flex">
-                                            <div className="swiper-button-prev">
-                                                <img src="../img/images/prev-arrow.svg" alt="prev" />
+                                productsItems.products.length < 0 ? null :
+                                    <div className=" position-relative" animate="right">
+                                        <div className="">
+                                            <div className=" justify-content-end d-flex">
+                                                <div className="swiper-button-prev">
+                                                    <img src="../img/images/prev-arrow.svg" alt="prev" />
+                                                </div>
+                                                <div className="swiper-button-next ">
+                                                    <img src="../img/images/next-arrow.svg" alt="next" />
+                                                </div>
                                             </div>
-                                            <div className="swiper-button-next ">
-                                                <img src="../img/images/next-arrow.svg" alt="next" />
-                                            </div>
+                                            <Swiper
+                                                modules={[Navigation]}
+                                                navigation={{
+                                                    nextEl: '.swiper-button-next',
+                                                    prevEl: '.swiper-button-prev'
+                                                }}
+                                                className="products-swiper">
+                                                {
+                                                    productsItems.products.map((product, index) =>
+                                                        <div key={index}>
+                                                            <SwiperSlide >
+                                                                <div className="row align-items-center">
+                                                                    <div className="col-lg-5 ">
+                                                                        <div className="product-bg position-relative py-5">
+                                                                            <div className=" justify-content-end d-flex">
+                                                                                <div className="swiper-button-prev fix-arrow-mobile-prev">
+                                                                                    <img src="../img/images/prev-arrow.svg" alt="prev" />
+                                                                                </div>
+                                                                                <div className="swiper-button-next fix-arrow-mobile-next">
+                                                                                    <img src="../img/images/next-arrow.svg" alt="next" />
+                                                                                </div>
+                                                                            </div>
+                                                                            <div className="row">
+                                                                                <div className="col-lg-5"></div>
+                                                                                <div className="col-lg-6">
+                                                                                    <Swiper
+                                                                                        style={{
+                                                                                            "--swiper-navigation-color": "#fff",
+                                                                                            "--swiper-pagination-color": "#fff",
+                                                                                        }}
+                                                                                        loop={true}
+                                                                                        spaceBetween={10}
+                                                                                        navigation={true}
+                                                                                        thumbs={{ swiper: (thumbsSwiper?.$el && thumbsSwiper?.slidesPerView) ? thumbsSwiper : null }}
+                                                                                        modules={[FreeMode, Navigation, Thumbs]}
+                                                                                        className="mySwiper2 pe-lg-2"
+                                                                                    >
+                                                                                        {
+                                                                                            product.product_images.map((imageProduct, index) =>
+                                                                                                <SwiperSlide key={index}>
+                                                                                                    <div className="ratio product-ratio">
+                                                                                                        <img className="pb-4" src={imageProduct.image} alt="product" />
+                                                                                                    </div>
+                                                                                                </SwiperSlide>
+                                                                                            )
+                                                                                        }
+                                                                                    </Swiper>
+                                                                                    <div className="justify-content-center">
+                                                                                        <Swiper
+                                                                                            onSwiper={setThumbsSwiper}
+                                                                                            spaceBetween={1}
+                                                                                            slidesPerView={4}
+                                                                                            freeMode={true}
+                                                                                            watchSlidesProgress={true}
+                                                                                            modules={[FreeMode, Navigation, Thumbs]}
+                                                                                            className="mySwiper4"
+                                                                                        >
+                                                                                            {
+                                                                                                product.product_images.map((productColor, index) =>
+                                                                                                    <SwiperSlide key={index}>
+                                                                                                        <div className="d-flex justify-content-center ">
+                                                                                                            <div className=" " style={{ color: productColor.color, backgroundColor: productColor.color, width: '30px', height: '30px', borderRadius: '6px' }}></div>
+                                                                                                        </div>
+                                                                                                    </SwiperSlide>
+                                                                                                )
+                                                                                            }
+                                                                                        </Swiper>
+                                                                                    </div>
+                                                                            </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div className="col-lg-6 pt-lg-0 pt-5  justify-content-lg-start justify-content-center text-lg-start text-center">
+                                                                        <div className="row product justify-content-md-center">
+                                                                            <div className="col-lg-9 col-md-9">
+                                                                                <div className="ms-lg-5 ms-2">
+                                                                                    <div className="pb-5 ">
+                                                                                        <div className="logo-product">
+                                                                                            <img src={product.logo} alt="brand" />
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div className="d-flex justify-content-lg-start justify-content-center">
+                                                                                        <div className="me-3">
+                                                                                            <Link href={product.website_url}>
+                                                                                                <a target="_blank" rel="noreferrer">
+                                                                                                    <button className="button blue-button visit-mobile">{product.website_button}</button>
+                                                                                                </a>
+                                                                                            </Link>
+                                                                                        </div>
+                                                                                        <button className="button youtube-button" onClick={() => setYoutubePopup(product)}>{product.product_button}</button>
+                                                                                    </div>
+                                                                                    <p className="pt-5">{product.description}</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </SwiperSlide>
+                                                        </div>
+                                                    )
+                                                }
+                                            </Swiper>
                                         </div>
-                                        <Swiper
-                                            modules={[Navigation]}
-                                            navigation={{
-                                                nextEl: '.swiper-button-next',
-                                                prevEl: '.swiper-button-prev'
-                                            }}
-                                            className="products-swiper">
-                                            {
-                                                productsItems.products.map((product, index) =>
-                                                    <div key={index}>
-                                                        <SwiperSlide >
-                                                            <div className="row align-items-center">
-                                                                <div className="col-lg-5 ">
-                                                                    <div className="product-bg position-relative py-5">
-                                                                        <div className=" justify-content-end d-flex">
-                                                                            <div className="swiper-button-prev fix-arrow-mobile-prev">
-                                                                                <img src="../img/images/prev-arrow.svg" alt="prev" />
-                                                                            </div>
-                                                                            <div className="swiper-button-next fix-arrow-mobile-next">
-                                                                                <img src="../img/images/next-arrow.svg" alt="next" />
-                                                                            </div>
-                                                                        </div>
-                                                                        <div className="row">
-                                                                            <div className="col-lg-6"></div>
-                                                                            <div className="col-lg-6">
-                                                                                <Swiper
-                                                                                    style={{
-                                                                                        "--swiper-navigation-color": "#fff",
-                                                                                        "--swiper-pagination-color": "#fff",
-                                                                                    }}
-                                                                                    loop={true}
-                                                                                    spaceBetween={10}
-                                                                                    navigation={true}
-                                                                                    thumbs={{ swiper: (thumbsSwiper?.$el && thumbsSwiper?.slidesPerView) ? thumbsSwiper : null }}
-                                                                                    modules={[FreeMode, Navigation, Thumbs]}
-                                                                                    className="mySwiper2 pe-lg-2"
-                                                                                >
-                                                                                    {
-                                                                                        product.product_images.map((imageProduct, index) =>
-                                                                                            <SwiperSlide key={index}>
-                                                                                                <div className="ratio product-ratio">
-                                                                                                    <img className="pb-4" src={imageProduct.image} alt="product" />
-                                                                                                </div>
-                                                                                            </SwiperSlide>
-                                                                                        )
-                                                                                    }
-                                                                                </Swiper>
-
-                                                                                <Swiper
-                                                                                    onSwiper={setThumbsSwiper}
-                                                                                    spaceBetween={10}
-                                                                                    slidesPerView={4}
-                                                                                    freeMode={true}
-                                                                                    watchSlidesProgress={true}
-                                                                                    modules={[FreeMode, Navigation, Thumbs]}
-                                                                                    className="mySwiper"
-                                                                                >
-                                                                                    {
-                                                                                        product.product_images.map((productColor, index) =>
-                                                                                            <SwiperSlide key={index}>
-                                                                                                <div className="d-flex justify-content-center me-lg-3">
-                                                                                                    <div className=" " style={{ color: productColor.color, backgroundColor: productColor.color, width: '30px', height: '30px', borderRadius: '6px' }}></div>
-                                                                                                </div>
-                                                                                            </SwiperSlide>
-                                                                                        )
-                                                                                    }
-                                                                                </Swiper>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="col-lg-6 pt-lg-0 pt-5  justify-content-lg-start justify-content-center text-lg-start text-center">
-                                                                    <div className="row product justify-content-md-center">
-                                                                        <div className="col-lg-9 col-md-9">
-                                                                            <div className="ms-lg-5 ms-2">
-                                                                                <div className=" ">
-                                                                                    <div className="logo-product">
-                                                                                        <img src={product.logo} alt="brand" />
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div className="d-flex justify-content-lg-start justify-content-center">
-                                                                                    <div className="me-3">
-                                                                                        <Link href={product.website_url}>
-                                                                                            <a target="_blank" rel="noreferrer">
-                                                                                                <button className="button blue-button visit-mobile">{product.website_button}</button>
-                                                                                            </a>
-                                                                                        </Link>
-                                                                                    </div>
-                                                                                    <button className="button youtube-button" onClick={() => setYoutubePopup(product)}>{product.product_button}</button>
-                                                                                </div>
-                                                                                <p className="pt-5">{product.description}</p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </SwiperSlide>
-                                                    </div>
-                                                )
-                                            }
-                                        </Swiper>
                                     </div>
-                                </div>
                             )
                         }
                         {
@@ -270,5 +272,6 @@ export async function getStaticProps() {
         props: {
             productsData: productsData.data,
         },
+        revalidate: 10,
     };
 }

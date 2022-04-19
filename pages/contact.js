@@ -57,16 +57,15 @@ export default function Contact(props) {
 
     const submitForm = (e) => {
         e.preventDefault();
-        setLoadingForm(true);
+        setLoadingForm(true); 
         setErrorMessages(null);
-        axios
-            .post('contact', {
-                'name': name,
-                'phone_number': phoneNumber,
-                'email': email,
-                'location': location?.label,
-                'message': message,
-            })
+        axios.post('contact', {
+            'name': name,
+            'phone_number': phoneNumber,
+            'email': email,
+            'location': location?.label,
+            'message': message,
+        })
             .then(r => {
                 setName('')
                 setPhoneNumber('')
@@ -76,9 +75,9 @@ export default function Contact(props) {
                 setErrorPopupOpen([]);
                 setErrorPopupOpen(false)
                 setSuccessPopupOpen(true)
-                // setTimeout(() => {
-                //     setSuccessPopupOpen('');
-                // }, 3000);
+                setTimeout(() => {
+                    setLoadingForm('');
+                }, 3000);
             })
             .catch(r => {
                 setErrorPopupOpen(true)
@@ -180,7 +179,7 @@ export default function Contact(props) {
                                                     </div>
                                                     <div className="col-12" animate="left">
                                                         <div className="mb-4 text-start">
-                                                            <textarea rows="4" className="booking-form w-100" placeholder={contactSettings.message_placeholder} value={message} onChange={e => setMessage(e.target.value)} />
+                                                            <textarea className="booking-form w-100" placeholder={contactSettings.message_placeholder} value={message} onChange={e => setMessage(e.target.value)} />
                                                         </div>
                                                     </div>
                                                     <div className="text-center">
@@ -327,5 +326,6 @@ export async function getStaticProps() {
         props: {
             contactData: contactData.data,
         },
+        revalidate: 10,
     };
 }
