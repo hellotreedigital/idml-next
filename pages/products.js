@@ -14,6 +14,7 @@ import "swiper/css";
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import GlobalState from "../GlobalState";
+import SeoTags from "../components/SeoTags";
 
 export default function Products(props) {
 
@@ -51,6 +52,13 @@ export default function Products(props) {
 
     return loading ? null : (
         <Layout activePage="products" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+
+            <SeoTags
+                title={props.productsData.page_items.seo.title}
+                description={props.productsData.page_items.seo.description}
+                image={props.productsData.page_items.seo.image}
+            />
+
             {
                 productsSetting ?
                     <Banner
@@ -100,8 +108,8 @@ export default function Products(props) {
                                             productsCategories.map((productCategory, index) =>
                                                 <SwiperSlide key={index} >
                                                     <div className="text-center px-3" onClick={() => logoClick(productCategory)}>
-                                                        <div className={"ratio ratio-1x1 marhaba" + (productCategory === productsItems ? " active" : " ")}>
-                                                            <img className="brand-image"  src={productCategory.logo} alt="brand" />
+                                                        <div className={"ratio ratio-1x1 category-circle" + (productCategory === productsItems ? " active" : " ")}>
+                                                            <img className="brand-image" src={productCategory.logo} alt="brand" />
                                                         </div>
                                                     </div>
                                                 </SwiperSlide>
@@ -193,7 +201,7 @@ export default function Products(props) {
                                                                                             }
                                                                                         </Swiper>
                                                                                     </div>
-                                                                            </div>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>

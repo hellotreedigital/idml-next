@@ -972,6 +972,11 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
     font-size: 1.125rem;
     height: 80px;
     padding: 11px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
 
 .think-blue-bg {
@@ -1537,10 +1542,15 @@ div.part-3:before {
     object-fit: scale-down;
 }
 
-.marhaba:hover, .marhaba.active {
-    -webkit-box-shadow: inset 0px 0px 10px 9px rgba(0, 0, 0, .15);
-    -moz-box-shadow: inset 0px 0px 10px 9px rgba(0, 0, 0, .15);
-    box-shadow: inset 0px 0px 10px 9px rgba(0, 0, 0, .15);
+.category-circle {
+    transition: all 0.5s;
+}
+
+.category-circle:hover,
+.category-circle.active {
+    -webkit-box-shadow: inset 0px 0px 10px 9px rgba(0, 0, 0, 5%);
+    -moz-box-shadow: inset 0px 0px 10px 9px rgba(0, 0, 0, 5%);
+    box-shadow: inset 0px 0px 10px 9px rgba(0, 0, 0, 5%);
     border-radius: 100px;
 }
 
@@ -2308,6 +2318,10 @@ div.part-3:before {
     color: #14334A !important;
 }
 
+.PhoneInputCountryIcon {
+    padding-left: 5px;
+}
+
 .PhoneInputCountry {
     border: 1px solid #CCD7E0;
     outline: none;
@@ -2401,8 +2415,11 @@ div.part-3:before {
 
 .booking-bg {
     background-color: #537289;
-    border-top-left-radius: 3.125rem;
-    border-bottom-right-radius: 3.125rem;
+    border-radius: 3.125rem;
+}
+
+.contact-bg img {
+    border-radius: 3.125rem;
 }
 
 .booking-form {
@@ -3089,10 +3106,6 @@ div.four:before {
 
     .bg-color h3 {
         font-size: 1.0625rem;
-    }
-
-    .bg-color p {
-        font-size: 1rem;
     }
 
     .team-position h5,
@@ -4067,14 +4080,31 @@ div.four:before {
     }
 }
 
+[animate="lala1"].show {
+    transition: transform 1s 0.5s, opacity 1s 0.5s;
+    opacity: 0;
+    background-color: red;
+}
 
-/* Animation */
+[animate="lala1"].show {
+    transition: transform 10s 5s, opacity 1s 0.5s;
+    opacity: 0;
+    background-color: green;
+}
+
+[animate="lala3"].show {
+    transition: transform 1s 0.5s, opacity 1s 0.5s;
+    opacity: 0;
+    background-color: red;
+}
+
 /* Animation */
 
 [animate] {
     transition: transform 1s 0.5s, opacity 1s 0.5s;
     opacity: 0;
 }
+
 
 [animate].show {
     opacity: 1;
@@ -5171,4 +5201,49 @@ div.four:before {
     font-weight: 100;
     font-style: italic;
     font-display: swap;
+}
+
+/* loader */
+
+.loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}
+
+.lds-ripple {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-ripple div {
+    position: absolute;
+    border: 4px solid #14334A;
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+}
+
+@keyframes lds-ripple {
+    0% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+
+    100% {
+        top: 0px;
+        left: 0px;
+        width: 72px;
+        height: 72px;
+        opacity: 0;
+    }
 }

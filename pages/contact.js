@@ -8,6 +8,7 @@ import PhoneInput from 'react-phone-number-input';
 import Select from 'react-select'
 import axios from "axios";
 import GlobalState from "../GlobalState";
+import SeoTags from "../components/SeoTags";
 
 
 const options = [
@@ -52,12 +53,11 @@ export default function Contact(props) {
         setCountriesOptions(newCountries);
 
         triggerScroll();
-
     }, [countriesList, contactSettings]);
 
     const submitForm = (e) => {
         e.preventDefault();
-        setLoadingForm(true); 
+        setLoadingForm(true);
         setErrorMessages(null);
         axios.post('contact', {
             'name': name,
@@ -90,6 +90,13 @@ export default function Contact(props) {
 
     return (
         <Layout activePage="contact" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+
+            <SeoTags
+                title={props.contactData.page_items.seo.title}
+                description={props.contactData.page_items.seo.description}
+                image={props.contactData.page_items.seo.image}
+            />
+
             {
                 contactSettings ?
                     <>
@@ -106,9 +113,9 @@ export default function Contact(props) {
                                     {
                                         contactOffices ?
                                             contactOffices.map((contactOffice, index) =>
-                                                <div className="col-lg-6 col-md-12 d-flex justify-content-center mb-4  " key={index}>
+                                                <div className="col-lg-6 col-md-12 justify-content-center mb-4 " key={index}>
                                                     <div className="row mb-4 mb-lg-0">
-                                                        <div className="col-lg-6 col-md-6 justify-content-center pb-md-0 pb-3">
+                                                        <div className="col-lg-6 col-md-6 justify-content-center pb-md-0 pb-3 ">
                                                             <iframe title="map" className="maps" src={contactOffice.map_url} loading="lazy" />
                                                         </div>
 

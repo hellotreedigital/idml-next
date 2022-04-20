@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
+import SeoTags from "../../../components/SeoTags";
 
 export default function News(props) {
     SwiperCore.use([Autoplay])
@@ -35,6 +36,13 @@ export default function News(props) {
 
     return loading ? null : (
         <Layout activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+
+            <SeoTags
+                title={props.insightsNewsSingleData.page_items.single_news.seo_title}
+                description={props.insightsNewsSingleData.page_items.single_news.seo_description}
+                image={props.insightsNewsSingleData.page_items.single_news.seo_image}
+            />
+
             <SideButton
                 title={menuItems['book-a-consultation']}
             />

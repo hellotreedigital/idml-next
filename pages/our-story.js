@@ -1,6 +1,7 @@
 import Layout from "../components/layout";
 import SideButton from "../components/SideButton";
 import Banner from "../components/Banner";
+import SeoTags from "../components/SeoTags";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import VisibilitySensor from 'react-visibility-sensor';
@@ -43,6 +44,12 @@ export default function OurStory(props) {
     return (
 
         <Layout fixedNav={false} activePage="our-story" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+            <SeoTags
+                title={props.ourStoryData.page_items.seo.title}
+                description={props.ourStoryData.page_items.seo.description}
+                image={props.ourStoryData.page_items.seo.image}
+            />
+
             {
                 storySettings ?
                     <>
@@ -172,7 +179,7 @@ export default function OurStory(props) {
                             </div>
                         </div>
 
-                        <div className={(pillarsList.length > 4) ? " add-padd " : " py-lg-5"}>
+                        <div className={(pillarsList.length > 4) ? " add-padd " : " py-lg-5 mb-lg-5"}>
                             <div className="pb-lg-5">
                                 <div className="pb-5">
                                     <div className="container pillars">

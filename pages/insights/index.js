@@ -11,6 +11,7 @@ import { Pagination } from "swiper";
 import GlobalState from "../../GlobalState";
 import axios from "axios";
 import Link from "next/link";
+import SeoTags from "../../components/SeoTags";
 
 export default function Insights(props) {
 
@@ -34,6 +35,13 @@ export default function Insights(props) {
 
     return loading ? null : (
         <Layout activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+
+            <SeoTags
+                title={props.insightsData.page_items.seo.title}
+                description={props.insightsData.page_items.seo.description}
+                image={props.insightsData.page_items.seo.image}
+            />
+
             {
                 insights ?
                     <>

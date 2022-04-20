@@ -5,6 +5,7 @@ import GlobalState from "../../../GlobalState";
 import Layout from "../../../components/layout";
 import NewsSection from "../../../components/NewsSection";
 import SideButton from "../../../components/SideButton";
+import SeoTags from "../../../components/SeoTags";
 
 export default function News(props) {
 
@@ -54,6 +55,13 @@ export default function News(props) {
 
     return loading ? null : (
         <Layout activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+           
+           <SeoTags
+                title={props.insightsNewsData.page_items.seo.title}
+                description={props.insightsNewsData.page_items.seo.description}
+                image={props.insightsNewsData.page_items.seo.image}
+            />
+           
             <SideButton
                 title={menuItems['book-a-consultation']}
             />
@@ -133,7 +141,12 @@ export default function News(props) {
                         </div>
                     </div>
                     :
-                    null
+                    <div className='loader'>
+                    <div class="lds-ripple">
+                      <div></div>
+                      <div></div>
+                    </div>
+                  </div>
             }
 
             {

@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import GlobalState from "../../../GlobalState";
 import Layout from "../../../components/layout";
 import SideButton from "../../../components/SideButton";
+import SeoTags from "../../../components/SeoTags";
 
 export default function CaseStudies(props) {
 
@@ -23,11 +24,15 @@ export default function CaseStudies(props) {
         setLoading(false);
     }, [loading]);
 
-
-
-
     return loading ? null : (
         <Layout activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+           
+           <SeoTags
+                title={props.insightsCaseStudiesSingleData.page_items.single_case_study.seo_title}
+                description={props.insightsCaseStudiesSingleData.page_items.single_case_study.seo_description}
+                image={props.insightsCaseStudiesSingleData.page_items.single_case_study.seo_image}
+            />
+           
             <SideButton
                 title={menuItems['book-a-consultation']}
             />

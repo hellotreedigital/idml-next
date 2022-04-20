@@ -3,6 +3,7 @@ import SideButton from "../../../components/SideButton";
 import { useContext, useEffect } from "react";
 import axios from "axios";
 import GlobalState from "../../../GlobalState";
+import SeoTags from "../../../components/SeoTags";
 
 export default function Services(props) {
 
@@ -27,6 +28,13 @@ export default function Services(props) {
     return (
         <div>
             <Layout fixedNav={true} activePage="services" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+
+                <SeoTags
+                    title={props.serviceCategoryData.page_items.single_category.seo_title}
+                    description={props.serviceCategoryData.page_items.single_category.seo_description}
+                    image={props.serviceCategoryData.page_items.single_category.seo_image}
+                />
+
                 <SideButton
                     title={menuItems['book-a-consultation']}
                 />
@@ -138,7 +146,6 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
     const { categorySlug } = context.params;
     const serviceCategoryData = await axios.get("/services/" + categorySlug);
-
     return {
         props: {
             serviceCategoryData: serviceCategoryData.data,

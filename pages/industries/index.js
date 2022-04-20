@@ -17,6 +17,7 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import GlobalState from "../../GlobalState";
 import { useRouter } from 'next/router'
+import SeoTags from "../../components/SeoTags";
 
 export default function Industries(props) {
 
@@ -101,6 +102,13 @@ export default function Industries(props) {
 
     return loading ? null : (
         <Layout activePage="industries" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+
+            <SeoTags
+                title={props.industriesData.page_items.seo.title}
+                description={props.industriesData.page_items.seo.description}
+                image={props.industriesData.page_items.seo.image}
+            />
+
             {
                 industriesSettings && (
                     <>
@@ -238,8 +246,8 @@ export default function Industries(props) {
                                         testimonialsList && (
                                             testimonialsList.map((testimonial, index) =>
                                                 <SwiperSlide key={index}>
-                                                    <div className="blue-card h-100 position-relative p-4 mt-2">
-                                                        <div className="text-card h-100">
+                                                    <div className="blue-card position-relative p-4 mt-2">
+                                                        <div className="text-card">
                                                             <div className="text-center justify-content-center d-grid">
                                                                 <div className="team-image-card ">
                                                                     <img src={testimonial.image} alt="ceo" />

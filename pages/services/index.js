@@ -4,6 +4,7 @@ import Layout from "../../components/layout";
 import SideButton from "../../components/SideButton";
 import BluePill from "../../components/BluePill";
 import GlobalState from "../../GlobalState";
+import SeoTags from "../../components/SeoTags";
 import axios from "axios";
 import Link from "next/link";
 
@@ -27,7 +28,11 @@ export default function Services(props) {
 
     return (
         <Layout activePage="services" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
-
+            <SeoTags
+                title={props.servicesData.page_items.seo.title}
+                description={props.servicesData.page_items.seo.description}
+                image={props.servicesData.page_items.seo.image}
+            />
             {
                 serviceSetting ?
                     <Banner
@@ -49,7 +54,7 @@ export default function Services(props) {
                         {
                             serviceCategories ?
                                 serviceCategories.map((serviceCategory, index) =>
-                                    <div className="col-lg-3 col-md-6 col-sm-6 pb-5" animate=""  key={index}>
+                                    <div className="col-lg-3 col-md-6 col-sm-6 pb-5" animate="" key={index}>
                                         <Link href={"/services/" + serviceCategory.slug}>
                                             <a>
                                                 <BluePill title={serviceCategory.title} icon={serviceCategory.icon} readMore={serviceSetting.read_more} />

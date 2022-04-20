@@ -2,6 +2,7 @@ import Layout from "../components/layout";
 import SideButton from "../components/SideButton";
 import NewsSection from "../components/NewsSection";
 import Section from "../components/Section";
+import SeoTags from "../components/SeoTags";
 import Link from "next/link";
 import axios from "axios";
 import Typist from 'react-typist';
@@ -48,6 +49,13 @@ export default function Home(props) {
 
   return loading ? null : (
     <Layout activePage="home" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+
+      <SeoTags
+        title={props.homeData.page_items.seo.title}
+        description={props.homeData.page_items.seo.description}
+        image={props.homeData.page_items.seo.image}
+      />
+
       <SideButton
         title={menuItems['book-a-consultation']}
       />
@@ -172,7 +180,7 @@ export default function Home(props) {
             </div>
             <div className="container py-5">
               <div className="row justify-content-center text-center ">
-                <div className="col-lg-8">
+                <div className="col-lg-8" >
                   <h2 className="pb-4 mb-0" >{homeSettings.what_we_do_title}</h2>
                   <p className="home-paragraph mb-0">{homeSettings.what_we_do_text}</p>
                 </div>
@@ -188,7 +196,7 @@ export default function Home(props) {
               <div className="row justify-content-center ">
                 {homeProcess ?
                   homeProcess.map((process, index) =>
-                    <div className="col-lg-4 col-md-6 col-12 pb-3" animate="" key={index}>
+                    <div className="col-lg-4 col-md-6 col-12 pb-3 " animate={(index % 3 === 0 ? " lala1" : (index % 2 === 0 ? " lala2" : " lala3"))}   key={index}>
                       <div className="bg-color button blue-button-hover shadow">
                         <div className="pt-3">
                           <div style={{ textTransform: 'uppercase' }}>{process.title}</div>
@@ -322,38 +330,38 @@ export default function Home(props) {
 
           {
             homeSettings ?
-            industries.length < 0 ? null :
-              <div className="container pt-5">
-                <div className="row justify-content-center text-center ">
-                  <div className="col-lg-8 pb-4" >
-                    <h2 className="mb-0">{homeSettings.industries_title}</h2>
+              industries.length === 0 ? null :
+                <div className="container pt-5">
+                  <div className="row justify-content-center text-center ">
+                    <div className="col-lg-8 pb-4" >
+                      <h2 className="mb-0">{homeSettings.industries_title}</h2>
+                    </div>
+                  </div>
+                  <div className="row justify-content-center ">
+                    {industries ?
+                      industries.map((industry, index) =>
+                        <div className="col-lg-4 col-md-6 col-12 pb-5" animate="" key={index}>
+                          <Link href={"/industries/" + industry.slug}>
+                            <a>
+                              <div className="button blue-ciel-button shadow">
+                                {industry.title}
+                              </div>
+                            </a>
+                          </Link>
+                        </div>
+                      )
+                      :
+                      null
+                    }
                   </div>
                 </div>
-                <div className="row justify-content-center ">
-                  {industries ?
-                    industries.map((industry, index) =>
-                      <div className="col-lg-4 col-md-6 col-12 pb-5" animate="" key={index}>
-                        <Link href={"/industries/" + industry.slug}>
-                          <a>
-                            <div className="button blue-ciel-button shadow">
-                              {industry.title}
-                            </div>
-                          </a>
-                        </Link>
-                      </div>
-                    )
-                    :
-                    null
-                  }
-                </div>
-              </div>
               :
               null
           }
 
           {
             homeSettings ?
-              news.length < 0 ? null :
+              news.length === 0 ? null :
                 <div className="container pt-5">
                   <div className="row justify-content-center text-center ">
                     <div className="col-lg-8 pb-4">

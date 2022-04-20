@@ -4,6 +4,7 @@ import Section from "../../../../components/Section";
 import SideButton from "../../../../components/SideButton";
 import axios from "axios";
 import GlobalState from "../../../../GlobalState";
+import SeoTags from "../../../../components/SeoTags";
 
 export default function SingleService(props) {
 
@@ -26,6 +27,13 @@ export default function SingleService(props) {
 
     return (
         <Layout fixedNav={true} activePage="services" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+
+            <SeoTags
+                title={props.serviceCategoryData.page_items.single_service.seo_title}
+                description={props.serviceCategoryData.page_items.single_service.seo_description}
+                image={props.serviceCategoryData.page_items.single_service.seo_image}
+            />
+
             <SideButton
                 title={menuItems['book-a-consultation']}
             />
@@ -87,7 +95,7 @@ export default function SingleService(props) {
                             </div>
                         </div>
 
-                        <div className=""  animate="">
+                        <div className="" animate="">
                             <div className="py-lg-5">
                                 <Section
                                     title={serviceContact.contact_component_title}

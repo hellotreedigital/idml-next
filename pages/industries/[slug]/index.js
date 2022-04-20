@@ -3,6 +3,7 @@ import GlobalState from "../../../GlobalState";
 import Layout from "../../../components/layout";
 import SideButton from "../../../components/SideButton";
 import axios from "axios";
+import SeoTags from "../../../components/SeoTags";
 
 export default function Industries(props) {
 
@@ -36,6 +37,13 @@ export default function Industries(props) {
 
     return (
         <Layout fixedNav={true} activePage="industries" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+           
+           <SeoTags
+                title={props.industriesData.page_items.single_industry.seo_title}
+                description={props.industriesData.page_items.single_industry.seo_description}
+                image={props.industriesData.page_items.single_industry.seo_image}
+            />
+           
             <SideButton
                 title={menuItems['book-a-consultation']}
             />

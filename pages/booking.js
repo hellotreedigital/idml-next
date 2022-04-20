@@ -6,13 +6,14 @@ import PhoneInput from 'react-phone-number-input';
 import Select from 'react-select';
 import axios from "axios";
 import GlobalState from "../GlobalState";
+import SeoTags from "../components/SeoTags";
 
 export default function Booking(props) {
 
-    const { triggerScroll} = useContext(GlobalState);
+    const { triggerScroll } = useContext(GlobalState);
     const bookingSettings = props.bookingData.page_items.book_consultation_settings;
     const countriesList = props.bookingData.page_items.countries_list;
-    
+
     const menuItems = props.bookingData.fixed_titles;
     const socialMedia = props.bookingData.social_media;
     const footerLogos = props.bookingData.footer_logos;
@@ -44,7 +45,7 @@ export default function Booking(props) {
         setCountriesOptions(newCountries);
         triggerScroll();
         setLoading(false);
-    }, [countriesList, bookingSettings, loading]); 
+    }, [countriesList, bookingSettings, loading]);
 
     const submitForm = (e) => {
         e.preventDefault();
@@ -79,7 +80,13 @@ export default function Booking(props) {
 
 
     return loading ? null : (
-        <Layout fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons}  serviceTitles={serviceTitles}  industriesTitles={industriesTitles}>
+        <Layout fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+            <SeoTags
+                title={props.bookingData.page_items.seo.title}
+                description={props.bookingData.page_items.seo.description}
+                image={props.bookingData.page_items.seo.image}
+            />
+
             {
                 bookingSettings ?
                     <div className="min-height-js">
@@ -125,7 +132,7 @@ export default function Booking(props) {
                                             </div>
                                             <div className="col-12"  >
                                                 <div className="mb-4">
-                                                    <textarea rows="4" className="contact-form w-100" placeholder={bookingSettings.message_placeholder} value={message} onChange={e => setMessage(e.target.value)} />
+                                                    <textarea className="contact-form w-100" placeholder={bookingSettings.message_placeholder} value={message} onChange={e => setMessage(e.target.value)} />
                                                 </div>
                                             </div>
                                             <div className="text-center" >

@@ -349,7 +349,7 @@ export default function Layout(props) {
                                                     props.socialMedia ?
                                                         props.socialMedia.map((social, index) =>
                                                             <a target="_blank" rel="noreferrer" href={social.url} key={index}>
-                                                                <img className="social-icon invert me-3" src={social.icon} alt="icon" />
+                                                                <img className="social-icon  me-3" src={social.mobile_icon} alt="icon" />
                                                             </a>
                                                         )
                                                         :

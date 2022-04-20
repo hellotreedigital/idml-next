@@ -61,7 +61,7 @@ function MyApp({ Component, pageProps }) {
   function calcMinHeight() {
     document.querySelector('.min-height-js').style.minHeight = (window.innerHeight - document.querySelector('.footer').clientHeight) + "px";
   }
- 
+
   useEffect(() => {
     window.addEventListener('scroll', triggerScroll);
     window.addEventListener("scroll", triggerScroll);
@@ -84,10 +84,8 @@ function MyApp({ Component, pageProps }) {
     <GlobalState.Provider value={{ triggerScroll, calcMinHeight }}>
       {
         loading ? (
-          <div className='loader-forms'>
-            <div className="home-loader lds-ring">
-              <div></div>
-              <div></div>
+          <div className='loader'>
+            <div class="lds-ripple">
               <div></div>
               <div></div>
             </div>
