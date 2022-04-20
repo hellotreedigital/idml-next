@@ -10,7 +10,7 @@ import SeoTags from "../components/SeoTags";
 
 export default function Booking(props) {
 
-    const { triggerScroll } = useContext(GlobalState);
+    const { triggerScroll, calcMinHeight } = useContext(GlobalState);
     const bookingSettings = props.bookingData.page_items.book_consultation_settings;
     const countriesList = props.bookingData.page_items.countries_list;
 
@@ -44,6 +44,7 @@ export default function Booking(props) {
         });
         setCountriesOptions(newCountries);
         triggerScroll();
+        // calcMinHeight();
         setLoading(false);
     }, [countriesList, bookingSettings, loading]);
 

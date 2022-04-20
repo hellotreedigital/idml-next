@@ -90,7 +90,7 @@ export default function Insights(props) {
 
                                         // when window width is >= 767.98px
                                         767.98: {
-                                            slidesPerView: 3,
+                                            slidesPerView: 2.5,
                                             pagination: 'true',
                                         },
                                         575.98: {
@@ -166,7 +166,7 @@ export default function Insights(props) {
 
                                         // when window width is >= 767.98px
                                         767.98: {
-                                            slidesPerView: 3,
+                                            slidesPerView: 2.5,
                                             pagination: 'true',
                                         },
                                         575.98: {

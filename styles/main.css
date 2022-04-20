@@ -26,7 +26,7 @@ body {
 }
 
 .swiper-wrapper {
-    padding-bottom: 20px !important;
+    padding-bottom: 70px !important;
 }
 
 .swiper-pointer-events {
@@ -4078,24 +4078,6 @@ div.four:before {
     .modal-window.success-booking {
         width: 86% !important;
     }
-}
-
-[animate="lala1"].show {
-    transition: transform 1s 0.5s, opacity 1s 0.5s;
-    opacity: 0;
-    background-color: red;
-}
-
-[animate="lala1"].show {
-    transition: transform 10s 5s, opacity 1s 0.5s;
-    opacity: 0;
-    background-color: green;
-}
-
-[animate="lala3"].show {
-    transition: transform 1s 0.5s, opacity 1s 0.5s;
-    opacity: 0;
-    background-color: red;
 }
 
 /* Animation */

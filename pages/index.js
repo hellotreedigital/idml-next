@@ -196,7 +196,7 @@ export default function Home(props) {
               <div className="row justify-content-center ">
                 {homeProcess ?
                   homeProcess.map((process, index) =>
-                    <div className="col-lg-4 col-md-6 col-12 pb-3 " animate={(index % 3 === 0 ? " lala1" : (index % 2 === 0 ? " lala2" : " lala3"))}   key={index}>
+                    <div className="col-lg-4 col-md-6 col-12 pb-3 " animate=""   key={index}>
                       <div className="bg-color button blue-button-hover shadow">
                         <div className="pt-3">
                           <div style={{ textTransform: 'uppercase' }}>{process.title}</div>
