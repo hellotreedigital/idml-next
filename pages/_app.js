@@ -49,6 +49,8 @@ function MyApp({ Component, pageProps }) {
     for (let i = 0; i < animatedElements.length; i++) {
       if (inViewport(animatedElements[i])) {
         animatedElements[i].classList.add('show');
+      } else {
+        animatedElements[i].classList.remove('show');
       }
     }
 
