@@ -16,10 +16,12 @@ import "swiper/css/pagination";
 // import required modules
 import { Pagination } from "swiper";
 import GlobalState from "../../GlobalState";
+import { useRouter } from 'next/router'
 
 export default function Industries(props) {
 
     SwiperCore.use([Autoplay])
+    const router = useRouter()
     const [ageVerificationPopup, setAgeVerificationPopup] = useState(null);
     const [filterId, setFilterId] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -42,7 +44,14 @@ export default function Industries(props) {
     const [currentFilter, setCurrentFilter] = useState();
 
     function ageVerificationClick(industry) {
-        setAgeVerificationPopup(industry)
+        let underAgePopup = localStorage.getItem('underAgePopup');
+        if (!underAgePopup) {
+            setAgeVerificationPopup(industry)
+            localStorage.setItem('underAgePopup', 1);
+        }
+        else {
+            router.push("/industries/" + industry.slug)
+        }
     }
 
     function clientClick(clientTag) {
@@ -73,8 +82,21 @@ export default function Industries(props) {
     }, [clientsTagsTitles]);
 
     useEffect(() => {
+
         triggerScroll();
         setLoading(false);
+    }, [loading]);
+
+    useEffect(() => {
+        if (window.location.href.includes('clients')) {
+            // window.scrollTo('clients')
+            // window.scrollTo(0, document.getElementById('clients').offsetTop)
+            const element = document.getElementById("clients")
+            if (element) {
+                window.scrollTo(0, element.offsetTop);
+                console.log(element.offsetTop)
+            }
+        }
     }, [loading]);
 
     return loading ? null : (
@@ -98,7 +120,7 @@ export default function Industries(props) {
                                         {
                                             allIndustries ?
                                                 allIndustries.map((industry, index) =>
-                                                    <div className="col-lg-4 col-md-6 col-sm-6 add-space" key={index}>
+                                                    <div className="col-lg-4 col-md-6 col-sm-6 add-space" animate="" key={index}>
                                                         <div className="blue-card h-100 position-relative p-4">
                                                             <div className="text-card">
                                                                 <div className="text-center justify-content-center d-grid">
@@ -111,11 +133,12 @@ export default function Industries(props) {
                                                                 <p className="my-3">{industry.small_text}</p>
                                                                 {
                                                                     industry.with_popup === 1 ?
+
                                                                         <div className="card-button " onClick={() => ageVerificationClick(industry)}>
                                                                             <div className="button white-button hover-effect add-padding shadow">{industriesSettings.read_more}</div>
                                                                         </div>
                                                                         :
-                                                                        <Link href={"industries/" + industry.slug}>
+                                                                        <Link href={"/industries/" + industry.slug}>
                                                                             <a>
                                                                                 <div className="card-button ">
                                                                                     <div className="button white-button hover-effect add-padding shadow">{industriesSettings.read_more}</div>
@@ -135,7 +158,7 @@ export default function Industries(props) {
                             </div>
                         </div>
 
-                        <div className="container py-lg-5 pb-5"  >
+                        <div className="container py-lg-5 pb-5" id="clients" >
                             <div className="row  justify-content-center d-flex text-center mb-4 gx-3">
                                 <h2 className="mb-4">{industriesSettings.clients_title}</h2>
                                 {
@@ -156,7 +179,7 @@ export default function Industries(props) {
                                         {
                                             clientsListFilter?.length > 0 ?
                                                 clientsListFilter.map((clientList, index) => (
-                                                    <div className="col-lg-2 col-md-3 col-sm-4 col-6 my-4" key={index}>
+                                                    <div className="col-lg-2 col-md-3 col-sm-4 col-6 my-4 " animate=" " key={index}>
                                                         <div className="circle-on-hover position-relative">
                                                             <div className="ratio ratio-1x1">
                                                                 <img className="brand-image-industry" src={clientList.full_path_logo} alt="brand" />
@@ -178,7 +201,7 @@ export default function Industries(props) {
                             </div>
                         </div>
 
-                        <div className="pb-lg-5">
+                        <div className="pb-lg-5" >
                             <div className="container py-lg-5 pb-5"  >
                                 <div className="row  justify-content-center d-flex text-center mb-4">
                                     <h2 className="mb-0">{industriesSettings.testimonials_title}</h2>
@@ -216,7 +239,7 @@ export default function Industries(props) {
                                             testimonialsList.map((testimonial, index) =>
                                                 <SwiperSlide key={index}>
                                                     <div className="blue-card h-100 position-relative p-4 mt-2">
-                                                        <div className="text-card">
+                                                        <div className="text-card h-100">
                                                             <div className="text-center justify-content-center d-grid">
                                                                 <div className="team-image-card ">
                                                                     <img src={testimonial.image} alt="ceo" />

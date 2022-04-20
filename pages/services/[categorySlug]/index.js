@@ -35,11 +35,11 @@ export default function Services(props) {
                         <div className="min-height-js pt-lg-5" >
                             <div className="pt-5">
                                 <div className="container pt-5" >
-                                    <div className="row align-items-center py-5">
+                                    <div className="row align-items-start py-5">
                                         <div className="col-xxl-auto col-lg-1 col-auto">
                                             <div className=" d-none d-sm-flex">
 
-                                                <div onClick={() => window.history.back()}  className="button back-button d-flex align-items-center shadow">
+                                                <div onClick={() => window.history.back()} className="button back-button d-flex align-items-center shadow">
                                                     <svg className="arrow-back" xmlns="http://www.w3.org/2000/svg" width="8.136" height="12.964" viewBox="0 0 8.136 12.964">
                                                         <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" strokeLinecap="round" strokeWidth="2" />
                                                     </svg>
@@ -48,7 +48,7 @@ export default function Services(props) {
 
                                             </div>
                                             <div className="d-block d-sm-none">
-                                                <button onClick={() => window.history.back()}  className="back-button-border">
+                                                <button onClick={() => window.history.back()} className="back-button-border">
                                                     <svg className="arrow-back " xmlns="http://www.w3.org/2000/svg" width="8.136" height="12.964" viewBox="0 0 8.136 12.964">
                                                         <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" strokeLinecap="round" strokeWidth="2" />
                                                     </svg>
@@ -62,13 +62,20 @@ export default function Services(props) {
                                                     <h2 className="mb-0 service-title-page">{singleCat?.title}</h2>
                                                 </div>
                                             </div>
+                                            <div className="pt-3 text-center services">
+                                                <p>{singleCat?.description}</p>
+                                            </div>
                                         </div>
                                         <div className="col-xxl-auto col-lg-1 col-auto"></div>
 
-                                        <div className="col-12 pt-4 justify-content-center text-center services">
+                                    </div>
+                                    {/* <div className="row pt-4">
+                                        <div className=" col-lg-1 col-2 "></div>
+                                        <div className="col  justify-content-center text-center services">
                                             <p>{singleCat?.description}</p>
                                         </div>
-                                    </div>
+                                        <div className="col-xxl-auto col-lg-1 col-auto"></div>
+                                    </div> */}
                                 </div>
                             </div>
 
@@ -77,7 +84,7 @@ export default function Services(props) {
                                     {
                                         categories ?
                                             categories.map((category, index) =>
-                                                <div className="col-lg-4 col-md-6 col-sm-6 pb-5" key={index}>
+                                                <div className="col-lg-4 col-md-6 col-sm-6 pb-5" animate="" key={index}>
                                                     <a href={"/services/" + singleCat?.slug + "/" + category.slug}>
                                                         <div className="service-section shadow position-relative">
                                                             <div className="ratio team-ratio">

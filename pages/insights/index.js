@@ -56,7 +56,11 @@ export default function Insights(props) {
 
                                 <Swiper
                                     pagination={true}
-                                    autoplay={{ delay: 3000 }}
+                                    autoplay={{
+                                        delay: 3000,
+                                        disableOnInteraction: false,
+                                        pauseOnMouseEnter: true,
+                                    }}
                                     modules={[Pagination]}
                                     spaceBetween={10}
                                     centeredSlides={true}
@@ -128,7 +132,11 @@ export default function Insights(props) {
 
                                 <Swiper
                                     pagination={true}
-                                    autoplay={{ delay: 3000 }}
+                                    autoplay={{
+                                        delay: 3000,
+                                        disableOnInteraction: false,
+                                        pauseOnMouseEnter: true,
+                                    }}
                                     modules={[Pagination]}
                                     spaceBetween={10}
                                     centeredSlides={true}

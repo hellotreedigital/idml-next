@@ -70,7 +70,7 @@ export default function OurStory(props) {
                                                         <h4>{story.last_text}</h4>
                                                     </div>
                                                 </div>
-                                                <div className="col-xxl-4 col-lg-5 col-md-5 col-sm-5 pt-sm-0">
+                                                <div className="col-xxl-4 col-lg-5 col-md-5 col-sm-5 pt-sm-0" animate="">
                                                     <div className="ratio story-image">
                                                         <img src={story.image} alt="story" />
                                                     </div>
@@ -172,7 +172,7 @@ export default function OurStory(props) {
                             </div>
                         </div>
 
-                        <div className="py-lg-5">
+                        <div className={(pillarsList.length > 4) ? " add-padd " : " py-lg-5"}>
                             <div className="pb-lg-5">
                                 <div className="pb-5">
                                     <div className="container pillars">
@@ -197,14 +197,14 @@ export default function OurStory(props) {
                                                     {
                                                         pillarsList ?
                                                             pillarsList.map((pillar, index) =>
-                                                                <div className="col-lg-3 col-md-6 col-sm-6 col-11 pt-lg-0 pt-4" key={index}>
+                                                                <div className="col-lg-3 col-md-6 col-sm-6 col-11 pt-lg-0 pb-lg-2 pt-4" key={index}>
                                                                     <div className="bg-color py-4 text-center p-2">
                                                                         <h3>{pillar.title}</h3>
                                                                         <div className="justify-content-center d-flex">
                                                                             <div className="hr-line"></div>
                                                                         </div>
                                                                         <div className="onhover-text pt-3">
-                                                                            <p className="mb-0 mx-lg-3">{pillar.description}</p>
+                                                                            <p className="mb-0 ">{pillar.description}</p>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -235,13 +235,14 @@ export default function OurStory(props) {
                                                 <div className="position-relative history" key={index}>
                                                     <div className={(index % 2 === 0 ? "first" : " second ")}><span></span></div>
                                                     <div className={"row pb-4   " + (index % 2 === 0 ? " d-flex justify-content-start " : " d-flex justify-content-end ")}>
-                                                        <div className={(index % 2 === 0 ? " col-lg-5 col-md-5 col-sm-5 col-12 fix-mobile-position d-flex align-items-center flex-sm-row flex-row-reverse " : " col-lg-5 col-md-5 col-sm-5 col-12 d-flex align-items-center flex-row-reverse fix-mobile-position")}>
-                                                            <p className="mb-0 me-sm-3 ms-3">{history.text}</p>
-                                                            <div className={(index % 2 === 0 ? " circle" : " circle-right")}>
-                                                                <p className="mb-0">{history.year}</p>
+                                                        <div className={(index % 2 === 0 ? " col-lg-5 col-md-5 col-sm-5 col-12 fix-mobile-position d-flex align-items-center flex-sm-row flex-row-reverse left-position" : " col-lg-5 col-md-5 col-sm-5 col-12 d-flex align-items-center flex-row-reverse fix-mobile-position right-position")}>
+                                                            <p className="mb-0 me-sm-3 ms-3" animate="">{history.text}</p>
+                                                            <div className={"position-relative " + (index % 2 === 0 ? " circle" : " circle-right")} >
+                                                                <div className="first-mobile"><span></span></div>
+                                                                <p className="mb-0" animate="">{history.year}</p>
                                                                 {
                                                                     (index % 2 === 0) ?
-                                                                        <>
+                                                                        <div className=" " animate="">
                                                                             <svg className="d-sm-block d-none" xmlns="http://www.w3.org/2000/svg" width="95.511" height="112.002" viewBox="0 0 95.511 112.002">
                                                                                 <g id="Group_3342" data-name="Group 3342" transform="translate(-204 -3318.568)">
                                                                                     <path id="Path_68" data-name="Path 68" d="M36.175,0A36.148,36.148,0,1,0,72.3,36.122,36.213,36.213,0,0,0,36.175,0Z" transform="translate(204 3338.421)" fill="#ccd7e0" />
@@ -254,14 +255,16 @@ export default function OurStory(props) {
                                                                                     <path id="Path_69" data-name="Path 69" d="M116.98,255.338a56.245,56.245,0,0,0,51.389,56l0-.03a7.96,7.96,0,1,0,0-15.92v0a40.338,40.338,0,0,1-1.2-79.932c.353-.053,1.314-.167,1.413-.169,4.789-.606,7.753-3.609,7.753-7.956a7.965,7.965,0,0,0-7.971-7.96l.018-.032A56.245,56.245,0,0,0,116.98,255.338Z" transform="translate(67.02 3119.232)" fill="#ccd7e0" opacity="0.498" />
                                                                                 </g>
                                                                             </svg>
-                                                                        </>
+                                                                        </div>
                                                                         :
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="95.51" height="112.002" viewBox="0 0 95.51 112.002">
-                                                                            <g id="Group_3343" data-name="Group 3343" transform="translate(-184 -3318.568)">
-                                                                                <path id="Path_68" data-name="Path 68" d="M36.121,0A36.148,36.148,0,1,1,0,36.122,36.213,36.213,0,0,1,36.121,0Z" transform="translate(207.214 3338.421)" fill="#ccd7e0" />
-                                                                                <path id="Path_69" data-name="Path 69" d="M116.98,255.338a56.245,56.245,0,0,0,51.389,56l0-.03a7.96,7.96,0,1,0,0-15.92v0a40.338,40.338,0,0,1-1.2-79.932c.353-.053,1.314-.167,1.413-.169,4.789-.606,7.753-3.609,7.753-7.956a7.965,7.965,0,0,0-7.971-7.96l.018-.032A56.245,56.245,0,0,0,116.98,255.338Z" transform="translate(67.02 3119.232)" fill="#ccd7e0" opacity="0.498" />
-                                                                            </g>
-                                                                        </svg>
+                                                                        <div className=" " animate="">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="95.51" height="112.002" viewBox="0 0 95.51 112.002">
+                                                                                <g id="Group_3343" data-name="Group 3343" transform="translate(-184 -3318.568)">
+                                                                                    <path id="Path_68" data-name="Path 68" d="M36.121,0A36.148,36.148,0,1,1,0,36.122,36.213,36.213,0,0,1,36.121,0Z" transform="translate(207.214 3338.421)" fill="#ccd7e0" />
+                                                                                    <path id="Path_69" data-name="Path 69" d="M116.98,255.338a56.245,56.245,0,0,0,51.389,56l0-.03a7.96,7.96,0,1,0,0-15.92v0a40.338,40.338,0,0,1-1.2-79.932c.353-.053,1.314-.167,1.413-.169,4.789-.606,7.753-3.609,7.753-7.956a7.965,7.965,0,0,0-7.971-7.96l.018-.032A56.245,56.245,0,0,0,116.98,255.338Z" transform="translate(67.02 3119.232)" fill="#ccd7e0" opacity="0.498" />
+                                                                                </g>
+                                                                            </svg>
+                                                                        </div>
                                                                 }
                                                             </div>
                                                         </div>
@@ -271,53 +274,6 @@ export default function OurStory(props) {
                                             :
                                             null
                                     }
-                                    {/* <div className="position-relative">
-                                        <div className="second">
-                                            <div className="row pb-4  d-flex justify-content-end">
-                                                <div className="col-lg-5 col-md-5 col-sm-5 col-12 d-flex align-items-center ">
-                                                    <div className="circle-right">
-                                                        <p>2018</p>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="95.51" height="112.002" viewBox="0 0 95.51 112.002">
-                                                            <g id="Group_3343" data-name="Group 3343" transform="translate(-184 -3318.568)">
-                                                                <path id="Path_68" data-name="Path 68" d="M36.121,0A36.148,36.148,0,1,1,0,36.122,36.213,36.213,0,0,1,36.121,0Z" transform="translate(207.214 3338.421)" fill="#ccd7e0" />
-                                                                <path id="Path_69" data-name="Path 69" d="M116.98,255.338a56.245,56.245,0,0,0,51.389,56l0-.03a7.96,7.96,0,1,0,0-15.92v0a40.338,40.338,0,0,1-1.2-79.932c.353-.053,1.314-.167,1.413-.169,4.789-.606,7.753-3.609,7.753-7.956a7.965,7.965,0,0,0-7.971-7.96l.018-.032A56.245,56.245,0,0,0,116.98,255.338Z" transform="translate(67.02 3119.232)" fill="#ccd7e0" opacity="0.498" />
-                                                            </g>
-                                                        </svg>
-                                                    </div>
-                                                    <p className="mb-0 ms-3 ">The company successfully
-                                                        exited on one of the projects</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> */}
-
-                                    {/* 
-
-                                    <div className="position-relative">
-                                        <div className="four-1 remove-last-one">
-                                            <div className="row pb-4 d-flex justify-content-start">
-                                                <div className="col-lg-5 col-md-5 col-sm-5 col-12 d-flex align-items-center reverse start">
-                                                    <p className="mb-0 me-sm-3 ms-3">Tobacco consultancy was added
-                                                        to the mix by working on two key projects</p>
-                                                    <div className="circle">
-                                                        <svg className="d-sm-block d-none" xmlns="http://www.w3.org/2000/svg" width="95.511" height="112.002" viewBox="0 0 95.511 112.002">
-                                                            <g id="Group_3342" data-name="Group 3342" transform="translate(-204 -3318.568)">
-                                                                <path id="Path_68" data-name="Path 68" d="M36.175,0A36.148,36.148,0,1,0,72.3,36.122,36.213,36.213,0,0,0,36.175,0Z" transform="translate(204 3338.421)" fill="#ccd7e0" />
-                                                                <path id="Path_69" data-name="Path 69" d="M176.342,255.338a56.245,56.245,0,0,1-51.389,56l0-.03a7.96,7.96,0,1,1,0-15.92v0a40.338,40.338,0,0,0,1.2-79.932c-.353-.053-1.314-.167-1.413-.169-4.789-.606-7.753-3.609-7.753-7.956a7.965,7.965,0,0,1,7.971-7.96l-.018-.032A56.245,56.245,0,0,1,176.342,255.338Z" transform="translate(123.168 3119.232)" fill="#ccd7e0" opacity="0.498" />
-                                                            </g>
-                                                        </svg>
-                                                        <svg className="d-sm-none d-block " xmlns="http://www.w3.org/2000/svg" width="95.51" height="112.002" viewBox="0 0 95.51 112.002">
-                                                            <g id="Group_3343" data-name="Group 3343" transform="translate(-184 -3318.568)">
-                                                                <path id="Path_68" data-name="Path 68" d="M36.121,0A36.148,36.148,0,1,1,0,36.122,36.213,36.213,0,0,1,36.121,0Z" transform="translate(207.214 3338.421)" fill="#ccd7e0" />
-                                                                <path id="Path_69" data-name="Path 69" d="M116.98,255.338a56.245,56.245,0,0,0,51.389,56l0-.03a7.96,7.96,0,1,0,0-15.92v0a40.338,40.338,0,0,1-1.2-79.932c.353-.053,1.314-.167,1.413-.169,4.789-.606,7.753-3.609,7.753-7.956a7.965,7.965,0,0,0-7.971-7.96l.018-.032A56.245,56.245,0,0,0,116.98,255.338Z" transform="translate(67.02 3119.232)" fill="#ccd7e0" opacity="0.498" />
-                                                            </g>
-                                                        </svg>
-                                                        <p>2021</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> */}
                                 </div>
                             </div>
                             <div className="row justify-content-center text-center pb-5">
@@ -336,13 +292,15 @@ export default function OurStory(props) {
                                     </div>
                                 </div>
 
-                                <div className="position-relative "  >
-                                    <div className="part-1">
-                                        <div className="part-2">
-                                            <div className="part-3">
+                                <div className="position-relative ">
+                                    <div className="">
+                                        <div className="">
+                                            <div className="">
                                                 <div className="row justify-content-center text-center ">
                                                     <div className="col-lg-4 col-md-4 col-12 pb-5">
-                                                        <div className="bleu-ciel-group h-100 shadow">
+                                                        <div className="bleu-ciel-group h-100 shadow position-relative">
+                                                            <div className="company-line-left"></div>
+                                                            <div className="company-line-right"></div>
                                                             <h4 className="mb-0 px-5">{storySettings.group_name}</h4>
                                                         </div>
                                                     </div>
@@ -359,7 +317,8 @@ export default function OurStory(props) {
                                                                                 companyList.map((company, index) =>
                                                                                     !company.second_column && !company.third_column && (
                                                                                         <div className="col-12 pb-5" key={index}>
-                                                                                            <div className="blue-dark-group h-100 shadow">
+                                                                                            <div className="blue-dark-group position-relative h-100 shadow">
+                                                                                                <div className="company-line"></div>
                                                                                                 <h4 className="mb-0 px-5">{company.title}</h4>
                                                                                             </div>
                                                                                         </div>
@@ -378,7 +337,8 @@ export default function OurStory(props) {
                                                                                 companyList.map((company, index) =>
                                                                                     !company.first_column && !company.third_column && (
                                                                                         <div className="col-12 pb-5" key={index}>
-                                                                                            <div className="blue-dark-group h-100 shadow">
+                                                                                            <div className="blue-dark-group position-relative h-100 shadow">
+                                                                                                <div className="company-line"></div>
                                                                                                 <h4 className="mb-0 px-5">{company.title}</h4>
                                                                                             </div>
                                                                                         </div>
@@ -397,7 +357,8 @@ export default function OurStory(props) {
                                                                                 companyList.map((company, index) =>
                                                                                     !company.second_column && !company.first_column && (
                                                                                         <div className="col-12 pb-5" key={index}>
-                                                                                            <div className="blue-dark-group h-100 shadow">
+                                                                                            <div className="blue-dark-group position-relative h-100 shadow">
+                                                                                                <div className="company-line"></div>
                                                                                                 <h4 className="mb-0 px-5">{company.title}</h4>
                                                                                             </div>
                                                                                         </div>
@@ -423,13 +384,13 @@ export default function OurStory(props) {
                         <div className="py-lg-5 pb-5">
                             <div className="py-lg-5">
                                 <div className="blue-bg-ceo position-relative">
-                                    <div className="ceo-ratio d-md-block d-none">
+                                    <div className="ceo-ratio d-md-block d-none" animate="">
                                         <img src={storySettings.ceo_image} alt="ceo" />
                                     </div>
                                     <div className="container position-relative">
                                         <div className=" d-block d-md-none mt-md-5 mt-3"  >
                                             <div className="">
-                                                <div className="ceo-ratio-mobile pt-5">
+                                                <div className="ceo-ratio-mobile pt-5" animate="">
                                                     <img src={storySettings.ceo_image} alt="ceo" />
                                                 </div>
                                             </div>
@@ -445,7 +406,7 @@ export default function OurStory(props) {
                                                                 <div className="text-end me-1">
                                                                     <p className="signature mb-0">{storySettings.ceo_name}</p>
                                                                 </div>
-                                                                <div className="text-end">
+                                                                <div className="text-end" animate="">
                                                                     <img className="ceo-signature" src={storySettings.ceo_signature} alt="signature" />
                                                                 </div>
                                                             </div>
@@ -472,7 +433,7 @@ export default function OurStory(props) {
                                         {
                                             teamList ?
                                                 teamList.map((team, index) =>
-                                                    <div className="col-lg-3 col-md-6 col-sm-6 mb-5" onClick={() => setPopupOpen(team)} key={index}>
+                                                    <div className="col-lg-3 col-md-6 col-sm-6 mb-5" animate="" onClick={() => setPopupOpen(team)} key={index}>
                                                         <div className="team-section shadow position-relative">
                                                             <div className="ratio team-ratio">
                                                                 <img src={team.image} alt="ceo" />
@@ -548,13 +509,13 @@ export default function OurStory(props) {
                                                 <p>{storySettings.idml_text}</p>
                                             </div>
                                         </div>
-                                        <div className="col-lg-4 col-md-5 d-md-block d-sm-none d-none">
+                                        <div className="col-lg-4 col-md-5 d-md-block d-sm-none d-none" animate="">
                                             <img className="what-is-idml-img" src={storySettings.idml_image} alt="idml" />
                                         </div>
                                     </div>
                                 </div>
 
-                                <img className="mobile-full-image" src={storySettings.idml_image} alt="idml" />
+                                <img className="mobile-full-image" animate="" src={storySettings.idml_image} alt="idml" />
 
                             </div>
                         </div>
@@ -565,11 +526,11 @@ export default function OurStory(props) {
                                     <h2 className="mb-4 text-center">{storySettings.operations_title}</h2>
                                     <p className="mb-5 text-center">{storySettings.subtitle}</p>
 
-                                    <div className="row side-map align-items-end d-md-flex d-block ">
+                                    <div className="row side-map align-items-end d-md-flex d-block " animate="">
                                         <div className="col-auto align-items-sm-start d-sm-flex   align-items-lg-center d-lg-block align-items-md-center d-md-block">
                                             {mapLegend ?
                                                 mapLegend.map((map, index) =>
-                                                    <div className="row align-items-center pb-4"   key={index}>
+                                                    <div className="row align-items-center pb-4" key={index}>
                                                         <div className="col-md-4 col-auto justify-content-md-center justify-content-start d-flex pb-sm-3">
                                                             <img className="side-icon" src={map.full_path_icon} alt="side-icon" />
                                                         </div>

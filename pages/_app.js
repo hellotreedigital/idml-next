@@ -5,6 +5,7 @@ import GlobalState from "../GlobalState";
 import Router from 'next/router';
 import axios from 'axios';
 
+
 axios.defaults.baseURL = 'https://idml-backend.hellotree.dev/api';
 
 function MyApp({ Component, pageProps }) {

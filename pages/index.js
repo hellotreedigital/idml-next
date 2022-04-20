@@ -16,8 +16,7 @@ import { useState, useEffect, useContext } from "react";
 import GlobalState from "../GlobalState";
 
 export default function Home(props) {
-
-  const { triggerScroll} = useContext(GlobalState);
+  const { triggerScroll } = useContext(GlobalState);
   const menuItems = props.homeData.fixed_titles;
   const socialMedia = props.homeData.social_media;
   const footerLogos = props.homeData.footer_logos;
@@ -151,7 +150,7 @@ export default function Home(props) {
             <div className="opacity-header"></div>
             <div className="section-1">
               <div className="container" >
-                <div className="text-center">
+                <div className="text-center" animate="">
                   <Link href="/booking">
                     <a>
                       <button className="button bleu-ciel-button shadow">
@@ -174,7 +173,7 @@ export default function Home(props) {
             <div className="container py-5">
               <div className="row justify-content-center text-center ">
                 <div className="col-lg-8">
-                  <h2 className="pb-4 mb-0">{homeSettings.what_we_do_title}</h2>
+                  <h2 className="pb-4 mb-0" >{homeSettings.what_we_do_title}</h2>
                   <p className="home-paragraph mb-0">{homeSettings.what_we_do_text}</p>
                 </div>
               </div>
@@ -189,13 +188,15 @@ export default function Home(props) {
               <div className="row justify-content-center ">
                 {homeProcess ?
                   homeProcess.map((process, index) =>
-                    <div className="col-lg-4 col-md-6 col-12 pb-lg-0 pb-5" key={index}>
+                    <div className="col-lg-4 col-md-6 col-12 pb-3" animate="" key={index}>
                       <div className="bg-color button blue-button-hover shadow">
-                        {process.title}
-                        <div className="justify-content-center d-flex">
-                          <div className="hr-line"></div>
+                        <div className="pt-3">
+                          <div style={{ textTransform: 'uppercase' }}>{process.title}</div>
+                          <div className="justify-content-center d-flex">
+                            <div className="hr-line"></div>
+                          </div>
                         </div>
-                        <div className="onhover-text pt-3">
+                        <div className="onhover-text">
                           <p className="mb-0 mx-lg-3"> {process.text}</p>
                         </div>
                       </div>
@@ -208,23 +209,28 @@ export default function Home(props) {
             </div>
             {
               homeSettings ?
-                <div className="container py-5">
-                  <div className="row justify-content-center text-center ">
-                    <div className="col-lg-8">
-                      <h2 className="pb-4 mb-0">{homeSettings.about_us_title}</h2>
-                      <p className="home-paragraph mb-0">{homeSettings.about_us_text}</p>
-                      <div className="pt-4" >
-                        <Link href="/our-story">
-                          <a>
-                            <button className="button blue-button shadow">
-                              {homeSettings.about_us_button}
-                            </button>
-                          </a>
-                        </Link>
+                !homeSettings.about_us_title && !homeSettings.about_us_button && !homeSettings.about_us_button ? null :
+                  <div className="container py-5">
+                    <div className="row justify-content-center text-center ">
+                      <div className="col-lg-8">
+                        <h2 className="pb-4 mb-0">{homeSettings.about_us_title}</h2>
+                        <p className="home-paragraph mb-0">{homeSettings.about_us_text}</p>
+                        <div className="pt-4" >
+                          {homeSettings.about_us_button ?
+                            <Link href="/our-story">
+                              <a>
+                                <button className="button blue-button shadow">
+                                  {homeSettings.about_us_button}
+                                </button>
+                              </a>
+                            </Link>
+                            :
+                            null
+                          }
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
                 :
                 null
             }
@@ -284,7 +290,7 @@ export default function Home(props) {
                     <SwiperSlide key={index}>
                       <div>
                         <div className="brand-logo-section shadow position-relative m-3">
-                          <div className="ratio ratio-1x1">
+                          <div className="ratio ratio-1x1 logo-clients">
                             <img src={clientList.full_path_logo} alt="brand-logo" />
                           </div>
                           <div className="overlay"></div>
@@ -299,12 +305,24 @@ export default function Home(props) {
                   :
                   null
               }
+
             </Swiper>
+            <div className="pt-5 text-center">
+              <Link href="/industries#clients">
+
+                <a>
+                  <button className="button blue-button shadow">
+                    {homeSettings.view_all}
+                  </button>
+                </a>
+              </Link>
+            </div>
 
           </div>
 
           {
             homeSettings ?
+            industries.length < 0 ? null :
               <div className="container pt-5">
                 <div className="row justify-content-center text-center ">
                   <div className="col-lg-8 pb-4" >
@@ -314,7 +332,7 @@ export default function Home(props) {
                 <div className="row justify-content-center ">
                   {industries ?
                     industries.map((industry, index) =>
-                      <div className="col-lg-4 col-md-6 col-12 pb-5" key={index}>
+                      <div className="col-lg-4 col-md-6 col-12 pb-5" animate="" key={index}>
                         <Link href={"/industries/" + industry.slug}>
                           <a>
                             <div className="button blue-ciel-button shadow">
@@ -335,127 +353,159 @@ export default function Home(props) {
 
           {
             homeSettings ?
-              <div className="container pt-5">
-                <div className="row justify-content-center text-center ">
-                  <div className="col-lg-8 pb-4">
-                    <h2 className="mb-0">{homeSettings.news_title}</h2>
+              news.length < 0 ? null :
+                <div className="container pt-5">
+                  <div className="row justify-content-center text-center ">
+                    <div className="col-lg-8 pb-4">
+                      <h2 className="mb-0">{homeSettings.news_title}</h2>
+                    </div>
                   </div>
+                  <Swiper
+                    className="news"
+                    modules={[Pagination]}
+                    spaceBetween={25}
+                    autoplay={{
+                      delay: 3000,
+                      disableOnInteraction: false,
+                      pauseOnMouseEnter: true,
+                    }}
+                    loop={true}
+                    slidesPerView={1}
+                    centeredSlides={true}
+                    breakpoints={{
+                      1199.98: {
+                        slidesPerView: 3,
+                        // allowTouchMove: false,
+                      },
+
+                      991.98: {
+                        slidesPerView: 3,
+                      },
+
+                      // when window width is >= 767.98px
+                      767.98: {
+                        slidesPerView: 2.35,
+                      },
+                      575.98: {
+                        slidesPerView: 2,
+                      },
+                    }}
+                  >
+                    {
+                      news ?
+                        news.map((newHome, index) =>
+                          <SwiperSlide key={index} >
+                            <Link href={"/insights/news/" + newHome.slug}>
+                              <a>
+                                <NewsSection
+                                  title={newHome.title}
+                                  date={newHome.date_formatted}
+                                  image={newHome.first_image}
+                                  description={newHome.small_description}
+                                  button={homeSettings.read_more}
+                                />
+                              </a>
+                            </Link>
+                          </SwiperSlide>
+                        )
+                        :
+                        null
+                    }
+                    <div className="pt-5 text-center">
+                      <Link href="/insights/news/">
+                        <a>
+                          <button className="button blue-button shadow">
+                            {homeSettings.view_all}
+                          </button>
+                        </a>
+                      </Link>
+                    </div>
+                  </Swiper>
                 </div>
-                <Swiper
-                  className="news"
-                  modules={[Pagination]}
-                  spaceBetween={25}
-                  autoplay={{ delay: 3000 }}
-                  loop={true}
-                  slidesPerView={1}
-                  centeredSlides={true}
-                  breakpoints={{
-                    1199.98: {
-                      slidesPerView: 3,
-                      allowTouchMove: false,
-                    },
-
-                    991.98: {
-                      slidesPerView: 3,
-                    },
-
-                    // when window width is >= 767.98px
-                    767.98: {
-                      slidesPerView: 2.35,
-                    },
-                    575.98: {
-                      slidesPerView: 2,
-                    },
-                  }}
-                >
-                  {
-                    news ?
-                      news.map((newHome, index) =>
-                        <SwiperSlide key={index}>
-                          <Link href={"/insights/news/" + newHome.slug}>
-                            <a>
-                              <NewsSection
-                                title={newHome.title}
-                                date={newHome.date_formatted}
-                                image={newHome.first_image}
-                                description={newHome.small_description}
-                                button={homeSettings.read_more}
-                              />
-                            </a>
-                          </Link>
-                        </SwiperSlide>
-                      )
-                      :
-                      null
-                  }
-                  <div className="pt-5 text-center">
-                    <Link href="/news">
-                      <a>
-                        <button className="button blue-button shadow">
-                          {homeSettings.view_all}
-                        </button>
-                      </a>
-                    </Link>
-                  </div>
-                </Swiper>
-              </div>
               :
               null
           }
           {
             homeSettings ?
+
               <>
                 <div className="container pt-5">
-                  <div className="row  justify-content-center  align-items-center ">
-                    <div className="col-lg-12 col-md-8 col-sm-12 col-12" >
-                      <div className="d-flex text-center justify-content-center">
-                        <h2 className="mb-2" >{homeSettings.tips_title}</h2>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row justify-content-center" >
-                    <div className="col-lg-6 text-center">
-                      <p className="tips-home mb-3">{homeSettings.tips_text}</p>
-                    </div>
-                  </div>
 
-                  <div className="row justify-content-center ">
-                    {
-                      tipsList ?
-                        tipsList.map((list, index) =>
-                          <div className={"col-lg-3 col-md-4 col-sm-6 pb-5 " + (index % 2 !== 0 ? "col-lg-6 col-md-4 col-sm-6 pb-5" : "")} key={index}>
-                            <div className="youtube-section position-relative shadow" onClick={() => setYoutubePopup(list)}>
-                              <div className={"ratio youtube-ratio" + (index % 2 !== 0 ? " youtube-section-longer" : "")}>
-                                <img src={list.thumbnail_image} alt="youtube" />
-                              </div>
-                              <div className="overlay-youtube"></div>
-                              <div className="youtube-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="47.861" height="47.861" viewBox="0 0 47.861 47.861">
-                                  <path className="fill-icon" id="fi-rr-play-alt" d="M37.89,47.861H9.971A9.983,9.983,0,0,1,0,37.89V9.971A9.983,9.983,0,0,1,9.971,0H37.89a9.983,9.983,0,0,1,9.971,9.971V37.89A9.983,9.983,0,0,1,37.89,47.861ZM9.971,3.988A5.983,5.983,0,0,0,3.988,9.971V37.89a5.983,5.983,0,0,0,5.983,5.983H37.89a5.983,5.983,0,0,0,5.983-5.983V9.971A5.983,5.983,0,0,0,37.89,3.988ZM18.63,33.911a4.722,4.722,0,0,1-2.365-.644,4.613,4.613,0,0,1-2.321-4.03V18.624a4.66,4.66,0,0,1,6.98-4.046l10.525,5.255a4.658,4.658,0,0,1,.1,8.144L20.825,33.335A4.387,4.387,0,0,1,18.63,33.911Zm-.05-15.954a.626.626,0,0,0-.313.084.652.652,0,0,0-.335.582V29.237a.672.672,0,0,0,1,.584l10.721-5.36a.626.626,0,0,0,.239-.53.648.648,0,0,0-.337-.582L19.035,18.093a.921.921,0,0,0-.455-.136Z" fill="#14334a" />
-                                </svg>
-                              </div>
-                            </div>
-                            <div className="under-box pt-3">
-                              <h3 className="mb-1">{list.date_formatted}</h3>
-                              <h4 className="mb-0">{list.video_desc}</h4>
-                            </div>
+                  {tipsList.length === 0 ? null :
+
+                    <>
+                      <div className="row  justify-content-center  align-items-center ">
+                        <div className="col-lg-12 col-md-8 col-sm-12 col-12" >
+                          <div className="d-flex text-center justify-content-center">
+                            <h2 className="mb-2" >{homeSettings.tips_title}</h2>
                           </div>
-                        )
-                        :
-                        null
-                    }
-                  </div>
+                        </div>
+                      </div>
+                      <div className="row justify-content-center" >
+                        <div className="col-lg-6 text-center">
+                          <p className="tips-home mb-3">{homeSettings.tips_text}</p>
+                        </div>
+                      </div>
 
-                  <div className="pb-5 text-center">
-                    <a href={homeSettings.subscribe_url} target="_blank" rel="noreferrer">
-                      <button className="button blue-button shadow">
-                        {homeSettings.subscribe_button}
-                      </button>
-                    </a>
-                  </div>
+                      <div className="row justify-content-center ">
+                        {
+                          tipsList ?
+                            tipsList.map((list, index) =>
+                              tipsList.length === 2 ?
+                                <div className={"col-lg-3 col-md-4 col-sm-6 pb-5 "} animate="" key={index}>
+                                  <div className="youtube-section position-relative shadow" onClick={() => setYoutubePopup(list)}>
+                                    <div className="ratio youtube-ratio">
+                                      <img src={list.thumbnail_image} alt="youtube" />
+                                    </div>
+                                    <div className="overlay-youtube"></div>
+                                    <div className="youtube-icon">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="47.861" height="47.861" viewBox="0 0 47.861 47.861">
+                                        <path className="fill-icon" id="fi-rr-play-alt" d="M37.89,47.861H9.971A9.983,9.983,0,0,1,0,37.89V9.971A9.983,9.983,0,0,1,9.971,0H37.89a9.983,9.983,0,0,1,9.971,9.971V37.89A9.983,9.983,0,0,1,37.89,47.861ZM9.971,3.988A5.983,5.983,0,0,0,3.988,9.971V37.89a5.983,5.983,0,0,0,5.983,5.983H37.89a5.983,5.983,0,0,0,5.983-5.983V9.971A5.983,5.983,0,0,0,37.89,3.988ZM18.63,33.911a4.722,4.722,0,0,1-2.365-.644,4.613,4.613,0,0,1-2.321-4.03V18.624a4.66,4.66,0,0,1,6.98-4.046l10.525,5.255a4.658,4.658,0,0,1,.1,8.144L20.825,33.335A4.387,4.387,0,0,1,18.63,33.911Zm-.05-15.954a.626.626,0,0,0-.313.084.652.652,0,0,0-.335.582V29.237a.672.672,0,0,0,1,.584l10.721-5.36a.626.626,0,0,0,.239-.53.648.648,0,0,0-.337-.582L19.035,18.093a.921.921,0,0,0-.455-.136Z" fill="#14334a" />
+                                      </svg>
+                                    </div>
+                                  </div>
+                                  <div className="under-box pt-3">
+                                    <h3 className="mb-1">{list.date_formatted}</h3>
+                                    <h4 className="mb-0">{list.video_desc}</h4>
+                                  </div>
+                                </div>
+                                :
+                                <div className={"col-lg-3 col-md-4 col-sm-6 pb-5 " + (index % 2 !== 0 ? "col-lg-6 col-md-4 col-sm-6 pb-5" : "")} animate="" key={index}>
+                                  <div className="youtube-section position-relative shadow" onClick={() => setYoutubePopup(list)}>
+                                    <div className={"ratio youtube-ratio" + (index % 2 !== 0 ? " youtube-section-longer" : "")}>
+                                      <img src={list.thumbnail_image} alt="youtube" />
+                                    </div>
+                                    <div className="overlay-youtube"></div>
+                                    <div className="youtube-icon">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="47.861" height="47.861" viewBox="0 0 47.861 47.861">
+                                        <path className="fill-icon" id="fi-rr-play-alt" d="M37.89,47.861H9.971A9.983,9.983,0,0,1,0,37.89V9.971A9.983,9.983,0,0,1,9.971,0H37.89a9.983,9.983,0,0,1,9.971,9.971V37.89A9.983,9.983,0,0,1,37.89,47.861ZM9.971,3.988A5.983,5.983,0,0,0,3.988,9.971V37.89a5.983,5.983,0,0,0,5.983,5.983H37.89a5.983,5.983,0,0,0,5.983-5.983V9.971A5.983,5.983,0,0,0,37.89,3.988ZM18.63,33.911a4.722,4.722,0,0,1-2.365-.644,4.613,4.613,0,0,1-2.321-4.03V18.624a4.66,4.66,0,0,1,6.98-4.046l10.525,5.255a4.658,4.658,0,0,1,.1,8.144L20.825,33.335A4.387,4.387,0,0,1,18.63,33.911Zm-.05-15.954a.626.626,0,0,0-.313.084.652.652,0,0,0-.335.582V29.237a.672.672,0,0,0,1,.584l10.721-5.36a.626.626,0,0,0,.239-.53.648.648,0,0,0-.337-.582L19.035,18.093a.921.921,0,0,0-.455-.136Z" fill="#14334a" />
+                                      </svg>
+                                    </div>
+                                  </div>
+                                  <div className="under-box pt-3">
+                                    <h3 className="mb-1">{list.date_formatted}</h3>
+                                    <h4 className="mb-0">{list.video_desc}</h4>
+                                  </div>
+                                </div>
+                            )
+                            :
+                            null
+                        }
+                      </div>
+
+
+                      <div className="pb-5 text-center">
+                        <a href={homeSettings.subscribe_url} target="_blank" rel="noreferrer">
+                          <button className="button blue-button shadow">
+                            {homeSettings.subscribe_button}
+                          </button>
+                        </a>
+                      </div>
+                    </>
+                  }
                 </div>
 
-                <div className="py-5">
+                <div className="py-5" animate="">
                   <Section
                     title={homeSettings.help_title}
                     subtitle={homeSettings.help_text}

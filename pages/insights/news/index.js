@@ -45,10 +45,7 @@ export default function News(props) {
             setMaxPages(foo);
             // console.log(foo);
         });
-
-
     }, [page]);
-
 
     useEffect(() => {
         triggerScroll();

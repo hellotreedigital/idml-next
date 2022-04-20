@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import VerificationPopup from "./VerificationPopup";
+import { useRouter } from 'next/router';
 
 export default function Layout(props) {
     const [ageVerificationPopup, setAgeVerificationPopup] = useState(null);
     const [headerScroll, setHeaderScroll] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const router = useRouter()
 
     function burgerClick() {
         setMobileMenuOpen(true)
@@ -15,7 +17,14 @@ export default function Layout(props) {
     }
 
     function ageVerificationClick(industryTitle) {
-        setAgeVerificationPopup(industryTitle)
+        let underAgePopup = localStorage.getItem('underAgePopup');
+        if (!underAgePopup) {
+            setAgeVerificationPopup(industryTitle)
+            localStorage.setItem('underAgePopup', 1);
+        }
+        else {
+            router.push("/industries/" + industryTitle.slug)
+        }
     }
 
     useEffect(() => {
@@ -69,7 +78,7 @@ export default function Layout(props) {
                                 {props.serviceTitles ?
                                     props.serviceTitles.map((serviceTitle, index) =>
                                         <>
-                                            <Link href={"services/" + serviceTitle.slug} key={index}>
+                                            <Link href={"/services/" + serviceTitle.slug} key={index}>
                                                 <a className="mb-2 mt-2">
                                                     {serviceTitle?.title}
                                                 </a>
@@ -91,7 +100,7 @@ export default function Layout(props) {
                                 {props.industriesTitles ?
                                     props.industriesTitles.map((industryTitle, index) =>
                                         industryTitle.with_popup === 1 ?
-                                            <p className="mb-0" onClick={() => ageVerificationClick(industryTitle)}>
+                                            <p className="mb-2 mt-2" onClick={() => ageVerificationClick(industryTitle)}>
                                                 {industryTitle?.title}
                                             </p>
 
@@ -270,6 +279,7 @@ export default function Layout(props) {
                                             {
                                                 props?.footerContactIcons ?
                                                     props.footerContactIcons.map((footerContactIcon, index) =>
+                                                    
                                                         <a href={footerContactIcon.url} target="_blank" rel="noreferrer" key={index}>
                                                             <img className="social-icon me-3" src={footerContactIcon.icon} alt="icon" />
                                                         </a>

@@ -100,8 +100,8 @@ export default function Products(props) {
                                             productsCategories.map((productCategory, index) =>
                                                 <SwiperSlide key={index} >
                                                     <div className="text-center px-3" onClick={() => logoClick(productCategory)}>
-                                                        <div className="ratio ratio-1x1">
-                                                            <img className={"brand-image" + (productCategory === productsItems ? " active" : " ")} src={productCategory.logo} alt="brand" />
+                                                        <div className={"ratio ratio-1x1 marhaba" + (productCategory === productsItems ? " active" : " ")}>
+                                                            <img className="brand-image"  src={productCategory.logo} alt="brand" />
                                                         </div>
                                                     </div>
                                                 </SwiperSlide>

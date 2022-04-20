@@ -3,8 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import GlobalState from "../../../GlobalState";
 import Layout from "../../../components/layout";
 import SideButton from "../../../components/SideButton";
-
-
+import SwiperCore, { Autoplay } from 'swiper';
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -12,6 +11,7 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 
 export default function News(props) {
+    SwiperCore.use([Autoplay])
 
     const insightsSettings = props.insightsNewsSingleData.page_items.insights_settings
     const singleNew = props.insightsNewsSingleData.page_items.single_news;
@@ -45,7 +45,7 @@ export default function News(props) {
                         <div className="pt-lg-5">
                             <div className="pt-5">
                                 <div className="container pt-5"  >
-                                    <div className="row  align-items-center  pt-5">
+                                    <div className="row  align-items-start  pt-5">
                                         <div className="col-xxl-auto col-lg-1 col-auto add-absolute">
                                             <div className=" d-none d-sm-block">
                                                 <button onClick={() => window.history.back()} className="button back-button d-flex align-items-center shadow">
@@ -72,19 +72,20 @@ export default function News(props) {
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div className="text-center mb-4 pt-3">
+                                                <h4 className="date ">{singleNew.date_formatted}</h4>
+                                            </div>
                                         </div>
                                         <div className="col-1  d-sm-block d-none"></div>
                                     </div>
-                                    <div className="text-center mb-4 pt-3">
-                                        <h4 className="date">{singleNew.date_formatted}</h4>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
 
                         <div className="container single-news-page">
                             <div className="row  align-items-center"  >
-                                <div className="col-lg-5 col-md-6 mb-4 mb-md-0">
+                                <div className="col-lg-5 col-md-6 mb-4 mb-md-0" animate="">
                                     <div className="ratio single-news">
                                         <img src={singleNew.first_image} alt="news" />
                                     </div>
@@ -99,12 +100,12 @@ export default function News(props) {
                                 </div>
                             </div>
                             <div className="row  align-items-center mb-4"  >
-                                <div className="col-lg-6 col-md-6 col-sm-6 pb-4 ">
+                                <div className="col-lg-6 col-md-6 col-sm-6 pb-4 " animate="">
                                     <div className="ratio single-news-image">
                                         <img src={singleNew.second_image} alt="news" />
                                     </div>
                                 </div>
-                                <div className="col-lg-6 col-md-6 col-sm-6 pb-4">
+                                <div className="col-lg-6 col-md-6 col-sm-6 pb-4" animate="">
                                     <div className="ratio single-news-image">
                                         <img src={singleNew.third_image} alt="youtube" />
                                     </div>

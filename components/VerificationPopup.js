@@ -32,7 +32,7 @@ export default function verificationPopup(props) {
                                     </Link>
                                 </div>
                                 <div className="col-lg-4 col-md-4 pt-md-0 pt-3">
-                                    <div onClick={() => props.ageClick()}   className="button white-button verification-button add-border shadow">{props.secondButton}</div>
+                                    <div onClick={() => props.ageClick()} className="button white-button verification-button add-border shadow">{props.secondButton}</div>
                                 </div>
                                 {/* onClick={() => setAgeVerificationPopup(false)} */}
                             </div>

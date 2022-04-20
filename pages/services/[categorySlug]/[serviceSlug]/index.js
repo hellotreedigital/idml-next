@@ -79,7 +79,7 @@ export default function SingleService(props) {
                                     <div dangerouslySetInnerHTML={{ __html: singleServiceItems.full_description }} />
                                 </div>
 
-                                <div className="col-lg-5 col-md-6">
+                                <div className="col-lg-5 col-md-6" animate="">
                                     <div className="ratio single-service-ratio">
                                         <img src={singleServiceItems.image} alt="ceo" />
                                     </div>
@@ -87,7 +87,7 @@ export default function SingleService(props) {
                             </div>
                         </div>
 
-                        <div className="">
+                        <div className=""  animate="">
                             <div className="py-lg-5">
                                 <Section
                                     title={serviceContact.contact_component_title}
