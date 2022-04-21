@@ -65,8 +65,7 @@ export default function News(props) {
             <SideButton
                 title={menuItems['book-a-consultation']}
             />
-            {
-                insightsSettings ?
+            
                     <div className="pt-lg-5">
                         <div className="pt-5">
                             <div className="container pt-5" >
@@ -108,15 +107,8 @@ export default function News(props) {
                             </div>
                         </div>
                     </div>
-                    :
-                    null
-
-            }
-
-            {
-                paginatedNews ?
+           
                     <div className="container pt-lg-5"  >
-
                         <div className="row justify-content-center gx-5">
                             {
                                 news?.length > 0 ?
@@ -140,14 +132,7 @@ export default function News(props) {
                             }
                         </div>
                     </div>
-                    :
-                    <div className='loader'>
-                    <div class="lds-ripple">
-                      <div></div>
-                      <div></div>
-                    </div>
-                  </div>
-            }
+                
 
             {
                 maxPages.length > 0 ?

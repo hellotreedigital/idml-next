@@ -3,20 +3,26 @@ import Layout from "../components/layout";
 import SideButton from "../components/SideButton";
 import Link from "next/link";
 
+import React, { useRef } from "react";
+// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Navigation, Thumbs } from "swiper";
-import SwiperCore, { Autoplay } from 'swiper';
+
+// Import Swiper styles
+import "swiper/css";
 import "swiper/css/navigation";
+import SwiperCore, { Autoplay, FreeMode, Navigation, Thumbs } from 'swiper';
+import "swiper/css/bundle";
 import "swiper/css/free-mode";
 import "swiper/css/thumbs";
-import "swiper/css";
+
+// import required modules
 
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import GlobalState from "../GlobalState";
 import SeoTags from "../components/SeoTags";
 
-export default function Products(props) {
+export default function Products1(props) {
 
     SwiperCore.use([Autoplay])
 
@@ -59,6 +65,7 @@ export default function Products(props) {
                 image={props.productsData.page_items.seo.image}
             />
 
+
             {
                 productsSetting ?
                     <Banner
@@ -78,7 +85,7 @@ export default function Products(props) {
                         <div className="container py-5" >
                             <div className="row justify-content-center">
                                 <div className="col-lg-9 ">
-                                    <Swiper className="mySwiper py-5"
+                                    <Swiper className="mySwiper1 py-5"
                                         spaceBetween={0}
                                         autoplay={{ delay: 3000 }}
                                         loop={true}
@@ -133,6 +140,7 @@ export default function Products(props) {
                                                     <img src="../img/images/next-arrow.svg" alt="next" />
                                                 </div>
                                             </div>
+
                                             <Swiper
                                                 modules={[Navigation]}
                                                 navigation={{
@@ -140,6 +148,7 @@ export default function Products(props) {
                                                     prevEl: '.swiper-button-prev'
                                                 }}
                                                 className="products-swiper">
+
                                                 {
                                                     productsItems.products.map((product, index) =>
                                                         <div key={index}>
@@ -158,6 +167,90 @@ export default function Products(props) {
                                                                             <div className="row">
                                                                                 <div className="col-lg-5"></div>
                                                                                 <div className="col-lg-6">
+                                                                                    {/* <Swiper
+                                                                                        style={{
+                                                                                            "--swiper-navigation-color": "#fff",
+                                                                                            "--swiper-pagination-color": "#fff",
+                                                                                        }}
+                                                                                        spaceBetween={10}
+                                                                                        navigation={true}
+                                                                                        // thumbs={{ swiper: thumbsSwiper }}
+                                                                                        thumbs={{ swiper: (thumbsSwiper?.$el) ? thumbsSwiper : null }}
+                                                                                        modules={[FreeMode, Navigation, Thumbs]}
+                                                                                        className="mySwiper2"
+                                                                                    >
+                                                                                        <SwiperSlide>
+                                                                                            <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                                                                                        </SwiperSlide>
+                                                                                        <SwiperSlide>
+                                                                                            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                                                                                        </SwiperSlide>
+                                                                                        <SwiperSlide>
+                                                                                            <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                                                                                        </SwiperSlide>
+                                                                                        <SwiperSlide>
+                                                                                            <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                                                                                        </SwiperSlide>
+                                                                                        <SwiperSlide>
+                                                                                            <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                                                                                        </SwiperSlide>
+                                                                                        <SwiperSlide>
+                                                                                            <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                                                                                        </SwiperSlide>
+                                                                                        <SwiperSlide>
+                                                                                            <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+                                                                                        </SwiperSlide>
+                                                                                        <SwiperSlide>
+                                                                                            <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+                                                                                        </SwiperSlide>
+                                                                                        <SwiperSlide>
+                                                                                            <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+                                                                                        </SwiperSlide>
+                                                                                        <SwiperSlide>
+                                                                                            <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+                                                                                        </SwiperSlide>
+                                                                                    </Swiper>
+
+                                                                                    <Swiper
+                                                                                        spaceBetween={10}
+                                                                                        slidesPerView={4}
+                                                                                        freeMode={true}
+                                                                                        watchSlidesProgress={true}
+                                                                                        modules={[FreeMode, Navigation, Thumbs]}
+                                                                                        className="mySwiper"
+                                                                                        onSwiper={setThumbsSwiper}
+                                                                                    >
+                                                                                        <SwiperSlide>
+                                                                                            <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                                                                                        </SwiperSlide>
+                                                                                        <SwiperSlide>
+                                                                                            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                                                                                        </SwiperSlide>
+                                                                                        <SwiperSlide>
+                                                                                            <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                                                                                        </SwiperSlide>
+                                                                                        <SwiperSlide>
+                                                                                            <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                                                                                        </SwiperSlide>
+                                                                                        <SwiperSlide>
+                                                                                            <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                                                                                        </SwiperSlide>
+                                                                                        <SwiperSlide>
+                                                                                            <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                                                                                        </SwiperSlide>
+                                                                                        <SwiperSlide>
+                                                                                            <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+                                                                                        </SwiperSlide>
+                                                                                        <SwiperSlide>
+                                                                                            <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+                                                                                        </SwiperSlide>
+                                                                                        <SwiperSlide>
+                                                                                            <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+                                                                                        </SwiperSlide>
+                                                                                        <SwiperSlide>
+                                                                                            <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+                                                                                        </SwiperSlide>
+                                                                                    </Swiper> */}
                                                                                     <Swiper
                                                                                         style={{
                                                                                             "--swiper-navigation-color": "#fff",
@@ -166,7 +259,7 @@ export default function Products(props) {
                                                                                         loop={true}
                                                                                         spaceBetween={10}
                                                                                         navigation={true}
-                                                                                        thumbs={{ swiper: (thumbsSwiper?.$el && thumbsSwiper?.slidesPerView) ? thumbsSwiper : null }}
+                                                                                        thumbs={{ swiper: (thumbsSwiper?.$el) ? thumbsSwiper : null }}
                                                                                         modules={[FreeMode, Navigation, Thumbs]}
                                                                                         className="mySwiper2 pe-lg-2"
                                                                                     >
@@ -180,27 +273,26 @@ export default function Products(props) {
                                                                                             )
                                                                                         }
                                                                                     </Swiper>
-                                                                                    <div className="justify-content-center">
-                                                                                        <Swiper
-                                                                                            onSwiper={setThumbsSwiper}
-                                                                                            spaceBetween={1}
-                                                                                            slidesPerView={4}
-                                                                                            freeMode={true}
-                                                                                            watchSlidesProgress={true}
-                                                                                            modules={[FreeMode, Navigation, Thumbs]}
-                                                                                            className="mySwiper4"
-                                                                                        >
-                                                                                            {
-                                                                                                product.product_images.map((productColor, index) =>
-                                                                                                    <SwiperSlide key={index}>
-                                                                                                        <div className="d-flex justify-content-center ">
-                                                                                                            <div className=" " style={{ color: productColor.color, backgroundColor: productColor.color, width: '30px', height: '30px', borderRadius: '6px' }}></div>
-                                                                                                        </div>
-                                                                                                    </SwiperSlide>
-                                                                                                )
-                                                                                            }
-                                                                                        </Swiper>
-                                                                                    </div>
+                                                                                    <Swiper
+                                                                                        spaceBetween={1}
+                                                                                        slidesPerView={4}
+                                                                                        freeMode={true}
+                                                                                        watchSlidesProgress={true}
+                                                                                        modules={[FreeMode, Navigation, Thumbs]}
+                                                                                        className="mySwiper4"
+                                                                                        onSwiper={setThumbsSwiper}
+                                                                                 
+                                                                                    >
+                                                                                        {
+                                                                                            product.product_images.map((productColor, index) =>
+                                                                                                <SwiperSlide key={index}>
+                                                                                                    <div className="d-flex justify-content-center ">
+                                                                                                        <div className=" " style={{ color: productColor.color, backgroundColor: productColor.color, width: '30px', height: '30px', borderRadius: '6px' }}></div>
+                                                                                                    </div>
+                                                                                                </SwiperSlide>
+                                                                                            )
+                                                                                        }
+                                                                                    </Swiper>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -216,11 +308,9 @@ export default function Products(props) {
                                                                                     </div>
                                                                                     <div className="d-flex justify-content-lg-start justify-content-center">
                                                                                         <div className="me-3">
-                                                                                            <Link href={product.website_url}>
-                                                                                                <a target="_blank" rel="noreferrer">
-                                                                                                    <button className="button blue-button visit-mobile">{product.website_button}</button>
-                                                                                                </a>
-                                                                                            </Link>
+                                                                                            <a href={product.website_url} target="_blank" rel="noreferrer">
+                                                                                                <button className="button blue-button visit-mobile">{product.website_button}</button>
+                                                                                            </a>
                                                                                         </div>
                                                                                         <button className="button youtube-button" onClick={() => setYoutubePopup(product)}>{product.product_button}</button>
                                                                                     </div>

@@ -26,7 +26,7 @@ body {
 }
 
 .swiper-wrapper {
-    padding-bottom: 70px !important;
+    padding-bottom: 20px !important;
 }
 
 .swiper-pointer-events {
@@ -4087,7 +4087,6 @@ div.four:before {
     opacity: 0;
 }
 
-
 [animate].show {
     opacity: 1;
 }
@@ -5191,6 +5190,7 @@ div.four:before {
     position: fixed;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .lds-ripple {

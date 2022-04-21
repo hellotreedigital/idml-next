@@ -240,16 +240,16 @@ export default function OurStory(props) {
                                         historyList ?
                                             historyList.map((history, index) =>
                                                 <div className="position-relative history" key={index}>
-                                                    <div className={(index % 2 === 0 ? "first" : " second ")}><span></span></div>
+                                                    <div className={(index % 2 === 0 ? "first" : " second ")} animate="" style={{transitionDelay: '2s'}}><span></span></div>
                                                     <div className={"row pb-4   " + (index % 2 === 0 ? " d-flex justify-content-start " : " d-flex justify-content-end ")}>
                                                         <div className={(index % 2 === 0 ? " col-lg-5 col-md-5 col-sm-5 col-12 fix-mobile-position d-flex align-items-center flex-sm-row flex-row-reverse left-position" : " col-lg-5 col-md-5 col-sm-5 col-12 d-flex align-items-center flex-row-reverse fix-mobile-position right-position")}>
-                                                            <p className="mb-0 me-sm-3 ms-3" animate="">{history.text}</p>
+                                                            <p className="mb-0 me-sm-3 ms-3" animate=""  style={{transitionDelay: '0.5s'}}>{history.text}</p>
                                                             <div className={"position-relative " + (index % 2 === 0 ? " circle" : " circle-right")} >
                                                                 <div className="first-mobile"><span></span></div>
-                                                                <p className="mb-0" animate="">{history.year}</p>
+                                                                <p className="mb-0" animate=""  style={{transitionDelay: '1s'}}>{history.year}</p>
                                                                 {
                                                                     (index % 2 === 0) ?
-                                                                        <div className=" " animate="">
+                                                                        <div className=" " animate=""  style={{transitionDelay: '1s'}}>
                                                                             <svg className="d-sm-block d-none" xmlns="http://www.w3.org/2000/svg" width="95.511" height="112.002" viewBox="0 0 95.511 112.002">
                                                                                 <g id="Group_3342" data-name="Group 3342" transform="translate(-204 -3318.568)">
                                                                                     <path id="Path_68" data-name="Path 68" d="M36.175,0A36.148,36.148,0,1,0,72.3,36.122,36.213,36.213,0,0,0,36.175,0Z" transform="translate(204 3338.421)" fill="#ccd7e0" />

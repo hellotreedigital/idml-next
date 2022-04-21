@@ -44,7 +44,7 @@ export default function Booking(props) {
         });
         setCountriesOptions(newCountries);
         triggerScroll();
-        // calcMinHeight();
+        calcMinHeight();
         setLoading(false);
     }, [countriesList, bookingSettings, loading]);
 
@@ -80,7 +80,7 @@ export default function Booking(props) {
     }
 
 
-    return loading ? null : (
+    return  (
         <Layout fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
             <SeoTags
                 title={props.bookingData.page_items.seo.title}
@@ -88,8 +88,7 @@ export default function Booking(props) {
                 image={props.bookingData.page_items.seo.image}
             />
 
-            {
-                bookingSettings ?
+         
                     <div className="min-height-js">
                         <div className="py-lg-5">
                             <div className="py-5">
@@ -263,9 +262,7 @@ export default function Booking(props) {
                             </div>
                         </div>
                     </div>
-                    :
-                    null
-            }
+              
         </Layout>
 
     )
