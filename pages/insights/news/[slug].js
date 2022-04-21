@@ -131,13 +131,13 @@ export default function News(props) {
                                     <hr className="social-line" />
                                 </div>
                                 <div className="col-auto">
-                                    <a target="_blank" rel="noreferrer" href="https://www.google.com/">
+                                    <a target="_blank" rel="noreferrer" href={'https://www.facebook.com/sharer.php?u=' + window.location}>
                                         <img className=" social-icon mx-2" src={insightsSettings.share_facebook} alt="icon" />
                                     </a>
-                                    <a target="_blank" rel="noreferrer" href="https://www.google.com/">
+                                    <a target="_blank" rel="noreferrer" href={'https://www.linkedin.com/sharing/share-offsite/?url=' + window.location}>
                                         <img className=" social-icon mx-2" src={insightsSettings.share_twitter} alt="icon" />
                                     </a>
-                                    <a target="_blank" rel="noreferrer" href="https://www.google.com/">
+                                    <a target="_blank" rel="noreferrer" href={'https://twitter.com/intent/tweet?url=' + window.location}>
                                         <img className=" social-icon mx-2" src={insightsSettings.share_linkedin} alt="icon" />
                                     </a>
                                 </div>

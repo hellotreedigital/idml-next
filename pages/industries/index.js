@@ -187,7 +187,7 @@ export default function Industries(props) {
                                         {
                                             clientsListFilter?.length > 0 ?
                                                 clientsListFilter.map((clientList, index) => (
-                                                    <div className="col-lg-2 col-md-3 col-sm-4 col-6 my-4 " animate=" " key={index}>
+                                                    <div className="col-lg-2 col-md-3 col-sm-4 col-6 my-4 " key={index}>
                                                         <div className="circle-on-hover position-relative">
                                                             <div className="ratio ratio-1x1">
                                                                 <img className="brand-image-industry" src={clientList.full_path_logo} alt="brand" />
