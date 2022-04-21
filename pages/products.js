@@ -201,7 +201,6 @@ export default function Products(props) {
                                                                                                 modules={[FreeMode, Navigation, Thumbs]}
                                                                                                 className="mySwiper4"
                                                                                                 onSwiper={setThumbsSwiper}
-                                                                                                loop={true}
 
                                                                                             >
                                                                                                 {
