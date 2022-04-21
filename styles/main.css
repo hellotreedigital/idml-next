@@ -2,18 +2,18 @@ html {
     overflow-x: hidden;
     font-size: 13px;
     color: #14334A;
-    cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
+    cursor: url('../public/img/images/cursor.png') 7.5 7.5, auto !important;
 }
 
 body {
     font-family: 'SF Pro Display' !important;
     overflow-x: hidden;
-    cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
+    cursor: inherit !important;
     color: #14334A !important;
 }
 
 * {
-    cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
+    cursor: inherit !important;
 }
 
 .add-padd {
@@ -30,7 +30,7 @@ body {
 }
 
 .swiper-pointer-events {
-    padding-bottom: 45px !important;
+    padding-bottom: 65px !important;
 }
 
 .social-contact-icon {
@@ -43,7 +43,7 @@ body {
 }
 
 .side-button {
-    cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
+    cursor: inherit !important;
     z-index: 1;
     position: fixed;
     right: 0;
@@ -86,7 +86,7 @@ h2 {
 }
 
 a {
-    cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
+    cursor: inherit !important;
     text-decoration: none !important;
 }
 
@@ -313,7 +313,7 @@ a {
 }
 
 .arrow-down {
-    cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
+    cursor: inherit !important;
 }
 
 .button {
@@ -322,7 +322,7 @@ a {
     font-family: 'SF Pro Display' !important;
     font-weight: bold;
     border: none;
-    cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
+    cursor: inherit !important;
 }
 
 .white-button {
@@ -330,7 +330,7 @@ a {
     color: #14334A;
     font-size: .875rem;
     padding: .8125rem;
-    cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
+    cursor: inherit !important;
 }
 
 .margin-button {
@@ -433,7 +433,7 @@ a {
 
 .burger-icon,
 .close-mobile-menu {
-    cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
+    cursor: inherit !important;
 }
 
 .remove {
@@ -445,13 +445,13 @@ a {
     font-size: 1rem;
     transition: all 0.5s;
     font-family: 'Raleway';
-    cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
+    cursor: inherit !important;
 }
 
 .contact-us a {
     font-size: 1rem;
     color: #14334A;
-    cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
+    cursor: inherit !important;
 }
 
 /* home */
@@ -642,7 +642,7 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 }
 
 .content-news {
-    cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
+    cursor: inherit !important;
     color: #fff;
     opacity: 0;
     position: absolute;
@@ -710,7 +710,7 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 .youtube-section {
     border-radius: 1.875rem;
     overflow: hidden;
-    cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
+    cursor: inherit !important;
 }
 
 .overlay-youtube {
@@ -1314,12 +1314,12 @@ div.part-3:before {
 }
 
 .team-position-hover p {
-    cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
+    cursor: inherit !important;
     font-size: 1.25rem;
 }
 
 .team-position-hover {
-    cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
+    cursor: inherit !important;
     color: #fff;
     opacity: 0;
     position: absolute;
@@ -1476,7 +1476,7 @@ div.part-3:before {
     position: absolute;
     top: -1px;
     right: 0;
-    cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
+    cursor: inherit !important;
 }
 
 /* story */
@@ -1503,7 +1503,7 @@ div.part-3:before {
     z-index: 1;
     width: 80px;
     height: 80px;
-    cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
+    cursor: inherit !important;
     transform: scale(1);
     transition: 0.5s;
 }
@@ -1520,7 +1520,7 @@ div.part-3:before {
     z-index: 1;
     width: 80px;
     height: 80px;
-    cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
+    cursor: inherit !important;
     transform: scale(1);
     transition: 0.5s;
     opacity: 0;
@@ -1586,7 +1586,7 @@ div.part-3:before {
 }
 
 .color-1 {
-    cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
+    cursor: inherit !important;
     border: 1px solid #A03444;
     border-bottom: 1px solid #A03444;
     border-top: 1px solid #A03444;
@@ -1599,7 +1599,7 @@ div.part-3:before {
 }
 
 .color-2 {
-    cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
+    cursor: inherit !important;
     border: 1px solid #044131;
     border-bottom: 1px solid #044131;
     border-top: 1px solid #044131;
@@ -1612,7 +1612,7 @@ div.part-3:before {
 }
 
 .color-3 {
-    cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
+    cursor: inherit !important;
     border: 1px solid #000;
     border-bottom: 1px solid #000;
     border-top: 1px solid #000;
@@ -1625,7 +1625,7 @@ div.part-3:before {
 }
 
 .color-4 {
-    cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
+    cursor: inherit !important;
     border: 1px solid #C99A93;
     border-bottom: 1px solid #C99A93;
     border-top: 1px solid #C99A93;
@@ -1812,12 +1812,12 @@ div.part-3:before {
 }
 
 .service-on-hover p {
-    cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
+    cursor: inherit !important;
     font-size: 1.25rem;
 }
 
 .service-on-hover {
-    cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
+    cursor: inherit !important;
     color: #14334A;
     opacity: 0;
     position: absolute;
@@ -1924,7 +1924,7 @@ div.part-3:before {
 }
 
 .filter-pills {
-    cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
+    cursor: inherit !important;
     padding: 2px 10px 0px 10px;
     color: #14334A;
     background-color: #fff;
@@ -2064,7 +2064,7 @@ div.part-3:before {
 }
 
 .single-industry {
-    cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
+    cursor: inherit !important;
 }
 
 .single-industry:hover .industry-icon {
@@ -2408,7 +2408,7 @@ div.part-3:before {
     top: 0;
     right: 0;
     transform: translate(-26%);
-    cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
+    cursor: inherit !important;
 }
 
 .bg-popup-bottom h3 {
@@ -2637,7 +2637,7 @@ div.part-3:before {
 
 .background-blue a {
     color: #fff !important;
-    cursor: url('../public/img/images/cursor.png') 40 20, auto !important;
+    cursor: inherit !important;
 }
 
 .footer-img img {
@@ -2737,8 +2737,8 @@ div.part-3:before {
     border-radius: 50px;
 }
 
-/* @media screen and (min-width: 1920px) { 
-    
+/* @media screen and (min-width: 1920px) {
+
 
   div.one:before {
     content: "";
@@ -5224,4 +5224,10 @@ div.four:before {
         height: 72px;
         opacity: 0;
     }
+}
+
+.pagination-thumbs .swiper-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }

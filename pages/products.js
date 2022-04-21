@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
-import SwiperCore, { Autoplay, FreeMode, Navigation, Thumbs } from 'swiper';
+import SwiperCore, { Autoplay, FreeMode, Navigation, Thumbs, Pagination } from 'swiper';
 import "swiper/css/bundle";
 import "swiper/css/free-mode";
 import "swiper/css/thumbs";
@@ -43,6 +43,8 @@ export default function Products(props) {
     const [loading, setLoading] = useState(true);
 
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
+    const [swiper, setSwiper] = useState();
+    const swiperRef = useRef();
 
     function logoClick(productCategory) {
         setProductsItems(productCategory);
@@ -53,8 +55,6 @@ export default function Products(props) {
         setLoading(false)
         setProductsItems(productsCategories[0])
     }, [productsCategories]);
-
-
 
     return loading ? null : (
         <Layout activePage="products" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
@@ -90,7 +90,7 @@ export default function Products(props) {
                                         autoplay={{ delay: 3000 }}
                                         loop={true}
                                         centeredSlides={true}
-                                        slidesPerView={productsCategories?.length < 2 ? productsCategories?.length : 2}
+                                        slidesPerView={6}
                                     >
                                         {
                                             productsCategories?.map((productCategory, index) =>
@@ -111,9 +111,9 @@ export default function Products(props) {
                         {
                             productsItems && (
                                 productsItems.products.length < 0 ? null :
-                                    <div className=" position-relative"  >
+                                    <div className=" position-relative">
                                         <div className="">
-                                            <div className=" justify-content-end d-flex">
+                                            <div className="d-flex justify-content-end">
                                                 <div className="swiper-button-prev">
                                                     <img src="../img/images/prev-arrow.svg" alt="prev" />
                                                 </div>
@@ -121,52 +121,44 @@ export default function Products(props) {
                                                     <img src="../img/images/next-arrow.svg" alt="next" />
                                                 </div>
                                             </div>
-
                                             <Swiper
                                                 modules={[Navigation]}
                                                 navigation={{
                                                     nextEl: '.swiper-button-next',
                                                     prevEl: '.swiper-button-prev'
                                                 }}
-                                                className="products-swiper">
-
+                                                className="products-swiper"
+                                            >
                                                 {
                                                     productsItems?.products?.map((product, index) =>
-                                                        <div key={index}>
-                                                            <SwiperSlide >
-                                                                <div className={ (product.product_images.length === 0 ? "row justify-content-center d-flex" : "row align-items-center d-flex") } >
-                                                                    {
-                                                                        product.product_images.length === 0 ? null :
-                                                                            <div className="col-lg-5 ">
-                                                                                <div className="product-bg position-relative py-5">
-                                                                                    <div className="row justify-content-end d-flex">
-                                                                                        {/* <div className="swiper-button-prev fix-arrow-mobile-prev">
-                                                                                            <img src="../img/images/prev-arrow.svg" alt="prev" />
-                                                                                        </div>
-                                                                                        <div className="swiper-button-next fix-arrow-mobile-next">
-                                                                                            <img src="../img/images/next-arrow.svg" alt="next" />
-                                                                                        </div> */}
-                                                                                    </div>
-                                                                                    <div className="row">
-                                                                                        <div className="col-lg-5"></div>
-                                                                                        
-                                                                                        <div className="col-lg-6">
-
+                                                        <SwiperSlide key={`product-items-${index}`}>
+                                                            <div className={(product.product_images.length === 0 ? "row justify-content-center d-flex" : "row align-items-center d-flex")} >
+                                                                {
+                                                                    product.product_images.length === 0 ? null :
+                                                                        <div className="col-lg-5 ">
+                                                                            <div className="product-bg position-relative py-5">
+                                                                                <div className="row">
+                                                                                    <div className="col-lg-5"></div>
+                                                                                    <div className="col-lg-6">
+                                                                                        <div className="pagination-thumbs">
                                                                                             <Swiper
-                                                                                                style={{
-                                                                                                    "--swiper-navigation-color": "#fff",
-                                                                                                    "--swiper-pagination-color": "#fff",
-                                                                                                }}
                                                                                                 loop={true}
                                                                                                 spaceBetween={10}
-                                                                                                // navigation={true}
-                                                                                                thumbs={{ swiper: (thumbsSwiper?.$el) ? thumbsSwiper : null }}
-                                                                                                modules={[FreeMode, Navigation, Thumbs]}
+                                                                                                navigation={false}
+                                                                                                modules={[Navigation, Pagination]}
+                                                                                                pagination={{
+                                                                                                    clickable: true,
+                                                                                                    clickableClass: 'custom-swiper-pagination-bullet',
+                                                                                                    renderBullet: function (index, className) {
+                                                                                                        return `<div class="d-flex justify-content-center ${className} w-auto h-auto mb-2"><div style="color: ${product.product_images[index].color}; background-color: ${product.product_images[index].color}; width: 30px; height: 30px; borderRadius: 6px;"></div></div>`;
+                                                                                                    }
+                                                                                                }}
                                                                                                 className="mySwiper2 pe-lg-2"
+                                                                                                ref={swiperRef}
                                                                                             >
                                                                                                 {
-                                                                                                    product?.product_images?.map((imageProduct, index) =>
-                                                                                                        <SwiperSlide key={index}>
+                                                                                                    product?.product_images?.map((imageProduct, x) =>
+                                                                                                        <SwiperSlide key={`product-images-${x}`}>
                                                                                                             <div className="ratio product-ratio">
                                                                                                                 <img className="pb-4" src={imageProduct.image} alt="product" />
                                                                                                             </div>
@@ -174,65 +166,58 @@ export default function Products(props) {
                                                                                                     )
                                                                                                 }
                                                                                             </Swiper>
-                                                                                            <Swiper
-                                                                                                freeMode={true}
-                                                                                                watchSlidesProgress={true}
-                                                                                                modules={[FreeMode, Navigation, Thumbs]}
-                                                                                                className="mySwiper4"
-                                                                                                onSwiper={setThumbsSwiper}
-
-                                                                                            >
+                                                                                            {/* <div className="custom-pagination-thumbs">
                                                                                                 {
-                                                                                                    product?.product_images?.map((productColor, index) =>
-                                                                                                        <SwiperSlide key={index}>
-                                                                                                            <div className="d-flex justify-content-center ">
-                                                                                                                <div className=" " style={{ color: productColor.color, backgroundColor: productColor.color, width: '30px', height: '30px', borderRadius: '6px' }}></div>
-                                                                                                            </div>
-                                                                                                        </SwiperSlide>
+                                                                                                    product?.product_images?.map((imageProduct, x) =>
+                                                                                                        <div className="
+                                                                                                        d-flex justify-content-center swiper-pagination-bullet w-auto h-auto
+                                                                                                        custom-swiper-pagination-bullet
+                                                                                                        ">
+                                                                                                            <div style={{ color: imageProduct.color, backgroundColor: imageProduct.color, width: 30, height: 30, borderRadius: 6 }}></div>
+                                                                                                        </div>
                                                                                                     )
                                                                                                 }
-                                                                                            </Swiper>
+                                                                                            </div> */}
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-                                                                    }
-
-                                                                    <div className={ (product.product_images.length === 0) ? "col-9 pt-lg-0 pt-5  justify-content-lg-start justify-content-center text-lg-start text-center" : "col-lg-6 pt-lg-0 pt-5  justify-content-lg-start justify-content-center text-lg-start text-center"}>
-                                                                        <div className={ (product.product_images.length === 0) ? "row product justify-content-md-center text-center" : "row product justify-content-lg-start justify-content-md-center" }>
-                                                                            <div className={((product.product_images.length === 0) ? " col-12" : "col-lg-9 col-md-9 ")}>
-                                                                                <div className="ms-lg-5 ms-2">
-                                                                                    <div className="pb-5 ">
-                                                                                        <div className="logo-product">
-                                                                                            <img src={product.logo} alt="brand" />
-                                                                                        </div>
+                                                                        </div>
+                                                                }
+                                                                <div className={(product.product_images.length === 0) ? "col-9 pt-lg-0 pt-5  justify-content-lg-start justify-content-center text-lg-start text-center" : "col-lg-6 pt-lg-0 pt-5  justify-content-lg-start justify-content-center text-lg-start text-center"}>
+                                                                    <div className={(product.product_images.length === 0) ? "row product justify-content-md-center text-center" : "row product justify-content-lg-start justify-content-md-center"}>
+                                                                        <div className={((product.product_images.length === 0) ? " col-12" : "col-lg-9 col-md-9 ")}>
+                                                                            <div className="ms-lg-5 ms-2">
+                                                                                <div className="pb-5 ">
+                                                                                    <div className="logo-product">
+                                                                                        <img src={product.logo} alt="brand" />
                                                                                     </div>
-                                                                                    <div className="d-flex justify-content-lg-start justify-content-center mb-5">
-                                                                                        {
-                                                                                            product.website_url ?
-                                                                                                < div className="me-3">
-                                                                                                    <a href={product.website_url} target="_blank" rel="noreferrer">
-                                                                                                        <button className="button blue-button visit-mobile">{product.website_button}</button>
-                                                                                                    </a>
-                                                                                                </div>
-                                                                                                :
-                                                                                                null
-                                                                                        }
-                                                                                        {
-                                                                                            product.product_button ?
-                                                                                                <button className="button youtube-button" onClick={() => setYoutubePopup(product)}>{product.product_button}</button>
-                                                                                                :
-                                                                                                null
-                                                                                        }
-                                                                                    </div>
-                                                                                    <p className={(product.product_images.length === 0) ? "mx-lg-5 mx-3" : "mx-lg-0 mx-1"}>{product.description}</p>
                                                                                 </div>
+                                                                                <div className="d-flex justify-content-lg-start justify-content-center mb-5">
+                                                                                    {
+                                                                                        product.website_url ?
+                                                                                            < div className="me-3">
+                                                                                                <a href={product.website_url} target="_blank" rel="noreferrer">
+                                                                                                    <button className="button blue-button visit-mobile">{product.website_button}</button>
+                                                                                                </a>
+                                                                                            </div>
+                                                                                            :
+                                                                                            null
+                                                                                    }
+                                                                                    {
+                                                                                        product.product_button ?
+                                                                                            <button className="button youtube-button" onClick={() => setYoutubePopup(product)}>{product.product_button}</button>
+                                                                                            :
+                                                                                            null
+                                                                                    }
+                                                                                </div>
+                                                                                <p className={(product.product_images.length === 0) ? "mx-lg-5 mx-3" : "mx-lg-0 mx-1"}>{product.description}</p>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </SwiperSlide>
-                                                        </div>
+                                                            </div>
+                                                        </SwiperSlide>
                                                     )
                                                 }
                                             </Swiper>

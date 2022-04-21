@@ -77,13 +77,11 @@ export default function Layout(props) {
                             <div className="dropdown-content">
                                 {props.serviceTitles ?
                                     props.serviceTitles.map((serviceTitle, index) =>
-                                        <>
-                                            <Link href={"/services/" + serviceTitle.slug} key={index}>
-                                                <a className="mb-2 mt-2">
-                                                    {serviceTitle?.title}
-                                                </a>
-                                            </Link>
-                                        </>
+                                        <Link href={"/services/" + serviceTitle.slug} key={index}>
+                                            <a className="mb-2 mt-2">
+                                                {serviceTitle?.title}
+                                            </a>
+                                        </Link>
                                     )
                                     :
                                     null
@@ -103,7 +101,6 @@ export default function Layout(props) {
                                             <p className="mb-2 mt-2" key={index} onClick={() => ageVerificationClick(industryTitle)}>
                                                 {industryTitle?.title}
                                             </p>
-
                                             :
                                             <Link href={"industries/" + industryTitle.slug} key={index}>
                                                 <a className="mb-2 mt-2">
@@ -190,14 +187,11 @@ export default function Layout(props) {
                                 <div className="mobile-dropdown d-grid">
                                     {props.serviceTitles ?
                                         props.serviceTitles.map((serviceTitle, index) =>
-                                            <>
-                                                <Link href={"services/" + serviceTitle.slug} key={index}>
-                                                    <a>
-                                                        {serviceTitle?.title}
-                                                    </a>
-                                                </Link>
-
-                                            </>
+                                            <Link href={"services/" + serviceTitle.slug} key={index}>
+                                                <a>
+                                                    {serviceTitle?.title}
+                                                </a>
+                                            </Link>
                                         )
                                         :
                                         null
@@ -279,7 +273,7 @@ export default function Layout(props) {
                                             {
                                                 props?.footerContactIcons ?
                                                     props.footerContactIcons.map((footerContactIcon, index) =>
-                                                    
+
                                                         <a href={footerContactIcon.url} target="_blank" rel="noreferrer" key={index}>
                                                             <img className="social-icon me-3" src={footerContactIcon.icon} alt="icon" />
                                                         </a>
