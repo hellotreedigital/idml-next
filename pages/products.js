@@ -80,7 +80,7 @@ export default function Products(props) {
             />
             <div className="py-lg-3"></div>
             {
-                productsCategories ?
+                productsCategories?.length > 0 ?
                     <>
                         <div className="container py-5" >
                             <div className="row justify-content-center">
@@ -89,30 +89,11 @@ export default function Products(props) {
                                         spaceBetween={0}
                                         autoplay={{ delay: 3000 }}
                                         loop={true}
-                                        slidesPerView={3}
                                         centeredSlides={true}
-                                        breakpoints={{
-                                            1199.98: {
-                                                slidesPerView: 6,
-                                            },
-
-                                            991.98: {
-                                                slidesPerView: 4,
-                                            },
-
-                                            // when window width is >= 767.98px
-                                            767.98: {
-                                                slidesPerView: 4,
-                                            },
-
-                                            575.98: {
-                                                slidesPerView: 4,
-                                            },
-
-                                        }}
+                                        slidesPerView={productsCategories?.length < 2 ? productsCategories?.length : 2}
                                     >
                                         {
-                                            productsCategories.map((productCategory, index) =>
+                                            productsCategories?.map((productCategory, index) =>
                                                 <SwiperSlide key={index} >
                                                     <div className="text-center px-3" onClick={() => logoClick(productCategory)}>
                                                         <div className={"ratio ratio-1x1 category-circle" + (productCategory === productsItems ? " active" : " ")}>
@@ -150,7 +131,7 @@ export default function Products(props) {
                                                 className="products-swiper">
 
                                                 {
-                                                    productsItems.products.map((product, index) =>
+                                                    productsItems?.products?.map((product, index) =>
                                                         <div key={index}>
                                                             <SwiperSlide >
                                                                 <div className={ (product.product_images.length === 0 ? "row justify-content-center d-flex" : "row align-items-center d-flex") } >
@@ -184,7 +165,7 @@ export default function Products(props) {
                                                                                                 className="mySwiper2 pe-lg-2"
                                                                                             >
                                                                                                 {
-                                                                                                    product.product_images.map((imageProduct, index) =>
+                                                                                                    product?.product_images?.map((imageProduct, index) =>
                                                                                                         <SwiperSlide key={index}>
                                                                                                             <div className="ratio product-ratio">
                                                                                                                 <img className="pb-4" src={imageProduct.image} alt="product" />
@@ -194,8 +175,6 @@ export default function Products(props) {
                                                                                                 }
                                                                                             </Swiper>
                                                                                             <Swiper
-                                                                                            
-                                                                                                slidesPerView={4}
                                                                                                 freeMode={true}
                                                                                                 watchSlidesProgress={true}
                                                                                                 modules={[FreeMode, Navigation, Thumbs]}
@@ -204,7 +183,7 @@ export default function Products(props) {
 
                                                                                             >
                                                                                                 {
-                                                                                                    product.product_images.map((productColor, index) =>
+                                                                                                    product?.product_images?.map((productColor, index) =>
                                                                                                         <SwiperSlide key={index}>
                                                                                                             <div className="d-flex justify-content-center ">
                                                                                                                 <div className=" " style={{ color: productColor.color, backgroundColor: productColor.color, width: '30px', height: '30px', borderRadius: '6px' }}></div>
