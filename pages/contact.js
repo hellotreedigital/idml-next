@@ -186,7 +186,7 @@ export default function Contact(props) {
                                                     </div>
                                                     <div className="col-12"  >
                                                         <div className="mb-4 text-start">
-                                                            <textarea className="booking-form w-100" placeholder={contactSettings.message_placeholder} value={message} onChange={e => setMessage(e.target.value)} />
+                                                            <textarea rows="4" className="booking-form w-100" placeholder={contactSettings.message_placeholder} value={message} onChange={e => setMessage(e.target.value)} />
                                                         </div>
                                                     </div>
                                                     <div className="text-center">

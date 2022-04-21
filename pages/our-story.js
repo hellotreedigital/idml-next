@@ -65,7 +65,7 @@ export default function OurStory(props) {
                             <div className="background-story">
                                 <img src="../img/images/bg-story.svg" alt="bg" />
                             </div>
-                            <div className="container py-5 our-story-1 ">
+                            <div className="container py-lg-5 pt-5 our-story-1 ">
                                 {
                                     storyList ?
                                         storyList.map((story, index) =>
@@ -246,10 +246,10 @@ export default function OurStory(props) {
                                                             <p className="mb-0 me-sm-3 ms-3" animate=""  style={{transitionDelay: '0.5s'}}>{history.text}</p>
                                                             <div className={"position-relative " + (index % 2 === 0 ? " circle" : " circle-right")} >
                                                                 <div className="first-mobile"><span></span></div>
-                                                                <p className="mb-0" animate=""  style={{transitionDelay: '1s'}}>{history.year}</p>
+                                                                <p className="mb-0"  style={{transitionDelay: '1s'}}>{history.year}</p>
                                                                 {
                                                                     (index % 2 === 0) ?
-                                                                        <div className=" " animate=""  style={{transitionDelay: '1s'}}>
+                                                                        <div className=" "   style={{transitionDelay: '1s'}}>
                                                                             <svg className="d-sm-block d-none" xmlns="http://www.w3.org/2000/svg" width="95.511" height="112.002" viewBox="0 0 95.511 112.002">
                                                                                 <g id="Group_3342" data-name="Group 3342" transform="translate(-204 -3318.568)">
                                                                                     <path id="Path_68" data-name="Path 68" d="M36.175,0A36.148,36.148,0,1,0,72.3,36.122,36.213,36.213,0,0,0,36.175,0Z" transform="translate(204 3338.421)" fill="#ccd7e0" />
@@ -264,7 +264,7 @@ export default function OurStory(props) {
                                                                             </svg>
                                                                         </div>
                                                                         :
-                                                                        <div className=" " animate="">
+                                                                        <div className=" " >
                                                                             <svg xmlns="http://www.w3.org/2000/svg" width="95.51" height="112.002" viewBox="0 0 95.51 112.002">
                                                                                 <g id="Group_3343" data-name="Group 3343" transform="translate(-184 -3318.568)">
                                                                                     <path id="Path_68" data-name="Path 68" d="M36.121,0A36.148,36.148,0,1,1,0,36.122,36.213,36.213,0,0,1,36.121,0Z" transform="translate(207.214 3338.421)" fill="#ccd7e0" />

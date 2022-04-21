@@ -1482,6 +1482,9 @@ div.part-3:before {
 /* story */
 
 /* products */
+.products-swiper .swiper-wrapper {
+    align-items: center;
+}
 .mySwiper4 {
     justify-content: center;
 }

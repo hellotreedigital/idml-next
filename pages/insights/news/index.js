@@ -9,7 +9,7 @@ import SeoTags from "../../../components/SeoTags";
 
 export default function News(props) {
 
-    const [loading, setLoading] = useState(true);
+    // const [loading, setLoading] = useState(true);
     const { triggerScroll } = useContext(GlobalState);
 
     const menuItems = props.insightsNewsData.fixed_titles;
@@ -30,8 +30,8 @@ export default function News(props) {
 
     useEffect(() => {
         triggerScroll();
-        setLoading(false);
-    }, [loading]);
+        // setLoading(false);
+    }, []);
 
     useEffect(() => {
         let dbPage = page === oldPage ? 1 : page;
@@ -48,12 +48,7 @@ export default function News(props) {
         });
     }, [page]);
 
-    useEffect(() => {
-        triggerScroll();
-        setLoading(false);
-    }, [loading]);
-
-    return loading ? null : (
+    return (
         <Layout activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
            
            <SeoTags
@@ -134,8 +129,8 @@ export default function News(props) {
                     </div>
                 
 
-            {
-                maxPages.length > 0 ?
+            {/* {
+                maxPages.length > 0 ? */}
                     <div className=" text-center align-items-center justify-content-center d-flex pb-5">
                         {
                             page > 1 ?
@@ -164,9 +159,9 @@ export default function News(props) {
                         }
 
                     </div>
-                    :
+                    {/* :
                     null
-            }
+            } */}
 
         </Layout >
     )
