@@ -32,9 +32,7 @@ export default function ProductSliderContent(props) {
                                                 modules={[Navigation]}
                                                 className="mySwiper2 pe-lg-2"
                                                 onSwiper={setMainSwiper}
-                                                onSlideChange={(r) => {
-                                                    thumbsSwiper.slideTo(r.activeIndex)
-                                                }}
+                                                onSlideChange={(r) => thumbsSwiper.slideTo(r.activeIndex)}
                                             >
                                                 {
                                                     props.product.product_images?.map((imageProduct, x) =>
@@ -48,24 +46,19 @@ export default function ProductSliderContent(props) {
                                             </Swiper>
                                             <Swiper
                                                 spaceBetween={10}
-                                                slidesPerView={4}
+                                                slidesPerView={5}
                                                 centeredSlides={true}
                                                 slideToClickedSlide={true}
                                                 watchSlidesProgress={true}
                                                 modules={[Navigation]}
-                                                onSlideChange={(r) => {
-                                                    console.log('thumbs', r.activeIndex)
-                                                    if (mainSwiper) {
-                                                        mainSwiper.slideTo(r.activeIndex)
-                                                    }
-                                                }}
+                                                onSlideChange={(r) => mainSwiper.slideTo(r.activeIndex)}
                                                 onSwiper={setThumbsSwiper}
                                             >
                                                 {
                                                     props.product.product_images?.map((imageProduct, x) =>
                                                         <SwiperSlide key={`product-images-${x}`}>
-                                                            <div className="ratio product-ratio">
-                                                                <img className="pb-4" src={imageProduct.image} alt="product" />
+                                                            <div className="d-flex justify-content-center w-auto h-auto mb-2">
+                                                                <div style={{ color: imageProduct.color, backgroundColor: imageProduct.color, width: 30, height: 30, borderRadius: 6 }}></div>
                                                             </div>
                                                         </SwiperSlide>
                                                     )
