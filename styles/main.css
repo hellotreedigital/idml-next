@@ -1489,12 +1489,8 @@ div.part-3:before {
     justify-content: center;
 }
 
-.swiper-button-prev.fix-arrow-mobile-prev img {
-    display: none;
-}
-
-.swiper-button-next.fix-arrow-mobile-next img {
-    display: none;
+.mySwiper4 .swiper-wrapper {
+    justify-content: center !important;
 }
 
 .play-btn {
@@ -3216,19 +3212,6 @@ div.four:before {
         padding-top: 118%;
     }
 
-    .swiper-button-next img,
-    .swiper-button-prev img {
-        display: none;
-    }
-
-    .swiper-button-prev.fix-arrow-mobile-prev img {
-        display: block;
-    }
-
-    .swiper-button-next.fix-arrow-mobile-next img {
-        display: block;
-    }
-
     .team-image img {
         width: 140px;
         height: 140px;
@@ -3713,6 +3696,9 @@ div.four:before {
 /* X-Small devices (portrait phones, less than 576px) */
 
 @media (max-width: 575.98px) {
+    .product p {
+        font-size: 0.9rem;
+    }
 
     .first-mobile {
         position: absolute;

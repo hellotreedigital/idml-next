@@ -22,7 +22,7 @@ import axios from "axios";
 import GlobalState from "../GlobalState";
 import SeoTags from "../components/SeoTags";
 
-export default function Products1(props) {
+export default function Products(props) {
 
     SwiperCore.use([Autoplay])
 
@@ -159,12 +159,12 @@ export default function Products1(props) {
                                                                             <div className="col-lg-5 ">
                                                                                 <div className="product-bg position-relative py-5">
                                                                                     <div className="row justify-content-end d-flex">
-                                                                                        <div className="swiper-button-prev fix-arrow-mobile-prev">
+                                                                                        {/* <div className="swiper-button-prev fix-arrow-mobile-prev">
                                                                                             <img src="../img/images/prev-arrow.svg" alt="prev" />
                                                                                         </div>
                                                                                         <div className="swiper-button-next fix-arrow-mobile-next">
                                                                                             <img src="../img/images/next-arrow.svg" alt="next" />
-                                                                                        </div>
+                                                                                        </div> */}
                                                                                     </div>
                                                                                     <div className="row">
                                                                                         <div className="col-lg-5"></div>
@@ -178,7 +178,7 @@ export default function Products1(props) {
                                                                                                 }}
                                                                                                 loop={true}
                                                                                                 spaceBetween={10}
-                                                                                                navigation={true}
+                                                                                                // navigation={true}
                                                                                                 thumbs={{ swiper: (thumbsSwiper?.$el) ? thumbsSwiper : null }}
                                                                                                 modules={[FreeMode, Navigation, Thumbs]}
                                                                                                 className="mySwiper2 pe-lg-2"
@@ -201,6 +201,7 @@ export default function Products1(props) {
                                                                                                 modules={[FreeMode, Navigation, Thumbs]}
                                                                                                 className="mySwiper4"
                                                                                                 onSwiper={setThumbsSwiper}
+                                                                                                loop={true}
 
                                                                                             >
                                                                                                 {
@@ -219,8 +220,8 @@ export default function Products1(props) {
                                                                             </div>
                                                                     }
 
-                                                                    <div className="col-lg-6 pt-lg-0 pt-5  justify-content-lg-start justify-content-center text-lg-start text-center">
-                                                                        <div className={ (product.product_images.length === 0) ? "row product justify-content-md-center text-center" : "row product justify-content-md-center" }>
+                                                                    <div className={ (product.product_images.length === 0) ? "col-9 pt-lg-0 pt-5  justify-content-lg-start justify-content-center text-lg-start text-center" : "col-lg-6 pt-lg-0 pt-5  justify-content-lg-start justify-content-center text-lg-start text-center"}>
+                                                                        <div className={ (product.product_images.length === 0) ? "row product justify-content-md-center text-center" : "row product justify-content-lg-start justify-content-md-center" }>
                                                                             <div className={((product.product_images.length === 0) ? " col-12" : "col-lg-9 col-md-9 ")}>
                                                                                 <div className="ms-lg-5 ms-2">
                                                                                     <div className="pb-5 ">
@@ -228,7 +229,7 @@ export default function Products1(props) {
                                                                                             <img src={product.logo} alt="brand" />
                                                                                         </div>
                                                                                     </div>
-                                                                                    <div className="d-flex justify-content-lg-start justify-content-center">
+                                                                                    <div className="d-flex justify-content-lg-start justify-content-center mb-5">
                                                                                         {
                                                                                             product.website_url ?
                                                                                                 < div className="me-3">
@@ -246,7 +247,7 @@ export default function Products1(props) {
                                                                                                 null
                                                                                         }
                                                                                     </div>
-                                                                                    <p className="pt-5">{product.description}</p>
+                                                                                    <p className={(product.product_images.length === 0) ? "mx-lg-5 mx-3" : "mx-lg-0 mx-1"}>{product.description}</p>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
