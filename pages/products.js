@@ -194,7 +194,7 @@ export default function Products(props) {
                                                                                                 }
                                                                                             </Swiper>
                                                                                             <Swiper
-                                                                                                spaceBetween={1}
+                                                                                            
                                                                                                 slidesPerView={4}
                                                                                                 freeMode={true}
                                                                                                 watchSlidesProgress={true}

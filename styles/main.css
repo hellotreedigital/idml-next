@@ -1489,9 +1489,11 @@ div.part-3:before {
     justify-content: center;
 }
 
-.mySwiper4 .swiper-wrapper {
-    justify-content: center !important;
-}
+
+/* .mySwiper4 .swiper-wrapper {
+    margin-left: 5px !important;
+    margin-right: 5px;
+} */
 
 .play-btn {
     position: absolute;
@@ -2078,6 +2080,11 @@ div.part-3:before {
 
 
 /* single new */
+
+.padding-loader {
+    /* padding: 100px; */
+    height: 60vh;
+}
 
 .single-news {
     padding-top: 68%;

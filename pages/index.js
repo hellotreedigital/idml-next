@@ -196,7 +196,7 @@ export default function Home(props) {
             <div className="row justify-content-center ">
               {homeProcess ?
                 homeProcess.map((process, index) =>
-                  <div className="col-lg-4 col-md-6 col-12 pb-3 " style={index % 3 === 0 ? { transitionDelay: '0.5s' } : (index % 2 === 0 ? { transitionDelay: '1.5s' } : { transitionDelay: '1s' })} animate="" key={index}>
+                  <div className="col-lg-4 col-md-6 col-12 pb-3 " style={index % 3 === 0 ? { transitionDelay: '0.6s' } : (index % 2 === 0 ? { transitionDelay: '1s' } : { transitionDelay: '0.8s' })} animate="" key={index}>
                     <div className="bg-color button blue-button-hover shadow">
                       <div className="pt-3">
                         <div style={{ textTransform: 'uppercase' }}>{process.title}</div>
@@ -340,7 +340,7 @@ export default function Home(props) {
                 <div className="row justify-content-center ">
                   {industries ?
                     industries.map((industry, index) =>
-                      <div className="col-lg-4 col-md-6 col-12 pb-5"  style={index % 3 === 0 ? { transitionDelay: '0.5s' } : (index % 2 === 0 ? { transitionDelay: '1.5s' } : { transitionDelay: '1s' })} animate="" key={index}>
+                      <div className="col-lg-4 col-md-6 col-12 pb-5"  style={index % 3 === 0 ? { transitionDelay: '0.6s' } : (index % 2 === 0 ? { transitionDelay: '1s' } : { transitionDelay: '0.8s' })} animate="" key={index}>
                         <Link href={"/industries/" + industry.slug}>
                           <a>
                             <div className="button blue-ciel-button shadow">
@@ -478,7 +478,7 @@ export default function Home(props) {
                                 </div>
                               </div>
                               :
-                              <div className={"col-lg-3 col-md-4 col-sm-6 pb-5 " + (index % 2 !== 0 ? "col-lg-6 col-md-4 col-sm-6 pb-5" : "")}  style={index % 3 === 0 ? {transitionDelay: '0.5s'} : (index % 2 === 0 ? {transitionDelay: '1.5s'}: {transitionDelay: '1s'})} animate="" key={index}>
+                              <div className={"col-lg-3 col-md-4 col-sm-6 pb-5 " + (index % 2 !== 0 ? "col-lg-6 col-md-4 col-sm-6 pb-5" : "")}  style={index % 3 === 0 ? { transitionDelay: '0.6s' } : (index % 2 === 0 ? { transitionDelay: '1s' } : { transitionDelay: '0.8s' })} animate="" key={index}>
                                 <div className="youtube-section position-relative shadow" onClick={() => setYoutubePopup(list)}>
                                   <div className={"ratio youtube-ratio" + (index % 2 !== 0 ? " youtube-section-longer" : "")}>
                                     <img src={list.thumbnail_image} alt="youtube" />

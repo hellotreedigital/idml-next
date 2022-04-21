@@ -9,7 +9,7 @@ import SeoTags from "../../../components/SeoTags";
 
 export default function News(props) {
 
-    // const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
     const { triggerScroll } = useContext(GlobalState);
 
     const menuItems = props.insightsNewsData.fixed_titles;
@@ -30,8 +30,8 @@ export default function News(props) {
 
     useEffect(() => {
         triggerScroll();
-        // setLoading(false);
-    }, []);
+        setLoading(false);
+    }, [loading]);
 
     useEffect(() => {
         let dbPage = page === oldPage ? 1 : page;
@@ -48,89 +48,99 @@ export default function News(props) {
         });
     }, [page]);
 
-    return (
+    useEffect(() => {
+        triggerScroll();
+        setLoading(false);
+    }, [loading]);
+
+    return  (
         <Layout activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
-           
-           <SeoTags
+
+            <SeoTags
                 title={props.insightsNewsData.page_items.seo.title}
                 description={props.insightsNewsData.page_items.seo.description}
                 image={props.insightsNewsData.page_items.seo.image}
             />
-           
+
             <SideButton
                 title={menuItems['book-a-consultation']}
             />
-            
-                    <div className="pt-lg-5">
-                        <div className="pt-5">
-                            <div className="container pt-5" >
-                                <div className="row  align-items-center mb-4 pt-5">
-                                    <div className="col-2">
-                                        <div className=" d-none d-sm-flex">
 
-                                            <button onClick={() => window.history.back()} className="button back-button d-flex align-items-center shadow">
-                                                <svg className="arrow-back" xmlns="http://www.w3.org/2000/svg" width="8.136" height="12.964" viewBox="0 0 8.136 12.964">
-                                                    <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" strokeLinecap="round" strokeWidth="2" />
-                                                </svg>
-                                                <p className="mb-0 ms-2">{insightsSettings.back_text}</p>
-                                            </button>
+            <div className="pt-lg-5">
+                <div className="pt-5">
+                    <div className="container pt-5" >
+                        <div className="row  align-items-center mb-4 pt-5">
+                            <div className="col-2">
+                                <div className=" d-none d-sm-flex">
 
-                                        </div>
-                                        <div className=" d-block d-sm-none">
-                                            <button onClick={() => window.history.back()} className="back-button-border">
+                                    <button onClick={() => window.history.back()} className="button back-button d-flex align-items-center shadow">
+                                        <svg className="arrow-back" xmlns="http://www.w3.org/2000/svg" width="8.136" height="12.964" viewBox="0 0 8.136 12.964">
+                                            <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" strokeLinecap="round" strokeWidth="2" />
+                                        </svg>
+                                        <p className="mb-0 ms-2">{insightsSettings.back_text}</p>
+                                    </button>
 
-                                                <svg className="arrow-back" xmlns="http://www.w3.org/2000/svg" width="8.136" height="12.964" viewBox="0 0 8.136 12.964">
-                                                    <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" strokeLinecap="round" strokeWidth="2" />
-                                                </svg>
-
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <div className="col">
-                                        <div className="d-flex text-center justify-content-center">
-
-                                            <div className="d-flex align-items-center">
-                                                <h2 className="mb-0 service-title-page">{insightsSettings.news_title}</h2>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div className="col-2">
-                                    </div>
                                 </div>
+                                <div className=" d-block d-sm-none">
+                                    <button onClick={() => window.history.back()} className="back-button-border">
+
+                                        <svg className="arrow-back" xmlns="http://www.w3.org/2000/svg" width="8.136" height="12.964" viewBox="0 0 8.136 12.964">
+                                            <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" strokeLinecap="round" strokeWidth="2" />
+                                        </svg>
+
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div className="col">
+                                <div className="d-flex text-center justify-content-center">
+
+                                    <div className="d-flex align-items-center">
+                                        <h2 className="mb-0 service-title-page">{insightsSettings.news_title}</h2>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div className="col-2">
                             </div>
                         </div>
                     </div>
-           
-                    <div className="container pt-lg-5"  >
-                        <div className="row justify-content-center gx-5">
-                            {
-                                news?.length > 0 ?
-                                    news.map((paginatedNew, index) => (
-                                        <div className="col-lg-4 col-md-6 col-sm-6 pb-5" key={index}>
-                                            <Link href={"/insights/news/" + paginatedNew.slug}>
-                                                <a>
-                                                    <NewsSection
-                                                        title={paginatedNew.title}
-                                                        date={paginatedNew.date_formatted}
-                                                        image={paginatedNew.first_image}
-                                                        description={paginatedNew.small_description}
-                                                        button={insightsSettings?.read_more}
-                                                    />
-                                                </a>
-                                            </Link>
-                                        </div>
-                                    ))
-                                    :
-                                    null
-                            }
-                        </div>
-                    </div>
-                
+                </div>
+            </div>
 
-            {/* {
-                maxPages.length > 0 ? */}
+            <div className="container pt-lg-5"  >
+                <div className="row justify-content-center gx-5">
+                    {
+                        news?.length > 0 ?
+                            news.map((paginatedNew, index) => (
+                                <div className="col-lg-4 col-md-6 col-sm-6 pb-5" key={index}>
+                                    <Link href={"/insights/news/" + paginatedNew.slug}>
+                                        <a>
+                                            <NewsSection
+                                                title={paginatedNew.title}
+                                                date={paginatedNew.date_formatted}
+                                                image={paginatedNew.first_image}
+                                                description={paginatedNew.small_description}
+                                                button={insightsSettings?.read_more}
+                                            />
+                                        </a>
+                                    </Link>
+                                </div>
+                            ))
+                            :
+                            <div className="text-center  padding-loader">
+                                <div className="lds-ripple">
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                    }
+                </div>
+            </div>
+
+
+            {
+                maxPages.length > 0 ?
                     <div className=" text-center align-items-center justify-content-center d-flex pb-5">
                         {
                             page > 1 ?
@@ -159,9 +169,9 @@ export default function News(props) {
                         }
 
                     </div>
-                    {/* :
+                    :
                     null
-            } */}
+            }
 
         </Layout >
     )
