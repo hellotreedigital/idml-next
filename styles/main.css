@@ -1485,6 +1485,7 @@ div.part-3:before {
 .products-swiper .swiper-wrapper {
     align-items: center;
 }
+
 .mySwiper4 {
     justify-content: center;
 }
@@ -2995,6 +2996,9 @@ div.four:before {
 /* Large devices (desktops, less than 1200px) */
 
 @media (max-width: 1199.98px) {
+    .product p {
+        font-size: 0.8rem;
+    }
 
     .company-line-left,
     .company-line-right {
@@ -3172,6 +3176,20 @@ div.four:before {
 
 @media (max-width: 991.98px) {
 
+    .swiper-button-prev {
+        left: 3px !important;
+    }
+
+    .swiper-button-next {
+        right: 3px !important;
+    }
+
+    .swiper-button-next img,
+    .swiper-button-prev img {
+        width: 30px;
+        height: 30px;
+    }
+
     .company-line-left,
     .company-line-right {
         width: 61%;
@@ -3181,7 +3199,10 @@ div.four:before {
         top: -50%;
     }
 
-
+    .logo-product img {
+        width: 80px;
+        height: 80px;
+    }
 
     .add-padd {
         padding-bottom: 0 !important;
@@ -3265,7 +3286,7 @@ div.four:before {
     }
 
     .product-ratio {
-        padding-top: 35%;
+        padding-top: 58%;
     }
 
     .bg-ceo-mobile {
@@ -3370,12 +3391,21 @@ div.four:before {
     .background-sections img {
         height: 70%;
     }
+
+    .blue-button.visit-mobile,
+    .youtube-button {
+        padding: 0.6rem 0.9rem;
+    }
 }
 
 
 /* Small devices (landscape phones, less than 768px) */
 
 @media (max-width: 767.98px) {
+    .product-ratio {
+        padding-top: 35%;
+    }
+
     .pins {
         width: 10px;
     }
