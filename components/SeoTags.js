@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-export default function (props) {
+export default function SeoTags(props) {
     return (
         <Head>
             {/* Primary Meta Tags */}
