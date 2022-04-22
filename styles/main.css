@@ -440,7 +440,7 @@ a {
     display: none;
 }
 
-.mobile-dropdown a {
+.mobile-dropdown a, .mobile-dropdown p  {
     color: #fff;
     font-size: 1rem;
     transition: all 0.5s;

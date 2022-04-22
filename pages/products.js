@@ -92,6 +92,25 @@ export default function Products(props) {
                                         loop={true}
                                         centeredSlides={true}
                                         slidesPerView={6}
+                                        breakpoints={{
+                                            1199.98: {
+                                                slidesPerView: 6,
+                                            },
+
+                                            991.98: {
+                                                slidesPerView: 4,
+                                            },
+
+                                            // when window width is >= 767.98px
+                                            767.98: {
+                                                slidesPerView: 4,
+                                            },
+
+                                            575.98: {
+                                                slidesPerView: 4,
+                                            },
+
+                                        }}
                                     >
                                         {
                                             productsCategories?.map((productCategory, index) =>

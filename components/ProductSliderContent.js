@@ -20,7 +20,7 @@ export default function ProductSliderContent(props) {
             <div className={(props.product.product_images.length === 0 ? "row justify-content-center" : "row align-items-center")} >
                 {
                     props.product.product_images.length === 0 ? null :
-                        <div className="col-lg-5 ">
+                        <div className="col-lg-5 col-md-5">
                             <div className="product-bg position-relative py-5">
                                 <div className="row">
                                     <div className="col-lg-5"></div>
@@ -70,16 +70,16 @@ export default function ProductSliderContent(props) {
                             </div>
                         </div>
                 }
-                <div className={(props.product.product_images.length === 0) ? "col-9 pt-lg-0 pt-5  justify-content-lg-start justify-content-center text-lg-start text-center" : "col-lg-6 pt-lg-0 pt-5  justify-content-lg-start justify-content-center text-lg-start text-center"}>
+                <div className={(props.product.product_images.length === 0) ? "col-9 pt-lg-0 pt-5  justify-content-lg-start justify-content-center text-lg-start text-center" : "col-lg-6 col-md-6 pt-lg-0 pt-5  justify-content-lg-start justify-content-center text-lg-start text-center"}>
                     <div className={(props.product.product_images.length === 0) ? "row product justify-content-md-center text-center" : "row product justify-content-lg-start justify-content-md-center"}>
                         <div className={((props.product.product_images.length === 0) ? " col-12" : "col-lg-9 col-md-9 ")}>
                             <div className="ms-lg-5 ms-2">
-                                <div className="pb-5">
+                                <div className="pb-lg-5 pb-md-3 pb-5">
                                     <div className="logo-product">
                                         <img src={props.product.logo} alt="brand" />
                                     </div>
                                 </div>
-                                <div className="d-flex justify-content-lg-start justify-content-center mb-5">
+                                <div className="d-flex justify-content-lg-start justify-content-center mb-lg-5 mb-md-3 mb-5">
                                     {
                                         props.product.website_url ?
                                             < div className="me-3">

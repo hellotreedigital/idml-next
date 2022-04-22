@@ -102,7 +102,7 @@ export default function Layout(props) {
                                                 {industryTitle?.title}
                                             </p>
                                             :
-                                            <Link href={"industries/" + industryTitle.slug} key={index}>
+                                            <Link href={"/industries/" + industryTitle.slug} key={index}>
                                                 <a className="mb-2 mt-2">
                                                     {industryTitle?.title}
                                                 </a>
@@ -187,7 +187,7 @@ export default function Layout(props) {
                                 <div className="mobile-dropdown d-grid">
                                     {props.serviceTitles ?
                                         props.serviceTitles.map((serviceTitle, index) =>
-                                            <Link href={"services/" + serviceTitle.slug} key={index}>
+                                            <Link href={"/services/" + serviceTitle.slug} key={index}>
                                                 <a>
                                                     {serviceTitle?.title}
                                                 </a>
@@ -218,7 +218,7 @@ export default function Layout(props) {
                                                     {industryTitle?.title}
                                                 </p>
                                                 :
-                                                <Link href={"industries/" + industryTitle.slug} key={index}>
+                                                <Link href={"/industries/" + industryTitle.slug} key={index}>
                                                     <a>
                                                         {industryTitle?.title}
                                                     </a>
