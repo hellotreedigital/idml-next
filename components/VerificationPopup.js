@@ -25,7 +25,7 @@ export default function verificationPopup(props) {
                             </div>
                             <div className="row justify-content-center p-3">
                                 <div className="col-lg-4 col-md-4">
-                                    <Link href={"industries/" + props.slug}>
+                                    <Link href={"/industries/" + props.slug}>
                                         <a>
                                             <div className="button blue-button verification-button  fix-padding shadow">{props.button}</div>
                                         </a>
