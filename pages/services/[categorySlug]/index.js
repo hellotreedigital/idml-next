@@ -1,6 +1,6 @@
 import Layout from "../../../components/layout";
 import SideButton from "../../../components/SideButton";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import GlobalState from "../../../GlobalState";
 import SeoTags from "../../../components/SeoTags";
@@ -20,10 +20,13 @@ export default function Services(props) {
     const footerContactIcons = props.serviceCategoryData.footer_contact_icons;
     const industriesTitles = props.serviceCategoryData.industries_titles;
 
+    const [loading, setLoading] = useState(true);
+
     useEffect(() => {
         triggerScroll();
         calcMinHeight();
-    }, [categorySettings]);
+        setLoading(false)
+    }, [categorySettings, loading]);
 
     return (
         <div>
@@ -45,23 +48,27 @@ export default function Services(props) {
                                 <div className="container pt-5" >
                                     <div className="row align-items-start py-5">
                                         <div className="col-xxl-auto col-lg-1 col-auto">
-                                            <div className=" d-none d-sm-flex">
+                                            {loading ? null :
+                                                <>
+                                                    <div className=" d-none d-sm-flex">
 
-                                                <div onClick={() => window.history.back()} className="button back-button d-flex align-items-center shadow">
-                                                    <svg className="arrow-back" xmlns="http://www.w3.org/2000/svg" width="8.136" height="12.964" viewBox="0 0 8.136 12.964">
-                                                        <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" strokeLinecap="round" strokeWidth="2" />
-                                                    </svg>
-                                                    <p className="mb-0 ms-2">{categorySettings.back_button}</p>
-                                                </div>
+                                                        <div onClick={() => window.history.back()} className="button back-button d-flex align-items-center shadow">
+                                                            <svg className="arrow-back" xmlns="http://www.w3.org/2000/svg" width="8.136" height="12.964" viewBox="0 0 8.136 12.964">
+                                                                <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" strokeLinecap="round" strokeWidth="2" />
+                                                            </svg>
+                                                            <p className="mb-0 ms-2">{categorySettings.back_button}</p>
+                                                        </div>
 
-                                            </div>
-                                            <div className="d-block d-sm-none">
-                                                <button onClick={() => window.history.back()} className="back-button-border">
-                                                    <svg className="arrow-back " xmlns="http://www.w3.org/2000/svg" width="8.136" height="12.964" viewBox="0 0 8.136 12.964">
-                                                        <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" strokeLinecap="round" strokeWidth="2" />
-                                                    </svg>
-                                                </button>
-                                            </div>
+                                                    </div>
+                                                    <div className="d-block d-sm-none">
+                                                        <button onClick={() => window.history.back()} className="back-button-border">
+                                                            <svg className="arrow-back " xmlns="http://www.w3.org/2000/svg" width="8.136" height="12.964" viewBox="0 0 8.136 12.964">
+                                                                <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" strokeLinecap="round" strokeWidth="2" />
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                </>
+                                            }
                                         </div>
 
                                         <div className="col">
@@ -92,11 +99,11 @@ export default function Services(props) {
                                     {
                                         categories ?
                                             categories.map((category, index) =>
-                                                <div className="col-lg-4 col-md-6 col-sm-6 pb-5" animate="" key={index}>
+                                                <div className="col-lg-4 col-md-6 col-sm-6 col-10 pb-5" animate="" key={index}>
                                                     <a href={"/services/" + singleCat?.slug + "/" + category.slug}>
-                                                        <div className="service-section shadow position-relative">
+                                                        <div className="service-section position-relative">
                                                             <div className="ratio team-ratio">
-                                                                <img src="../img/temp-images/story1.jpg" alt="ceo" />
+                                                                <img src="../img/temp-images/story1.jpg" alt="categories" />
                                                             </div>
                                                             <div className="service-title py-lg-3 py-2">
                                                                 <h4 className="my-4">{category.title}</h4>

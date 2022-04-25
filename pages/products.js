@@ -90,7 +90,6 @@ export default function Products(props) {
                                         spaceBetween={0}
                                         autoplay={{ delay: 3000 }}
                                         loop={true}
-                                        centeredSlides={true}
                                         slidesPerView={2}
                                         breakpoints={{
                                             1199.98: {

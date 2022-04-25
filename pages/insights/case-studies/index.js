@@ -71,19 +71,29 @@ export default function CaseStudies(props) {
                         <div className="row align-items-center  pt-5 mb-4">
                             <div className="col-xxl-auto col-lg-1 col-auto add-absolute">
                                 <div className=" d-none d-sm-block">
-                                    <button onClick={() => window.history.back()} className="button back-button d-flex align-items-center shadow">
-                                        <svg className="arrow-back" xmlns="http://www.w3.org/2000/svg" width="8.136" height="12.964" viewBox="0 0 8.136 12.964">
-                                            <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" strokeLinecap="round" strokeWidth="2" />
-                                        </svg>
-                                        <p className="mb-0 ms-2">{insightsSettings.back_text}</p>
-                                    </button>
+                                    {
+                                        (history.length > 2) ?
+                                            <button onClick={() => window.history.back()} className="button back-button d-flex align-items-center shadow">
+                                                <svg className="arrow-back" xmlns="http://www.w3.org/2000/svg" width="8.136" height="12.964" viewBox="0 0 8.136 12.964">
+                                                    <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" strokeLinecap="round" strokeWidth="2" />
+                                                </svg>
+                                                <p className="mb-0 ms-2">{insightsSettings.back_text}</p>
+                                            </button>
+                                            :
+                                            null
+                                    }
                                 </div>
                                 <div className=" d-block d-sm-none">
-                                    <button onClick={() => window.history.back()} className="back-button-border">
-                                        <svg className="arrow-back" xmlns="http://www.w3.org/2000/svg" width="8.136" height="12.964" viewBox="0 0 8.136 12.964">
-                                            <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" strokeLinecap="round" strokeWidth="2" />
-                                        </svg>
-                                    </button>
+                                    {
+                                        (history.length > 2) ?
+                                            <button onClick={() => window.history.back()} className="back-button-border">
+                                                <svg className="arrow-back" xmlns="http://www.w3.org/2000/svg" width="8.136" height="12.964" viewBox="0 0 8.136 12.964">
+                                                    <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" strokeLinecap="round" strokeWidth="2" />
+                                                </svg>
+                                            </button>
+                                            :
+                                            null
+                                    }
                                 </div>
                             </div>
 

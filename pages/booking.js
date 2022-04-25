@@ -172,7 +172,7 @@ export default function Booking(props) {
                                     <div className="row justify-content-center text-center  gx-5 mx-3">
                                         <div className="col-12 bg-popup-top">
                                             <div className="py-5">
-                                                <img className="popup-form-icon" src="../img/images/error.svg" alt="ceo" />
+                                                <img className="popup-form-icon" src="../img/images/error.svg" alt="error" />
                                             </div>
                                         </div>
                                     </div>
@@ -242,7 +242,7 @@ export default function Booking(props) {
                                     <div className="row justify-content-center text-center  gx-5 mx-3">
                                         <div className="col-md-12 bg-popup-top">
                                             <div className="py-5">
-                                                <img className="popup-form-icon" src="../img/images/success.svg" alt="ceo" />
+                                                <img className="popup-form-icon" src="../img/images/success.svg" alt="success" />
                                             </div>
                                         </div>
                                     </div>

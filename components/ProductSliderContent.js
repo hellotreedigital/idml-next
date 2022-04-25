@@ -20,11 +20,11 @@ export default function ProductSliderContent(props) {
             <div className={(props.product.product_images.length === 0 ? "row justify-content-center" : "row align-items-center")} >
                 {
                     props.product.product_images.length === 0 ? null :
-                        <div className="col-lg-5 col-md-5">
+                        <div className="col-lg-6 col-md-5">
                             <div className="product-bg position-relative py-5">
                                 <div className="row">
-                                    <div className="col-lg-5"></div>
-                                    <div className="col-lg-6">
+                                    <div className="col-lg-6"></div>
+                                    <div className="col-lg-5">
                                         <div className="pagination-thumbs">
                                             <Swiper
                                                 spaceBetween={10}
@@ -53,6 +53,23 @@ export default function ProductSliderContent(props) {
                                                 modules={[Navigation]}
                                                 onSlideChange={(r) => mainSwiper.slideTo(r.activeIndex)}
                                                 onSwiper={setThumbsSwiper}
+                                                breakpoints={{
+                                                    1199.98: {
+                                                        slidesPerView: 7,
+                                                        spaceBetween:10,
+                                                    },
+
+                                                   
+                                                    // when window width is >= 767.98px
+                                                    767.98: {
+                                                        slidesPerView: 6,
+                                                    },
+
+                                                    575.98: {
+                                                        slidesPerView: 10,
+                                                    },
+
+                                                }}
                                             >
                                                 {
                                                     props.product.product_images?.map((imageProduct, x) =>

@@ -130,7 +130,7 @@ export default function OurStory(props) {
                                                         </VisibilitySensor>
                                                     )}
                                                 </CountUp>
-                                                <div className="counter-plus">+</div>
+                                                <div className="counter-plus">{storySettings.counter_plus}</div>
                                             </div>
                                             <hr className="seperator" />
                                             <h4>{storySettings.second_number_title}</h4>
@@ -152,7 +152,7 @@ export default function OurStory(props) {
                                                         </VisibilitySensor>
                                                     )}
                                                 </CountUp>
-                                                <div className="counter-plus">+</div>
+                                                <div className="counter-plus">{storySettings.counter_plus}</div>
                                             </div>
                                             <hr className="seperator" />
                                             <h4>{storySettings.third_number_title}</h4>
@@ -194,10 +194,7 @@ export default function OurStory(props) {
 
                                     <div className="position-relative">
                                         <div className="think-blue-bg py-lg-5 pb-4" style={{ backgroundImage: 'url(' + storySettings.pillars_image + ')' }}>
-                                            <div className="pt-lg-5"></div>
-                                            <div className="pt-lg-5"></div>
-                                            <div className="pt-lg-5"></div>
-                                            <div className="pt-lg-5"></div>
+                                            <div className="pilllars-larger"></div>
 
                                             <div className="container section-on-image ">
                                                 <div className="row justify-content-center">
@@ -211,7 +208,7 @@ export default function OurStory(props) {
                                                                             <div className="hr-line"></div>
                                                                         </div>
                                                                         <div className="onhover-text pt-3">
-                                                                            <p className="mb-0 ">{pillar.description}</p>
+                                                                            <p className="mb-lg-5 mb-0 ">{pillar.description}</p>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -392,13 +389,13 @@ export default function OurStory(props) {
                             <div className="py-lg-5">
                                 <div className="blue-bg-ceo position-relative">
                                     <div className="ceo-ratio d-md-block d-none" animate="">
-                                        <img src={storySettings.ceo_image} alt="ceo" />
+                                        <img src={storySettings.ceo_image} alt="background" />
                                     </div>
                                     <div className="container position-relative">
                                         <div className=" d-block d-md-none mt-md-5 mt-3"  >
                                             <div className="">
                                                 <div className="ceo-ratio-mobile pt-5" animate="">
-                                                    <img src={storySettings.ceo_image} alt="ceo" />
+                                                    <img src={storySettings.ceo_image} alt="background" />
                                                 </div>
                                             </div>
                                         </div>
@@ -443,12 +440,12 @@ export default function OurStory(props) {
                                                     <div className="col-lg-3 col-md-6 col-sm-6 mb-5" animate="" onClick={() => setPopupOpen(team)} key={index}>
                                                         <div className="team-section shadow position-relative">
                                                             <div className="ratio team-ratio">
-                                                                <img src={team.image} alt="ceo" />
+                                                                <img src={team.image} alt="team" />
                                                             </div>
                                                             <div className="team-position py-2">
-                                                                <h4 className="mb-2">{team.name}</h4>
-                                                                <h5>{team.position}</h5>
-                                                                <p className="mobile-read-more underline mb-0">{storySettings.read_more}</p>
+                                                                <h4 className="mb-2 mx-3">{team.name}</h4>
+                                                                <h5 className="mx-3">{team.position}</h5>
+                                                                <p className="mobile-read-more underline mb-0 mx-3">{storySettings.read_more}</p>
                                                             </div>
                                                             <div className="team-position-hover">
                                                                 <div className="content">
@@ -479,7 +476,7 @@ export default function OurStory(props) {
                                             <SwiperSlide key={index}>
                                                 <div className="team-section shadow position-relative" onClick={() => setPopupOpen(team)}>
                                                     <div className="ratio team-ratio">
-                                                        <img src={team.image} alt="ceo" />
+                                                        <img src={team.image} alt="team" />
                                                     </div>
                                                     <div className="team-position py-3">
                                                         <h4 className="mb-2">{team.name}</h4>
@@ -587,7 +584,7 @@ export default function OurStory(props) {
                                     <div className="row justify-content-center justify-content-lg-start align-items-center py-lg-5 py-3 gx-5 mx-lg-3 mx-2">
                                         <div className="col-auto p-4 pb-md-0">
                                             <div className="team-image ">
-                                                <img src={popupOpen?.image} alt="ceo" />
+                                                <img src={popupOpen?.image} alt="team" />
                                             </div>
                                         </div>
                                         <div className="col-lg-8 col-md-8 col-11 pt-lg-0">

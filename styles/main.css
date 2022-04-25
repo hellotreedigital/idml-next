@@ -3,6 +3,13 @@ html {
     font-size: 13px;
     color: #14334A;
     cursor: url('../public/img/images/cursor.png') 7.5 7.5, auto !important;
+    scroll-behavior: unset !important;
+}
+
+:root {
+    --PhoneInputCountryFlag-backgroundColor--loading: transparent !important;
+    --PhoneInputCountryFlag-borderColor: transparent !important;
+    --PhoneInput-color--focus: transparent !important;
 }
 
 body {
@@ -12,12 +19,25 @@ body {
     color: #14334A !important;
 }
 
+.PhoneInputCountryFlag {
+    border-color: red !important;
+}
+
+.myAnimation {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: red;
+}
+
 * {
     cursor: inherit !important;
 }
 
+
+
 .add-padd {
-    padding-bottom: 240px !important;
+    padding-bottom: 250px !important;
 }
 
 .blue-button.contact-button:hover {
@@ -29,7 +49,11 @@ body {
     padding-bottom: 20px !important;
 }
 
-.swiper-pointer-events {
+.industries-swiper .swiper-wrapper {
+    padding-bottom: 40px !important;
+}
+
+.mySwiper2 .swiper-pointer-events {
     padding-bottom: 65px !important;
 }
 
@@ -440,7 +464,8 @@ a {
     display: none;
 }
 
-.mobile-dropdown a, .mobile-dropdown p  {
+.mobile-dropdown a,
+.mobile-dropdown p {
     color: #fff;
     font-size: 1rem;
     transition: all 0.5s;
@@ -472,6 +497,11 @@ a {
     align-items: center;
 }
 
+.Cursor.Cursor--blinking {
+    display: none;
+}
+
+
 
 .react-typewriter-text {
     text-align: center !important;
@@ -481,8 +511,8 @@ a {
     background-color: #CCD7E0;
     color: #14334A;
     text-align: center;
-    padding: 1.75rem;
-    /* border: .0625rem solid #CCD7E0; */
+    padding: 2.5rem;
+    border-radius: 3.125rem;
     font-size: 1.25rem;
     background: linear-gradient(to left, #CCD7E0 50%, #14334A 50%) right;
     background-size: 201%;
@@ -837,7 +867,9 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
     font-size: 1rem !important;
 }
 
-
+.pilllars-larger {
+    padding: 130px;
+}
 
 .pins {
     transform: translate(-50%, -50%);
@@ -940,12 +972,6 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
     opacity: 0;
     transition: all 0.5s;
     overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    /* number of lines to show */
-    line-clamp: 4;
-    -webkit-box-orient: vertical;
 }
 
 .bg-color:hover .onhover-text {
@@ -972,17 +998,18 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
     font-size: 1.125rem;
     height: 80px;
     padding: 11px;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    line-clamp: 4;
-    -webkit-box-orient: vertical;
+}
+
+.bg-color:hover .bg-color p {
+    height: 100%;
 }
 
 .think-blue-bg {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-size: cover;
+    border-top-left-radius: 3.125rem;
+    border-top-right-radius: 3.125rem;
 }
 
 .company-history p {
@@ -1568,7 +1595,7 @@ div.part-3:before {
 }
 
 .product-ratio {
-    padding-top: 120%;
+    padding-top: 90%;
 }
 
 .logo-product img {
@@ -1686,13 +1713,15 @@ div.part-3:before {
     transition: all 2s;
 }
 
-
 .blue-circle {
     position: absolute;
     top: 0;
     left: 0;
     transition: all 0.5s;
     height: 100%;
+    border-radius: 3.4375rem;
+    z-index: 2;
+    box-shadow: 0px 8px 15px #0003;
 }
 
 .blue-pill:hover .blue-circle {
@@ -1829,7 +1858,7 @@ div.part-3:before {
     text-align: center;
     background-color: #CCD7E0;
     transition: all 0.5s;
-    border-radius: 50px;
+    /* border-radius: 50px; */
 }
 
 .service-content {
@@ -1882,11 +1911,33 @@ div.part-3:before {
 .blue-card {
     background-color: #14334A;
     border-radius: 20px;
+    transition: all 0.5s;
 }
 
 .text-card {
     color: #fff;
 }
+
+.text-card p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    /* number of lines to show */
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    transition: height 0.5s;
+    height: 100px;
+}
+
+/* .blue-card:hover .text-card p {
+    height: 300px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 15;
+    line-clamp: 10;
+    -webkit-box-orient: vertical;
+} */
 
 .card-button {
     position: absolute;
@@ -3176,6 +3227,10 @@ div.four:before {
 
 @media (max-width: 991.98px) {
 
+    .pilllars-larger {
+        padding: 0;
+    }
+
     .swiper-button-prev {
         left: 3px !important;
     }
@@ -3309,6 +3364,11 @@ div.four:before {
 
     .bg-color .onhover-text {
         opacity: 1;
+        height: 100%;
+    }
+
+    .bg-color p {
+        height: auto;
     }
 
     .bg-color {
@@ -3403,7 +3463,7 @@ div.four:before {
 
 @media (max-width: 767.98px) {
     .product-ratio {
-        padding-top: 35%;
+        padding-top: 30%;
     }
 
     .pins {
@@ -3733,6 +3793,15 @@ div.four:before {
 /* X-Small devices (portrait phones, less than 576px) */
 
 @media (max-width: 575.98px) {
+
+    .text-on-circle-overlay h2 {
+        font-size: .875rem !important;
+    }
+
+    .text-on-circle-overlay p {
+        font-size: .875rem !important;
+    }
+
     .product p {
         font-size: 0.9rem;
     }

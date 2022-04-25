@@ -113,7 +113,7 @@ export default function Contact(props) {
                                     {
                                         contactOffices ?
                                             contactOffices.map((contactOffice, index) =>
-                                                <div className="col-lg-6 col-md-12 justify-content-center mb-4 " key={index}>
+                                                <div className="col-lg-6 col-md-12 justify-content-center mb-5 " key={index}>
                                                     <div className="row mb-4 mb-lg-0">
                                                         <div className="col-lg-6 col-md-6 justify-content-center pb-md-0 pb-3 ">
                                                             <iframe title="map" className="maps" src={contactOffice.map_url} loading="lazy" />
@@ -231,7 +231,7 @@ export default function Contact(props) {
                         <div className="row justify-content-center text-center  gx-5 mx-3">
                             <div className="col-12 bg-popup-top">
                                 <div className="py-lg-5 py-3">
-                                    <img className="popup-form-icon" src="../img/images/success.svg" alt="ceo" />
+                                    <img className="popup-form-icon" src="../img/images/success.svg" alt="success" />
                                 </div>
                             </div>
                         </div>
@@ -270,7 +270,7 @@ export default function Contact(props) {
                         <div className="row justify-content-center text-center  gx-5 mx-3">
                             <div className="col-12 bg-popup-top">
                                 <div className="py-5">
-                                    <img className="popup-form-icon" src="../img/images/error.svg" alt="ceo" />
+                                    <img className="popup-form-icon" src="../img/images/error.svg" alt="error" />
                                 </div>
                             </div>
                         </div>

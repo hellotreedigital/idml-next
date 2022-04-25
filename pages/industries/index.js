@@ -56,10 +56,13 @@ export default function Industries(props) {
     }
 
     function clientClick(clientTag) {
+        // setClientsListFilter([]);
         setCurrentFilter(clientTag);
     }
 
     useEffect(() => {
+        console.log('1')
+        setClientsListFilter([]);
         if (clientsList?.length > 1 && currentFilter) {
             let filtered = [];
             clientsList.forEach(singleClient => {
@@ -69,10 +72,10 @@ export default function Industries(props) {
                             filtered = [...filtered, singleClient]
                         }
                     })
-
                 }
             })
             setClientsListFilter(filtered)
+            
         }
     }, [clientsList, currentFilter]);
 
@@ -83,7 +86,10 @@ export default function Industries(props) {
     }, [clientsTagsTitles]);
 
     useEffect(() => {
+        triggerScroll();
+    }, [clientsListFilter]);
 
+    useEffect(() => {
         triggerScroll();
         setLoading(false);
     }, [loading]);
@@ -130,7 +136,7 @@ export default function Industries(props) {
                                                 allIndustries.map((industry, index) =>
                                                     <div className="col-lg-4 col-md-6 col-sm-6 add-space" animate="" key={index}>
                                                         <div className="blue-card h-100 position-relative p-4">
-                                                            <div className="text-card">
+                                                            <div className="text-card ">
                                                                 <div className="text-center justify-content-center d-grid">
                                                                     <div className="circle-card shadow">
                                                                         <img className="icon-card" src={industry.icon} alt="icon" />
@@ -183,11 +189,11 @@ export default function Industries(props) {
 
                             <div className="row  justify-content-center">
                                 <div className="col-lg-10 ">
-                                    <div className="row justify-content-center text-center">
+                                    <div className="row justify-content-center text-center" >
                                         {
                                             clientsListFilter?.length > 0 ?
                                                 clientsListFilter.map((clientList, index) => (
-                                                    <div className="col-lg-2 col-md-3 col-sm-4 col-6 my-4 " key={index}>
+                                                    <div className="col-lg-2 col-md-3 col-sm-4 col-4 my-4 " animate=" " key={`${currentFilter}-${index}`}>
                                                         <div className="circle-on-hover position-relative">
                                                             <div className="ratio ratio-1x1">
                                                                 <img className="brand-image-industry" src={clientList.full_path_logo} alt="brand" />
@@ -247,10 +253,10 @@ export default function Industries(props) {
                                             testimonialsList.map((testimonial, index) =>
                                                 <SwiperSlide key={index}>
                                                     <div className="blue-card position-relative p-4 mt-2">
-                                                        <div className="text-card">
+                                                        <div className="text-card py-3">
                                                             <div className="text-center justify-content-center d-grid">
                                                                 <div className="team-image-card ">
-                                                                    <img src={testimonial.image} alt="ceo" />
+                                                                    <img src={testimonial.image} alt="testimonials" />
                                                                 </div>
                                                             </div>
                                                             <div>
@@ -258,7 +264,6 @@ export default function Industries(props) {
                                                                     <path id="Path_323" data-name="Path 323" d="M188.972,186.607v10.8H176.885V188.88q0-6.923,2-10.024a16.076,16.076,0,0,1,8.328-6.253l2.756,3.617a9.809,9.809,0,0,0-5.073,3.539,12.978,12.978,0,0,0-1.815,6.847Z" transform="translate(-176.885 -172.603)" fill="#fff" />
                                                                     <path id="Path_324" data-name="Path 324" d="M199.515,186.607v10.8H187.43V188.88q0-6.923,2-10.024a16.089,16.089,0,0,1,8.328-6.253l2.756,3.617a9.8,9.8,0,0,0-5.072,3.539,12.977,12.977,0,0,0-1.817,6.847Z" transform="translate(-170.888 -172.603)" fill="#fff" />
                                                                 </svg>
-
                                                             </div>
                                                             <p className="my-3">{testimonial.text}</p>
                                                             <div className="text-end">
@@ -266,8 +271,10 @@ export default function Industries(props) {
                                                                     <path id="Path_321" data-name="Path 321" d="M266.769,258.724v-10.8h12.085v8.526q0,6.923-2,10.024a16.087,16.087,0,0,1-8.33,6.253l-2.755-3.617a9.791,9.791,0,0,0,5.072-3.54,12.966,12.966,0,0,0,1.817-6.846Z" transform="translate(-249.225 -247.925)" fill="#fff" />
                                                                     <path id="Path_322" data-name="Path 322" d="M256.224,258.724v-10.8h12.087v8.526q0,6.923-2,10.024a16.077,16.077,0,0,1-8.328,6.253l-2.756-3.617a9.8,9.8,0,0,0,5.073-3.54,12.981,12.981,0,0,0,1.817-6.846Z" transform="translate(-255.222 -247.925)" fill="#fff" />
                                                                 </svg>
-
                                                             </div>
+                                                        </div>
+                                                        <div className="text-center">
+                                                            <div className="button white-button hover-effect add-padding shadow">{industriesSettings.read_more}</div>
                                                         </div>
                                                     </div>
                                                 </SwiperSlide>
@@ -278,9 +285,9 @@ export default function Industries(props) {
                             </div>
                         </div>
 
+                            <div className={" team-popup " + (ageVerificationPopup ? " " : " fade-out")}>
                         {
                             ageVerificationPopup ?
-                                <div className={"team-popup " + (ageVerificationPopup ? " " : " fade-out")}>
                                     <div className="modal-window team-member change-color position-relative">
                                         <VerificationPopup
                                             image={ageVerificationPopup.popup_image}
@@ -292,10 +299,10 @@ export default function Industries(props) {
                                             ageClick={() => setAgeVerificationPopup(null)}
                                         />
                                     </div>
-                                </div>
                                 :
                                 null
                         }
+                                </div>
                     </>
                 )
             }

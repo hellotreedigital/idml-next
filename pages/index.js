@@ -16,6 +16,11 @@ import SwiperCore, { Autoplay } from 'swiper';
 import { useState, useEffect, useContext } from "react";
 import GlobalState from "../GlobalState";
 
+import * as Scroll from 'react-scroll';
+
+
+let scroll    = Scroll.animateScroll;
+
 export default function Home(props) {
   const { triggerScroll } = useContext(GlobalState);
   const menuItems = props.homeData.fixed_titles;
@@ -44,8 +49,10 @@ export default function Home(props) {
 
   function scrollTop() {
     const element = document.getElementById("home-section-1")
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    scroll.scrollTo(element.offsetTop-81)
   }
+
+
 
   return loading ? null : (
     <Layout activePage="home" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
@@ -340,7 +347,7 @@ export default function Home(props) {
                 <div className="row justify-content-center ">
                   {industries ?
                     industries.map((industry, index) =>
-                      <div className="col-lg-4 col-md-6 col-12 pb-5"  style={index % 3 === 0 ? { transitionDelay: '0.6s' } : (index % 2 === 0 ? { transitionDelay: '1s' } : { transitionDelay: '0.8s' })} animate="" key={index}>
+                      <div className="col-lg-4 col-md-6 col-12 pb-5" style={index % 3 === 0 ? { transitionDelay: '0.6s' } : (index % 2 === 0 ? { transitionDelay: '1s' } : { transitionDelay: '0.8s' })} animate="" key={index}>
                         <Link href={"/industries/" + industry.slug}>
                           <a>
                             <div className="button blue-ciel-button shadow">
@@ -478,7 +485,7 @@ export default function Home(props) {
                                 </div>
                               </div>
                               :
-                              <div className={"col-lg-3 col-md-4 col-sm-6 pb-5 " + (index % 2 !== 0 ? "col-lg-6 col-md-4 col-sm-6 pb-5" : "")}  style={index % 3 === 0 ? { transitionDelay: '0.6s' } : (index % 2 === 0 ? { transitionDelay: '1s' } : { transitionDelay: '0.8s' })} animate="" key={index}>
+                              <div className={"col-lg-3 col-md-4 col-sm-6 pb-5 " + (index % 2 !== 0 ? "col-lg-6 col-md-4 col-sm-6 pb-5" : "")} style={index % 3 === 0 ? { transitionDelay: '0.6s' } : (index % 2 === 0 ? { transitionDelay: '1s' } : { transitionDelay: '0.8s' })} animate="" key={index}>
                                 <div className="youtube-section position-relative shadow" onClick={() => setYoutubePopup(list)}>
                                   <div className={"ratio youtube-ratio" + (index % 2 !== 0 ? " youtube-section-longer" : "")}>
                                     <img src={list.thumbnail_image} alt="youtube" />
