@@ -3047,6 +3047,14 @@ div.four:before {
 /* Large devices (desktops, less than 1200px) */
 
 @media (max-width: 1199.98px) {
+    .text-on-circle-overlay h2 {
+        font-size: .875rem !important;
+    }
+
+    .text-on-circle-overlay p {
+        font-size: .875rem !important;
+    }
+
     .product p {
         font-size: 0.8rem;
     }
@@ -3793,14 +3801,6 @@ div.four:before {
 /* X-Small devices (portrait phones, less than 576px) */
 
 @media (max-width: 575.98px) {
-
-    .text-on-circle-overlay h2 {
-        font-size: .875rem !important;
-    }
-
-    .text-on-circle-overlay p {
-        font-size: .875rem !important;
-    }
 
     .product p {
         font-size: 0.9rem;
