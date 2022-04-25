@@ -1305,6 +1305,7 @@ div.part-3:before {
 
 .team-ratio img {
     object-fit: cover;
+    border-radius: 57px;
 }
 
 .team-section {
