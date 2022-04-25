@@ -22,6 +22,7 @@ import SeoTags from "../../components/SeoTags";
 export default function Industries(props) {
 
     SwiperCore.use([Autoplay])
+    const [popupOpen, setPopupOpen] = useState(null);
     const router = useRouter()
     const [ageVerificationPopup, setAgeVerificationPopup] = useState(null);
     const [filterId, setFilterId] = useState(null);
@@ -44,6 +45,7 @@ export default function Industries(props) {
     const [clientsListFilter, setClientsListFilter] = useState();
     const [currentFilter, setCurrentFilter] = useState();
 
+
     function ageVerificationClick(industry) {
         let underAgePopup = localStorage.getItem('underAgePopup');
         if (!underAgePopup) {
@@ -51,17 +53,20 @@ export default function Industries(props) {
             localStorage.setItem('underAgePopup', 1);
         }
         else {
-            router.push("/industries/" + industry.slug)
+            router.push("/industries/" + industry?.slug)
         }
     }
 
+    function ageClose(industry) {
+        setAgeVerificationPopup(null)
+        localStorage.removeItem('underAgePopup', 1);
+    }
+
     function clientClick(clientTag) {
-        // setClientsListFilter([]);
         setCurrentFilter(clientTag);
     }
 
     useEffect(() => {
-        console.log('1')
         setClientsListFilter([]);
         if (clientsList?.length > 1 && currentFilter) {
             let filtered = [];
@@ -75,7 +80,7 @@ export default function Industries(props) {
                 }
             })
             setClientsListFilter(filtered)
-            
+
         }
     }, [clientsList, currentFilter]);
 
@@ -105,6 +110,12 @@ export default function Industries(props) {
             }
         }
     }, [loading]);
+
+    useEffect(() => {
+        triggerScroll();
+        document.querySelector('body').style.overflow = popupOpen ? 'hidden' : null;
+        document.querySelector('html').style.overflow = popupOpen ? 'hidden' : null;
+    }, [popupOpen]);
 
     return loading ? null : (
         <Layout activePage="industries" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
@@ -206,7 +217,6 @@ export default function Industries(props) {
                                                         </div>
                                                     </div>
                                                 ))
-                                                // )
                                                 :
                                                 null
                                         }
@@ -273,7 +283,7 @@ export default function Industries(props) {
                                                                 </svg>
                                                             </div>
                                                         </div>
-                                                        <div className="text-center">
+                                                        <div className="text-center" onClick={() => setPopupOpen(testimonial)}>
                                                             <div className="button white-button hover-effect add-padding shadow">{industriesSettings.read_more}</div>
                                                         </div>
                                                     </div>
@@ -285,9 +295,9 @@ export default function Industries(props) {
                             </div>
                         </div>
 
-                            <div className={" team-popup " + (ageVerificationPopup ? " " : " fade-out")}>
-                        {
-                            ageVerificationPopup ?
+                        <div className={" team-popup " + (ageVerificationPopup ? " " : " fade-out")}>
+                            {
+                                ageVerificationPopup ?
                                     <div className="modal-window team-member change-color position-relative">
                                         <VerificationPopup
                                             image={ageVerificationPopup.popup_image}
@@ -296,16 +306,59 @@ export default function Industries(props) {
                                             slug={ageVerificationPopup.slug}
                                             button={ageVerificationPopup.first_popup_button}
                                             secondButton={ageVerificationPopup.second_popup_button}
-                                            ageClick={() => setAgeVerificationPopup(null)}
+                                            ageClose={ageClose}
+                                            ageVerificationClick={() => ageVerificationClick()}
                                         />
                                     </div>
-                                :
-                                null
-                        }
-                                </div>
+                                    :
+                                    null
+                            }
+                        </div>
                     </>
                 )
             }
+
+            <div className={"team-popup " + (popupOpen ? " " : " fade-out")}>
+                <div className="modal-window team-member position-relative">
+                    <div className="popup-team">
+                        <div className="close-svg" onClick={() => setPopupOpen(null)}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="49" height="37" viewBox="0 0 49 37">
+                                <g id="Group_3342" data-name="Group 3342" transform="translate(-1096 -228)">
+                                    <path id="Rectangle_267" data-name="Rectangle 267" d="M0,0H12A37,37,0,0,1,49,37v0a0,0,0,0,1,0,0H27.75A27.75,27.75,0,0,1,0,9.25V0A0,0,0,0,1,0,0Z" transform="translate(1096 228)" fill="#14334a" />
+                                    <g id="Group_3054" data-name="Group 3054" transform="translate(214.465 49.965)">
+                                        <line id="Line_8" data-name="Line 8" x2="9.07" y2="9.07" transform="translate(900.5 193.5)" fill="none" stroke="#fff" strokeLinecap="round" strokeWidth="2" />
+                                        <line id="Line_9" data-name="Line 9" x1="9.07" y2="9.07" transform="translate(900.5 193.5)" fill="none" stroke="#fff" strokeLinecap="round" strokeWidth="2" />
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <div className="row justify-content-center justify-content-lg-start align-items-center py-lg-5 py-3 gx-5 mx-lg-3 mx-2">
+                            <div className="col-auto p-4 pb-md-0">
+                                <div className="team-image ">
+                                    <img src={popupOpen?.image} alt="team" />
+                                </div>
+                            </div>
+                            <div className="col-lg-8 col-md-8 col-11 pt-lg-0">
+                                <div>
+                                    <svg id="Group_427" data-name="Group 427" xmlns="http://www.w3.org/2000/svg" width="29.629" height="24.802" viewBox="0 0 29.629 24.802">
+                                        <path id="Path_323" data-name="Path 323" d="M188.972,186.607v10.8H176.885V188.88q0-6.923,2-10.024a16.076,16.076,0,0,1,8.328-6.253l2.756,3.617a9.809,9.809,0,0,0-5.073,3.539,12.978,12.978,0,0,0-1.815,6.847Z" transform="translate(-176.885 -172.603)" fill="#14334A" />
+                                        <path id="Path_324" data-name="Path 324" d="M199.515,186.607v10.8H187.43V188.88q0-6.923,2-10.024a16.089,16.089,0,0,1,8.328-6.253l2.756,3.617a9.8,9.8,0,0,0-5.072,3.539,12.977,12.977,0,0,0-1.817,6.847Z" transform="translate(-170.888 -172.603)" fill="#14334A" />
+                                    </svg>
+                                </div>
+                                <p className="my-3 text-center">{popupOpen?.text}</p>
+                                <div className="text-end">
+                                    <svg id="Group_428" data-name="Group 428" xmlns="http://www.w3.org/2000/svg" width="29.629" height="24.803" viewBox="0 0 29.629 24.803">
+                                        <path id="Path_321" data-name="Path 321" d="M266.769,258.724v-10.8h12.085v8.526q0,6.923-2,10.024a16.087,16.087,0,0,1-8.33,6.253l-2.755-3.617a9.791,9.791,0,0,0,5.072-3.54,12.966,12.966,0,0,0,1.817-6.846Z" transform="translate(-249.225 -247.925)" fill="#14334A" />
+                                        <path id="Path_322" data-name="Path 322" d="M256.224,258.724v-10.8h12.087v8.526q0,6.923-2,10.024a16.077,16.077,0,0,1-8.328,6.253l-2.756-3.617a9.8,9.8,0,0,0,5.073-3.54,12.981,12.981,0,0,0,1.817-6.846Z" transform="translate(-255.222 -247.925)" fill="#14334A" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </Layout >
     )
 }

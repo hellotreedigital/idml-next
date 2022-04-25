@@ -39,7 +39,7 @@ export default function OurStory(props) {
         triggerScroll();
         document.querySelector('body').style.overflow = popupOpen ? 'hidden' : null;
         document.querySelector('html').style.overflow = popupOpen ? 'hidden' : null;
-    }, [popupOpen, popupOpen]);
+    }, [popupOpen]);
 
     return (
 
@@ -226,7 +226,7 @@ export default function OurStory(props) {
                         <div className="container company-history " >
                             <div className="row justify-content-center text-center pb-5">
                                 <div className="col-lg-10 ">
-                                    <h2 className="mb-4">{storySettings.history_title}</h2>
+                                    <h2 className="mb-4 mt-lg-3">{storySettings.history_title}</h2>
                                     <p className="mb-0">{storySettings.history_text}</p>
                                 </div>
                             </div>

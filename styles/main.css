@@ -34,10 +34,8 @@ body {
     cursor: inherit !important;
 }
 
-
-
 .add-padd {
-    padding-bottom: 250px !important;
+    padding-bottom: 335px !important;
 }
 
 .blue-button.contact-button:hover {
@@ -47,6 +45,10 @@ body {
 
 .swiper-wrapper {
     padding-bottom: 20px !important;
+}
+
+.mySwiper-clients .swiper-wrapper {
+    padding-bottom: 50px !important;
 }
 
 .industries-swiper .swiper-wrapper {
@@ -959,7 +961,7 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
     background-color: #14334A;
     border-radius: 1.875rem;
     color: #fff;
-    height: 50%;
+    height: 40%;
     transition: all 0.5s;
 }
 
@@ -1450,6 +1452,7 @@ div.part-3:before {
 
 .team-image img {
     border-radius: 150px;
+    object-fit: cover;
 }
 
 .popup-team {

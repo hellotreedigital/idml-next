@@ -27,6 +27,11 @@ export default function Layout(props) {
         }
     }
 
+    function ageClose(industryTitle) {
+        setAgeVerificationPopup(null)
+        localStorage.removeItem('underAgePopup', 1);
+    }
+
     useEffect(() => {
         window.addEventListener('scroll', function (e) {
             setHeaderScroll(window.pageYOffset > 50);
@@ -463,6 +468,8 @@ export default function Layout(props) {
                                 button={ageVerificationPopup.first_popup_button}
                                 secondButton={ageVerificationPopup.second_popup_button}
                                 ageClick={() => setAgeVerificationPopup(null)}
+                                ageClose={ageClose}
+                                ageVerificationClick={() => ageVerificationClick()}
                             />
                         </div>
                     </div>

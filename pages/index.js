@@ -52,8 +52,6 @@ export default function Home(props) {
     scroll.scrollTo(element.offsetTop-81)
   }
 
-
-
   return loading ? null : (
     <Layout activePage="home" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
 
@@ -276,11 +274,11 @@ export default function Home(props) {
             pagination={true}
             autoplay={{ delay: 3000 }}
             modules={[Pagination]}
-            spaceBetween={1}
+            spaceBetween={10}
             centeredSlides={true}
             loop={true}
             slidesPerView={2}
-            className="mySwiper"
+            className="mySwiper-clients"
             breakpoints={{
               1199.98: {
                 slidesPerView: 4.8,
@@ -304,7 +302,7 @@ export default function Home(props) {
                 clientsList.map((clientList, index) =>
                   <SwiperSlide key={index}>
                     <div>
-                      <div className="brand-logo-section shadow position-relative m-3">
+                      <div className="brand-logo-section shadow position-relative">
                         <div className="ratio ratio-1x1 logo-clients">
                           <img src={clientList.full_path_logo} alt="brand-logo" />
                         </div>
