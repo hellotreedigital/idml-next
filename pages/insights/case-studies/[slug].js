@@ -53,7 +53,8 @@ export default function CaseStudies(props) {
                                                         <p className="mb-0 ms-2">{insightsSettings.back_text}</p>
                                                     </button>
                                                     :
-                                                    null}
+                                                    null
+                                            }
                                         </div>
                                         <div className=" d-block d-sm-none">
                                             {
