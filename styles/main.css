@@ -1013,7 +1013,7 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
     background-color: #14334A;
     border-radius: 3.125rem;
     color: #fff;
-    height: 50% !important;
+    /* height: 50% !important; */
     transition: all 0.5s;
     flex-direction: column;
     justify-content: center;

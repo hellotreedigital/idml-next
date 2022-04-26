@@ -1,108 +1,108 @@
-import React, { useRef, useState } from "react";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import axios from "axios";
 
-// Import Swiper styles
-import "swiper/css/bundle";
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/navigation";
-import "swiper/css/thumbs";
+export default function test(props) {
 
-// import "./styles.css";
+    const storySettings = props.ourStoryData.page_items.story_settings;
+    const companyList = props.ourStoryData.page_items.companies_list;
 
-// import required modules
-import { FreeMode, Navigation, Thumbs } from "swiper";
+    return (
+        <div>
+            <div className="position-relative ">
+                <div className="">
+                    <div className="">
+                        <div className="">
+                            <div className="row justify-content-center text-center ">
+                                <div className="col-lg-4 col-md-4 col-12 pb-5">
+                                    <div className="bleu-ciel-group h-100 shadow position-relative">
+                                        <div className="company-line-left"></div>
+                                        <div className="company-line-right"></div>
+                                        <h4 className="mb-0 px-5">{storySettings.group_name}</h4>
+                                    </div>
+                                </div>
+                            </div>
 
-export default function App() {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+                            <div className="row justify-content-center text-center ">
+                                {
+                                    companyList ?
+                                        <>
+                                            <div className="col-lg-4 col-md-4 col-12">
+                                                <div className="row justify-content-center text-center">
+                                                    {
+                                                        companyList ?
+                                                            companyList.map((company, index) =>
+                                                                !company.second_column && !company.third_column && (
+                                                                    <div className="col-12 pb-5" key={index}>
+                                                                        <div className="blue-dark-group position-relative h-100 shadow">
+                                                                            <div className="company-line"></div>
+                                                                            <h4 className="mb-0 px-5">{company.title}</h4>
+                                                                        </div>
+                                                                    </div>
+                                                                )
+                                                            )
+                                                            :
+                                                            null
+                                                    }
+                                                </div>
+                                            </div>
 
-  return (
-    <>
-      <Swiper
-        style={{
-          "--swiper-navigation-color": "#fff",
-          "--swiper-pagination-color": "#fff",
-        }}
-        spaceBetween={10}
-        navigation={true}
-        // thumbs={{ swiper: thumbsSwiper }}
-        thumbs={{ swiper: (thumbsSwiper?.$el) ? thumbsSwiper : null }}
-        modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper2"
-      >
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-        </SwiperSlide>
-      </Swiper>
-      
-      <Swiper
-        spaceBetween={10}
-        slidesPerView={4}
-        freeMode={true}
-        watchSlidesProgress={true}
-        modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper"
-        onSwiper={setThumbsSwiper}
-      >
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-        </SwiperSlide>
-      </Swiper>
-    </>
-  );
+                                            <div className="col-lg-4 col-md-4 col-12">
+                                                <div className="row justify-content-center text-center">
+                                                    {
+                                                        companyList ?
+                                                            companyList.map((company, index) =>
+                                                                !company.first_column && !company.third_column && (
+                                                                    <div className="col-12 pb-5" key={index}>
+                                                                        <div className="blue-dark-group position-relative h-100 shadow">
+                                                                            <div className="company-line"></div>
+                                                                            <h4 className="mb-0 px-5">{company.title}</h4>
+                                                                        </div>
+                                                                    </div>
+                                                                )
+                                                            )
+                                                            :
+                                                            null
+                                                    }
+                                                </div>
+                                            </div>
+
+                                            <div className="col-lg-4 col-md-4 col-12">
+                                                <div className="row justify-content-center text-center">
+                                                    {
+                                                        companyList ?
+                                                            companyList.map((company, index) =>
+                                                                !company.second_column && !company.first_column && (
+                                                                    <div className="col-12 pb-5" key={index}>
+                                                                        <div className="blue-dark-group position-relative h-100 shadow">
+                                                                            <div className="company-line"></div>
+                                                                            <h4 className="mb-0 px-5">{company.title}</h4>
+                                                                        </div>
+                                                                    </div>
+                                                                )
+                                                            )
+                                                            :
+                                                            null
+                                                    }
+                                                </div>
+                                            </div>
+                                        </>
+                                        :
+                                        null
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export async function getStaticProps() {
+    const ourStoryData = await axios.get("/our-story");
+    return {
+        props: {
+            ourStoryData: ourStoryData.data,
+        },
+        revalidate: 10,
+    };
 }

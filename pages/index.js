@@ -202,8 +202,8 @@ export default function Home(props) {
               {homeProcess ?
                 homeProcess.map((process, index) =>
                   <div className="col-lg-4 col-md-6 col-12 pb-3 " style={index % 3 === 0 ? { transitionDelay: '0.6s' } : (index % 2 === 0 ? { transitionDelay: '1s' } : { transitionDelay: '0.8s' })} animate="" key={index}>
-                    <div className="bg-color button blue-button-hover shadow">
-                      <div className="pt-3">
+                    <div className="bg-color button blue-button-hover shadow py-3">
+                      <div className="py-4">
                         <div style={{ textTransform: 'uppercase' }}>{process.title}</div>
                         <div className="justify-content-center d-flex">
                           <div className="hr-line"></div>
