@@ -13,6 +13,7 @@ import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import GlobalState from "../GlobalState";
 import LocationMap from "../components/LocationMap";
+// import { NgxOrgChartModule } from './OrgChart';
 
 export default function OurStory(props) {
 
@@ -43,9 +44,6 @@ export default function OurStory(props) {
         document.querySelector('body').style.overflow = popupOpen ? 'hidden' : null;
         document.querySelector('html').style.overflow = popupOpen ? 'hidden' : null;
     }, [popupOpen]);
-
-   
-
 
     return (
 

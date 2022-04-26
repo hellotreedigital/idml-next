@@ -17,29 +17,29 @@ export default function LocationMap(props) {
     }
 
     useEffect(() => {
-        setPinOnEdge(pinRef.current.getBoundingClientRect().x + 270 > window.innerWidth)
-
+        setPinOnEdge(pinRef.current.getBoundingClientRect().x + 200 > window.innerWidth)
     }, [pinRef]);
 
     return (
         <>
             <div className="">
-                <div className="position-absolute " style={{ top: props.y + '%', left: props.x + '%' }} onClick={() => pinClick(props.pinLocation)}>
+                {/* <div className="position-absolute pin-location" style={{ top: props.y + '%', left: props.x + '%' }} onClick={() => pinClick(props.pinLocation)}> */}
+                <div className="position-absolute pin-location" style={{ top: props.y + '%', left: props.x + '%' }} onClick={() => pinClick(props.pinLocation)}>
                     <img ref={pinRef} className=" pins" src={props.pin} alt="pin" />
-                    <div className={"location-details d-none d-sm-none d-md-block d-lg-block" + (pinOnEdge ? " pin-on-edge" : " ") + (props.pinDetails === props.id ? " " : " fade-out")}>
+                    <div className={"location-details-hover d-none d-sm-none d-md-block d-lg-block" + (pinOnEdge ? " pin-on-edge" : " ") + (props.pinDetails === props.id ? " " : " fade-out")}>
                         <div className="row p-3">
                             <div className="col-auto">
-                                <div className="close-details text-end" onClick={(e) => { e.stopPropagation(); closeClick() }}>
+                                {/* <div className="close-details text-end" onClick={(e) => { e.stopPropagation(); closeClick() }}>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 12.338 12.338">
                                         <line id="Line_35" data-name="Line 35" y2="13.448" transform="translate(10.924 1.414) rotate(45)" fill="none" stroke="#fff" strokeLinecap="round" strokeWidth="1.5"></line>
                                         <line id="Line_36" data-name="Line 36" y2="13.448" transform="translate(1.414 1.414) rotate(-45)" fill="none" stroke="#fff" strokeLinecap="round" strokeWidth="1.5"></line>
                                     </svg>
-                                </div>
+                                </div> */}
                                 {
 
                                     <>
-                                        <h2>{props.title}</h2>
-                                        <p>{props.description}</p>
+                                        <h2 className={props.description ? " " : " mb-0"}>{props.title}</h2>
+                                        <p className={props.description ? " " : " d-none"}>{props.description}</p>
                                         {props.phone ?
                                             <a className="d-flex align-items-center map-details pb-3" href={"tel:" + props.phoneUrl}>
                                                 <img src={props.iconPhone} alt="icon" />
@@ -73,7 +73,7 @@ export default function LocationMap(props) {
 
             <div className={"location-details d-block d-sm-block d-md-none d-lg-none" + (props.pinDetails === props.id ? " " : " fade-out")}>
                 <div className="row p-3">
-                    <div className="col-auto">
+                    <div className="col">
                         <div className="close-details text-end" onClick={(e) => { e.stopPropagation(); closeClick() }}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 12.338 12.338">
                                 <line id="Line_35" data-name="Line 35" y2="13.448" transform="translate(10.924 1.414) rotate(45)" fill="none" stroke="#fff" strokeLinecap="round" strokeWidth="1.5"></line>

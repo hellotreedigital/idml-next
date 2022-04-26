@@ -824,21 +824,27 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 
 /* story */
 
-.location-details.pin-on-edge {
+.location-details-hover.pin-on-edge {
     left: auto;
     right: 28px;
 }
 
-.location-details {
+.pin-location:hover .location-details-hover {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.location-details-hover {
     position: absolute;
     height: auto;
-    width: 270px;
-    top: 0;
-    left: 0;
+    width: 200px;
+    top: -9px;
+    left: 20px;
     background-color: #3E5A6F;
     border-radius: 30px;
     transition: 0.5s;
-    opacity: 1;
+    opacity: 0;
+    pointer-events: none;
     overflow-x: hidden;
     overflow-y: hidden;
     z-index: 2000;
@@ -855,13 +861,13 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
     transition: width 0s 0.5s, height 0s 0.5s, opacity 0.5s;
 }
 
-.location-details h2 {
+.location-details-hover h2 {
     font-size: 1.375rem !important;
     font-weight: bold;
     color: #fff !important;
 }
 
-.map-details p {
+.location-details-hover p {
     color: #fff;
     transition: all 0.5s;
 }
@@ -876,9 +882,6 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 }
 
 .close-details svg {
-    position: absolute;
-    right: 12px;
-    top: 7px;
     width: 10px;
 }
 
@@ -2107,7 +2110,7 @@ div.part-3:before {
 }
 
 .text-on-circle-overlay h2 {
-    font-size: 1.125rem;
+    font-size: .75rem;
     font-weight: bold;
     color: #fff;
     transition: all 0.5s;
@@ -2119,7 +2122,7 @@ div.part-3:before {
 
 .text-on-circle-overlay p {
     transform: translateY(-0.1875rem);
-    font-size: 1.125rem;
+    font-size: .75rem;
     color: #fff;
     transition: all 0.5s;
 }
@@ -3541,6 +3544,47 @@ div.four:before {
 
 @media (max-width: 767.98px) {
 
+
+
+    .location-details {
+        position: absolute;
+        height: auto;
+        width: 200px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #3E5A6F;
+        border-radius: 30px;
+        transition: 0.5s;
+        opacity: 1;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        z-index: 2000;
+        transition: opacity 0.5s;
+        z-index: 4000;
+        color: #fff !important;
+    }
+
+    .location-details.fade-out {
+        overflow: hidden;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        transition: width 0s 0.5s, height 0s 0.5s, opacity 0.5s;
+    }
+
+    .location-details h2 {
+        font-size: 1.375rem !important;
+        font-weight: bold;
+        color: #fff !important;
+    }
+
+    .location-details p {
+        color: #fff;
+        transition: all 0.5s;
+    }
+
+
     .location-details h2 {
         font-size: 0.8rem !important;
     }
@@ -3871,7 +3915,7 @@ div.four:before {
         display: none;
     }
 
-    .location-details {
+    .location-details-hover {
         position: absolute;
         top: 50%;
         left: 50%;
