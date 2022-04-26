@@ -41,10 +41,13 @@ export default function LocationMap(props) {
                                         <h2 className={props.description ? " " : " mb-0"}>{props.title}</h2>
                                         <p className={props.description ? " " : " d-none"}>{props.description}</p>
                                         {props.phone ?
-                                            <a className="d-flex align-items-center map-details pb-3" href={"tel:" + props.phoneUrl}>
-                                                <img src={props.iconPhone} alt="icon" />
-                                                <p className="mb-0 ms-3">{props.phone}</p>
-                                            </a>
+                                            <>
+                                             
+                                                <a className={"d-flex align-items-center map-details pb-3" + (props.title ? " pt-2" : " ")} href={"tel:" + props.phoneUrl}>
+                                                    <img src={props.iconPhone} alt="icon" />
+                                                    <p className="mb-0 ms-3">{props.phone}</p>
+                                                </a>
+                                            </>
                                             :
                                             null
                                         }

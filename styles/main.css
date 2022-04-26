@@ -824,6 +824,7 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 
 /* story */
 
+
 .location-details-hover.pin-on-edge {
     left: auto;
     right: 28px;
@@ -936,7 +937,9 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 
 .pins {
     transform: translate(-50%, -50%);
-    width: 20px;
+    padding: 10px;
+    transform: translate(-50%, -50%);
+    width: 40px
 }
 
 .our-story-1 p {
@@ -1010,7 +1013,7 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
     background-color: #14334A;
     border-radius: 3.125rem;
     color: #fff;
-    /* height: 50%; */
+    height: 50% !important;
     transition: all 0.5s;
     flex-direction: column;
     justify-content: center;
