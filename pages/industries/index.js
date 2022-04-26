@@ -91,6 +91,7 @@ export default function Industries(props) {
     }, [clientsTagsTitles]);
 
     useEffect(() => {
+        console.log
         triggerScroll();
     }, [clientsListFilter]);
 
@@ -206,14 +207,16 @@ export default function Industries(props) {
                                                 clientsListFilter.map((clientList, index) => (
                                                     <div className="col-lg-2 col-md-3 col-sm-4 col-4 my-4 " animate=" " key={`${currentFilter}-${index}`}>
                                                         <div className="circle-on-hover position-relative">
-                                                            <div className="ratio ratio-1x1">
-                                                                <img className="brand-image-industry" src={clientList.full_path_logo} alt="brand" />
-                                                            </div>
-                                                            <div className="circle-overlay"></div>
-                                                            <div className="text-on-circle-overlay text-center">
-                                                                <h2 className="mb-3">{clientList.title}</h2>
-                                                                <p className="mb-0">{clientList.info}</p>
-                                                            </div>
+                                                            <a href={clientList.url} target="_blank" rel="noreferrer">
+                                                                <div className="ratio ratio-1x1">
+                                                                    <img className="brand-image-industry" src={clientList.full_path_logo} alt="brand" />
+                                                                </div>
+                                                                <div className="circle-overlay"></div>
+                                                                <div className="text-on-circle-overlay text-center">
+                                                                    <h2 className="mb-3">{clientList.title}</h2>
+                                                                    <p className="mb-0">{clientList.info}</p>
+                                                                </div>
+                                                            </a>
                                                         </div>
                                                     </div>
                                                 ))
