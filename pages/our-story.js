@@ -12,6 +12,7 @@ import { Pagination } from "swiper";
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import GlobalState from "../GlobalState";
+import LocationMap from "../components/LocationMap";
 
 export default function OurStory(props) {
 
@@ -26,7 +27,7 @@ export default function OurStory(props) {
     const companyList = props.ourStoryData.page_items.companies_list;
     const teamList = props.ourStoryData.page_items.team_list;
     const mapLegend = props.ourStoryData.page_items.map_legend;
-    const mapPinnedLocoations = props.ourStoryData.page_items.map_pinned_locations;
+    const mapPinnedLocations = props.ourStoryData.page_items.map_pinned_locations;
 
     const menuItems = props.ourStoryData.fixed_titles;
     const socialMedia = props.ourStoryData.social_media;
@@ -35,11 +36,16 @@ export default function OurStory(props) {
     const serviceTitles = props.ourStoryData.services_titles;
     const industriesTitles = props.ourStoryData.industries_titles;
 
+    const [pinDetails, setPinDetails] = useState(null);
+
     useEffect(() => {
         triggerScroll();
         document.querySelector('body').style.overflow = popupOpen ? 'hidden' : null;
         document.querySelector('html').style.overflow = popupOpen ? 'hidden' : null;
     }, [popupOpen]);
+
+   
+
 
     return (
 
@@ -449,7 +455,7 @@ export default function OurStory(props) {
                                                             </div>
                                                             <div className="team-position-hover">
                                                                 <div className="content">
-                                                                    <h4 className="mb-2">{team.name}</h4>
+                                                                    <h4 className="mb-2 ">{team.name}</h4>
                                                                     <h5 className="mb-3">{team.small_description}</h5>
                                                                     <p className="underline mb-0">{storySettings.read_more}</p>
                                                                 </div>
@@ -479,14 +485,14 @@ export default function OurStory(props) {
                                                         <img src={team.image} alt="team" />
                                                     </div>
                                                     <div className="team-position py-3">
-                                                        <h4 className="mb-2">{team.name}</h4>
-                                                        <h5>{team.position}</h5>
+                                                        <h4 className="mb-2 mx-3">{team.name}</h4>
+                                                        <h5 className="mx-3">{team.position}</h5>
                                                         <p className="mobile-read-more underline mb-0">{storySettings.read_more}</p>
 
                                                     </div>
                                                     <div className="team-position-hover">
                                                         <div className="content">
-                                                            <h4 className="mb-2">{team.name}</h4>
+                                                            <h4 className="mb-2 ">{team.name}</h4>
                                                             <h5 className="mb-3">{team.small_description}</h5>
                                                             <p className="underline">{storySettings.read_more}</p>
                                                         </div>
@@ -553,13 +559,31 @@ export default function OurStory(props) {
                                                     <img src={storySettings.map_image} alt="map" />
                                                 </div>
                                                 {
-                                                    mapPinnedLocoations ?
-                                                        mapPinnedLocoations.map((pinLocation, index) =>
+                                                    mapPinnedLocations ?
+                                                        mapPinnedLocations.map((pinLocation, index) =>
                                                             <>
-                                                                <img className="position-absolute pins" src={pinLocation.operations_map_legend.full_path_icon} alt="pin" style={{ top: pinLocation.y + '%', left: pinLocation.x + '%' }} key={index} />
-                                                                <div className="">
-
-                                                                </div>
+                                                                <LocationMap
+                                                                    key={index}
+                                                                    pinLocation={pinLocation}
+                                                                    id={pinLocation.id}
+                                                                    // closeClick={closeClick}
+                                                                    // pinClick={pinClick}
+                                                                    pinDetails={pinDetails}
+                                                                    title={pinLocation.operations_map_legend.title}
+                                                                    description={pinLocation.description}
+                                                                    y={pinLocation.y}
+                                                                    x={pinLocation.x}
+                                                                    pin={pinLocation.operations_map_legend.full_path_icon}
+                                                                    phoneUrl={pinLocation.phone}
+                                                                    iconPhone={storySettings.map_phone_icon}
+                                                                    phone={pinLocation.phone}
+                                                                    locationUrl={pinLocation.location_url}
+                                                                    locationIcon={storySettings.map_location_icon}
+                                                                    location={pinLocation.location}
+                                                                    email={pinLocation.email}
+                                                                    iconEmail={storySettings.map_email_icon}
+                                                                    setPinDetails={setPinDetails}
+                                                                />
                                                             </>
                                                         )
                                                         :

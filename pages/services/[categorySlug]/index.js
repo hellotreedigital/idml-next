@@ -109,8 +109,8 @@ export default function Services(props) {
                                                 <div className="col-lg-4 col-md-6 col-sm-6 col-10 pb-5" animate="" key={index}>
                                                     <a href={"/services/" + singleCat?.slug + "/" + category.slug}>
                                                         <div className="service-section position-relative">
-                                                            <div className="ratio team-ratio">
-                                                                <img src="../img/temp-images/story1.jpg" alt="categories" />
+                                                            <div className="ratio team-ratio ">
+                                                                <img className="industry-image" src="../img/temp-images/story1.jpg" alt="categories" />
                                                             </div>
                                                             <div className="service-title py-lg-3 py-2">
                                                                 <h4 className="my-4">{category.title}</h4>
