@@ -151,7 +151,7 @@ export default function Products(props) {
                                                 {
                                                     productsItems?.products?.map((product, index) =>
                                                         <SwiperSlide key={`product-items-${index}`}>
-                                                            <ProductSliderContent product={product} />
+                                                            <ProductSliderContent product={product} youtubeClick={() => setYoutubePopup(product)} />
                                                         </SwiperSlide>
                                                     )
                                                 }

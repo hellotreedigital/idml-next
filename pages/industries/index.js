@@ -63,7 +63,14 @@ export default function Industries(props) {
     }
 
     function clientClick(clientTag) {
-        setCurrentFilter(clientTag);
+        var els = document.querySelectorAll('.clients-circles');
+        for (let i = 0; i < els.length; i++) {
+            const element = els[i];
+            element.classList.remove('show');
+        }
+        setTimeout(() => {
+            setCurrentFilter(clientTag);
+        }, [1000]);
     }
 
     useEffect(() => {
@@ -205,7 +212,7 @@ export default function Industries(props) {
                                         {
                                             clientsListFilter?.length > 0 ?
                                                 clientsListFilter.map((clientList, index) => (
-                                                    <div className="col-lg-2 col-md-3 col-sm-4 col-4 my-4 " animate=" " key={`${currentFilter}-${index}`}>
+                                                    <div className="col-lg-2 col-md-3 col-sm-4 col-4 my-4 clients-circles" animate=" " key={`${currentFilter}-${index}`}>
                                                         <div className="circle-on-hover position-relative">
                                                             <a href={clientList.url} target="_blank" rel="noreferrer">
                                                                 <div className="ratio ratio-1x1">

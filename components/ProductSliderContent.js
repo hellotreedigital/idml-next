@@ -109,7 +109,7 @@ export default function ProductSliderContent(props) {
                                     }
                                     {
                                         props.product.product_button ?
-                                            <button className="button youtube-button" onClick={() => setYoutubePopup(product)}>{props.product.product_button}</button>
+                                            <button className="button youtube-button" onClick={props.youtubeClick}>{props.product.product_button}</button>
                                             :
                                             null
                                     }

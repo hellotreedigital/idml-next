@@ -1080,6 +1080,12 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 
 .company-history p {
     font-size: 1.25rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .circle {
@@ -1371,10 +1377,9 @@ div.part-3:before {
     object-fit: cover;
 }
 
-.industry-image {
+/* .industry-image {
     border-radius: 57px;
-
-}
+} */
 
 .team-section {
     overflow: hidden;
@@ -1994,12 +1999,12 @@ div.part-3:before {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 2;
     /* number of lines to show */
-    line-clamp: 4;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     transition: height 0.5s;
-    height: 100px;
+    height: 50px;
 }
 
 /* .blue-card:hover .text-card p {
@@ -2113,7 +2118,7 @@ div.part-3:before {
 }
 
 .text-on-circle-overlay h2 {
-    font-size: .75rem;
+    font-size: 1rem !important;
     font-weight: bold;
     color: #fff;
     transition: all 0.5s;
@@ -3306,6 +3311,19 @@ div.four:before {
 /* Medium devices (tablets, less than 992px) */
 
 @media (max-width: 991.98px) {
+    .company-history p {
+        font-size: 1.25rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        line-clamp: 4;
+        -webkit-box-orient: vertical;
+    }
+
+    .text-card p {
+        height: 42px;
+    }
 
     .pilllars-larger {
         padding: 0;
