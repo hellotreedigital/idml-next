@@ -112,7 +112,7 @@ body {
     transform: rotate(180deg);
     padding: 15px 10px;
     border-radius: 0 .625rem .625rem 0 !important;
-    z-index: 2;
+    z-index: 1000;
     box-shadow: 0 0 10px #0003;
 }
 
@@ -3151,6 +3151,11 @@ div.four:before {
     .square-ratio {
         padding-top: 86%;
     }
+    .custom-chart-node {
+        font-size: 1.2rem !important;
+        padding: 1.2rem !important;
+        width: 275px;
+    }
 
 }
 
@@ -3351,12 +3356,20 @@ div.four:before {
     .bg-color {
         height: 42%;
     }
+    .custom-chart-node {
+        font-size: 1.2rem !important;
+        padding: 1.2rem !important;
+        width: 275px;
+    }
 }
 
 
 /* Medium devices (tablets, less than 992px) */
 
 @media (max-width: 991.98px) {
+
+ 
+
     .company-history p {
         font-size: 1rem;
         /* overflow: hidden;
@@ -3610,7 +3623,10 @@ div.four:before {
 /* Small devices (landscape phones, less than 768px) */
 
 @media (max-width: 767.98px) {
-
+    .custom-chart-node {
+        width: 159px;
+        font-size: 0.9rem !important;
+    }
 
 
     .location-details {
@@ -4041,7 +4057,9 @@ div.four:before {
 /* X-Small devices (portrait phones, less than 576px) */
 
 @media (max-width: 575.98px) {
-
+    .custom-chart-node {
+        width: 145px;
+    }
 
     .product p {
         font-size: 0.9rem;
