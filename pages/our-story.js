@@ -43,7 +43,7 @@ export default function OurStory(props) {
         triggerScroll();
         document.querySelector('body').style.overflow = popupOpen ? 'hidden' : null;
         document.querySelector('html').style.overflow = popupOpen ? 'hidden' : null;
-    }, [popupOpen]);
+    }, [popupOpen]); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
 

@@ -26,7 +26,7 @@ export default function Services(props) {
         triggerScroll();
         calcMinHeight();
         setLoading(false)
-    }, [categorySettings, loading]);
+    }, [categorySettings, loading]); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <div>

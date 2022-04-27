@@ -25,7 +25,7 @@ export default function SingleService(props) {
     useEffect(() => {
         setLoading(false);
         triggerScroll();
-    }, [loading]);
+    }, [loading]); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <Layout fixedNav={true} activePage="services" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>

@@ -43,10 +43,10 @@ export default function Booking(props) {
             });
         });
         setCountriesOptions(newCountries);
-        triggerScroll();
+        triggerScroll(); 
         // calcMinHeight();
         setLoading(false);
-    }, [countriesList, bookingSettings, loading]);
+    }, [countriesList, bookingSettings, loading]); // eslint-disable-line react-hooks/exhaustive-deps
 
     const submitForm = (e) => {
         e.preventDefault();

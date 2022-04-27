@@ -32,7 +32,7 @@ export default function News(props) {
     useEffect(() => {
         triggerScroll();
         setLoading(false);
-    }, [loading]);
+    }, [loading]); // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
         let dbPage = page === oldPage ? 1 : page;

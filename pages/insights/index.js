@@ -31,7 +31,7 @@ export default function Insights(props) {
     useEffect(() => {
         triggerScroll();
         setLoading(false);
-    }, [insights, loading]);
+    }, [insights, loading]); // eslint-disable-line react-hooks/exhaustive-deps
 
     return loading ? null : (
         <Layout activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>

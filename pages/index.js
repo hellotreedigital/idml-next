@@ -44,8 +44,9 @@ export default function Home(props) {
 
   useEffect(() => {
     setLoading(false);
-    triggerScroll();
-  }, [loading]);
+    triggerScroll(); 
+  }, [loading]); // eslint-disable-line react-hooks/exhaustive-deps
+  
 
   function scrollTop() {
     const element = document.getElementById("home-section-1")

@@ -55,7 +55,7 @@ export default function Products(props) {
         triggerScroll();
         setLoading(false)
         setProductsItems(productsCategories[0])
-    }, [productsCategories]);
+    }, [productsCategories]); // eslint-disable-line react-hooks/exhaustive-deps
 
     return loading ? null : (
         <Layout activePage="products" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>

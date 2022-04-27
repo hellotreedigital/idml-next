@@ -81,7 +81,7 @@ function MyApp({ Component, pageProps }) {
       Router.events.off("routeChangeComplete", end);
       Router.events.off("routeChangeError", end);
     };
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <GlobalState.Provider value={{ triggerScroll, calcMinHeight }}>
       {

@@ -95,16 +95,16 @@ export default function Industries(props) {
         // console.log(clientsTagsTitles[0].slug)
         setCurrentFilter(clientsTagsTitles[0].slug);
 
-    }, [clientsTagsTitles]);
+    }, [clientsTagsTitles]); 
 
     useEffect(() => {
         triggerScroll();
-    }, [clientsListFilter]);
+    }, [clientsListFilter]); // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
-        // triggerScroll();
+        triggerScroll();
         setLoading(false);
-    }, [loading]);
+    }, [loading]); // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
         if (window.location.href.includes('clients')) {

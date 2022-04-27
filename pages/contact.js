@@ -52,8 +52,8 @@ export default function Contact(props) {
         });
         setCountriesOptions(newCountries);
 
-        // triggerScroll();
-    }, [countriesList, contactSettings]);
+        triggerScroll();
+    }, [countriesList, contactSettings]); // eslint-disable-line react-hooks/exhaustive-deps
 
     const submitForm = (e) => {
         e.preventDefault();
