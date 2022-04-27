@@ -243,7 +243,7 @@ export default function OurStory(props) {
                                                 <div className="position-relative history" key={index}>
                                                     <div className={(index % 2 === 0 ? "first" : " second ")} animate="" style={{ transitionDelay: '2s' }}><span></span></div>
                                                     <div className={"row pb-4   " + (index % 2 === 0 ? " d-flex justify-content-start " : " d-flex justify-content-end ")}>
-                                                        <div className={(index % 2 === 0 ? " col-lg-5 col-md-5 col-sm-5 col-12 fix-mobile-position d-flex align-items-center flex-sm-row flex-row-reverse left-position" : " col-lg-5 col-md-5 col-sm-5 col-12 d-flex align-items-center flex-row-reverse fix-mobile-position right-position")}>
+                                                        <div className={(index % 2 === 0 ? " col-lg-5 col-md-5 col-sm-12 col-12 fix-mobile-position d-flex align-items-center flex-md-row flex-row-reverse left-position" : " col-lg-5 col-md-5 col-sm-12 col-12 d-flex align-items-center flex-row-reverse fix-mobile-position right-position")}>
                                                             <p className="mb-0 me-sm-3 ms-3" animate="" style={{ transitionDelay: '0.5s' }}>{history.text}</p>
                                                             <div className={"position-relative " + (index % 2 === 0 ? " circle" : " circle-right")} >
                                                                 <div className="first-mobile"><span></span></div>
@@ -251,13 +251,13 @@ export default function OurStory(props) {
                                                                 {
                                                                     (index % 2 === 0) ?
                                                                         <div className=" " style={{ transitionDelay: '1s' }}>
-                                                                            <svg className="d-sm-block d-none" xmlns="http://www.w3.org/2000/svg" width="95.511" height="112.002" viewBox="0 0 95.511 112.002">
+                                                                            <svg className="d-md-block d-none" xmlns="http://www.w3.org/2000/svg" width="95.511" height="112.002" viewBox="0 0 95.511 112.002">
                                                                                 <g id="Group_3342" data-name="Group 3342" transform="translate(-204 -3318.568)">
                                                                                     <path id="Path_68" data-name="Path 68" d="M36.175,0A36.148,36.148,0,1,0,72.3,36.122,36.213,36.213,0,0,0,36.175,0Z" transform="translate(204 3338.421)" fill="#ccd7e0" />
                                                                                     <path id="Path_69" data-name="Path 69" d="M176.342,255.338a56.245,56.245,0,0,1-51.389,56l0-.03a7.96,7.96,0,1,1,0-15.92v0a40.338,40.338,0,0,0,1.2-79.932c-.353-.053-1.314-.167-1.413-.169-4.789-.606-7.753-3.609-7.753-7.956a7.965,7.965,0,0,1,7.971-7.96l-.018-.032A56.245,56.245,0,0,1,176.342,255.338Z" transform="translate(123.168 3119.232)" fill="#ccd7e0" opacity="0.498" />
                                                                                 </g>
                                                                             </svg>
-                                                                            <svg className="d-sm-none d-block" xmlns="http://www.w3.org/2000/svg" width="95.51" height="112.002" viewBox="0 0 95.51 112.002">
+                                                                            <svg className="d-md-none d-block" xmlns="http://www.w3.org/2000/svg" width="95.51" height="112.002" viewBox="0 0 95.51 112.002">
                                                                                 <g id="Group_3343" data-name="Group 3343" transform="translate(-184 -3318.568)">
                                                                                     <path id="Path_68" data-name="Path 68" d="M36.121,0A36.148,36.148,0,1,1,0,36.122,36.213,36.213,0,0,1,36.121,0Z" transform="translate(207.214 3338.421)" fill="#ccd7e0" />
                                                                                     <path id="Path_69" data-name="Path 69" d="M116.98,255.338a56.245,56.245,0,0,0,51.389,56l0-.03a7.96,7.96,0,1,0,0-15.92v0a40.338,40.338,0,0,1-1.2-79.932c.353-.053,1.314-.167,1.413-.169,4.789-.606,7.753-3.609,7.753-7.956a7.965,7.965,0,0,0-7.971-7.96l.018-.032A56.245,56.245,0,0,0,116.98,255.338Z" transform="translate(67.02 3119.232)" fill="#ccd7e0" opacity="0.498" />
