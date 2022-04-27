@@ -44,6 +44,7 @@ export default function OurStory(props) {
     const [tree, setTree] = useState({});
 
     const getNode = (node) => {
+        console.log(node)
         var nodeChildren = [];
 
         node.children_companies.forEach(node => {
@@ -55,6 +56,7 @@ export default function OurStory(props) {
             title: node.title,
             children_companies: nodeChildren,
             isopen: node.isopen,
+            companies_chart_list_id: node.companies_chart_list_id,
             children: node.isopen ? nodeChildren : [],
         };
     }
@@ -332,7 +334,7 @@ export default function OurStory(props) {
                             </div>
                         </div>
 
-                        <div className="table-responsive">
+                        <div className="table-responsive pb-5 mb-5">
                             <div className="container-fluid company-history ">
                                 <div className="row justify-content-center text-center py-5" >
                                     <div className="col-lg-10 ">
@@ -346,7 +348,7 @@ export default function OurStory(props) {
                                         <OrgChart
                                             tree={tree}
                                             NodeComponent={({ node }) => (
-                                                <div className="custom-chart-node" onClick={() => nodeClick(node)}> {node.title}</div >
+                                                <div className={`custom-chart-node ${node.companies_chart_list_id ? '' : 'first-chart-node'}`} onClick={() => nodeClick(node)}> {node.title}</div >
                                             )}
                                         />
                                     </div>

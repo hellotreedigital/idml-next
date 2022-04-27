@@ -37,11 +37,16 @@ body {
     border-radius: 50px;
     color: #fff;
     margin: 0 auto;
-    padding: 10px 20px;
+    padding: 1.75rem;
     width: 400px;
+    font-size: 1.5625rem;
+    font-weight: 500;
 }
 
-
+.first-chart-node {
+    background-color: #537289;
+    border: 0.0625rem solid #537289;
+}
 
 /* chart */
 
