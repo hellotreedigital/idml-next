@@ -95,7 +95,7 @@ export default function Industries(props) {
         // console.log(clientsTagsTitles[0].slug)
         setCurrentFilter(clientsTagsTitles[0].slug);
 
-    }, [clientsTagsTitles]); 
+    }, [clientsTagsTitles]);
 
     useEffect(() => {
         triggerScroll();
@@ -292,9 +292,13 @@ export default function Industries(props) {
                                                                 </svg>
                                                             </div>
                                                         </div>
-                                                        <div className="text-center" onClick={() => setPopupOpen(testimonial)}>
-                                                            <div className="button white-button hover-effect add-padding shadow">{industriesSettings.read_more}</div>
-                                                        </div>
+                                                        {/* {testimonial.text.length >= 2 ? */}
+                                                            <div className="text-center" onClick={() => setPopupOpen(testimonial)}>
+                                                                <div className="button white-button hover-effect add-padding shadow">{industriesSettings.read_more}</div>
+                                                            </div>
+                                                            {/* : */}
+                                                            {/* null */}
+                                                        {/* } */}
                                                     </div>
                                                 </SwiperSlide>
                                             )
