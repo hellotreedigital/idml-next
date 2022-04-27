@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import OrgChart from 'react-orgchart';
 
-export default function (props) {
+export default function orgchart(props) {
 
     const [tree, setTree] = useState({});
 
