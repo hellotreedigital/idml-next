@@ -18,7 +18,7 @@ const options = [
 ]
 
 export default function Contact(props) {
-    // const { triggerScroll } = useContext(GlobalState);
+    const { triggerScroll } = useContext(GlobalState);
     const contactSettings = props.contactData.page_items.contact_settings;
     const contactOffices = props.contactData.page_items.contact_offices;
     const countriesList = props.contactData.page_items.countries_list;
