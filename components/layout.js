@@ -50,7 +50,9 @@ export default function Layout(props) {
                 <div className="row mx-lg-3">
                     <div className="col">
                         <Link href="/">
-                            <img src="/img/images/logo.svg" alt="logo" />
+                            <a>
+                                <img src="/img/images/logo.svg" alt="logo" />
+                            </a>
                         </Link>
                     </div>
                     <div className="col-auto d-lg-flex d-none">

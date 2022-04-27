@@ -46,8 +46,6 @@ export default function CaseStudies(props) {
             setMaxPages(foo);
             console.log(foo);
         });
-
-
     }, [page]);
 
 

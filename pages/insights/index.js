@@ -122,9 +122,11 @@ export default function Insights(props) {
                                 </Swiper>
                                 <div className=" text-center">
                                     <Link href="/insights/news/">
-                                        <button className="button blue-button shadow">
-                                            {insights.news_button}
-                                        </button>
+                                        <a>
+                                            <button className="button blue-button shadow">
+                                                {insights.news_button}
+                                            </button>
+                                        </a>
                                     </Link>
                                 </div>
                             </div>
@@ -198,9 +200,11 @@ export default function Insights(props) {
                                 </Swiper>
                                 <div className="pb-5 text-center">
                                     <Link href="/insights/case-studies/">
-                                        <button className="button blue-button shadow">
-                                            {insights.case_studies_button}
-                                        </button>
+                                        <a>
+                                            <button className="button blue-button shadow">
+                                                {insights.case_studies_button}
+                                            </button>
+                                        </a>
                                     </Link>
                                 </div>
                             </div>

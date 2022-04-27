@@ -31,7 +31,7 @@ export default function Industries(props) {
     useEffect(() => {
         setLoading(false);
         triggerScroll();
-    }, [loading]);
+    }, [loading]); // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
         document.querySelector('body').style.overflow = popupOpen ? 'hidden' : null;
