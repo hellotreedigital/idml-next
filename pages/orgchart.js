@@ -40,7 +40,7 @@ export default function Orgchart(props) {
 
     useEffect(() => {
         setTree(getNode({ ...props.page_items.companies_chart_list[0] }));
-    }, []);
+    }, [setTree, getNode]);
 
     return (
         <OrgChart
