@@ -47,7 +47,7 @@ export default function News(props) {
             setMaxPages(foo);
             // console.log(foo);
         });
-    }, [page]);
+    }, [page]); // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
         triggerScroll();
