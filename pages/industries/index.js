@@ -98,12 +98,11 @@ export default function Industries(props) {
     }, [clientsTagsTitles]);
 
     useEffect(() => {
-        console.log
         triggerScroll();
     }, [clientsListFilter]);
 
     useEffect(() => {
-        triggerScroll();
+        // triggerScroll();
         setLoading(false);
     }, [loading]);
 
@@ -120,7 +119,7 @@ export default function Industries(props) {
     }, [loading]);
 
     useEffect(() => {
-        triggerScroll();
+        // triggerScroll();
         document.querySelector('body').style.overflow = popupOpen ? 'hidden' : null;
         document.querySelector('html').style.overflow = popupOpen ? 'hidden' : null;
     }, [popupOpen]);
