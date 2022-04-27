@@ -40,7 +40,7 @@ export default function Orgchart(props) {
 
     useEffect(() => {
         setTree(getNode({ ...props.page_items.companies_chart_list[0] }));
-    }, [setTree, getNode]); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <OrgChart
@@ -51,6 +51,7 @@ export default function Orgchart(props) {
                     border: '0.0625rem solid #14334a',
                     borderRadius: '50px',
                     color: '#fff',
+                    margin: '0 10px',
                 }} onClick={() => nodeClick(node)}> {node.title}</div >
             )}
         />
