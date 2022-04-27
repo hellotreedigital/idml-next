@@ -1372,7 +1372,7 @@ div.part-3:before {
 .team-ratio {
     padding-top: 90%;
     border-radius: 50px;
-    transform: translateZ(0);
+    /* transform: translateZ(0); */
 }
 
 .team-ratio img {
