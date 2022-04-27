@@ -1371,10 +1371,12 @@ div.part-3:before {
 
 .team-ratio {
     padding-top: 90%;
+    transform: translateZ(0);
 }
 
 .team-ratio img {
     object-fit: cover;
+    transform: translateZ(0);
 }
 
 /* .industry-image {
