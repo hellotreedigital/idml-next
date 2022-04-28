@@ -61,7 +61,7 @@ export default function Industries(props) {
                     <>
                         <div className="pt-lg-5"  >
                             <div className="pt-5">
-                                <div className="container pt-5" >
+                                <div className="container px-sm-2 px-4 pt-5" >
                                     <div className="row align-items-lg-center py-5">
                                         <div className="col-2">
                                             <div className="col-xxl-auto col-lg-1 col-auto add-absolute">
@@ -114,7 +114,7 @@ export default function Industries(props) {
                             </div>
                         </div>
 
-                        <div className="container "  >
+                        <div className="container px-sm-2 px-4"  >
                             <div className="row justify-content-center">
                                 {
                                     singleIndustry?.products_list?.map((product, index) =>
@@ -134,7 +134,7 @@ export default function Industries(props) {
                             </div>
                         </div>
 
-                        <div className="container py-lg-5 pt-5"  >
+                        <div className="container py-lg-5 pt-5 px-sm-2 px-4"  >
                             <div className="row justify-content-center d-flex text-center mb-4">
                                 <h2 className="mb-4">{industriesSettings.clients_title}</h2>
                             </div>

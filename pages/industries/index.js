@@ -119,7 +119,7 @@ export default function Industries(props) {
             const element = document.getElementById("clients")
             if (element) {
                 window.scrollTo(0, element.offsetTop);
-                console.log(element.offsetTop)
+                // console.log(element.offsetTop)
             }
         }
     }, [loading]);
@@ -152,7 +152,7 @@ export default function Industries(props) {
 
                         <div className="pt-lg-5"  >
                             <div className="pt-5">
-                                <div className="container pt-5">
+                                <div className="container px-sm-2 px-4 pt-5">
                                     <div className="row  pt-5 justify-content-center">
                                         {
                                             allIndustries ?
@@ -195,7 +195,7 @@ export default function Industries(props) {
                             </div>
                         </div>
 
-                        <div className="container py-lg-5 pb-5" id="clients" >
+                        <div className="container px-sm-2 px-4 py-lg-5 pb-5" id="clients" >
                             <div className="row  justify-content-center d-flex text-center mb-4 gx-3">
                                 <h2 className="mb-4">{industriesSettings.clients_title}</h2>
                                 {
@@ -218,14 +218,14 @@ export default function Industries(props) {
                                                 clientsListFilter.map((clientList, index) => (
                                                     <div className="col-lg-2 col-md-3 col-sm-4 col-4 my-4 clients-circles" onClick={() => clientsPopupClick(clientList)} animate=" " key={`${currentFilter}-${index}`}>
                                                         <div className="circle-on-hover position-relative">
-                                                                <div className="ratio ratio-1x1">
-                                                                    <img className="brand-image-industry" src={clientList.full_path_logo} alt="brand" />
-                                                                </div>
-                                                                <div className="circle-overlay"></div>
-                                                                <div className="text-on-circle-overlay text-center">
-                                                                    <h2 className="mb-3">{clientList.title}</h2>
-                                                                    <p className="mb-0">{clientList.info}</p>
-                                                                </div>
+                                                            <div className="ratio ratio-1x1">
+                                                                <img className="brand-image-industry" src={clientList.full_path_logo} alt="brand" />
+                                                            </div>
+                                                            <div className="circle-overlay"></div>
+                                                            <div className="text-on-circle-overlay text-center">
+                                                                <h2 className="mb-3">{clientList.title}</h2>
+                                                                <p className="mb-0">{clientList.info}</p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 ))
@@ -238,13 +238,15 @@ export default function Industries(props) {
                         </div>
 
                         <div className="pb-lg-5" >
-                            <div className="container py-lg-5 pb-5"  >
+                            <div className="container py-lg-5 pb-5 px-sm-2 px-4">
                                 <div className="row  justify-content-center d-flex text-center mb-4">
                                     <h2 className="mb-0">{industriesSettings.testimonials_title}</h2>
                                 </div>
 
                                 <Swiper
-                                    pagination={true}
+                                    pagination={{
+                                        dynamicBullets: true,
+                                    }}
                                     modules={[Pagination]}
                                     spaceBetween={15}
                                     centeredSlides={true}

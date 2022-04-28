@@ -44,7 +44,7 @@ export default function SingleService(props) {
                     <>
                         <div className="pt-lg-5" >
                             <div className="pt-5">
-                                <div className="container pt-5" >
+                                <div className="container pt-5 px-sm-2 px-4" >
                                     <div className="row align-items-center mb-4  pt-5">
                                         {loading ? null :
                                             <>
@@ -96,7 +96,7 @@ export default function SingleService(props) {
                             </div>
                         </div>
 
-                        <div className="container pb-5 single-service" >
+                        <div className="container pb-5 single-service px-sm-2 px-4" >
                             <div className="row align-items-center mb-5 mb-md-0">
                                 <div className="col-lg-7 col-md-6 pb-lg-0 pt-3">
                                     <p>{singleServiceItems.small_description}</p>

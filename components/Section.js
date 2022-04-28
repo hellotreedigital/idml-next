@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Section(props) {
     return (
-        <div className="container">
+        <div className="container px-sm-2 px-4">
             <div className="row">
                 <div className="col-12 pb-5">
                     <h2 className="mb-4">{props.title}</h2>

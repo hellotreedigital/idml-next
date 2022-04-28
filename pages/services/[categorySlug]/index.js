@@ -44,9 +44,9 @@ export default function Services(props) {
                 />
                 <div className="min-height-js pt-lg-5" >
                     <div className="pt-5">
-                        <div className="container pt-5" >
+                        <div className="container px-sm-2 px-4 pt-5" >
                             <div className="row align-items-start py-5">
-                                <div className="col-xxl-auto col-lg-1 col-auto">
+                                <div className="col-xxl-auto col-lg-1 col-auto position-absolute">
                                     {loading ? null :
                                         <>
                                             <div className=" d-none d-sm-flex">
@@ -77,7 +77,7 @@ export default function Services(props) {
                                     }
                                 </div>
 
-                                <div className="col">
+                                <div className="col-12">
                                     <div className="d-flex text-center justify-content-center">
                                         <div className="d-flex align-items-center">
                                             <h2 className="mb-0 service-title-page">{singleCat?.title}</h2>

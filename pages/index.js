@@ -59,6 +59,11 @@ export default function Home(props) {
     setClientPopup(clientList);
   }
 
+  useEffect(() => {
+    document.querySelector('body').style.overflow = youtubePopup ? 'hidden' : null;
+    document.querySelector('html').style.overflow = youtubePopup ? 'hidden' : null;
+  }, [youtubePopup]);
+
   return loading ? null : (
     <Layout activePage="home" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
 
@@ -74,7 +79,7 @@ export default function Home(props) {
 
       <>
         <div className="position-relative">
-          <div className="container">
+          <div className="container px-sm-2 px-4">
             <div className="think-blue">
               <img src="../img/images/header-logo.svg" alt="logo" className="home-logo" />
               <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 953.44 363.66">
@@ -162,14 +167,14 @@ export default function Home(props) {
               </svg>
             </div>
           </div>
-          <div className="ratio background-image">
+          <div className="ratio background-image ">
             <video playsInline muted loop autoPlay>
               <source src={homeSettings.banner_video} type='video/mp4' />
             </video>
           </div>
           <div className="opacity-header"></div>
           <div className="section-1">
-            <div className="container" >
+            <div className="container px-sm-2 px-4" >
               <div className="text-center" animate="">
                 <Link href="/booking">
                   <a>
@@ -190,7 +195,7 @@ export default function Home(props) {
           <div className="background-sections">
             <img src="../img/images/test1.svg" alt="" />
           </div>
-          <div className="container py-5">
+          <div className="container px-sm-2 px-4 py-5">
             <div className="row justify-content-center text-center ">
               <div className="col-lg-8" >
                 <h2 className="pb-4 mb-0" >{homeSettings.what_we_do_title}</h2>
@@ -199,7 +204,7 @@ export default function Home(props) {
             </div>
           </div>
 
-          <div className="container pt-5">
+          <div className="container px-sm-2 px-4 pt-5">
             <div className="row justify-content-center text-center ">
               <div className="col-lg-8 pb-4" >
                 <h2 className="mb-0">{homeSettings.process_title}</h2>
@@ -208,7 +213,7 @@ export default function Home(props) {
             <div className="row justify-content-center ">
               {homeProcess ?
                 homeProcess.map((process, index) =>
-                  <div className="col-lg-4 col-md-6 col-12 pb-3 " style={index % 3 === 0 ? { transitionDelay: '0.6s' } : (index % 2 === 0 ? { transitionDelay: '1s' } : { transitionDelay: '0.8s' })} animate="" key={index}>
+                  <div className="col-lg-4 col-md-6 col-12 pb-3 " style={index % 3 === 0 ? { transitionDelay: '0.6s' } : (index % 2 === 0 ? { transitionDelay: '1s' } : { transitionDelay: '0.8s' })}  animate="" key={index}>
                     <div className="bg-color button blue-button-hover shadow py-3">
                       <div className="py-4">
                         <div style={{ textTransform: 'uppercase' }}>{process.title}</div>
@@ -230,7 +235,7 @@ export default function Home(props) {
           {
             homeSettings ?
               !homeSettings.about_us_title && !homeSettings.about_us_button && !homeSettings.about_us_button ? null :
-                <div className="container py-5">
+                <div className="container px-sm-2 px-4 py-5">
                   <div className="row justify-content-center text-center ">
                     <div className="col-lg-8">
                       <h2 className="pb-4 mb-0">{homeSettings.about_us_title}</h2>
@@ -258,7 +263,7 @@ export default function Home(props) {
 
         <div className="py-5">
           <div className="blue-background-section ">
-            <div className="container py-5">
+            <div className="container px-sm-2 px-4 py-5">
               <div className="">
                 <Typist>
                   {homeSettings.animated_text}
@@ -278,7 +283,9 @@ export default function Home(props) {
           </div>
 
           <Swiper
-            pagination={true}
+            pagination={{
+              dynamicBullets: true,
+            }}
             autoplay={{ delay: 3000 }}
             modules={[Pagination]}
             spaceBetween={10}
@@ -343,7 +350,7 @@ export default function Home(props) {
         {
           homeSettings ?
             industries.length === 0 ? null :
-              <div className="container pt-5">
+              <div className="container pt-5 px-sm-2 px-4">
                 <div className="row justify-content-center text-center ">
                   <div className="col-lg-8 pb-4" >
                     <h2 className="mb-0">{homeSettings.industries_title}</h2>
@@ -374,7 +381,7 @@ export default function Home(props) {
         {
           homeSettings ?
             news.length === 0 ? null :
-              <div className="container pt-5">
+              <div className="container pt-5 px-sm-2 px-4">
                 <div className="row justify-content-center text-center ">
                   <div className="col-lg-8 pb-4">
                     <h2 className="mb-0">{homeSettings.news_title}</h2>
@@ -449,7 +456,7 @@ export default function Home(props) {
           homeSettings ?
 
             <>
-              <div className="container pt-5">
+              <div className="container pt-5 px-sm-2 px-4">
 
                 {tipsList.length === 0 ? null :
 
@@ -525,7 +532,7 @@ export default function Home(props) {
                 }
               </div>
 
-              <div className="py-5" animate="">
+              <div className="py-5 " animate="">
                 <Section
                   title={homeSettings.help_title}
                   subtitle={homeSettings.help_text}

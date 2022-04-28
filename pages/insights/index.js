@@ -63,7 +63,9 @@ export default function Insights(props) {
                             <div className="">
 
                                 <Swiper
-                                    pagination={true}
+                                    pagination={{
+                                        dynamicBullets: true,
+                                    }}
                                     autoplay={{
                                         delay: 3000,
                                         disableOnInteraction: false,
@@ -141,7 +143,9 @@ export default function Insights(props) {
                             <div className="">
 
                                 <Swiper
-                                    pagination={true}
+                                    pagination={{
+                                        dynamicBullets: true,
+                                    }}
                                     autoplay={{
                                         delay: 3000,
                                         disableOnInteraction: false,

@@ -93,7 +93,7 @@ export default function Booking(props) {
                         <div className="py-lg-5">
                             <div className="py-5">
                                 <div className="py-5">
-                                    <div className="container py-5" >
+                                    <div className="container px-sm-2 px-4 py-5" >
                                         <form onSubmit={submitForm} className="row py-5">
                                             <div className="text-center" >
                                                 <h2 className="mb-4">{bookingSettings.title}</h2>

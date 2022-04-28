@@ -44,7 +44,6 @@ export default function CaseStudies(props) {
                 foo.push(i + 1);
             }
             setMaxPages(foo);
-            console.log(foo);
         });
     }, [page]); // eslint-disable-line react-hooks/exhaustive-deps
 

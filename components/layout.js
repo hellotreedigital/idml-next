@@ -267,16 +267,37 @@ export default function Layout(props) {
                     <div className="row footer align-items-center justify-content-between">
                         <div className="col-lg-5 col-md-12 justify-content-md-center text-lg-start text-center">
                             <div className="background-blue py-lg-5 py-4">
-                                <div className="row justify-content-center justify-content-lg-start  align-items-center position-relative">
-                                    <div className="col-lg-3 ">
+
+                                <div className="row d-lg-none d-md-flex d-sm-flex d-none position-relative justify-content-center align-items-center pb-3">
+                                    <div className="col-2">
                                         <Link href="/">
                                             <a>
-                                                <img src="/img/images/logo-footer.svg" alt="logo" />
+                                                <img className="footer-logo" src="/img/images/logo-footer.svg" alt="logo" />
                                             </a>
                                         </Link>
                                     </div>
-                                    <div className="col-lg-6 col-md-5 col-sm-8 col-9">
-                                        <div className="d-none d-lg-block">
+                                    <div className="col-md-5 col-sm-5">
+                                        <div className="text-start">
+
+                                            <div className="pt-3">
+                                                <p className="mb-0">{props.menuItems ? props.menuItems['footer-text'] : ''}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="row justify-content-center justify-content-lg-start  align-items-center position-relative">
+                                    <div className="col-lg-3  d-block d-sm-none d-md-none d-lg-block">
+                                        <Link href="/">
+                                            <a>
+                                                <img className="footer-logo" src="/img/images/logo-footer.svg" alt="logo" />
+                                            </a>
+                                        </Link>
+                                    </div>
+
+
+                                    <div className="col-lg-6 col-md-5 col-sm-8 col-9 ">
+                                        <div className="d-none  d-sm-block d-md-block d-lg-block pb-3">
                                             {
                                                 props?.footerContactIcons ?
                                                     props.footerContactIcons.map((footerContactIcon, index) =>
@@ -289,10 +310,10 @@ export default function Layout(props) {
                                                     null
                                             }
                                         </div>
-                                        <div className="pt-3">
+                                        <div className="pt-3 d-block d-sm-none d-md-none d-lg-block">
                                             <p>{props.menuItems ? props.menuItems['footer-text'] : ''}</p>
                                         </div>
-                                        <div className="d-block d-lg-none pb-3">
+                                        <div className="d-block d-md-none d-sm-none d-lg-none pb-3">
                                             {
                                                 props?.footerContactIcons ?
                                                     props.footerContactIcons.map((footerContactIcon, index) =>
@@ -321,18 +342,20 @@ export default function Layout(props) {
                                                             </a>
                                                         </Link>
                                                     </div>
+                                                </div>
+                                                <div className="col-4">
                                                     <div className="mb-4">
                                                         <Link href="/services">
                                                             <a className={"mobile-footer" + (props.activePage === "services" ? " active" : "")}>{props.menuItems?.services}</a>
                                                         </Link>
                                                     </div>
-                                                </div>
-                                                <div className="col-4">
                                                     <div className="mb-4">
                                                         <Link href="/industries">
                                                             <a className={"mobile-footer" + (props.activePage === "industries" ? " active" : "")} > {props.menuItems?.industries}</a>
                                                         </Link>
                                                     </div>
+                                                </div>
+                                                <div className="col-4">
                                                     <div className="mb-4">
                                                         <Link href="/insights">
                                                             <a className={"mobile-footer" + (props.activePage === "insights" ? " active" : "")} >{props.menuItems?.insights}</a>

@@ -40,7 +40,7 @@ export default function CaseStudies(props) {
                 insightsSettings && (
                     <div className="pt-lg-5">
                         <div className="pt-5">
-                            <div className="container pt-5"  >
+                            <div className="container pt-5 px-sm-2 px-4"  >
                                 <div className="row align-items-center  pt-5 mb-4">
                                     <div className="col-xxl-auto col-lg-1 col-auto add-absolute">
                                         <div className=" d-none d-sm-block">
@@ -88,7 +88,7 @@ export default function CaseStudies(props) {
 
             {
                 singleCase && (
-                    <div className="container single-study">
+                    <div className="container single-study px-sm-2 px-4">
                         <div className="row"  >
                             <div className="col-12">
                                 <div dangerouslySetInnerHTML={{ __html: singleCase.small_text }} />

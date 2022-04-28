@@ -48,7 +48,7 @@ export default function Services(props) {
             />
             <div className="py-lg-5"></div>
             <div className="py-5">
-                <div className="container py-lg-5">
+                <div className="container py-lg-5 px-sm-2 px-4">
                     <div className="row justify-content-center pt-5">
 
                         {

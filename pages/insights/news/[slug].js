@@ -52,7 +52,7 @@ export default function News(props) {
                     <>
                         <div className="pt-lg-5">
                             <div className="pt-5">
-                                <div className="container pt-5"  >
+                                <div className="container pt-5 px-sm-2 px-4"  >
                                     <div className="row  align-items-start  pt-5">
                                         <div className="col-xxl-auto col-lg-1 col-auto add-absolute">
                                             <div className=" d-none d-sm-block">
@@ -100,7 +100,7 @@ export default function News(props) {
                             </div>
                         </div>
 
-                        <div className="container single-news-page">
+                        <div className="container single-news-page px-sm-2 px-4">
                             <div className="row  align-items-center"  >
                                 <div className="col-lg-5 col-md-6 mb-4 mb-md-0" animate="">
                                     <div className="ratio single-news">
@@ -207,7 +207,9 @@ export default function News(props) {
                                                                         <h3>{latestNew.title}</h3>
                                                                         <h4 className="date-latest">{latestNew.date_formatted}</h4>
                                                                     </div>
-                                                                    <div className="latest-news-content-hover">
+                                                                    <div className="latest-news-content-hover text-center">
+                                                                        <h3>{latestNew.title}</h3>
+                                                                        <h4 className="date-latest">{latestNew.date_formatted}</h4>
                                                                         <a href={"/insights/news/" + latestNew.slug} className="underlined-link read-more-news">{insightsSettings.read_more}</a>
                                                                     </div>
                                                                 </div>

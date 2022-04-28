@@ -108,7 +108,7 @@ export default function Contact(props) {
                             title={menuItems['book-a-consultation']}
                         />
                         <div className="py-lg-5">
-                            <div className="container contact-us py-5"  >
+                            <div className="container px-sm-2 px-4 contact-us py-5"  >
                                 <div className="row py-lg-5 pt-5">
                                     {
                                         contactOffices ?
@@ -152,7 +152,7 @@ export default function Contact(props) {
                                         </div>
                                         <form onSubmit={submitForm} className="row justify-content-center position-relative">
                                             <div className="col-lg-10 col-12">
-                                                <div className="row justify-content-center text-center mx-5 py-5">
+                                                <div className="row justify-content-center text-center mx-lg-5 mx-3 py-5">
                                                     <h3 className="mb-5">{contactSettings.form_title}</h3>
                                                     <div className="col-lg-6"  >
                                                         <div className="mb-4 text-start">

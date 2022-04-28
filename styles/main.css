@@ -1431,10 +1431,15 @@ div.part-3:before {
     position: absolute;
     bottom: 0;
     left: 0;
+    height: 40%;
     width: 100%;
     text-align: center;
     background-color: #3E5A6F;
     color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 .team-position h4,
@@ -3619,12 +3624,27 @@ div.four:before {
     .location-details h2 {
         font-size: 1rem !important;
     }
+
+    .footer-logo {
+        /* width: 78px; */
+        height: 78px;
+    }
 }
 
 
 /* Small devices (landscape phones, less than 768px) */
 
 @media (max-width: 767.98px) {
+    .footer-logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .social-icon {
+        width: 30px;
+        height: 30px;
+    }
+
     .custom-chart-node {
         width: 159px;
         font-size: 0.9rem !important;
@@ -4051,12 +4071,49 @@ div.four:before {
     .circle-right:before {
         z-index: -2;
     }
+
+    .mySwiper-clients .swiper-wrapper {
+        padding-bottom: 70px !important;
+    }
+
+    .cancel-button {
+        right: 6px;
+    }
+
+    .latest-news-section .overlay {
+        opacity: 1;
+    }
+
+    .latest-news-section .border-on-overlay {
+        opacity: 1;
+    }
+
+    .latest-news-section .latest-news-content-hover {
+        opacity: 1;
+    }
+
+    .latest-news-section .border-on-overlay {
+        opacity: 1;
+    }
+
+    .latest-news-section .latest-news-content {
+        opacity: 0;
+    }
+
+    .latest-news-section .latest-news-content {
+        opacity: 0;
+    }
 }
 
 
 /* X-Small devices (portrait phones, less than 576px) */
 
 @media (max-width: 575.98px) {
+
+    .team-position {
+        height: 58%;
+    }
+
     .pins {
         padding: 15px;
     }
@@ -4155,30 +4212,6 @@ div.four:before {
         font-size: 0.8rem;
     }
 
-    .latest-news-section:hover .overlay {
-        opacity: 0;
-    }
-
-    s .latest-news-section:hover .border-on-overlay {
-        opacity: 0;
-    }
-
-    .latest-news-section:hover .latest-news-content-hover {
-        opacity: 0;
-    }
-
-    .latest-news-section:hover .border-on-overlay {
-        opacity: 0;
-    }
-
-    .latest-news-section .latest-news-content {
-        opacity: 1;
-    }
-
-    .latest-news-section:hover .latest-news-content {
-        opacity: 1;
-    }
-
     .add-overflow.popup-industry {
         height: 23vh;
     }
@@ -4195,7 +4228,11 @@ div.four:before {
     }
 
     .service-title-page {
-        font-size: 2rem;
+        font-size: 1.3rem !important;
+    }
+
+    .services p {
+        font-size: 1.2rem;
     }
 
     .title-industry {
@@ -4264,7 +4301,7 @@ div.four:before {
         background: transparent;
         border-radius: 50px;
         border: 2px solid #14334A;
-        padding: 6px;
+        padding: 4px;
     }
 
     .operations p {
@@ -5552,3 +5589,4 @@ div.four:before {
     flex-wrap: wrap;
     justify-content: center;
 }
+
