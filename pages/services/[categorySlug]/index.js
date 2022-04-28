@@ -29,7 +29,7 @@ export default function Services(props) {
         setLoading(false)
     }, [categorySettings, loading]);
 
-    return  (
+    return (
         <div>
             <Layout fixedNav={true} activePage="services" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
 
@@ -54,7 +54,7 @@ export default function Services(props) {
                                                     window.history.length > 2 ?
                                                         <div onClick={() => window.history.back()} className="button back-button d-flex align-items-center shadow">
                                                             <svg className="arrow-back" xmlns="http://www.w3.org/2000/svg" width="8.136" height="12.964" viewBox="0 0 8.136 12.964">
-                                                                <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" strokeLinecap="round" strokeWidth="2" />
+                                                                <path id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,6.733,3.448,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" stroke-linecap="round" stroke-width="2" />
                                                             </svg>
                                                             <p className="mb-0 ms-3">{categorySettings.back_button}</p>
                                                         </div>
@@ -66,9 +66,10 @@ export default function Services(props) {
                                                 {
                                                     window.history.length > 2 ?
                                                         <button onClick={() => window.history.back()} className="back-button-border">
-                                                            <svg className="arrow-back " xmlns="http://www.w3.org/2000/svg" width="8.136" height="12.964" viewBox="0 0 8.136 12.964">
-                                                                <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" strokeLinecap="round" strokeWidth="2" />
+                                                            <svg className="arrow-back" xmlns="http://www.w3.org/2000/svg" width="8.136" height="12.964" viewBox="0 0 8.136 12.964">
+                                                                <path id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,6.733,3.448,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" stroke-linecap="round" stroke-width="2" />
                                                             </svg>
+
                                                         </button>
                                                         :
                                                         null}
@@ -103,29 +104,29 @@ export default function Services(props) {
                     <div className="container " >
                         <div className="row pb-lg-5 justify-content-center">
                             {
-                                    categories.map((category, index) =>
-                                        <div className="col-lg-4 col-md-6 col-sm-6 col-10 pb-5" animate="" key={index}>
-                                            <Link href={"/services/" + singleCat?.slug + "/" + category.slug}>
-                                                <a>
-                                                    <div className="service-section position-relative">
-                                                        <div className="ratio team-ratio ">
-                                                            <img className="industry-image" src={category.image} alt="categories" />
-                                                        </div>
-                                                        <div className="service-title py-lg-3 py-2">
-                                                            <h4 className="my-4">{category.title}</h4>
-                                                            {/* <h5>Founder & CEO</h5> */}
-                                                        </div>
-                                                        <div className="service-on-hover">
-                                                            <div className="service-content">
-                                                                <h4 className="mb-4">{category.title}</h4>
-                                                                <h5 className="mb-3">{category.small_description}</h5>
-                                                            </div>
+                                categories.map((category, index) =>
+                                    <div className="col-lg-4 col-md-6 col-sm-6 col-10 pb-5" animate="" key={index}>
+                                        <Link href={"/services/" + singleCat?.slug + "/" + category.slug}>
+                                            <a>
+                                                <div className="service-section position-relative">
+                                                    <div className="ratio team-ratio ">
+                                                        <img className="industry-image" src={category.image} alt="categories" />
+                                                    </div>
+                                                    <div className="service-title py-lg-3 py-2">
+                                                        <h4 className="my-4">{category.title}</h4>
+                                                        {/* <h5>Founder & CEO</h5> */}
+                                                    </div>
+                                                    <div className="service-on-hover">
+                                                        <div className="service-content">
+                                                            <h4 className="mb-4">{category.title}</h4>
+                                                            <h5 className="mb-3">{category.small_description}</h5>
                                                         </div>
                                                     </div>
-                                                </a>
-                                            </Link>
-                                        </div>
-                                    )
+                                                </div>
+                                            </a>
+                                        </Link>
+                                    </div>
+                                )
                             }
                         </div>
                     </div>

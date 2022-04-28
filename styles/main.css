@@ -3345,11 +3345,6 @@ div.four:before {
         font-size: 10px;
     }
 
-    .arrow-back {
-        width: 8px;
-        height: 8px;
-    }
-
     .service-on-hover h5 {
         font-size: 1rem;
     }
@@ -3629,6 +3624,10 @@ div.four:before {
         /* width: 78px; */
         height: 78px;
     }
+    .cancel-button {
+        right: 6px !important;
+        transform: translateY(-127%) !important;
+    }
 }
 
 
@@ -3846,11 +3845,6 @@ div.four:before {
 
     .popup-age h4 {
         font-size: 1.0625rem;
-    }
-
-    .arrow-back {
-        width: 12px;
-        height: 8px;
     }
 
     .service-on-hover h5 {
@@ -4074,10 +4068,6 @@ div.four:before {
 
     .mySwiper-clients .swiper-wrapper {
         padding-bottom: 70px !important;
-    }
-
-    .cancel-button {
-        right: 6px;
     }
 
     .latest-news-section .overlay {
@@ -4409,8 +4399,8 @@ div.four:before {
     }
 
     .arrow-back {
-        width: 12px;
-        height: 12px;
+        width: 9px;
+        height: 8px;
     }
 
     .square-ratio.ratio-1x1 {
@@ -5589,4 +5579,3 @@ div.four:before {
     flex-wrap: wrap;
     justify-content: center;
 }
-

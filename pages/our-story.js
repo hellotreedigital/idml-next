@@ -53,10 +53,11 @@ export default function OurStory(props) {
     const getNode = (node) => {
         // console.log(node)
         var nodeChildren = [];
-
-        node.children_companies.forEach(node => {
-            nodeChildren.push(getNode(node));
-        });
+        if (node.children_companies) {
+            node.children_companies.forEach(node => {
+                nodeChildren.push(getNode(node));
+            });
+        } else { null }
 
         return {
             id: node.id,
@@ -341,27 +342,30 @@ export default function OurStory(props) {
                             </div>
                         </div>
 
-                        <div className="table-responsive pb-5 mb-5">
-                            <div className="container-fluid company-history px-sm-2 px-4">
-                                <div className="row justify-content-center text-center py-5" >
-                                    <div className="col-lg-10 ">
-                                        <h2 className="mb-4">{storySettings.group_title}</h2>
-                                        <p className="mb-0">{storySettings.group_text}</p>
-                                    </div>
-                                </div>
+                        {
+                            !storySettings.group_title && !storySettings.group_text ? " " :
+                                <div className="table-responsive pb-5 mb-5">
+                                    <div className="container-fluid company-history px-sm-2 px-4">
+                                        <div className="row justify-content-center text-center py-5" >
+                                            <div className="col-lg-10 ">
+                                                <h2 className="mb-4">{storySettings.group_title}</h2>
+                                                <p className="mb-0">{storySettings.group_text}</p>
+                                            </div>
+                                        </div>
 
-                                <div className="position-relative ">
-                                    <div className="row justify-content-center text-center ">
-                                        <OrgChart
-                                            tree={tree}
-                                            NodeComponent={({ node }) => (
-                                                <div className={`custom-chart-node ${node.companies_chart_list_id ? '' : 'first-chart-node'}`} onClick={() => nodeClick(node)}> {node.title}</div >
-                                            )}
-                                        />
+                                        <div className="position-relative ">
+                                            <div className="row justify-content-center text-center ">
+                                                <OrgChart
+                                                    tree={tree}
+                                                    NodeComponent={({ node }) => (
+                                                        <div className={`custom-chart-node ${node.companies_chart_list_id ? '' : 'first-chart-node'}`} onClick={() => nodeClick(node)}> {node.title}</div >
+                                                    )}
+                                                />
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                        }
 
                         <div className="py-lg-5 pb-5">
                             <div className="py-lg-5">
@@ -487,30 +491,31 @@ export default function OurStory(props) {
                                 }
                             </Swiper>
                         </div>
-
-                        <div className="pb-5">
-                            <div className="bg-blue-idml position-relative">
-                                <div className="container px-sm-2 px-4">
-                                    <img className="idml-bg " src="../img/images/idml-bg.png" alt="bg" />
-                                </div>
-                                <div className="container px-sm-2 px-4">
-                                    <div className="row what-is-idml">
-                                        <div className="col-lg-8 col-md-7 col-sm-12 col-12  py-5 "  >
-                                            <div className="pe-md-5 ms-md-0 ms-5">
-                                                <h2 className="mb-4">{storySettings.idml_title}</h2>
-                                                <p>{storySettings.idml_text}</p>
+                        {!storySettings.idml_title && !storySettings.idml_text && !storySettings.idml_image === 0 ? " d-none" :
+                            <div className="pb-5">
+                                <div className={"bg-blue-idml position-relative" + (!storySettings.idml_title && !storySettings.idml_text && !storySettings.idml_image) ? " d-none" : ""}>
+                                    <div className="container px-sm-2 px-4">
+                                        <img className={"idml-bg " + (!storySettings.idml_title && !storySettings.idml_text && !storySettings.idml_image) ? " d-none" : ""} src="../img/images/idml-bg.png" alt="bg" />
+                                    </div>
+                                    <div className="container px-sm-2 px-4">
+                                        <div className="row what-is-idml">
+                                            <div className="col-lg-8 col-md-7 col-sm-12 col-12  py-5 "  >
+                                                <div className="pe-md-5 ms-md-0 ms-5">
+                                                    <h2 className="mb-4">{storySettings.idml_title}</h2>
+                                                    <p>{storySettings.idml_text}</p>
+                                                </div>
+                                            </div>
+                                            <div className="col-lg-4 col-md-5 d-md-block d-sm-none d-none" animate="">
+                                                <img className="what-is-idml-img" src={storySettings.idml_image} alt="idml" />
                                             </div>
                                         </div>
-                                        <div className="col-lg-4 col-md-5 d-md-block d-sm-none d-none" animate="">
-                                            <img className="what-is-idml-img" src={storySettings.idml_image} alt="idml" />
-                                        </div>
                                     </div>
+
+                                    <img className="mobile-full-image" animate="" src={storySettings.idml_image} alt="idml" />
+
                                 </div>
-
-                                <img className="mobile-full-image" animate="" src={storySettings.idml_image} alt="idml" />
-
                             </div>
-                        </div>
+                        }
 
                         <div className="container  px-sm-2 px-4">
                             <div className="row operations  py-5"  >
@@ -546,7 +551,7 @@ export default function OurStory(props) {
                                                             <div key={index}>
 
                                                                 <LocationMap
-                                                                index={index}
+                                                                    index={index}
                                                                     pinLocation={pinLocation}
                                                                     id={pinLocation.id}
                                                                     // closeClick={closeClick}
