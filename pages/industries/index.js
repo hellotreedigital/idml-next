@@ -18,6 +18,7 @@ import { Pagination } from "swiper";
 import GlobalState from "../../GlobalState";
 import { useRouter } from 'next/router'
 import SeoTags from "../../components/SeoTags";
+import ClientsPopup from "../../components/ClientsPopup";
 
 export default function Industries(props) {
 
@@ -44,6 +45,7 @@ export default function Industries(props) {
     const testimonialsList = props.industriesData.page_items.testimonials_list;
     const [clientsListFilter, setClientsListFilter] = useState();
     const [currentFilter, setCurrentFilter] = useState();
+    const [clientPopup, setClientPopup] = useState(null)
 
 
     function ageVerificationClick(industry) {
@@ -55,6 +57,10 @@ export default function Industries(props) {
         else {
             router.push("/industries/" + industry?.slug)
         }
+    }
+
+    function clientsPopupClick(clientList) {
+        setClientPopup(clientList);
     }
 
     function ageClose(industry) {
@@ -119,7 +125,6 @@ export default function Industries(props) {
     }, [loading]);
 
     useEffect(() => {
-        // triggerScroll();
         document.querySelector('body').style.overflow = popupOpen ? 'hidden' : null;
         document.querySelector('html').style.overflow = popupOpen ? 'hidden' : null;
     }, [popupOpen]);
@@ -211,9 +216,8 @@ export default function Industries(props) {
                                         {
                                             clientsListFilter?.length > 0 ?
                                                 clientsListFilter.map((clientList, index) => (
-                                                    <div className="col-lg-2 col-md-3 col-sm-4 col-4 my-4 clients-circles" animate=" " key={`${currentFilter}-${index}`}>
+                                                    <div className="col-lg-2 col-md-3 col-sm-4 col-4 my-4 clients-circles" onClick={() => clientsPopupClick(clientList)} animate=" " key={`${currentFilter}-${index}`}>
                                                         <div className="circle-on-hover position-relative">
-                                                            <a href={clientList.url} target="_blank" rel="noreferrer">
                                                                 <div className="ratio ratio-1x1">
                                                                     <img className="brand-image-industry" src={clientList.full_path_logo} alt="brand" />
                                                                 </div>
@@ -222,7 +226,6 @@ export default function Industries(props) {
                                                                     <h2 className="mb-3">{clientList.title}</h2>
                                                                     <p className="mb-0">{clientList.info}</p>
                                                                 </div>
-                                                            </a>
                                                         </div>
                                                     </div>
                                                 ))
@@ -270,7 +273,7 @@ export default function Industries(props) {
                                     {
                                         testimonialsList && (
                                             testimonialsList.map((testimonial, index) =>
-                                                <SwiperSlide key={index}>
+                                                <SwiperSlide key={index} >
                                                     <div className="blue-card position-relative p-4 mt-2">
                                                         <div className="text-card py-3">
                                                             <div className="text-center justify-content-center d-grid">
@@ -293,11 +296,11 @@ export default function Industries(props) {
                                                             </div>
                                                         </div>
                                                         {/* {testimonial.text.length >= 2 ? */}
-                                                            <div className="text-center" onClick={() => setPopupOpen(testimonial)}>
-                                                                <div className="button white-button hover-effect add-padding shadow">{industriesSettings.read_more}</div>
-                                                            </div>
-                                                            {/* : */}
-                                                            {/* null */}
+                                                        <div className="text-center" onClick={() => setPopupOpen(testimonial)}>
+                                                            <div className="button white-button hover-effect add-padding shadow">{industriesSettings.read_more}</div>
+                                                        </div>
+                                                        {/* : */}
+                                                        {/* null */}
                                                         {/* } */}
                                                     </div>
                                                 </SwiperSlide>
@@ -371,6 +374,19 @@ export default function Industries(props) {
                 </div>
             </div>
 
+            <div className={"team-popup " + (clientPopup ? " " : " fade-out")}>
+                {clientPopup && (
+                    <ClientsPopup
+                        setClientPopup={setClientPopup}
+                        image={clientPopup.full_path_logo}
+                        title={clientPopup.title}
+                        description={clientPopup.description}
+                        url={clientPopup.url}
+                        label={industriesSettings.visit_button}
+                    />
+                )
+                }
+            </div>
 
         </Layout >
     )

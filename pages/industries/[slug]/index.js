@@ -4,6 +4,7 @@ import Layout from "../../../components/layout";
 import SideButton from "../../../components/SideButton";
 import axios from "axios";
 import SeoTags from "../../../components/SeoTags";
+import ClientsPopup from "../../../components/ClientsPopup";
 
 export default function Industries(props) {
 
@@ -17,12 +18,17 @@ export default function Industries(props) {
     const serviceTitles = props.industriesData.services_titles;
     const industriesTitles = props.industriesData.industries_titles;
 
-
     const industriesSettings = props.industriesData.page_items.industries_setting;
     const singleIndustry = props.industriesData.page_items.single_industry;
     const clientsList = props.industriesData.page_items.single_industry.clients_list;
 
+    const [clientPopup, setClientPopup] = useState(null)
+
     const [loading, setLoading] = useState(true);
+
+    function clientsPopupClick(clientList) {
+        setClientPopup(clientList);
+    }
 
     function popupClick(product) {
         setPopupOpen(product);
@@ -77,13 +83,13 @@ export default function Industries(props) {
                                                         <div className=" d-block d-sm-none">
                                                             {
                                                                 window.history.length > 2 ?
-                                                                <button onClick={() => window.history.back()} className="back-button-border">
-                                                                    <svg className="arrow-back" xmlns="http://www.w3.org/2000/svg" width="8.136" height="12.964" viewBox="0 0 8.136 12.964">
-                                                                        <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" strokeLinecap="round" strokeWidth="2" />
-                                                                    </svg>
-                                                                </button>
-                                                                :
-                                                                null
+                                                                    <button onClick={() => window.history.back()} className="back-button-border">
+                                                                        <svg className="arrow-back" xmlns="http://www.w3.org/2000/svg" width="8.136" height="12.964" viewBox="0 0 8.136 12.964">
+                                                                            <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" strokeLinecap="round" strokeWidth="2" />
+                                                                        </svg>
+                                                                    </button>
+                                                                    :
+                                                                    null
                                                             }
                                                         </div>
                                                     </>
@@ -139,9 +145,18 @@ export default function Industries(props) {
                                         {
                                             clientsList ?
                                                 clientsList.map((clientList, index) =>
-                                                    <div className="col-lg-auto col-md-3  col-6 mb-5 mx-lg-3" key={index}>
-                                                        <div>
-                                                            <img className="brand-image-default" src={clientList.full_path_logo} alt="brand" />
+                                                    <div className="col-lg-2 col-md-3 col-sm-4 col-4 my-4 clients-circles" onClick={() => clientsPopupClick(clientList)} animate=" " key={index}>
+                                                        <div className="circle-on-hover position-relative">
+                                                            {/* <a href={clientList.url} target="_blank" rel="noreferrer"> */}
+                                                            <div className="ratio ratio-1x1">
+                                                                <img className="brand-image-industry" src={clientList.full_path_logo} alt="brand" />
+                                                            </div>
+                                                            <div className="circle-overlay"></div>
+                                                            <div className="text-on-circle-overlay text-center">
+                                                                <h2 className="mb-3">{clientList.title}</h2>
+                                                                <p className="mb-0">{clientList.info}</p>
+                                                            </div>
+                                                            {/* </a> */}
                                                         </div>
                                                     </div>
                                                 )
@@ -159,6 +174,20 @@ export default function Industries(props) {
                                     <p>{singleIndustry.last_text}</p>
                                 </div>
                             </div>
+                        </div>
+
+                        <div className={"team-popup " + (clientPopup ? " " : " fade-out")}>
+                            {clientPopup && (
+                                <ClientsPopup
+                                    setClientPopup={setClientPopup}
+                                    image={clientPopup.full_path_logo}
+                                    title={clientPopup.title}
+                                    description={clientPopup.description}
+                                    url={clientPopup.url}
+                                    label={industriesSettings.visit_button}
+                                />
+                            )
+                            }
                         </div>
 
                         <div className={" team-popup " + (popupOpen ? " " : " fade-out")}>
@@ -211,7 +240,7 @@ export async function getStaticPaths() {
         });
     });
     // We'll pre-render only these paths at build time.
-    // { fallback: false } means other routes should 404.
+    // {fallback: false } means other routes should 404.
     return { paths, fallback: false };
 }
 

@@ -17,9 +17,10 @@ import { useState, useEffect, useContext } from "react";
 import GlobalState from "../GlobalState";
 
 import * as Scroll from 'react-scroll';
+import ClientsPopup from "../components/ClientsPopup";
 
 
-let scroll    = Scroll.animateScroll;
+let scroll = Scroll.animateScroll;
 
 export default function Home(props) {
   const { triggerScroll } = useContext(GlobalState);
@@ -39,18 +40,23 @@ export default function Home(props) {
 
   const [loading, setLoading] = useState(true);
   const [youtubePopup, setYoutubePopup] = useState(null);
+  const [clientPopup, setClientPopup] = useState(null);
 
   SwiperCore.use([Autoplay])
 
   useEffect(() => {
     setLoading(false);
-    triggerScroll(); 
+    triggerScroll();
   }, [loading]); // eslint-disable-line react-hooks/exhaustive-deps
-  
+
 
   function scrollTop() {
     const element = document.getElementById("home-section-1")
-    scroll.scrollTo(element.offsetTop-81)
+    scroll.scrollTo(element.offsetTop - 81)
+  }
+
+  function clientsPopupClick(clientList) {
+    setClientPopup(clientList);
   }
 
   return loading ? null : (
@@ -301,8 +307,8 @@ export default function Home(props) {
             {
               clientsList ?
                 clientsList.map((clientList, index) =>
-                  <SwiperSlide key={index}>
-                    <div>
+                  <SwiperSlide key={index} onClick={() => clientsPopupClick(clientList)}>
+                    <div  >
                       <div className="brand-logo-section shadow position-relative">
                         <div className="ratio ratio-1x1 logo-clients">
                           <img src={clientList.full_path_logo} alt="brand-logo" />
@@ -544,6 +550,20 @@ export default function Home(props) {
             </div>
           )
         }
+
+        <div className={"team-popup " + (clientPopup ? " " : " fade-out")}>
+          {clientPopup && (
+            <ClientsPopup
+              setClientPopup={setClientPopup}
+              image={clientPopup.full_path_logo}
+              title={clientPopup.title}
+              description={clientPopup.description}
+              url={clientPopup.url}
+              label={homeSettings.visit_button}
+            />
+          )
+          }
+        </div>
 
       </>
 

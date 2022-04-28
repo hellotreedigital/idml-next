@@ -4202,6 +4202,11 @@ div.four:before {
         font-size: 1.5rem;
     }
 
+    .team-image.clients img {
+        width: 135px;
+        height: 135px;
+    }
+
     .team-image img {
         width: 130px;
         height: 130px;

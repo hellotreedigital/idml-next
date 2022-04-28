@@ -109,7 +109,7 @@ export default function Services(props) {
                                                 <a>
                                                     <div className="service-section position-relative">
                                                         <div className="ratio team-ratio ">
-                                                            <img className="industry-image" src="../img/temp-images/story1.jpg" alt="categories" />
+                                                            <img className="industry-image" src={category.image} alt="categories" />
                                                         </div>
                                                         <div className="service-title py-lg-3 py-2">
                                                             <h4 className="my-4">{category.title}</h4>
