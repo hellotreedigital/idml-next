@@ -47,8 +47,6 @@ export default function News(props) {
                 title={menuItems['book-a-consultation']}
             />
 
-            {
-                insightsSettings && (
                     <>
                         <div className="pt-lg-5">
                             <div className="pt-5">
@@ -224,8 +222,6 @@ export default function News(props) {
                             </div>
                         </div>
                     </>
-                )
-            }
 
         </Layout >
     )
