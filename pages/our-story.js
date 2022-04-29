@@ -543,7 +543,7 @@ export default function OurStory(props) {
                                         <div className="col pb-4">
                                             <div className="position-relative">
                                                 <div className="ratio map-ratio">
-                                                    <img src={storySettings.map_image} alt={pinLocation.operations_map_legend.title} title={pinLocation.operations_map_legend.title} />
+                                                    <img src={storySettings.map_image} alt="map"  />
                                                 </div>
                                                 {
                                                     mapPinnedLocations ?
