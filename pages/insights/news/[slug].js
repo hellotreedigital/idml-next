@@ -101,7 +101,7 @@ export default function News(props) {
                         </div>
 
                         <div className="container single-news-page px-sm-2 px-4">
-                            <div className="row  align-items-center"  >
+                            <div className="row  align-items-start"  >
                                 <div className="col-lg-5 col-md-6 mb-4 mb-md-0" animate="">
                                     <div className="ratio single-news">
                                         <img src={singleNew.first_image} alt="news" />

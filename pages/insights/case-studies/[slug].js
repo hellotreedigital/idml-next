@@ -91,7 +91,6 @@ export default function CaseStudies(props) {
                     <div className="container single-study px-sm-2 px-4">
                         <div className="row"  >
                             <div className="col-12">
-                                <div dangerouslySetInnerHTML={{ __html: singleCase.small_text }} />
 
                                 <div dangerouslySetInnerHTML={{ __html: singleCase.subtitle }} />
                             </div>
