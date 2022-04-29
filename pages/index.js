@@ -318,7 +318,7 @@ export default function Home(props) {
                     <div  >
                       <div className="brand-logo-section shadow position-relative">
                         <div className="ratio ratio-1x1 logo-clients">
-                          <img src={clientList.full_path_logo} alt="brand-logo" />
+                          <img src={clientList.full_path_logo} alt={clientList.title} title={clientList.title} />
                         </div>
                         <div className="overlay"></div>
                         <div className="text-on-overlay text-center">
@@ -482,7 +482,7 @@ export default function Home(props) {
                               <div className={"col-lg-3 col-md-4 col-sm-6 pb-5 "} animate="" key={index}>
                                 <div className="youtube-section position-relative shadow" onClick={() => setYoutubePopup(list)}>
                                   <div className="ratio youtube-ratio">
-                                    <img src={list.thumbnail_image} alt="youtube" />
+                                    <img src={list.thumbnail_image} alt={list.video_desc} title={list.video_desc} />
                                   </div>
                                   <div className="overlay-youtube"></div>
                                   <div className="youtube-icon">
@@ -500,7 +500,7 @@ export default function Home(props) {
                               <div className={"col-lg-3 col-md-4 col-sm-6 pb-5 " + (index % 2 !== 0 ? "col-lg-6 col-md-4 col-sm-6 pb-5" : "")} style={index % 3 === 0 ? { transitionDelay: '0.6s' } : (index % 2 === 0 ? { transitionDelay: '1s' } : { transitionDelay: '0.8s' })} animate="" key={index}>
                                 <div className="youtube-section position-relative shadow" onClick={() => setYoutubePopup(list)}>
                                   <div className={"ratio youtube-ratio" + (index % 2 !== 0 ? " youtube-section-longer" : "")}>
-                                    <img src={list.thumbnail_image} alt="youtube" />
+                                    <img src={list.thumbnail_image} alt={list.video_desc} title={list.video_desc} />
                                   </div>
                                   <div className="overlay-youtube"></div>
                                   <div className="youtube-icon">

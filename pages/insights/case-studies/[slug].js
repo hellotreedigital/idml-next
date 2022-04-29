@@ -106,7 +106,7 @@ export default function CaseStudies(props) {
 
                             <div className="col-lg-5 col-md-5 oder-lg-1 order-2 pb-4">
                                 <div className="ratio single-news">
-                                    <img src={singleCase.image} alt="news" />
+                                    <img src={singleCase.image} alt={singleCase.section_title}  title={singleCase.section_title} />
                                 </div>
                             </div>
                         </div>

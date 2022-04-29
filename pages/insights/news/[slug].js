@@ -105,10 +105,8 @@ export default function News(props) {
                                         <img src={singleNew.first_image} alt="news" />
                                     </div>
                                 </div>
-
                                 <div className="col-lg-7 col-md-6">
                                     <div className="mb-3" dangerouslySetInnerHTML={{ __html: singleNew.first_text }} />
-
                                 </div>
                                 <div className="col-12">
                                     <div className="py-4 mb-0" dangerouslySetInnerHTML={{ __html: singleNew.text_between }} />
@@ -117,12 +115,12 @@ export default function News(props) {
                             <div className="row  align-items-center mb-4"  >
                                 <div className="col-lg-6 col-md-6 col-sm-6 pb-4 " animate="">
                                     <div className="ratio single-news-image">
-                                        <img src={singleNew.second_image} alt="news" />
+                                        <img src={singleNew.second_image} alt={singleNew.title} title={singleNew.title} />
                                     </div>
                                 </div>
                                 <div className="col-lg-6 col-md-6 col-sm-6 pb-4" animate="">
                                     <div className="ratio single-news-image">
-                                        <img src={singleNew.third_image} alt="youtube" />
+                                        <img src={singleNew.third_image} alt={singleNew.title} title={singleNew.title} />
                                     </div>
                                 </div>
                                 <div className="col-12 pb-4">
@@ -139,13 +137,13 @@ export default function News(props) {
                                 </div>
                                 <div className="col-auto">
                                     <a target="_blank" rel="noreferrer" href={'https://www.facebook.com/sharer.php?u=' + window.location}>
-                                        <img className=" social-icon mx-2" src={insightsSettings.share_facebook} alt="icon" />
+                                        <img className=" social-icon mx-2" src={insightsSettings.share_facebook} alt={insightsSettings.share_facebook} title={insightsSettings.share_facebook} />
                                     </a>
                                     <a target="_blank" rel="noreferrer" href={'https://www.linkedin.com/sharing/share-offsite/?url=' + window.location}>
-                                        <img className=" social-icon mx-2" src={insightsSettings.share_twitter} alt="icon" />
+                                        <img className=" social-icon mx-2" src={insightsSettings.share_twitter} alt={insightsSettings.share_twitter} title={insightsSettings.share_twitter} />
                                     </a>
                                     <a target="_blank" rel="noreferrer" href={'https://twitter.com/intent/tweet?url=' + window.location}>
-                                        <img className=" social-icon mx-2" src={insightsSettings.share_linkedin} alt="icon" />
+                                        <img className=" social-icon mx-2" src={insightsSettings.share_linkedin} alt={insightsSettings.share_linkedin} title={insightsSettings.share_linkedin} />
                                     </a>
                                 </div>
                                 <div className="col">
@@ -197,7 +195,7 @@ export default function News(props) {
                                                             <div className="pb-5">
                                                                 <div className="latest-news-section position-relative">
                                                                     <div className="ratio ratio-1x1 lastest-news">
-                                                                        <img src={latestNew.first_image} alt="youtube" />
+                                                                        <img src={latestNew.first_image} alt={latestNew.title} title={latestNew.title} />
                                                                     </div>
                                                                     <div className="overlay"></div>
                                                                     <div className="border-on-overlay"></div>

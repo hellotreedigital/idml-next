@@ -134,7 +134,7 @@ export default function OurStory(props) {
                                                 </div>
                                                 <div className="col-xxl-4 col-lg-5 col-md-5 col-sm-5 pt-sm-0" animate="">
                                                     <div className="ratio story-image">
-                                                        <img src={story.image} alt="story" />
+                                                        <img src={story.image} alt={story.title} title={story.title} />
                                                     </div>
                                                 </div>
                                             </div>
@@ -371,13 +371,13 @@ export default function OurStory(props) {
                             <div className="py-lg-5">
                                 <div className="blue-bg-ceo position-relative">
                                     <div className="ceo-ratio d-md-block d-none" animate="">
-                                        <img src={storySettings.ceo_image} alt="background" />
+                                        <img src={storySettings.ceo_image}  alt={storySettings.ceo_title} title={storySettings.ceo_title} />
                                     </div>
                                     <div className="container position-relative px-sm-2 px-4">
                                         <div className=" d-block d-md-none mt-md-5 mt-3"  >
                                             <div className="">
                                                 <div className="ceo-ratio-mobile pt-5" animate="">
-                                                    <img src={storySettings.ceo_image} alt="background" />
+                                                    <img src={storySettings.ceo_image} alt={storySettings.ceo_title} title={storySettings.ceo_title} />
                                                 </div>
                                             </div>
                                         </div>
@@ -393,7 +393,7 @@ export default function OurStory(props) {
                                                                     <p className="signature mb-0">{storySettings.ceo_name}</p>
                                                                 </div>
                                                                 <div className="text-end" animate="">
-                                                                    <img className="ceo-signature" src={storySettings.ceo_signature} alt="signature" />
+                                                                    <img className="ceo-signature" src={storySettings.ceo_signature} alt={storySettings.ceo_title} title={storySettings.ceo_title} />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -422,7 +422,7 @@ export default function OurStory(props) {
                                                     <div className="col-lg-3 col-md-6 col-sm-6 mb-5" animate="" onClick={() => setPopupOpen(team)} key={index}>
                                                         <div className="team-section shadow position-relative">
                                                             <div className="ratio team-ratio">
-                                                                <img src={team.image} alt="team" />
+                                                                <img src={team.image} alt={team.name} title={team.name} />
                                                             </div>
                                                             <div className="team-position py-2">
                                                                 <h4 className="mb-2 mx-3">{team.name}</h4>
@@ -468,7 +468,7 @@ export default function OurStory(props) {
                                             <SwiperSlide key={index}>
                                                 <div className="team-section shadow position-relative" onClick={() => setPopupOpen(team)}>
                                                     <div className="ratio team-ratio">
-                                                        <img src={team.image} alt="team" />
+                                                        <img src={team.image} alt={team.name} title={team.name} />
                                                     </div>
                                                     <div className="team-position py-3">
                                                         <h4 className="mb-2 mx-3">{team.name}</h4>
@@ -495,7 +495,7 @@ export default function OurStory(props) {
                             <div className="pb-5">
                                 <div className={"bg-blue-idml position-relative" + (!storySettings.idml_title && !storySettings.idml_text && !storySettings.idml_image) ? " d-none" : ""}>
                                     <div className="container px-sm-2 px-4">
-                                        <img className={"idml-bg " + (!storySettings.idml_title && !storySettings.idml_text && !storySettings.idml_image) ? " d-none" : ""} src="../img/images/idml-bg.png" alt="bg" />
+                                        <img className={"idml-bg " + (!storySettings.idml_title && !storySettings.idml_text && !storySettings.idml_image) ? " d-none" : ""} src="../img/images/idml-bg.png" alt={storySettings.idml_title} title={storySettings.idml_title} />
                                     </div>
                                     <div className="container px-sm-2 px-4">
                                         <div className="row what-is-idml">
@@ -506,12 +506,12 @@ export default function OurStory(props) {
                                                 </div>
                                             </div>
                                             <div className="col-lg-4 col-md-5 d-md-block d-sm-none d-none" animate="">
-                                                <img className="what-is-idml-img" src={storySettings.idml_image} alt="idml" />
+                                                <img className="what-is-idml-img" src={storySettings.idml_image} alt={storySettings.idml_title} title={storySettings.idml_title} />
                                             </div>
                                         </div>
                                     </div>
 
-                                    <img className="mobile-full-image" animate="" src={storySettings.idml_image} alt="idml" />
+                                    <img className="mobile-full-image" animate="" src={storySettings.idml_image} alt={storySettings.idml_title} title={storySettings.idml_title} />
 
                                 </div>
                             </div>
@@ -529,7 +529,7 @@ export default function OurStory(props) {
                                                 mapLegend.map((map, index) =>
                                                     <div className="row align-items-center pb-4" key={index}>
                                                         <div className="col-md-4 col-auto justify-content-md-center justify-content-start d-flex pb-sm-3">
-                                                            <img className="side-icon" src={map.full_path_icon} alt="side-icon" />
+                                                            <img className="side-icon" src={map.full_path_icon} alt={map.title} title={map.title} />
                                                         </div>
                                                         <div className="col-md-8 col-auto">
                                                             <p className="mb-0">{map.title}</p>
@@ -543,7 +543,7 @@ export default function OurStory(props) {
                                         <div className="col pb-4">
                                             <div className="position-relative">
                                                 <div className="ratio map-ratio">
-                                                    <img src={storySettings.map_image} alt="map" />
+                                                    <img src={storySettings.map_image} alt={pinLocation.operations_map_legend.title} title={pinLocation.operations_map_legend.title} />
                                                 </div>
                                                 {
                                                     mapPinnedLocations ?
@@ -601,7 +601,7 @@ export default function OurStory(props) {
                                     <div className="row justify-content-center justify-content-lg-start align-items-center py-lg-5 py-3 gx-5 mx-lg-3 mx-2">
                                         <div className="col-auto p-4 pb-md-0">
                                             <div className="team-image ">
-                                                <img src={popupOpen?.image} alt="team" />
+                                                <img src={popupOpen?.image} alt={popupOpen?.name} title={popupOpen?.name} />
                                             </div>
                                         </div>
                                         <div className="col-lg-8 col-md-8 col-11 pt-lg-0">

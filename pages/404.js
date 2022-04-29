@@ -8,12 +8,12 @@ export default function NotFound(props) {
     return (
         <div className="not-found position-relative py-5 h-100 d-flex flex-column justify-content-center">
             <div className="contact-bg">
-                <img src="../img/images/contact-bg.png" alt="background" />
+                <img src="../img/images/contact-bg.png" alt={notFoundSettings.title} title={notFoundSettings.title} />
             </div>
             <div className="row py-5 justify-content-center">
                 <div className="col-lg-12 col-md-12 col-sm-12 ">
                     <div className="text-center not-found-image">
-                        <img src={notFoundSettings.image} alt="404" />
+                        <img src={notFoundSettings.image} alt={notFoundSettings.title} title={notFoundSettings.title} />
                     </div>
                 </div>
             </div>

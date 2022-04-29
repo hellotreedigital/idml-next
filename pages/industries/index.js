@@ -219,7 +219,7 @@ export default function Industries(props) {
                                                     <div className="col-lg-2 col-md-3 col-sm-4 col-4 my-4 clients-circles" onClick={() => clientsPopupClick(clientList)} animate=" " key={`${currentFilter}-${index}`}>
                                                         <div className="circle-on-hover position-relative">
                                                             <div className="ratio ratio-1x1">
-                                                                <img className="brand-image-industry" src={clientList.full_path_logo} alt="brand" />
+                                                                <img className="brand-image-industry" src={clientList.full_path_logo} alt={clientList.title} title={clientList.title} />
                                                             </div>
                                                             <div className="circle-overlay"></div>
                                                             <div className="text-on-circle-overlay text-center">

@@ -105,7 +105,7 @@ export default function SingleService(props) {
 
                                 <div className="col-lg-5 col-md-6" animate="">
                                     <div className="ratio single-service-ratio">
-                                        <img src={singleServiceItems.image} alt="service" />
+                                        <img src={singleServiceItems.image} alt={singleServiceItems.title} title={singleServiceItems.title} />
                                     </div>
                                 </div>
                             </div>

@@ -123,7 +123,7 @@ export default function Industries(props) {
                                                 <div className="ratio industy-square">
                                                     <div className="square"></div>
                                                 </div>
-                                                <img className="industry-icon" src={product.full_path_icon} alt="icon" />
+                                                <img className="industry-icon" src={product.full_path_icon} alt={product.title} title={product.title} />
                                             </div>
                                             <div className="text-center pt-3">
                                                 <h3 className="title-industry">{product.title}</h3>
@@ -149,7 +149,7 @@ export default function Industries(props) {
                                                         <div className="circle-on-hover position-relative">
                                                             {/* <a href={clientList.url} target="_blank" rel="noreferrer"> */}
                                                             <div className="ratio ratio-1x1">
-                                                                <img className="brand-image-industry" src={clientList.full_path_logo} alt="brand" />
+                                                                <img className="brand-image-industry" src={clientList.full_path_logo} alt={clientList.title} title={clientList.title} />
                                                             </div>
                                                             <div className="circle-overlay"></div>
                                                             <div className="text-on-circle-overlay text-center">
@@ -210,7 +210,7 @@ export default function Industries(props) {
                                                 <div className="ratio square-ratio">
                                                     <div className="square"></div>
                                                 </div>
-                                                <img className="industry-icon" src={popupOpen?.full_path_icon} alt="icon" />
+                                                <img className="industry-icon" src={popupOpen?.full_path_icon} alt={popupOpen?.title} title={popupOpen?.title} />
                                             </div>
                                         </div>
                                         <div className="col-sm-8">
