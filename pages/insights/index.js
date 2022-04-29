@@ -106,15 +106,17 @@ export default function Insights(props) {
                                             insightsNews.map((insightNews, index) =>
 
                                                 <SwiperSlide key={index}>
-                                                    <a href={"/insights/news/" + insightNews.slug}>
-                                                        <NewsSection
-                                                            title={insightNews.title}
-                                                            date={insightNews.date_formatted}
-                                                            image={insightNews.first_image}
-                                                            description={insightNews.small_description}
-                                                            button={insights.read_more}
-                                                        />
-                                                    </a>
+                                                    <Link href={"/insights/news/" + insightNews.slug}>
+                                                        <a>
+                                                            <NewsSection
+                                                                title={insightNews.title}
+                                                                date={insightNews.date_formatted}
+                                                                image={insightNews.first_image}
+                                                                description={insightNews.small_description}
+                                                                button={insights.read_more}
+                                                            />
+                                                        </a>
+                                                    </Link>
                                                 </SwiperSlide>
                                             )
                                             :
@@ -187,14 +189,16 @@ export default function Insights(props) {
                                             insightsCaseStudies.map((insightCaseStudies, index) =>
 
                                                 <SwiperSlide key={index}>
-                                                    <a href={"/insights/case-studies/" + insightCaseStudies.slug}>
-                                                        <NewsSection
-                                                            title={insightCaseStudies.title}
-                                                            image={insightCaseStudies.image}
-                                                            description={insightCaseStudies.small_text}
-                                                            button={insights.read_more}
-                                                        />
-                                                    </a>
+                                                    <Link href={"/insights/case-studies/" + insightCaseStudies.slug}>
+                                                        <a>
+                                                            <NewsSection
+                                                                title={insightCaseStudies.title}
+                                                                image={insightCaseStudies.image}
+                                                                description={insightCaseStudies.small_text}
+                                                                button={insights.read_more}
+                                                            />
+                                                        </a>
+                                                    </Link>
                                                 </SwiperSlide>
                                             )
                                             :
