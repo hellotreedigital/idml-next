@@ -538,7 +538,9 @@ export default function OurStory(props) {
                                         <div className="col-auto align-items-sm-start d-sm-flex   align-items-lg-center d-lg-block align-items-md-center d-md-block">
                                             {mapLegend ?
                                                 mapLegend.map((map, index) =>
+                                                map.id === 5 ?   null :
                                                     <div className="row align-items-center pb-4" key={index}>
+                                                        
                                                         <div className="col-md-4 col-auto justify-content-md-center justify-content-start d-flex pb-sm-3">
                                                             <img className="side-icon" src={map.full_path_icon} alt={map.title} title={map.title} />
                                                         </div>
