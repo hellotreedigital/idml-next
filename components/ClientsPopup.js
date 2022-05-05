@@ -19,12 +19,12 @@ export default function ClientsPopup(props) {
                             <img src={props.image} alt="team" />
                         </div>
                     </div>
-                    <div className="col-lg-8 col-md-8 col-11 pt-lg-0">
-                        <h3 className="mb-1 text-lg-start text-center">{props.title}</h3>
-                        <p className="text-lg-start text-center">{props.description}</p>
+                    <div className="col-lg-8 col-md-8 col-11 pt-lg-0 text-lg-start text-center">
+                        <h3 className="mb-1 ">{props.title}</h3>
+                        <p className="">{props.description}</p>
                         {props.url ?
                             <a href={props.url} target="_blank" rel="noreferrer">
-                                <button className="button blue-button">
+                                <button className="button blue-button ">
                                     {props.label}
                                 </button>
                             </a>

@@ -47,6 +47,8 @@ export default function Industries(props) {
     const [currentFilter, setCurrentFilter] = useState();
     const [clientPopup, setClientPopup] = useState(null);
     const popupRef = useRef(null);
+    const testimonialRef = useRef(null);
+
 
 
     function ageVerificationClick(industry) {
@@ -77,7 +79,7 @@ export default function Industries(props) {
         }
         setTimeout(() => {
             setCurrentFilter(clientTag);
-        }, [1000]);
+        }, [300]);
     }
 
     useEffect(() => {
@@ -143,6 +145,25 @@ export default function Industries(props) {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, [popupRef, setAgeVerificationPopup]);
+
+    useEffect(() => {
+        /**
+         * Alert if clicked on outside of element
+         */
+        function handleClickOutside(event) {
+            if (testimonialRef.current && !testimonialRef.current.contains(event.target)) {
+                setPopupOpen(false)
+                setClientPopup(false)
+            }
+        }
+
+        // Bind the event listener
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            // Unbind the event listener on clean up
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [testimonialRef, setPopupOpen, setClientPopup]);
 
     useEffect(() => {
         document.querySelector('body').style.overflow = popupOpen ? 'hidden' : null;
@@ -237,7 +258,7 @@ export default function Industries(props) {
                                         {
                                             clientsListFilter?.length > 0 ?
                                                 clientsListFilter.map((clientList, index) => (
-                                                    <div className="col-lg-2 col-md-3 col-sm-4 col-4 my-4 clients-circles" onClick={() => clientsPopupClick(clientList)} animate=" " key={`${currentFilter}-${index}`}>
+                                                    <div className="col-lg-2 col-md-3 col-sm-4 col-4 my-4 clients-circles" ref={testimonialRef} onClick={() => clientsPopupClick(clientList)} animate=" " style={{ transitionDelay: '0.1s' }} key={`${currentFilter}-${index}`}>
                                                         <div className="circle-on-hover position-relative">
                                                             <div className="ratio ratio-1x1">
                                                                 <img className="brand-image-industry" src={clientList.full_path_logo} alt={clientList.title} title={clientList.title} />
@@ -265,13 +286,17 @@ export default function Industries(props) {
                                 </div>
 
                                 <Swiper
+                                    autoplay={{
+                                        delay: 3000,
+                                        disableOnInteraction: false,
+                                        pauseOnMouseEnter: true,
+                                    }}
                                     pagination={{
                                         dynamicBullets: true,
                                     }}
                                     modules={[Pagination]}
                                     spaceBetween={15}
                                     centeredSlides={true}
-                                    autoplay={{ delay: 3000 }}
                                     loop={true}
                                     slidesPerView={1}
                                     className="industries-swiper "
@@ -319,7 +344,7 @@ export default function Industries(props) {
                                                             </div>
                                                         </div>
                                                         {/* {testimonial.text.length >= 2 ? */}
-                                                        <div className="text-center" onClick={() => setPopupOpen(testimonial)}>
+                                                        <div className="text-center" onClick={() => setPopupOpen(testimonial)} ref={testimonialRef}>
                                                             <div className="button white-button hover-effect add-padding shadow">{industriesSettings.read_more}</div>
                                                         </div>
                                                         {/* : */}

@@ -278,7 +278,6 @@ export default function Layout(props) {
 
             {props.children}
 
-
             <div className=" position-relative">
                 <div className="footer-img">
                     <img src="/img/images/footer-bg.png" alt="bg" />
@@ -288,18 +287,18 @@ export default function Layout(props) {
                         <div className="col-lg-5 col-md-12 justify-content-md-center text-lg-start text-center">
                             <div className="background-blue py-lg-5 py-4">
 
-                                <div className="row d-lg-none d-md-flex d-sm-flex d-none position-relative justify-content-center align-items-center pb-3">
-                                    <div className="col-2">
+                                <div className="row d-lg-none d-flex position-relative justify-content-center align-items-center pb-4">
+                                    <div className="col-md-2 col-sm-2 col-3">
                                         <Link href="/">
                                             <a>
                                                 <img className="footer-logo" src="/img/images/logo-footer.svg" alt="logo" />
                                             </a>
                                         </Link>
                                     </div>
-                                    <div className="col-md-5 col-sm-5">
+                                    <div className="col-md-5 col-sm-5 col-5">
                                         <div className="text-start">
 
-                                            <div className="pt-3">
+                                            <div className="pt-lg-3">
                                                 <p className="mb-0">{props.menuItems ? props.menuItems['footer-text'] : ''}</p>
                                             </div>
                                         </div>
@@ -307,7 +306,7 @@ export default function Layout(props) {
                                 </div>
 
                                 <div className="row justify-content-center justify-content-lg-start  align-items-center position-relative">
-                                    <div className="col-lg-3  d-block d-sm-none d-md-none d-lg-block">
+                                    <div className="col-lg-3  d-none d-lg-block">
                                         <Link href="/">
                                             <a>
                                                 <img className="footer-logo" src="/img/images/logo-footer.svg" alt="logo" />
@@ -317,7 +316,7 @@ export default function Layout(props) {
 
 
                                     <div className="col-lg-6 col-md-5 col-sm-8 col-9 ">
-                                        <div className="d-none  d-sm-block d-md-block d-lg-block pb-3">
+                                        <div className="d-none d-lg-block pb-3">
                                             {
                                                 props?.footerContactIcons ?
                                                     props.footerContactIcons.map((footerContactIcon, index) =>
@@ -330,7 +329,7 @@ export default function Layout(props) {
                                                     null
                                             }
                                         </div>
-                                        <div className="pt-3 d-block d-sm-none d-md-none d-lg-block">
+                                        <div className="pt-3 d-none d-lg-block">
                                             <p>{props.menuItems ? props.menuItems['footer-text'] : ''}</p>
                                         </div>
                                         <div className="d-block d-md-none d-sm-none d-lg-none pb-3">

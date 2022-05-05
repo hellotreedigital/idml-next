@@ -14,11 +14,11 @@ export default function NewsSection(props) {
                 </div>
                 <div className="content-news p-4 px-4 d-flex flex-column justify-content-center">
                     <div>
-                        <div className="d-flex align-items-center  mb-2">
-                            <h3 className="me-3">{props.title}</h3>
+                        <div className="d-md-flex d-block align-items-center  mb-2">
+                            <h3 className="">{props.title}</h3>
                             <h4 className="date">{props.date}</h4>
                         </div>
-                        <p>{props.description}</p>
+                        <p className="mb-1">{props.description}</p>
                     </div>
                     <span className="underlined-link" >{props.button}</span>
                 </div>

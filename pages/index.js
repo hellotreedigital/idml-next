@@ -13,7 +13,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import SwiperCore, { Autoplay } from 'swiper';
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 import GlobalState from "../GlobalState";
 
 import * as Scroll from 'react-scroll';
@@ -41,6 +41,7 @@ export default function Home(props) {
   const [loading, setLoading] = useState(true);
   const [youtubePopup, setYoutubePopup] = useState(null);
   const [clientPopup, setClientPopup] = useState(null);
+  const popupRef = useRef(null);
 
   SwiperCore.use([Autoplay])
 
@@ -58,6 +59,30 @@ export default function Home(props) {
   function clientsPopupClick(clientList) {
     setClientPopup(clientList);
   }
+
+  useEffect(() => {
+    /**
+     * Alert if clicked on outside of element
+     */
+    function handleClickOutside(event) {
+        if (popupRef.current && !popupRef.current.contains(event.target)) {
+            setClientPopup(false)
+            setYoutubePopup(false)
+        }
+    }
+
+    // Bind the event listener
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+        // Unbind the event listener on clean up
+        document.removeEventListener("mousedown", handleClickOutside);
+    };
+}, [popupRef, setClientPopup, setYoutubePopup]);
+
+  useEffect(() => {
+    document.querySelector('body').style.overflow = clientPopup ? 'hidden' : null;
+    document.querySelector('html').style.overflow = clientPopup ? 'hidden' : null;
+  }, [clientPopup]);
 
   useEffect(() => {
     document.querySelector('body').style.overflow = youtubePopup ? 'hidden' : null;
@@ -320,7 +345,7 @@ export default function Home(props) {
             {
               clientsList ?
                 clientsList.map((clientList, index) =>
-                  <SwiperSlide key={index} onClick={() => clientsPopupClick(clientList)}>
+                  <SwiperSlide key={index} onClick={() => clientsPopupClick(clientList)} ref={popupRef}>
                     <div  >
                       <div className="brand-logo-section shadow position-relative">
                         <div className="ratio ratio-1x1 logo-clients">
@@ -486,7 +511,7 @@ export default function Home(props) {
                           tipsList.map((list, index) =>
                             tipsList.length === 2 ?
                               <div className={"col-lg-3 col-md-4 col-sm-6 pb-5 "} animate="" key={index}>
-                                <div className="youtube-section position-relative shadow" onClick={() => setYoutubePopup(list)}>
+                                <div className="youtube-section position-relative shadow" onClick={() => setYoutubePopup(list)} ref={popupRef}>
                                   <div className="ratio youtube-ratio">
                                     <img src={list.thumbnail_image} alt={list.video_desc} title={list.video_desc} />
                                   </div>
@@ -538,7 +563,7 @@ export default function Home(props) {
                 }
               </div>
 
-              <div className="py-5 " animate="">
+              <div className="py-5 ">
                 <Section
                   title={homeSettings.help_title}
                   subtitle={homeSettings.help_text}

@@ -40,15 +40,6 @@ export default function OurStory(props) {
 
     const [pinDetails, setPinDetails] = useState(null);
     const popupRef = useRef(null);
-
-    const [pin, setPin] = useState(props.ourStoryData.page_items.map_pinned_locations);
-
-    useEffect(() => {
-        props.ourStoryData.page_items.map_pinned_locations.forEach((pin) => {
-            console.log((pin));
-        });
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
     const [tree, setTree] = useState({});
 
     const getNode = (node) => {
