@@ -27,7 +27,7 @@ export default function LocationMap(props) {
             <div className="">
                 {/* <div className="position-absolute pin-location" style={{ top: props.y + '%', left: props.x + '%' }} onClick={() => pinClick(props.pinLocation)}> */}
                 <div className="position-absolute pin-location" style={{ top: props.y + '%', left: props.x + '%' }} onClick={() => pinClick(props.pinLocation)}>
-                    <img ref={pinRef} className=" pins pin-delay" src={props.pin} alt="pin" animate="" style={{ transitionDelay: props.index * 0.5 + 's' }}  />
+                    <img ref={pinRef} className=" pins pin-delay" src={props.pin} alt="pin" animate="" style={{ transitionDelay: props.index * 0.1 + 's' }}  />
                     <div className={"location-details-hover d-none d-sm-none d-md-block d-lg-block" + (pinOnEdge ? " pin-on-edge" : " ") + (props.pinDetails === props.id ? " " : " fade-out")}>
                         <div className="row p-3">
                             <div className="col-auto">

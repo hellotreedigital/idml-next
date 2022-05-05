@@ -167,11 +167,17 @@ export default function Home(props) {
               </svg>
             </div>
           </div>
-          <div className="ratio background-image ">
-            <video playsInline muted loop autoPlay>
-              <source src={homeSettings.banner_video} type='video/mp4' />
-            </video>
-          </div>
+          {homeSettings.banner_video ?
+            <div className="ratio background-image ">
+              <video playsInline muted loop autoPlay>
+                <source src={homeSettings.banner_video} type='video/mp4' />
+              </video>
+            </div>
+            :
+            <div className="ratio background-image ">
+              <img src={homeSettings.banner_image} alt="banner" />
+            </div>
+          }
           <div className="opacity-header"></div>
           <div className="section-1">
             <div className="container px-sm-2 px-4" >
@@ -213,7 +219,7 @@ export default function Home(props) {
             <div className="row justify-content-center ">
               {homeProcess ?
                 homeProcess.map((process, index) =>
-                  <div className="col-lg-4 col-md-6 col-12 pb-3 " style={index % 3 === 0 ? { transitionDelay: '0.6s' } : (index % 2 === 0 ? { transitionDelay: '1s' } : { transitionDelay: '0.8s' })}  animate="" key={index}>
+                  <div className="col-lg-4 col-md-6 col-12 pb-3 " style={index % 3 === 0 ? { transitionDelay: '0.6s' } : (index % 2 === 0 ? { transitionDelay: '1s' } : { transitionDelay: '0.8s' })} animate="" key={index}>
                     <div className="bg-color button blue-button-hover shadow py-3">
                       <div className="py-4">
                         <div style={{ textTransform: 'uppercase' }}>{process.title}</div>

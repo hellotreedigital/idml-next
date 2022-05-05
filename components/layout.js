@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import VerificationPopup from "./VerificationPopup";
 import { useRouter } from 'next/router';
 
@@ -7,7 +7,8 @@ export default function Layout(props) {
     const [ageVerificationPopup, setAgeVerificationPopup] = useState(null);
     const [headerScroll, setHeaderScroll] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const router = useRouter()
+    const router = useRouter();
+    const popupRef = useRef(null);
 
     function burgerClick() {
         setMobileMenuOpen(true)
@@ -31,6 +32,25 @@ export default function Layout(props) {
         setAgeVerificationPopup(null)
         localStorage.removeItem('underAgePopup', 1);
     }
+
+    useEffect(() => {
+        /**
+         * Alert if clicked on outside of element
+         */
+        function handleClickOutside(event) {
+            if (popupRef.current && !popupRef.current.contains(event.target)) {
+                setAgeVerificationPopup(null)
+                localStorage.removeItem('underAgePopup', 1);
+            }
+        }
+
+        // Bind the event listener
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            // Unbind the event listener on clean up
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [popupRef, setAgeVerificationPopup]);
 
     useEffect(() => {
         window.addEventListener('scroll', function (e) {
@@ -105,7 +125,7 @@ export default function Layout(props) {
                                 {props.industriesTitles ?
                                     props.industriesTitles.map((industryTitle, index) =>
                                         industryTitle.with_popup === 1 ?
-                                            <p className="mb-2 mt-2" key={index} onClick={() => ageVerificationClick(industryTitle)}>
+                                            <p className="mb-2 mt-2" key={index} onClick={() => ageVerificationClick(industryTitle)} ref={popupRef}>
                                                 {industryTitle?.title}
                                             </p>
                                             :

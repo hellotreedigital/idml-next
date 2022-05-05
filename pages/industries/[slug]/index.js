@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import GlobalState from "../../../GlobalState";
 import Layout from "../../../components/layout";
 import SideButton from "../../../components/SideButton";
@@ -25,6 +25,7 @@ export default function Industries(props) {
     const [clientPopup, setClientPopup] = useState(null)
 
     const [loading, setLoading] = useState(true);
+    const popupRef = useRef(null);
 
     function clientsPopupClick(clientList) {
         setClientPopup(clientList);
@@ -38,6 +39,24 @@ export default function Industries(props) {
         setLoading(false);
         triggerScroll();
     }, [loading]); // eslint-disable-line react-hooks/exhaustive-deps
+
+    useEffect(() => {
+        /**
+         * Alert if clicked on outside of element
+         */
+        function handleClickOutside(event) {
+            if (popupRef.current && !popupRef.current.contains(event.target)) {
+                setPopupOpen(false)
+            }
+        }
+
+        // Bind the event listener
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            // Unbind the event listener on clean up
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [popupRef, setPopupOpen]);
 
     useEffect(() => {
         document.querySelector('body').style.overflow = popupOpen ? 'hidden' : null;
@@ -119,7 +138,7 @@ export default function Industries(props) {
                                 {
                                     singleIndustry?.products_list?.map((product, index) =>
                                         <div className="col-lg-2 col-md-4 col-sm-6 pb-5" key={index}>
-                                            <div className="single-industry position-relative" onClick={() => popupClick(product)}>
+                                            <div className="single-industry position-relative" onClick={() => popupClick(product)}  ref={popupRef}>
                                                 <div className="ratio industy-square">
                                                     <div className="square"></div>
                                                 </div>

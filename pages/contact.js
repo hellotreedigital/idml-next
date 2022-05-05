@@ -102,6 +102,7 @@ export default function Contact(props) {
                     <>
                         <Banner
                             banner={contactSettings.image}
+                            video={contactSettings.banner_video}
                             title={contactSettings.title}
                         />
                         <SideButton

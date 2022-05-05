@@ -970,7 +970,7 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
     transform: translate(-50%, -50%);
     padding: 10px;
     transform: translate(-50%, -50%);
-    width: 40px
+    width: 30px
 }
 
 .our-story-1 p {
@@ -1076,7 +1076,7 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 }
 
 .bg-color:hover {
-    height: 100%;
+    height: 85%;
 }
 
 .section-on-image {
@@ -1431,10 +1431,10 @@ div.part-3:before {
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 40%;
+    height: 33%;
     width: 100%;
     text-align: center;
-    background-color: #3E5A6F;
+    background-color: #3e5a6fd2;
     color: #fff;
     flex-direction: column;
     justify-content: center;
@@ -1715,8 +1715,8 @@ div.part-3:before {
 }
 
 .logo-product img {
-    width: 100px;
-    height: 100px;
+    width:110px;
+    height: 110px;
 }
 
 .product-ratio img {
@@ -2436,7 +2436,7 @@ div.part-3:before {
 .location-select__input-container {
     font-weight: bold;
     font-size: .875rem;
-    color: #fff !important;
+    color: #14334A !important;
 }
 
 .location-select__placeholder {
@@ -2642,7 +2642,7 @@ div.part-3:before {
 .location-select-booking__input-container {
     font-weight: bold;
     font-size: .875rem;
-    color: #CCD7E0 !important;
+    color: #14334A !important;
 }
 
 .location-select-booking__placeholder {
@@ -3163,6 +3163,10 @@ div.four:before {
         width: 275px;
     }
 
+    .bg-color:hover {
+        height: 77%;
+    }
+
 }
 
 
@@ -3370,7 +3374,9 @@ div.four:before {
 
 @media (max-width: 991.98px) {
 
-
+    .team-position {
+        height: 28%;
+    }
 
     .company-history p {
         font-size: 1rem;
@@ -3634,6 +3640,10 @@ div.four:before {
 /* Small devices (landscape phones, less than 768px) */
 
 @media (max-width: 767.98px) {
+
+    .team-position {
+        height: 37%;
+    }
     .footer-logo {
         width: 80px;
         height: 80px;
@@ -4105,7 +4115,7 @@ div.four:before {
     }
 
     .pins {
-        padding: 15px;
+        padding: 12px;
     }
 
     .custom-chart-node {

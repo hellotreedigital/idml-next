@@ -2,7 +2,7 @@ import SideButton from "../../components/SideButton";
 import VerificationPopup from "../../components/VerificationPopup";
 import Banner from "../../components/Banner";
 import Link from "next/link";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import Layout from "../../components/layout";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay } from 'swiper';
@@ -45,7 +45,8 @@ export default function Industries(props) {
     const testimonialsList = props.industriesData.page_items.testimonials_list;
     const [clientsListFilter, setClientsListFilter] = useState();
     const [currentFilter, setCurrentFilter] = useState();
-    const [clientPopup, setClientPopup] = useState(null)
+    const [clientPopup, setClientPopup] = useState(null);
+    const popupRef = useRef(null);
 
 
     function ageVerificationClick(industry) {
@@ -125,6 +126,25 @@ export default function Industries(props) {
     }, [loading]);
 
     useEffect(() => {
+        /**
+         * Alert if clicked on outside of element
+         */
+        function handleClickOutside(event) {
+            if (popupRef.current && !popupRef.current.contains(event.target)) {
+                setAgeVerificationPopup(null)
+                localStorage.removeItem('underAgePopup', 1);
+            }
+        }
+
+        // Bind the event listener
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            // Unbind the event listener on clean up
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [popupRef, setAgeVerificationPopup]);
+
+    useEffect(() => {
         document.querySelector('body').style.overflow = popupOpen ? 'hidden' : null;
         document.querySelector('html').style.overflow = popupOpen ? 'hidden' : null;
     }, [popupOpen]);
@@ -144,6 +164,7 @@ export default function Industries(props) {
                         <Banner
                             banner={industriesSettings.image}
                             title={industriesSettings.title}
+                            video={industriesSettings.banner_video}
                         />
 
                         <SideButton
@@ -171,7 +192,7 @@ export default function Industries(props) {
                                                                 {
                                                                     industry.with_popup === 1 ?
 
-                                                                        <div className="card-button " onClick={() => ageVerificationClick(industry)}>
+                                                                        <div className="card-button " onClick={() => ageVerificationClick(industry)} ref={popupRef}>
                                                                             <div className="button white-button hover-effect add-padding shadow">{industriesSettings.read_more}</div>
                                                                         </div>
                                                                         :

@@ -72,6 +72,7 @@ export default function Products(props) {
                     <Banner
                         video={productsSetting.banner_video}
                         title={productsSetting.title}
+                        banner={productsSetting.image}
                     />
                     :
                     null

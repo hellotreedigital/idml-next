@@ -20,7 +20,7 @@ export default function Section(props) {
                             null}
                     {
                         props.button === "2" ?
-                            <Link href="/contact">
+                            <Link href="/booking">
                                 <a>
                                     <button className="button blue-button  shadow">
                                         {props.label}

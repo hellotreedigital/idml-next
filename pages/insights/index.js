@@ -34,7 +34,7 @@ export default function Insights(props) {
     }, [insights, loading]); // eslint-disable-line react-hooks/exhaustive-deps
 
     return loading ? null : (
-        <Layout activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+        <Layout activePage="insights" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
 
             <SeoTags
                 title={props.insightsData.page_items.seo.title}
@@ -48,6 +48,7 @@ export default function Insights(props) {
                         <Banner
                             banner={insights.image}
                             title={insights.title}
+                            video={insights.banner_video}
                         />
 
                         <SideButton

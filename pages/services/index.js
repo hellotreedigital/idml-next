@@ -38,6 +38,7 @@ export default function Services(props) {
                     <Banner
                         banner={serviceSetting.image}
                         title={serviceSetting.title}
+                        video={serviceSetting.banner_video}
                     />
                     :
                     null
