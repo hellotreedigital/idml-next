@@ -1011,6 +1011,14 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
     width: 30px
 }
 
+.pin-home {
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    transform: translate(-50%, -50%);
+    width: 45px;
+    
+}
+
 .our-story-1 p {
     font-size: 1.25rem;
     color: #14334A;

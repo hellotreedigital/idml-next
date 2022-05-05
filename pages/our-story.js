@@ -560,13 +560,11 @@ export default function OurStory(props) {
                                                     mapPinnedLocations ?
                                                         mapPinnedLocations.map((pinLocation, index) =>
                                                             <div key={index}>
-
+                                                                {/* {console.log(pinLocation)} */}
                                                                 <LocationMap
                                                                     index={index}
                                                                     pinLocation={pinLocation}
                                                                     id={pinLocation.id}
-                                                                    // closeClick={closeClick}
-                                                                    // pinClick={pinClick}
                                                                     pinDetails={pinDetails}
                                                                     title={pinLocation.operations_map_legend.title}
                                                                     description={pinLocation.description}
