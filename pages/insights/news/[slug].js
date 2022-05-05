@@ -81,8 +81,8 @@ export default function News(props) {
 
                                         <div className="col">
                                             <div className="d-flex text-center justify-content-center">
-                                                <div className="row d-flex align-items-center">
-                                                    <div className="col-8 justify-content-center">
+                                                <div className="row d-flex align-items-center justify-content-center">
+                                                    <div className="col-lg-12 col-md-12 col-sm-12 col-8 justify-content-center">
                                                         <h2 className="mb-0 service-title-page">{singleNew.title}</h2>
                                                     </div>
                                                 </div>

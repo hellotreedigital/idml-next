@@ -15,10 +15,10 @@ export default function NewsSection(props) {
                 <div className="content-news p-4 px-4 d-flex flex-column justify-content-center">
                     <div>
                         <div className="d-md-flex d-block align-items-center  mb-2">
-                            <h3 className="">{props.title}</h3>
+                            <h3 className="me-md-3">{props.title}</h3>
                             <h4 className="date">{props.date}</h4>
                         </div>
-                        <p className="mb-1">{props.description}</p>
+                        <p>{props.description}</p>
                     </div>
                     <span className="underlined-link" >{props.button}</span>
                 </div>

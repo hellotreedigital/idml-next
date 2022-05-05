@@ -303,13 +303,13 @@ export default function OurStory(props) {
                                         historyList ?
                                             historyList.map((history, index) =>
                                                 <div className="position-relative history" key={index}>
-                                                    <div className={(index % 2 === 0 ? "first" : " second ")} animate="" style={{ transitionDelay: '2s' }}><span></span></div>
+                                                    <div className={(index % 2 === 0 ? "first" : " second ")} animate="" style={{ transitionDelay: '0.5s' }}><span></span></div>
                                                     <div className={"row pb-4   " + (index % 2 === 0 ? " d-flex justify-content-start " : " d-flex justify-content-end ")}>
                                                         <div className={(index % 2 === 0 ? " col-lg-5 col-md-5 col-sm-12 col-12 fix-mobile-position d-flex align-items-center flex-md-row flex-row-reverse left-position" : " col-lg-5 col-md-5 col-sm-12 col-12 d-flex align-items-center flex-row-reverse fix-mobile-position right-position")}>
-                                                            <p className="mb-0 me-sm-3 ms-3" animate="" style={{ transitionDelay: '0.3s' }}>{history.text}</p>
+                                                            <p className="mb-0 me-sm-3 ms-3" animate="" style={{ transitionDelay: '0.2s' }}>{history.text}</p>
                                                             <div className={"position-relative " + (index % 2 === 0 ? " circle" : " circle-right")} >
                                                                 <div className="first-mobile"><span></span></div>
-                                                                <p className="mb-0" style={{ transitionDelay: '0.5s' }}>{history.year}</p>
+                                                                <p className="mb-0" style={{ transitionDelay: '0.4s' }}>{history.year}</p>
                                                                 {
                                                                     (index % 2 === 0) ?
                                                                         <div className=" " style={{ transitionDelay: '0.5s' }}>
@@ -530,7 +530,7 @@ export default function OurStory(props) {
 
                         <div className="container  px-sm-2 px-4">
                             <div className="row operations  py-5"  >
-                                <div className="col-lg-11 pb-5 ">
+                                <div className="col-lg-12 pb-5 ">
                                     <h2 className="mb-4 text-center">{storySettings.operations_title}</h2>
                                     <p className="mb-5 text-center">{storySettings.subtitle}</p>
 

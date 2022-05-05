@@ -2,8 +2,40 @@ html {
     overflow-x: hidden;
     font-size: 13px;
     color: #14334A;
+    /* cursor: none; */
     cursor: url('../public/img/images/cursor.png') 7.5 7.5, auto !important;
     scroll-behavior: unset !important;
+}
+
+* {
+    cursor: none;
+}
+
+.cursor-dot,
+.cursor-dot-outline {
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.cursor-dot {
+    width: 14px;
+    height: 14px;
+    background-color: #C5D2DC;
+    z-index: 2000;
+}
+
+.cursor-dot-outline {
+    width: 40px;
+    height: 40px;
+    background-color: #C5D2DC;
+    mix-blend-mode: color-burn;
+    z-index: 2000;
 }
 
 :root {
@@ -15,6 +47,7 @@ html {
 body {
     font-family: 'SF Pro Display' !important;
     overflow-x: hidden;
+    /* cursor: none; */
     cursor: inherit !important;
     color: #14334A !important;
 }
@@ -1537,7 +1570,7 @@ div.part-3:before {
 }
 
 .map-ratio {
-    padding-top: 66%;
+    padding-top: 84%;
 }
 
 .map-ratio img {
@@ -1720,7 +1753,7 @@ div.part-3:before {
 }
 
 .logo-product img {
-    width:110px;
+    width: 110px;
     height: 110px;
 }
 
@@ -3179,6 +3212,11 @@ div.four:before {
 
 @media (max-width: 1199.98px) {
 
+    .pins {
+        padding: 11px;
+        width: 29px;
+    }
+
     .first {
         top: 92%;
         left: 36%;
@@ -3639,6 +3677,7 @@ div.four:before {
         /* width: 78px; */
         height: 78px;
     }
+
     .cancel-button {
         right: 6px !important;
         transform: translateY(-127%) !important;
@@ -3653,6 +3692,7 @@ div.four:before {
     .team-position {
         height: 37%;
     }
+
     .footer-logo {
         width: 80px;
         height: 80px;
@@ -3846,12 +3886,14 @@ div.four:before {
 
     .news-section:hover .content-news {
         opacity: 1;
-        height: 60%;
+        height: 180px;
+        /* height: 60%; */
     }
 
     .news-section .content-news {
         opacity: 1;
-        height: 60%;
+        /* height: 60%; */
+        height: 180px;
     }
 
     .popup-team p {
@@ -4112,12 +4154,14 @@ div.four:before {
     .latest-news-section .latest-news-content {
         opacity: 0;
     }
+
 }
 
 
 /* X-Small devices (portrait phones, less than 576px) */
 
 @media (max-width: 575.98px) {
+
     .footer-logo {
         width: 70px;
         height: 70px;
@@ -4273,12 +4317,13 @@ div.four:before {
 
     .news-section .content-news {
         opacity: 1;
-        height: 30%;
+        height: 180px;
+        /* height: 30%; */
     }
 
     .news-section:hover .content-news {
         opacity: 1;
-        height: 59%;
+        height: 180px;
     }
 
     .not-found h2 {

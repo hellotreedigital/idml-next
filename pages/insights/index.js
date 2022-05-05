@@ -12,6 +12,7 @@ import GlobalState from "../../GlobalState";
 import axios from "axios";
 import Link from "next/link";
 import SeoTags from "../../components/SeoTags";
+import AnimatedCursor from "react-animated-cursor"
 
 export default function Insights(props) {
 
@@ -41,6 +42,15 @@ export default function Insights(props) {
                 description={props.insightsData.page_items.seo.description}
                 image={props.insightsData.page_items.seo.image}
             />
+            {/* <AnimatedCursor
+                innerSize={10}
+                outerSize={10}
+                color='54, 80, 100'
+                outerAlpha={0.2}
+                innerScale={0.7}
+                inner
+                outerScale={0}
+            /> */}
 
             {
                 insights ?
@@ -107,17 +117,19 @@ export default function Insights(props) {
                                             insightsNews.map((insightNews, index) =>
 
                                                 <SwiperSlide key={index}>
-                                                    <Link href={"/insights/news/" + insightNews.slug}>
-                                                        <a>
-                                                            <NewsSection
-                                                                title={insightNews.title}
-                                                                date={insightNews.date_formatted}
-                                                                image={insightNews.first_image}
-                                                                description={insightNews.small_description}
-                                                                button={insights.read_more}
-                                                            />
-                                                        </a>
-                                                    </Link>
+                                                    <div>
+                                                        <Link href={"/insights/news/" + insightNews.slug}>
+                                                            <a>
+                                                                <NewsSection
+                                                                    title={insightNews.title}
+                                                                    date={insightNews.date_formatted}
+                                                                    image={insightNews.first_image}
+                                                                    description={insightNews.small_description}
+                                                                    button={insights.read_more}
+                                                                />
+                                                            </a>
+                                                        </Link>
+                                                    </div>
                                                 </SwiperSlide>
                                             )
                                             :

@@ -18,6 +18,7 @@ import GlobalState from "../GlobalState";
 
 import * as Scroll from 'react-scroll';
 import ClientsPopup from "../components/ClientsPopup";
+import VisibilitySensor from 'react-visibility-sensor';
 
 
 let scroll = Scroll.animateScroll;
@@ -41,6 +42,7 @@ export default function Home(props) {
   const [loading, setLoading] = useState(true);
   const [youtubePopup, setYoutubePopup] = useState(null);
   const [clientPopup, setClientPopup] = useState(null);
+  const [typistVisible, setTypistVisible] = useState(false);
   const popupRef = useRef(null);
 
   SwiperCore.use([Autoplay])
@@ -65,19 +67,19 @@ export default function Home(props) {
      * Alert if clicked on outside of element
      */
     function handleClickOutside(event) {
-        if (popupRef.current && !popupRef.current.contains(event.target)) {
-            setClientPopup(false)
-            setYoutubePopup(false)
-        }
+      if (popupRef.current && !popupRef.current.contains(event.target)) {
+        setClientPopup(false)
+        setYoutubePopup(false)
+      }
     }
 
     // Bind the event listener
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
-        // Unbind the event listener on clean up
-        document.removeEventListener("mousedown", handleClickOutside);
+      // Unbind the event listener on clean up
+      document.removeEventListener("mousedown", handleClickOutside);
     };
-}, [popupRef, setClientPopup, setYoutubePopup]);
+  }, [popupRef, setClientPopup, setYoutubePopup]);
 
   useEffect(() => {
     document.querySelector('body').style.overflow = clientPopup ? 'hidden' : null;
@@ -296,9 +298,15 @@ export default function Home(props) {
           <div className="blue-background-section ">
             <div className="container px-sm-2 px-4 py-5">
               <div className="">
-                <Typist>
-                  {homeSettings.animated_text}
-                </Typist>
+                <VisibilitySensor onChange={(r) => setTypistVisible(r)}>
+                  <>
+                    <div key={'typistKey' + typistVisible}>
+                      <Typist avgTypingDelay={50} >
+                        {homeSettings.animated_text}
+                      </Typist>
+                    </div>
+                  </>
+                </VisibilitySensor>
               </div>
             </div>
           </div>
