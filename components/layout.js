@@ -384,7 +384,7 @@ export default function Layout(props) {
                                                 {
                                                     props?.footerLogos ?
                                                         props.footerLogos.map((footerLogo, index) =>
-                                                            <img className="mx-3" src={footerLogo.mobile_logo} alt="logo" key={index} />
+                                                            <img className="mx-3 footer-mobile-logo" src={footerLogo.mobile_logo} alt="logo" key={index} />
                                                         )
                                                         :
                                                         null

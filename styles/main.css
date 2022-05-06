@@ -4168,6 +4168,10 @@ div.four:before {
 /* X-Small devices (portrait phones, less than 576px) */
 
 @media (max-width: 575.98px) {
+    .footer-mobile-logo {
+        width: 40px;
+        height: 40px;
+    }
 
     .footer-logo {
         width: 70px;
