@@ -5671,9 +5671,9 @@ div.four:before {
 }
 
 strong {
-    color: #14334A;
+    color: #14334A !important;
 }
 
 strong a {
-    color: #14334A;
+    color: #14334A !important;
 }
