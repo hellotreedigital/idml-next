@@ -212,7 +212,7 @@ export default function Industries(props) {
                         <div className={" team-popup " + (popupOpen ? " " : " fade-out")}>
                             <div className=" team-member position-relative">
                                 <div className="popup-team popup-single-industry">
-                                    <div className="close-svg" onClick={() => setPopupOpen(false)}>
+                                    <div className="close-svg cursor-opposite" onClick={() => setPopupOpen(false)}>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="49" height="37" viewBox="0 0 49 37">
                                             <g id="Group_3342" data-name="Group 3342" transform="translate(-1096 -228)">
                                                 <path id="Rectangle_267" data-name="Rectangle 267" d="M0,0H12A37,37,0,0,1,49,37v0a0,0,0,0,1,0,0H27.75A27.75,27.75,0,0,1,0,9.25V0A0,0,0,0,1,0,0Z" transform="translate(1096 228)" fill="#14334a" />
