@@ -49,8 +49,6 @@ export default function Industries(props) {
     const popupRef = useRef(null);
     const testimonialRef = useRef(null);
 
-
-
     function ageVerificationClick(industry) {
         let underAgePopup = localStorage.getItem('underAgePopup');
         if (!underAgePopup) {
@@ -67,8 +65,8 @@ export default function Industries(props) {
     }
 
     function ageClose(industry) {
-        setAgeVerificationPopup(null)
         localStorage.removeItem('underAgePopup', 1);
+        setAgeVerificationPopup(null)
     }
 
     function clientClick(clientTag) {
@@ -127,24 +125,7 @@ export default function Industries(props) {
         }
     }, [loading]);
 
-    useEffect(() => {
-        /**
-         * Alert if clicked on outside of element
-         */
-        function handleClickOutside(event) {
-            if (popupRef.current && !popupRef.current.contains(event.target)) {
-                setAgeVerificationPopup(null)
-                localStorage.removeItem('underAgePopup', 1);
-            }
-        }
-
-        // Bind the event listener
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            // Unbind the event listener on clean up
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, [popupRef, setAgeVerificationPopup]);
+    
 
     useEffect(() => {
         /**
@@ -213,7 +194,7 @@ export default function Industries(props) {
                                                                 {
                                                                     industry.with_popup === 1 ?
 
-                                                                        <div className="card-button " onClick={() => ageVerificationClick(industry)} ref={popupRef}>
+                                                                        <div className="card-button " onClick={() => ageVerificationClick(industry)} >
                                                                             <div className="button white-button hover-effect add-padding shadow ">{industriesSettings.read_more}</div>
                                                                         </div>
                                                                         :

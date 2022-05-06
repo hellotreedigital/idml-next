@@ -34,25 +34,6 @@ export default function Layout(props) {
     }
 
     useEffect(() => {
-        /**
-         * Alert if clicked on outside of element
-         */
-        function handleClickOutside(event) {
-            if (popupRef.current && !popupRef.current.contains(event.target)) {
-                setAgeVerificationPopup(null)
-                localStorage.removeItem('underAgePopup', 1);
-            }
-        }
-
-        // Bind the event listener
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            // Unbind the event listener on clean up
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, [popupRef, setAgeVerificationPopup]);
-
-    useEffect(() => {
         window.addEventListener('scroll', function (e) {
             setHeaderScroll(window.pageYOffset > 50);
         });
@@ -125,7 +106,7 @@ export default function Layout(props) {
                                 {props.industriesTitles ?
                                     props.industriesTitles.map((industryTitle, index) =>
                                         industryTitle.with_popup === 1 ?
-                                            <p className="mb-2 mt-2" key={index} onClick={() => ageVerificationClick(industryTitle)} ref={popupRef}>
+                                            <p className="mb-2 mt-2" key={index} onClick={() => ageVerificationClick(industryTitle)}>
                                                 {industryTitle?.title}
                                             </p>
                                             :
