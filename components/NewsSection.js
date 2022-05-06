@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function NewsSection(props) {
     return (
-        <div className="news-section shadow position-relative mb-3">
+        <div className="news-section shadow position-relative mb-3 cursor-opposite">
             <div className="ratio news-image">
                 <img src={props.image} alt="news" />
             </div>

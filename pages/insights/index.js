@@ -140,7 +140,7 @@ export default function Insights(props) {
                                 <div className=" text-center">
                                     <Link href="/insights/news/">
                                         <a>
-                                            <button className="button blue-button shadow">
+                                            <button className="button blue-button shadow cursor-opposite">
                                                 {insights.news_button}
                                             </button>
                                         </a>
@@ -222,7 +222,7 @@ export default function Insights(props) {
                                 <div className="pb-5 text-center">
                                     <Link href="/insights/case-studies/">
                                         <a>
-                                            <button className="button blue-button shadow">
+                                            <button className="button blue-button shadow cursor-opposite">
                                                 {insights.case_studies_button}
                                             </button>
                                         </a>

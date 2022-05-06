@@ -21,7 +21,7 @@ export default function ProductSliderContent(props) {
                 {
                     props.product.product_images.length === 0 ? null :
                         <div className="col-lg-6 col-md-5">
-                            <div className="product-bg position-relative py-5">
+                            <div className="product-bg position-relative py-5 cursor-opposite">
                                 <div className="row">
                                     <div className="col-lg-6"></div>
                                     <div className="col-lg-5">
@@ -101,7 +101,7 @@ export default function ProductSliderContent(props) {
                                         props.product.website_url ?
                                             < div className="me-3">
                                                 <a href={props.product.website_url} target="_blank" rel="noreferrer">
-                                                    <button className="button blue-button visit-mobile">{props.product.website_button}</button>
+                                                    <button className="button blue-button visit-mobile cursor-opposite">{props.product.website_button}</button>
                                                 </a>
                                             </div>
                                             :
@@ -109,7 +109,7 @@ export default function ProductSliderContent(props) {
                                     }
                                     {
                                         props.product.product_button ?
-                                            <button className="button youtube-button" onClick={props.youtubeClick}>{props.product.product_button}</button>
+                                            <button className="button youtube-button cursor-opposite" onClick={props.youtubeClick}>{props.product.product_button}</button>
                                             :
                                             null
                                     }
@@ -120,7 +120,7 @@ export default function ProductSliderContent(props) {
                                         props.product.website_url ?
                                             < div className="me-3">
                                                 <a href={props.product.website_url} target="_blank" rel="noreferrer">
-                                                    <button className="button blue-button visit-mobile">{props.product.website_button}</button>
+                                                    <button className="button blue-button visit-mobile cursor-opposite">{props.product.website_button}</button>
                                                 </a>
                                             </div>
                                             :
@@ -128,7 +128,7 @@ export default function ProductSliderContent(props) {
                                     }
                                     {
                                         props.product.product_button ?
-                                            <button className="button youtube-button" onClick={props.youtubeClick}>{props.product.product_button}</button>
+                                            <button className="button youtube-button cursor-opposite" onClick={props.youtubeClick}>{props.product.product_button}</button>
                                             :
                                             null
                                     }

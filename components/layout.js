@@ -66,16 +66,16 @@ export default function Layout(props) {
     return (
         <>
 
-            <div className={"container-fluid navbar-items py-3" + (headerScroll ? " header-scroll" : " ") + (props.fixedNav ? " header-scroll" : " ")}>
+            <div className={"container-fluid navbar-items py-3" + (headerScroll ? " header-scroll cursor-opposite" : " ") + (props.fixedNav ? " header-scroll" : " ")}>
                 <div className="row mx-lg-3">
-                    <div className="col">
+                    <div className="col ">
                         <Link href="/">
                             <a>
-                                <img src="/img/images/logo.svg" alt="logo" />
+                                <img className="cursor-opposite" src="/img/images/logo.svg" alt="logo" />
                             </a>
                         </Link>
                     </div>
-                    <div className="col-auto d-lg-flex d-none">
+                    <div className="col-auto d-lg-flex d-none cursor-opposite">
                         <div className="me-xl-5 me-lg-4 h-100 d-flex align-items-center">
                             <Link href="/">
                                 <a className={"menu " + (props.activePage === "home" ? " active" : "") + (props.activePage === "home" && headerScroll ? "header-scroll active" : "")}>
@@ -278,20 +278,20 @@ export default function Layout(props) {
 
             {props.children}
 
-            <div className=" position-relative">
+            <div className=" position-relative ">
                 <div className="footer-img">
                     <img src="/img/images/footer-bg.png" alt="bg" />
                 </div>
                 <div className="container">
                     <div className="row footer align-items-center justify-content-between">
-                        <div className="col-lg-5 col-md-12 justify-content-md-center text-lg-start text-center">
-                            <div className="background-blue py-lg-5 py-4">
+                        <div className="col-lg-5 col-md-12 justify-content-md-center text-lg-start text-center cursor-opposite">
+                            <div className="background-blue  py-lg-5 py-4">
 
                                 <div className="row d-lg-none d-flex position-relative justify-content-center align-items-center pb-4">
                                     <div className="col-md-2 col-sm-2 col-3">
                                         <Link href="/">
                                             <a>
-                                                <img className="footer-logo" src="/img/images/logo-footer.svg" alt="logo" />
+                                                <img className="footer-logo " src="/img/images/logo-footer.svg" alt="logo" />
                                             </a>
                                         </Link>
                                     </div>

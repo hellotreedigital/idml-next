@@ -89,7 +89,7 @@ export default function Industries(props) {
                                                         <div className=" d-none d-sm-block">
                                                             {
                                                                 window.history.length > 2 ?
-                                                                    <button onClick={() => window.history.back()} className="button back-button d-flex align-items-center shadow">
+                                                                    <button onClick={() => window.history.back()} className="button back-button d-flex align-items-center shadow cursor-opposite">
                                                                         <svg className="arrow-back" xmlns="http://www.w3.org/2000/svg" width="8.136" height="12.964" viewBox="0 0 8.136 12.964">
                                                                             <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" strokeLinecap="round" strokeWidth="2" />
                                                                         </svg>
@@ -102,7 +102,7 @@ export default function Industries(props) {
                                                         <div className=" d-block d-sm-none">
                                                             {
                                                                 window.history.length > 2 ?
-                                                                    <button onClick={() => window.history.back()} className="back-button-border">
+                                                                    <button onClick={() => window.history.back()} className="back-button-border cursor-opposite">
                                                                         <svg className="arrow-back" xmlns="http://www.w3.org/2000/svg" width="8.136" height="12.964" viewBox="0 0 8.136 12.964">
                                                                             <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" strokeLinecap="round" strokeWidth="2" />
                                                                         </svg>
@@ -138,7 +138,7 @@ export default function Industries(props) {
                                 {
                                     singleIndustry?.products_list?.map((product, index) =>
                                         <div className="col-lg-2 col-md-4 col-sm-6 pb-5" key={index}>
-                                            <div className="single-industry position-relative" onClick={() => popupClick(product)}  ref={popupRef}>
+                                            <div className="single-industry position-relative cursor-opposite" onClick={() => popupClick(product)}  ref={popupRef}>
                                                 <div className="ratio industy-square">
                                                     <div className="square"></div>
                                                 </div>
@@ -164,7 +164,7 @@ export default function Industries(props) {
                                         {
                                             clientsList ?
                                                 clientsList.map((clientList, index) =>
-                                                    <div className="col-lg-2 col-md-3 col-sm-4 col-4 my-4 clients-circles" onClick={() => clientsPopupClick(clientList)} animate=" " key={index}>
+                                                    <div className="col-lg-2 col-md-3 col-sm-4 col-4 my-4 clients-circles cursor-opposite" onClick={() => clientsPopupClick(clientList)} animate=" " key={index}>
                                                         <div className="circle-on-hover position-relative">
                                                             {/* <a href={clientList.url} target="_blank" rel="noreferrer"> */}
                                                             <div className="ratio ratio-1x1">

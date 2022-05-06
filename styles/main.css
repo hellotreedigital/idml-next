@@ -2,13 +2,17 @@ html {
     overflow-x: hidden;
     font-size: 13px;
     color: #14334A;
-    /* cursor: none; */
-    cursor: url('../public/img/images/cursor.png') 7.5 7.5, auto !important;
+    cursor: none;
+    cursor: url('../public/img/images/blue-cursor.png') 7.5 7.5, auto !important;
     scroll-behavior: unset !important;
 }
 
 * {
     cursor: none;
+}
+
+* {
+    cursor: inherit !important;
 }
 
 .cursor-dot,
@@ -92,10 +96,6 @@ body {
     height: 50px;
     position: absolute;
     background-color: red;
-}
-
-* {
-    cursor: inherit !important;
 }
 
 .add-padd {
@@ -5653,4 +5653,19 @@ div.four:before {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+/* .cursor.round {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #365064;
+    opacity: 0.5;
+    mix-blend-mode: difference;
+    z-index: 9999;
+} */
+
+.cursor-opposite {
+    cursor: url('../public/img/images/white-cursor.png') 7.5 7.5, auto !important;
 }

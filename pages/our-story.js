@@ -144,7 +144,7 @@ export default function OurStory(props) {
                                                     </div>
                                                 </div>
                                                 <div className="col-xxl-4 col-lg-5 col-md-5 col-sm-5 pt-sm-0" animate="">
-                                                    <div className="ratio story-image">
+                                                    <div className="ratio story-image cursor-opposite">
                                                         <img src={story.image} alt={story.title} title={story.title} />
                                                     </div>
                                                 </div>
@@ -157,7 +157,7 @@ export default function OurStory(props) {
                         </div>
 
                         <div className=" pb-5">
-                            <div className="counter-background py-md-5 pt-5" >
+                            <div className="counter-background py-md-5 pt-5 cursor-opposite">
                                 <div className="container px-sm-2 px-4">
                                     <div className="row mb-5" >
                                         <h3 >{storySettings.numbers_section_title}</h3>
@@ -268,7 +268,7 @@ export default function OurStory(props) {
                                                         pillarsList ?
                                                             pillarsList.map((pillar, index) =>
                                                                 <div className="col-lg-3 col-md-6 col-sm-6 col-11 pt-lg-0 pb-lg-2 pt-4" key={index}>
-                                                                    <div className="bg-color py-4 text-center p-2">
+                                                                    <div className="bg-color py-4 text-center p-2 cursor-opposite">
                                                                         <h3>{pillar.title}</h3>
                                                                         <div className="justify-content-center d-flex">
                                                                             <div className="hr-line"></div>
@@ -381,7 +381,7 @@ export default function OurStory(props) {
                         <div className="py-lg-5 pb-5">
                             <div className="py-lg-5">
                                 <div className="blue-bg-ceo position-relative">
-                                    <div className="ceo-ratio d-md-block d-none" animate="">
+                                    <div className="ceo-ratio d-md-block d-none cursor-opposite" animate="">
                                         <img src={storySettings.ceo_image}  alt={storySettings.ceo_title} title={storySettings.ceo_title} />
                                     </div>
                                     <div className="container position-relative px-sm-2 px-4">
@@ -392,11 +392,11 @@ export default function OurStory(props) {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="row bg-ceo-mobile align-items-center gx-0">
+                                        <div className="row bg-ceo-mobile align-items-center gx-0 ">
                                             <div className="col-lg-7 col-md-12" >
                                                 <div className=" py-5 " >
                                                     <div className="container">
-                                                        <div className="row  justify-content-center justify-content-md-start">
+                                                        <div className="row  justify-content-center justify-content-md-start cursor-opposite">
                                                             <div className="col-lg-11 col-md-7 col-12 "  >
                                                                 <h2 className="mb-4 pt-1">{storySettings.ceo_title}</h2>
                                                                 <p>{storySettings.ceo_message}</p>
@@ -431,7 +431,7 @@ export default function OurStory(props) {
                                             teamList ?
                                                 teamList.map((team, index) =>
                                                     <div className="col-lg-3 col-md-6 col-sm-6 mb-5" animate="" onClick={() => setPopupOpen(team)} ref={popupRef} key={index}>
-                                                        <div className="team-section shadow position-relative">
+                                                        <div className="team-section shadow position-relative cursor-opposite">
                                                             <div className="ratio team-ratio">
                                                                 <img src={team.image} alt={team.name} title={team.name} />
                                                             </div>
@@ -477,7 +477,7 @@ export default function OurStory(props) {
                                     teamList ?
                                         teamList.map((team, index) =>
                                             <SwiperSlide key={index}>
-                                                <div className="team-section shadow position-relative" ref={popupRef} onClick={() => setPopupOpen(team)}>
+                                                <div className="team-section shadow position-relative cursor-opposite" ref={popupRef} onClick={() => setPopupOpen(team)}>
                                                     <div className="ratio team-ratio">
                                                         <img src={team.image} alt={team.name} title={team.name} />
                                                     </div>
@@ -598,7 +598,7 @@ export default function OurStory(props) {
                         <div className={"team-popup " + (popupOpen ? " " : " fade-out")}>
                             <div className="modal-window team-member position-relative">
                                 <div className="popup-team">
-                                    <div className="close-svg" onClick={() => setPopupOpen(null)}>
+                                    <div className="close-svg cursor-opposite" onClick={() => setPopupOpen(null)}>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="49" height="37" viewBox="0 0 49 37">
                                             <g id="Group_3342" data-name="Group 3342" transform="translate(-1096 -228)">
                                                 <path id="Rectangle_267" data-name="Rectangle 267" d="M0,0H12A37,37,0,0,1,49,37v0a0,0,0,0,1,0,0H27.75A27.75,27.75,0,0,1,0,9.25V0A0,0,0,0,1,0,0Z" transform="translate(1096 228)" fill="#14334a" />

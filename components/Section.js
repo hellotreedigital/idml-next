@@ -11,7 +11,7 @@ export default function Section(props) {
                         props.button === "1" ?
                             <Link href="/booking">
                                 <a>
-                                    <button className="button blue-button mt-4 remove-padding shadow">
+                                    <button className="button blue-button mt-4 remove-padding shadow cursor-opposite">
                                         {props.label}
                                     </button>
                                 </a>
@@ -22,7 +22,7 @@ export default function Section(props) {
                         props.button === "2" ?
                             <Link href="/booking">
                                 <a>
-                                    <button className="button blue-button  shadow">
+                                    <button className="button blue-button  shadow cursor-opposite">
                                         {props.label}
                                     </button>
                                 </a>

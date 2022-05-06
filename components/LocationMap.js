@@ -28,7 +28,7 @@ export default function LocationMap(props) {
                 {/* <div className="position-absolute pin-location" style={{ top: props.y + '%', left: props.x + '%' }} onClick={() => pinClick(props.pinLocation)}> */}
                 <div className="position-absolute pin-location" style={{ top: props.y + '%', left: props.x + '%' }} onClick={() => pinClick(props.pinLocation)}>
                     <img ref={pinRef} className={" pins pin-delay" + (props.pinLocation.operations_map_legend_id === 5 ? " pin-home" : " ")} src={props.pin} alt="pin" animate="" style={{ transitionDelay: props.index * 0.1 + 's' }}  />
-                    <div className={"location-details-hover d-none d-sm-none d-md-block d-lg-block" + (pinOnEdge ? " pin-on-edge" : " ") + (props.pinDetails === props.id ? " " : " fade-out")}>
+                    <div className={"location-details-hover d-none d-sm-none d-md-block d-lg-block cursor-opposite" + (pinOnEdge ? " pin-on-edge" : " ") + (props.pinDetails === props.id ? " " : " fade-out")}>
                         <div className="row p-3">
                             <div className="col-auto">
                                 {
@@ -69,7 +69,7 @@ export default function LocationMap(props) {
                 </div>
             </div>
 
-            <div className={"location-details d-block d-sm-block d-md-none d-lg-none" + (props.pinDetails === props.id ? " " : " fade-out")}>
+            <div className={"location-details d-block d-sm-block d-md-none d-lg-none cursor-opposite" + (props.pinDetails === props.id ? " " : " fade-out")}>
                 <div className="row p-3">
                     <div className="col">
                         <div className="close-details text-end" onClick={(e) => { e.stopPropagation(); closeClick() }}>

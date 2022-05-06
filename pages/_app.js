@@ -65,6 +65,21 @@ function MyApp({ Component, pageProps }) {
   }
 
   useEffect(() => {
+
+    const cursorRounded = document.querySelector('.cursor.round');
+    const cursorPointed = document.querySelector('.cursor.pointed');
+
+    const moveCursor = (e) => {
+      const mouseY = e.clientY;
+      const mouseX = e.clientX;
+
+      cursorRounded.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+      cursorPointed.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+    }
+
+    // window.addEventListener('mousemove', moveCursor)
+
+
     window.addEventListener('scroll', triggerScroll);
     window.addEventListener("scroll", triggerScroll);
     const start = () => {
@@ -84,9 +99,11 @@ function MyApp({ Component, pageProps }) {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <GlobalState.Provider value={{ triggerScroll, calcMinHeight }}>
+      <div className="cursor round"></div>
+      <div className="cursor pointed"></div>
       {
         loading ? (
-          <div className='loader'>
+          <div className="loader">
             <div className="lds-ripple">
               <div></div>
               <div></div>

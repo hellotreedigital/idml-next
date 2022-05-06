@@ -99,17 +99,17 @@ export default function Booking(props) {
                                                 <h2 className="mb-4">{bookingSettings.title}</h2>
                                             </div>
                                             <div className="col-lg-6 col-md-6"  >
-                                                <div className="mb-4">
+                                                <div className="mb-4 cursor-opposite">
                                                     <input className="contact-form w-100" placeholder={bookingSettings.name_palceholder} value={name} onChange={e => setName(e.target.value)} />
                                                 </div>
                                             </div>
                                             <div className="col-lg-6 col-md-6"  >
-                                                <div className="mb-4">
+                                                <div className="mb-4 cursor-opposite">
                                                     <input className="contact-form w-100" placeholder={bookingSettings.email_placeholder} value={email} onChange={e => setEmail(e.target.value)} />
                                                 </div>
                                             </div>
                                             <div className="col-lg-6 col-md-6"  >
-                                                <div className="mb-4">
+                                                <div className="mb-4 cursor-opposite">
                                                     <div className="booking-phone">
                                                         <PhoneInput
                                                             placeholder={bookingSettings.phone_number_placeholder}
@@ -120,7 +120,7 @@ export default function Booking(props) {
                                                 </div>
                                             </div>
                                             <div className="col-lg-6 col-md-6 location-input"  >
-                                                <div className="mb-4">
+                                                <div className="mb-4 cursor-opposite">
                                                     <Select
                                                         Select classNamePrefix="location-select-booking"
                                                         placeholder={bookingSettings.location_placeholder}
@@ -131,12 +131,12 @@ export default function Booking(props) {
                                                 </div>
                                             </div>
                                             <div className="col-12"  >
-                                                <div className="mb-4">
+                                                <div className="mb-4 cursor-opposite">
                                                     <textarea className="contact-form w-100" placeholder={bookingSettings.message_placeholder} value={message} onChange={e => setMessage(e.target.value)} />
                                                 </div>
                                             </div>
                                             <div className="text-center" >
-                                                <button className="button blue-button" type="submit">
+                                                <button className="button blue-button cursor-opposite" type="submit">
 
                                                     {
                                                         loadingForm ?

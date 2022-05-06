@@ -5,7 +5,7 @@ export default function verificationPopup(props) {
         <div className="row ">
             <div className="col-lg-10 col-md-10 col-sm-10 col-11">
                 <div className="popup-age change-color">
-                    <div className="close-svg" onClick={() => props.ageClose()} >
+                    <div className="close-svg cursor-opposite" onClick={() => props.ageClose()} >
                         <svg xmlns="http://www.w3.org/2000/svg" width="49" height="37" viewBox="0 0 49 37">
                             <g id="Group_3342" data-name="Group 3342" transform="translate(-1096 -228)">
                                 <path id="Rectangle_267" data-name="Rectangle 267" d="M0,0H12A37,37,0,0,1,49,37v0a0,0,0,0,1,0,0H27.75A27.75,27.75,0,0,1,0,9.25V0A0,0,0,0,1,0,0Z" transform="translate(1096 228)" fill="#14334a" />
@@ -27,12 +27,12 @@ export default function verificationPopup(props) {
                                 <div className="col-lg-4 col-md-4">
                                     <Link href={"/industries/" + props.slug}>
                                         <a>
-                                            <div className="button blue-button verification-button  fix-padding shadow">{props.button}</div>
+                                            <div className="button blue-button verification-button  fix-padding shadow cursor-opposite">{props.button}</div>
                                         </a>
                                     </Link>
                                 </div>
                                 <div className="col-lg-4 col-md-4 pt-md-0 pt-3">
-                                    <div onClick={() => props.ageClose()} className="button white-button verification-button add-border shadow">{props.secondButton}</div>
+                                    <div onClick={() => props.ageClose()} className="button white-button verification-button add-border shadow cursor-opposite">{props.secondButton}</div>
                                 </div>
                                 {/* onClick={() => setAgeVerificationPopup(false)} */}
                             </div>

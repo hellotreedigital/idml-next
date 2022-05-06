@@ -199,7 +199,7 @@ export default function Industries(props) {
                                         {
                                             allIndustries ?
                                                 allIndustries.map((industry, index) =>
-                                                    <div className="col-lg-4 col-md-6 col-sm-6 add-space" animate="" key={index}>
+                                                    <div className="col-lg-4 col-md-6 col-sm-6 add-space cursor-opposite" animate="" key={index}>
                                                         <div className="blue-card h-100 position-relative p-4">
                                                             <div className="text-card ">
                                                                 <div className="text-center justify-content-center d-grid">
@@ -214,7 +214,7 @@ export default function Industries(props) {
                                                                     industry.with_popup === 1 ?
 
                                                                         <div className="card-button " onClick={() => ageVerificationClick(industry)} ref={popupRef}>
-                                                                            <div className="button white-button hover-effect add-padding shadow">{industriesSettings.read_more}</div>
+                                                                            <div className="button white-button hover-effect add-padding shadow ">{industriesSettings.read_more}</div>
                                                                         </div>
                                                                         :
                                                                         <Link href={"/industries/" + industry.slug}>
@@ -244,7 +244,7 @@ export default function Industries(props) {
                                     clientsTagsTitles ?
                                         clientsTagsTitles.map((clientTag, index) =>
                                             <div className="col-auto" onClick={() => clientClick(clientTag.slug)} key={index}>
-                                                <p className={"filter-pills " + ((clientTag.slug === currentFilter) ? ' active' : '')}>{clientTag.title}</p>
+                                                <p className={"filter-pills cursor-opposite" + ((clientTag.slug === currentFilter) ? ' active' : '')}>{clientTag.title}</p>
                                             </div>
                                         )
                                         :
@@ -258,7 +258,7 @@ export default function Industries(props) {
                                         {
                                             clientsListFilter?.length > 0 ?
                                                 clientsListFilter.map((clientList, index) => (
-                                                    <div className="col-lg-2 col-md-3 col-sm-4 col-4 my-4 clients-circles" ref={testimonialRef} onClick={() => clientsPopupClick(clientList)} animate=" " style={{ transitionDelay: '0.1s' }} key={`${currentFilter}-${index}`}>
+                                                    <div className="col-lg-2 col-md-3 col-sm-4 col-4 my-4 clients-circles cursor-opposite" ref={testimonialRef} onClick={() => clientsPopupClick(clientList)} animate=" " style={{ transitionDelay: '0.1s' }} key={`${currentFilter}-${index}`}>
                                                         <div className="circle-on-hover position-relative">
                                                             <div className="ratio ratio-1x1">
                                                                 <img className="brand-image-industry" src={clientList.full_path_logo} alt={clientList.title} title={clientList.title} />
@@ -322,10 +322,10 @@ export default function Industries(props) {
                                         testimonialsList && (
                                             testimonialsList.map((testimonial, index) =>
                                                 <SwiperSlide key={index} >
-                                                    <div className="blue-card position-relative p-4 mt-2">
+                                                    <div className="blue-card position-relative p-4 mt-2 cursor-opposite">
                                                         <div className="text-card py-3">
                                                             <div className="text-center justify-content-center d-grid">
-                                                                <div className="team-image-card ">
+                                                                <div className="team-image-card  ">
                                                                     <img src={testimonial.image} alt="testimonials" />
                                                                 </div>
                                                             </div>
@@ -385,7 +385,7 @@ export default function Industries(props) {
             <div className={"team-popup " + (popupOpen ? " " : " fade-out")}>
                 <div className="modal-window team-member position-relative">
                     <div className="popup-team">
-                        <div className="close-svg" onClick={() => setPopupOpen(null)}>
+                        <div className="close-svg cursor-opposite cursor-opposite" onClick={() => setPopupOpen(null)}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="49" height="37" viewBox="0 0 49 37">
                                 <g id="Group_3342" data-name="Group 3342" transform="translate(-1096 -228)">
                                     <path id="Rectangle_267" data-name="Rectangle 267" d="M0,0H12A37,37,0,0,1,49,37v0a0,0,0,0,1,0,0H27.75A27.75,27.75,0,0,1,0,9.25V0A0,0,0,0,1,0,0Z" transform="translate(1096 228)" fill="#14334a" />
@@ -398,7 +398,7 @@ export default function Industries(props) {
                         </div>
                         <div className="row justify-content-center justify-content-lg-start align-items-center py-lg-5 py-3 gx-5 mx-lg-3 mx-2">
                             <div className="col-auto p-4 pb-md-0">
-                                <div className="team-image ">
+                                <div className="team-image cursor-opposite ">
                                     <img src={popupOpen?.image} alt="team" />
                                 </div>
                             </div>

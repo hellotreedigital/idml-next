@@ -56,7 +56,7 @@ export default function News(props) {
                                             <div className=" d-none d-sm-block">
                                                 {
                                                     (history.length > 2) ?
-                                                        <button onClick={() => window.history.back()} className="button back-button d-flex align-items-center shadow">
+                                                        <button onClick={() => window.history.back()} className="button back-button d-flex align-items-center shadow cursor-opposite">
                                                             <svg className="arrow-back" xmlns="http://www.w3.org/2000/svg" width="8.136" height="12.964" viewBox="0 0 8.136 12.964">
                                                                 <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" strokeLinecap="round" strokeWidth="2" />
                                                             </svg>
@@ -69,7 +69,7 @@ export default function News(props) {
                                             <div className="d-block d-sm-none">
                                                 {
                                                     (history.length > 2) ?
-                                                        <button onClick={() => window.history.back()} className="back-button-border">
+                                                        <button onClick={() => window.history.back()} className="back-button-border cursor-opposite">
                                                             <svg className="arrow-back " xmlns="http://www.w3.org/2000/svg" width="8.136" height="12.964" viewBox="0 0 8.136 12.964">
                                                                 <path className="arrow-stroke" id="Path_4297" data-name="Path 4297" d="M0,0,5.191,5.074,10,0" transform="matrix(-0.017, 1, -1, -0.017, 6.698, 1.527)" fill="none" stroke="#14334a" strokeLinecap="round" strokeWidth="2" />
                                                             </svg>
@@ -101,7 +101,7 @@ export default function News(props) {
                         <div className="container single-news-page px-sm-2 px-4">
                             <div className="row  align-items-start"  >
                                 <div className="col-lg-5 col-md-6 mb-4 mb-md-0" animate="">
-                                    <div className="ratio single-news">
+                                    <div className="ratio single-news cursor-opposite">
                                         <img src={singleNew.first_image} alt="news" />
                                     </div>
                                 </div>
@@ -114,12 +114,12 @@ export default function News(props) {
                             </div>
                             <div className="row  align-items-center mb-4"  >
                                 <div className="col-lg-6 col-md-6 col-sm-6 pb-4 " animate="">
-                                    <div className="ratio single-news-image">
+                                    <div className="ratio single-news-image cursor-opposite">
                                         <img src={singleNew.second_image} alt={singleNew.title} title={singleNew.title} />
                                     </div>
                                 </div>
                                 <div className="col-lg-6 col-md-6 col-sm-6 pb-4" animate="">
-                                    <div className="ratio single-news-image">
+                                    <div className="ratio single-news-image cursor-opposite">
                                         <img src={singleNew.third_image} alt={singleNew.title} title={singleNew.title} />
                                     </div>
                                 </div>
@@ -137,13 +137,13 @@ export default function News(props) {
                                 </div>
                                 <div className="col-auto">
                                     <a target="_blank" rel="noreferrer" href={'https://www.facebook.com/sharer.php?u=' + window.location}>
-                                        <img className=" social-icon mx-2" src={insightsSettings.share_facebook} alt={insightsSettings.share_facebook} title={insightsSettings.share_facebook} />
+                                        <img className=" social-icon mx-2 cursor-opposite" src={insightsSettings.share_facebook} alt={insightsSettings.share_facebook} title={insightsSettings.share_facebook} />
                                     </a>
                                     <a target="_blank" rel="noreferrer" href={'https://www.linkedin.com/sharing/share-offsite/?url=' + window.location}>
-                                        <img className=" social-icon mx-2" src={insightsSettings.share_twitter} alt={insightsSettings.share_twitter} title={insightsSettings.share_twitter} />
+                                        <img className=" social-icon mx-2 cursor-opposite" src={insightsSettings.share_twitter} alt={insightsSettings.share_twitter} title={insightsSettings.share_twitter} />
                                     </a>
                                     <a target="_blank" rel="noreferrer" href={'https://twitter.com/intent/tweet?url=' + window.location}>
-                                        <img className=" social-icon mx-2" src={insightsSettings.share_linkedin} alt={insightsSettings.share_linkedin} title={insightsSettings.share_linkedin} />
+                                        <img className=" social-icon mx-2 cursor-opposite" src={insightsSettings.share_linkedin} alt={insightsSettings.share_linkedin} title={insightsSettings.share_linkedin} />
                                     </a>
                                 </div>
                                 <div className="col">
@@ -192,7 +192,7 @@ export default function News(props) {
                                                 <SwiperSlide key={index}>
                                                     <Link href={"/insights/news/" + latestNew.slug}>
                                                         <a>
-                                                            <div className="pb-5">
+                                                            <div className="pb-5 cursor-opposite">
                                                                 <div className="latest-news-section position-relative">
                                                                     <div className="ratio ratio-1x1 lastest-news">
                                                                         <img src={latestNew.first_image} alt={latestNew.title} title={latestNew.title} />

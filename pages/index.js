@@ -211,13 +211,13 @@ export default function Home(props) {
               <div className="text-center" animate="">
                 <Link href="/booking">
                   <a>
-                    <button className="button bleu-ciel-button shadow">
+                    <button className="button bleu-ciel-button shadow cursor-opposite">
                       {homeSettings.book_consultation_title}
                     </button>
                   </a>
                 </Link>
                 <div className="pt-lg-4 pt-3">
-                  <img onClick={scrollTop} className="arrow-down" src="../img/images/header-arrow.svg" alt="video" />
+                  <img onClick={scrollTop} className="arrow-down cursor-opposite" src="../img/images/header-arrow.svg" alt="video" />
                 </div>
               </div>
             </div>
@@ -247,7 +247,7 @@ export default function Home(props) {
               {homeProcess ?
                 homeProcess.map((process, index) =>
                   <div className="col-lg-4 col-md-6 col-12 pb-3 " style={index % 3 === 0 ? { transitionDelay: '0.6s' } : (index % 2 === 0 ? { transitionDelay: '1s' } : { transitionDelay: '0.8s' })} animate="" key={index}>
-                    <div className="bg-color button blue-button-hover shadow py-3">
+                    <div className="bg-color button blue-button-hover shadow py-3 cursor-opposite">
                       <div className="py-4">
                         <div style={{ textTransform: 'uppercase' }}>{process.title}</div>
                         <div className="justify-content-center d-flex">
@@ -295,7 +295,7 @@ export default function Home(props) {
         </div>
 
         <div className="py-5">
-          <div className="blue-background-section ">
+          <div className="blue-background-section cursor-opposite">
             <div className="container px-sm-2 px-4 py-5">
               <div className="">
                 <VisibilitySensor onChange={(r) => setTypistVisible(r)}>
@@ -355,7 +355,7 @@ export default function Home(props) {
                 clientsList.map((clientList, index) =>
                   <SwiperSlide key={index} onClick={() => clientsPopupClick(clientList)} ref={popupRef}>
                     <div  >
-                      <div className="brand-logo-section shadow position-relative">
+                      <div className="brand-logo-section shadow position-relative cursor-opposite">
                         <div className="ratio ratio-1x1 logo-clients">
                           <img src={clientList.full_path_logo} alt={clientList.title} title={clientList.title} />
                         </div>
@@ -373,11 +373,11 @@ export default function Home(props) {
             }
 
           </Swiper>
-          <div className="pt-5 text-center">
+          <div className="pt-5 text-center ">
             <Link href="/industries#clients">
 
               <a>
-                <button className="button blue-button shadow">
+                <button className="button blue-button shadow cursor-opposite">
                   {homeSettings.view_all}
                 </button>
               </a>
@@ -398,7 +398,7 @@ export default function Home(props) {
                 <div className="row justify-content-center ">
                   {industries ?
                     industries.map((industry, index) =>
-                      <div className="col-lg-4 col-md-6 col-12 pb-5" style={index % 3 === 0 ? { transitionDelay: '0.6s' } : (index % 2 === 0 ? { transitionDelay: '1s' } : { transitionDelay: '0.8s' })} animate="" key={index}>
+                      <div className="col-lg-4 col-md-6 col-12 pb-5 cursor-opposite" style={index % 3 === 0 ? { transitionDelay: '0.6s' } : (index % 2 === 0 ? { transitionDelay: '1s' } : { transitionDelay: '0.8s' })} animate="" key={index}>
                         <Link href={"/industries/" + industry.slug}>
                           <a>
                             <div className="button blue-ciel-button shadow">
@@ -480,7 +480,7 @@ export default function Home(props) {
                   <div className="pt-5 text-center">
                     <Link href="/insights/news/">
                       <a>
-                        <button className="button blue-button shadow">
+                        <button className="button blue-button shadow cursor-opposite">
                           {homeSettings.view_all}
                         </button>
                       </a>
@@ -562,7 +562,7 @@ export default function Home(props) {
 
                     <div className="pb-5 text-center">
                       <a href={homeSettings.subscribe_url} target="_blank" rel="noreferrer">
-                        <button className="button blue-button shadow">
+                        <button className="button blue-button shadow cursor-opposite">
                           {homeSettings.subscribe_button}
                         </button>
                       </a>
@@ -588,7 +588,7 @@ export default function Home(props) {
           youtubePopup && (
             <div className={"youtube-popup" + (youtubePopup ? " " : " fade-out")}>
               <div className="modal-window position-relative">
-                <div className="cancel-button stop-video" onClick={() => setYoutubePopup(null)}>
+                <div className="cancel-button stop-video cursor-opposite" onClick={() => setYoutubePopup(null)}>
                   <img src="../img/images/x-button.svg" alt="" />
                 </div>
                 <iframe className="youtube-borders mw-100" width="900" height="500" src={youtubePopup.video_url} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
