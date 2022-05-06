@@ -169,7 +169,7 @@ export default function Layout(props) {
                 </div>
             </div>
 
-            <div className={"mobile-menu" + (mobileMenuOpen ? " " : " fade-out")}>
+            <div className={"mobile-menu cursor-opposite" + (mobileMenuOpen ? " " : " fade-out")}>
                 <div className="container-fluid d-flex flex-column h-100">
 
                     <div className="text-end close-mobile-menu py-4" onClick={closeMenu}>

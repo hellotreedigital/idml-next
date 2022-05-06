@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import Layout from "../components/layout";
 
 import 'react-phone-number-input/style.css';
@@ -33,6 +33,26 @@ export default function Booking(props) {
     const [loadingForm, setLoadingForm] = useState('');
     const [loading, setLoading] = useState(true);
 
+    const popupRef = useRef(null);
+
+    useEffect(() => {
+        /**
+         * Alert if clicked on outside of element
+         */
+        function handleClickOutside(event) {
+          if (popupRef.current && !popupRef.current.contains(event.target)) {
+            setSuccessPopupOpen(false)
+            setErrorPopupOpen(false)
+          }
+        }
+    
+        // Bind the event listener
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+          // Unbind the event listener on clean up
+          document.removeEventListener("mousedown", handleClickOutside);
+        };
+      }, [popupRef, setErrorPopupOpen, setSuccessPopupOpen]);
 
     useEffect(() => {
         let newCountries = [];
@@ -213,7 +233,7 @@ export default function Booking(props) {
                                                             null
                                                     }
                                                     <div className="pt-3">
-                                                        <button className="button blue-button color-hover" onClick={() => setErrorPopupOpen(false)}>{bookingSettings.error_popup_button}</button>
+                                                        <button className="button blue-button color-hover" ref={popupRef} onClick={() => setErrorPopupOpen(false)}>{bookingSettings.error_popup_button}</button>
                                                     </div>
                                                 </div>
                                             </div>

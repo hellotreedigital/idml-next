@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import Banner from "../components/Banner";
 import Layout from "../components/layout";
 import SideButton from "../components/SideButton";
@@ -39,6 +39,27 @@ export default function Contact(props) {
     const [successPopupOpen, setSuccessPopupOpen] = useState(false);
     const [errorPopupOpen, setErrorPopupOpen] = useState(false);
     const [loadingForm, setLoadingForm] = useState('');
+
+    const popupRef = useRef(null);
+
+    useEffect(() => {
+        /**
+         * Alert if clicked on outside of element
+         */
+        function handleClickOutside(event) {
+          if (popupRef.current && !popupRef.current.contains(event.target)) {
+            setSuccessPopupOpen(false)
+            setErrorPopupOpen(false)
+          }
+        }
+    
+        // Bind the event listener
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+          // Unbind the event listener on clean up
+          document.removeEventListener("mousedown", handleClickOutside);
+        };
+      }, [popupRef, setErrorPopupOpen, setSuccessPopupOpen]);
 
 
     useEffect(() => {
@@ -84,9 +105,7 @@ export default function Contact(props) {
                 setErrorMessages(r.response.data.errors)
                 setLoadingForm(false)
             });
-
     }
-
 
     return (
         <Layout activePage="contact" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
@@ -216,7 +235,7 @@ export default function Contact(props) {
             <div className={"popup " + (successPopupOpen ? " " : " fade-out")}>
                 <div className="modal-window success-booking position-relative ">
                     <div className="">
-                        <div className="close-svg-popup" onClick={() => setSuccessPopupOpen(false)}>
+                        <div className="close-svg-popup" onClick={() => setSuccessPopupOpen(false)} ref={popupRef}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="49" height="37" viewBox="0 0 49 37">
                                 <g id="Group_3343" data-name="Group 3343" transform="translate(-908 -203)">
                                     <g id="Group_3345" data-name="Group 3345">
@@ -242,7 +261,7 @@ export default function Contact(props) {
                                     <div className="col-10">
                                         <h3 className="mb-4">{contactSettings.success_message}</h3>
                                         <div className="">
-                                            <button className="button blue-button color-hover" onClick={() => setSuccessPopupOpen(false)}>{contactSettings.success_popup_button}</button>
+                                            <button className="button blue-button color-hover"  ref={popupRef} onClick={() => setSuccessPopupOpen(false)}>{contactSettings.success_popup_button}</button>
                                         </div>
                                     </div>
                                 </div>
