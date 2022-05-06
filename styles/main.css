@@ -5673,3 +5673,7 @@ div.four:before {
 strong {
     color: #14334A;
 }
+
+strong a {
+    color: #14334A;
+}
