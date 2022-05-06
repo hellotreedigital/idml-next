@@ -454,7 +454,7 @@ export default function Layout(props) {
                                         {
                                             props?.footerLogos ?
                                                 props.footerLogos.map((footerLogo, index) =>
-                                                    <img className="ms-3" src={footerLogo.logo} alt="logo" key={index} />
+                                                    <img className="ms-3 logo-products" src={footerLogo.logo} alt="logo" key={index} />
                                                 )
                                                 :
                                                 null
