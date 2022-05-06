@@ -295,7 +295,7 @@ export default function Layout(props) {
                                             </a>
                                         </Link>
                                     </div>
-                                    <div className="col-md-5 col-sm-5 col-5">
+                                    <div className="col-md-5 col-sm-8 col-8">
                                         <div className="text-start">
 
                                             <div className="pt-lg-3">

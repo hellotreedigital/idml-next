@@ -5669,3 +5669,7 @@ div.four:before {
 .cursor-opposite {
     cursor: url('../public/img/images/white-cursor.png') 7.5 7.5, auto !important;
 }
+
+strong {
+    color: #14334A;
+}
