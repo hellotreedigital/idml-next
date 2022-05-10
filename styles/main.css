@@ -603,11 +603,10 @@ a {
 
 .background-sections img {
     position: absolute;
-    right: 0;
-    z-index: -1;
-    top: 55%;
-    transform: translateY(-50%);
-    height: 110%;
+    bottom: -53%;
+    right: -69px;
+    height: 148%;
+    z-index: -11;
 }
 
 .overlay {
@@ -1756,7 +1755,7 @@ div.part-3:before {
 }
 
 .product-ratio {
-    padding-top: 90%;
+    padding-top: 100%;
 }
 
 .logo-product img {
@@ -3427,6 +3426,7 @@ div.four:before {
         width: 40px;
         height: 40px;
     }
+
     .mobile-footer {
         font-size: 0.9rem;
     }
@@ -3675,7 +3675,8 @@ div.four:before {
     }
 
     .background-sections img {
-        height: 70%;
+        height: 130%;
+        bottom: -38%;
     }
 
     .blue-button.visit-mobile,
@@ -4179,6 +4180,7 @@ div.four:before {
     .mobile-footer {
         font-size: 0.7rem;
     }
+
     .footer-mobile-logo {
         width: 40px;
         height: 40px;
@@ -4221,7 +4223,8 @@ div.four:before {
     }
 
     .background-sections img {
-        height: 50%;
+        height: 106%;
+        bottom: -21%;
     }
 
     .ceo-ratio-mobile img {
@@ -4759,6 +4762,10 @@ div.four:before {
 
 .background-sections.team-background img {
     height: auto;
+}
+
+.background-sections img{
+    display: none;
 }
 
 .our-team-image {

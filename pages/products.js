@@ -3,6 +3,7 @@ import Layout from "../components/layout";
 import SideButton from "../components/SideButton";
 import ProductSliderContent from "../components/ProductSliderContent";
 import Link from "next/link";
+import VerificationPopup from "../components/VerificationPopup";
 
 import React, { useRef } from "react";
 // Import Swiper React components
@@ -25,6 +26,8 @@ import SeoTags from "../components/SeoTags";
 
 export default function Products(props) {
 
+    const [ageVerificationPopup, setAgeVerificationPopup] = useState(null);
+
     SwiperCore.use([Autoplay])
 
     const { triggerScroll } = useContext(GlobalState);
@@ -43,12 +46,26 @@ export default function Products(props) {
     const [youtubePopup, setYoutubePopup] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    const [thumbsSwiper, setThumbsSwiper] = useState(null);
-    const [swiper, setSwiper] = useState();
-    const swiperRef = useRef();
-
     function logoClick(productCategory) {
+        setAgeVerificationPopup(null)
         setProductsItems(productCategory);
+    }
+
+    function ageVerificationClick(productCategory) {
+        let underAgePopupProducts = localStorage.getItem('underAgePopupProducts');
+        if (!underAgePopupProducts) {
+            setAgeVerificationPopup(productCategory)
+            localStorage.setItem('underAgePopupProducts', 1);
+        }
+        else {
+            setProductsItems(productCategory);
+            setAgeVerificationPopup(null)
+        }
+    }
+
+    function ageClose(productCategory) {
+        localStorage.removeItem('underAgePopupProducts', 1);
+        setAgeVerificationPopup(null)
     }
 
     useEffect(() => {
@@ -114,13 +131,24 @@ export default function Products(props) {
                                     >
                                         {
                                             productsCategories?.map((productCategory, index) =>
+
                                                 <SwiperSlide key={index} >
-                                                    <div className="text-center px-3" onClick={() => logoClick(productCategory)}>
-                                                        <div className={"ratio ratio-1x1 category-circle" + (productCategory === productsItems ? " active" : " ")}>
-                                                            <img className="brand-image" src={productCategory.logo} alt="brand" />
-                                                        </div>
-                                                    </div>
+                                                    {
+                                                        productCategory.with_popup === 1 ?
+                                                            <div className="text-center px-3" onClick={() => ageVerificationClick(productCategory)}>
+                                                                <div className={"ratio ratio-1x1 category-circle" + (productCategory === productsItems ? " active" : " ")}>
+                                                                    <img className="brand-image" src={productCategory.logo} alt="brand" />
+                                                                </div>
+                                                            </div>
+                                                            :
+                                                            <div className="text-center px-3" onClick={() => logoClick(productCategory)}>
+                                                                <div className={"ratio ratio-1x1 category-circle" + (productCategory === productsItems ? " active" : " ")}>
+                                                                    <img className="brand-image" src={productCategory.logo} alt="brand" />
+                                                                </div>
+                                                            </div>
+                                                    }
                                                 </SwiperSlide>
+
                                             )
                                         }
                                     </Swiper>
@@ -130,7 +158,7 @@ export default function Products(props) {
 
                         {
                             productsItems && (
-                                productsItems.products.length < 0 ? null :
+                                productsItems.products?.length < 0 ? null :
                                     <div className=" position-relative">
                                         <div className="">
                                             <div className="d-flex justify-content-end">
@@ -192,6 +220,52 @@ export default function Products(props) {
                     :
                     null
             }
+
+            <div className={" team-popup " + (ageVerificationPopup ? " " : " fade-out")}>
+                {
+                    ageVerificationPopup ?
+                        <div className="modal-window team-member change-color position-relative">
+                            <div className="row ">
+                                <div className="col-lg-10 col-md-10 col-sm-10 col-11">
+                                    <div className="popup-age change-color">
+                                        <div className="close-svg cursor-opposite" onClick={() => ageClose()} >
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="49" height="37" viewBox="0 0 49 37">
+                                                <g id="Group_3342" data-name="Group 3342" transform="translate(-1096 -228)">
+                                                    <path id="Rectangle_267" data-name="Rectangle 267" d="M0,0H12A37,37,0,0,1,49,37v0a0,0,0,0,1,0,0H27.75A27.75,27.75,0,0,1,0,9.25V0A0,0,0,0,1,0,0Z" transform="translate(1096 228)" fill="#14334a" />
+                                                    <g id="Group_3054" data-name="Group 3054" transform="translate(214.465 49.965)">
+                                                        <line id="Line_8" data-name="Line 8" x2="9.07" y2="9.07" transform="translate(900.5 193.5)" fill="none" stroke="#fff" strokeLinecap="round" strokeWidth="2" />
+                                                        <line id="Line_9" data-name="Line 9" x1="9.07" y2="9.07" transform="translate(900.5 193.5)" fill="none" stroke="#fff" strokeLinecap="round" strokeWidth="2" />
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <div className="row justify-content-center py-5 gx-5">
+                                            <div className="col-lg-12 col-md-10 text-center">
+                                                <img src={ageVerificationPopup.popup_image} alt="age" />
+                                                <div className="py-4">
+                                                    <h3 className="mb-2">{ageVerificationPopup.popup_title}</h3>
+                                                    <h4 className="mb-0">{ageVerificationPopup.popup_text}</h4>
+                                                </div>
+                                                <div className="row justify-content-center p-3">
+                                                    <div className="col-lg-4 col-md-4">
+
+                                                        <div onClick={logoClick} className="button blue-button verification-button  fix-padding shadow cursor-opposite">{ageVerificationPopup.first_popup_button}</div>
+
+                                                    </div>
+                                                    <div className="col-lg-4 col-md-4 pt-md-0 pt-3">
+                                                        <div onClick={() => ageClose()} className="button white-button verification-button add-border shadow cursor-opposite">{ageVerificationPopup.second_popup_button}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        :
+                        null
+                }
+            </div>
         </Layout >
     )
 }
