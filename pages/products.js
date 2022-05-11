@@ -249,7 +249,7 @@ export default function Products(props) {
                                                 <div className="row justify-content-center p-3">
                                                     <div className="col-lg-4 col-md-4">
 
-                                                        <div onClick={logoClick} className="button blue-button verification-button  fix-padding shadow cursor-opposite">{ageVerificationPopup.first_popup_button}</div>
+                                                        <div onClick={() => logoClick(ageVerificationPopup)} className="button blue-button verification-button  fix-padding shadow cursor-opposite">{ageVerificationPopup.first_popup_button}</div>
 
                                                     </div>
                                                     <div className="col-lg-4 col-md-4 pt-md-0 pt-3">
