@@ -184,7 +184,7 @@ export default function Layout(props) {
                                 </Link>
                             </div>
                             <div className="dropdown pb-4">
-                                <div className="mb-3">
+                                <div className="">
                                     <Link href="/services">
                                         <a className="burger-menu" >
                                             {props.menuItems?.services}
@@ -192,7 +192,7 @@ export default function Layout(props) {
                                     </Link>
                                 </div>
 
-                                <div className="mobile-dropdown d-grid">
+                                {/* <div className="mobile-dropdown d-grid">
                                     {props.serviceTitles ?
                                         props.serviceTitles.map((serviceTitle, index) =>
                                             <Link href={"/services/" + serviceTitle.slug} key={index}>
@@ -205,18 +205,18 @@ export default function Layout(props) {
                                         null
                                     }
 
-                                </div>
+                                </div> */}
                             </div>
 
                             <div className="dropdown pb-3">
-                                <div className="mb-3">
+                                <div className="">
                                     <Link href="/industries">
                                         <a className="burger-menu">
                                             {props.menuItems?.industries}
                                         </a>
                                     </Link>
                                 </div>
-                                <div className="mobile-dropdown d-grid">
+                                {/* <div className="mobile-dropdown d-grid">
                                     {props.industriesTitles ?
 
                                         props.industriesTitles.map((industryTitle, index) =>
@@ -236,7 +236,7 @@ export default function Layout(props) {
                                         :
                                         null
                                     }
-                                </div>
+                                </div> */}
                             </div>
                             <div className="pb-3">
                                 <Link href="/insights">
