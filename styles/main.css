@@ -603,10 +603,11 @@ a {
 
 .background-sections img {
     position: absolute;
-    bottom: -53%;
-    right: -69px;
-    height: 148%;
-    z-index: -11;
+    right: 0;
+    z-index: -1;
+    top: 55%;
+    transform: translateY(-50%);
+    height: 88%;
 }
 
 .overlay {
@@ -3441,12 +3442,6 @@ div.four:before {
 
     .company-history p {
         font-size: 1rem;
-        /* overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 4;
-        line-clamp: 4;
-        -webkit-box-orient: vertical; */
     }
 
     .text-card p {
@@ -3666,17 +3661,12 @@ div.four:before {
         width: 170px;
     }
 
-    /* .counter-background span {
-        width: 48px;
-    } */
-
     .background-story img {
         height: 50%;
     }
 
     .background-sections img {
-        height: 130%;
-        bottom: -38%;
+        height: 70%;
     }
 
     .blue-button.visit-mobile,
@@ -4176,6 +4166,10 @@ div.four:before {
 /* X-Small devices (portrait phones, less than 576px) */
 
 @media (max-width: 575.98px) {
+
+    .background-sections img{
+        display: none;
+    }
 
     .mobile-footer {
         font-size: 0.7rem;
@@ -4762,10 +4756,6 @@ div.four:before {
 
 .background-sections.team-background img {
     height: auto;
-}
-
-.background-sections img{
-    display: none;
 }
 
 .our-team-image {

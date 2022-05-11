@@ -76,7 +76,6 @@ export default function Products(props) {
 
     return loading ? null : (
         <Layout activePage="products" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
-
             <SeoTags
                 title={props.productsData.page_items.seo.title}
                 description={props.productsData.page_items.seo.description}
