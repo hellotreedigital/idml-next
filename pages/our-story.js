@@ -49,7 +49,8 @@ export default function OurStory(props) {
             node.children_companies.forEach(node => {
                 nodeChildren.push(getNode(node));
             });
-        } else { null }
+        } 
+        else { null }
 
         return {
             id: node.id,
@@ -354,7 +355,7 @@ export default function OurStory(props) {
                         </div>
 
                         {
-                            !storySettings.group_title && !storySettings.group_text ? " " :
+                            // !storySettings.group_title && !storySettings.group_text ? null :
                                 <div className="table-responsive pb-5 mb-5">
                                     <div className="container-fluid company-history px-sm-2 px-4">
                                         <div className="row justify-content-center text-center py-5" >
