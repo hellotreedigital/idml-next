@@ -535,7 +535,7 @@ export default function OurStory(props) {
                                     <h2 className="mb-4 text-center">{storySettings.operations_title}</h2>
                                     <p className="mb-5 text-center">{storySettings.subtitle}</p>
 
-                                    <div className="row side-map align-items-end d-md-flex d-block " animate="">
+                                    <div className="row side-map align-items-start d-md-flex d-block " animate="">
                                         <div className="col-auto align-items-sm-start d-sm-flex   align-items-lg-center d-lg-block align-items-md-center d-md-block">
                                             {mapLegend ?
                                                 mapLegend.map((map, index) =>
