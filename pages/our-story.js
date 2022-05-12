@@ -357,7 +357,7 @@ export default function OurStory(props) {
                         </div>
 
                         {
-                            // !storySettings.group_title && !storySettings.group_text ? null :
+                            !storySettings.group_title && !storySettings.group_text ? null :
                                 <div className="table-responsive pb-5 mb-5">
                                     <div className="container-fluid company-history px-sm-2 px-4">
                                         <div className="row justify-content-center text-center py-5" >
