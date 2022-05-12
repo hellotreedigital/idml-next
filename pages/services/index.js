@@ -15,7 +15,7 @@ export default function Services(props) {
     const serviceCategories = props.servicesData.page_items.services_categories
 
     const menuItems = props.servicesData.fixed_titles;
-    const productsSetting = props.servicesData.product_settings;
+    const productSetting = props.servicesData.product_settings;
     const socialMedia = props.servicesData.social_media;
     const footerLogos = props.servicesData.footer_logos;
     const footerContactIcons = props.servicesData.footer_contact_icons;
