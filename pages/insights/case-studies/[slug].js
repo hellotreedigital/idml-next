@@ -11,6 +11,7 @@ export default function CaseStudies(props) {
     const singleCase = props.insightsCaseStudiesSingleData.page_items.single_case_study;
     const menuItems = props.insightsCaseStudiesSingleData.fixed_titles;
     const socialMedia = props.insightsCaseStudiesSingleData.social_media;
+    const favIcon = props.insightsCaseStudiesSingleData.fav_icon_settings;
     const footerLogos = props.insightsCaseStudiesSingleData.footer_logos;
     const footerContactIcons = props.insightsCaseStudiesSingleData.footer_contact_icons;
     const serviceTitles = props.insightsCaseStudiesSingleData.services_titles;
@@ -26,7 +27,7 @@ export default function CaseStudies(props) {
     }, [loading]); // eslint-disable-line react-hooks/exhaustive-deps
 
     return loading ? null : (
-        <Layout productSetting={productSetting} activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+        <Layout favIcon={favIcon} productSetting={productSetting} activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
 
             <SeoTags
                 title={props.insightsCaseStudiesSingleData.page_items.single_case_study.seo_title}

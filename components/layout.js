@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import VerificationPopup from "./VerificationPopup";
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 export default function Layout(props) {
     const [ageVerificationPopup, setAgeVerificationPopup] = useState(null);
@@ -68,6 +69,15 @@ export default function Layout(props) {
 
     return (
         <>
+            <Head>
+                <link rel="apple-touch-icon" sizes="180x180" href={props.favIcon?.apple_touch_icon} />
+                <link rel="icon" type="image/png" sizes="32x32" href={props.favIcon?.icon_32} />
+                <link rel="icon" type="image/png" sizes="16x16" href={props.favIcon?.icon_16} />
+                <link rel="manifest" href={props.favIcon?.manifest} />
+                <link rel="mask-icon" href={props.favIcon?.mask_icon} color="#5bbad5" />
+                <meta name="msapplication-TileColor" content="#da532c" />
+                <meta name="theme-color" content="#ffffff"></meta>
+            </Head>
 
             <div className={"container-fluid navbar-items py-3" + (headerScroll ? " header-scroll cursor-opposite" : " ") + (props.fixedNav ? " header-scroll" : " ")}>
                 <div className="row mx-lg-3">

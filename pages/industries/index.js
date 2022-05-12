@@ -37,6 +37,7 @@ export default function Industries(props) {
     const footerContactIcons = props.industriesData.footer_contact_icons;
     const serviceTitles = props.industriesData.services_titles;
     const industriesTitles = props.industriesData.industries_titles;
+    const favIcon = props.industriesData.fav_icon_settings;
 
     const industriesSettings = props.industriesData.page_items.industries_setting;
     const allIndustries = props.industriesData.page_items.all_industries;
@@ -153,7 +154,7 @@ export default function Industries(props) {
     }, [popupOpen]);
 
     return loading ? null : (
-        <Layout activePage="industries" productSetting={productSetting} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+        <Layout activePage="industries" favIcon={favIcon} productSetting={productSetting} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
 
             <SeoTags
                 title={props.industriesData.page_items.seo.title}

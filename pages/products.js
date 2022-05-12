@@ -31,6 +31,7 @@ export default function Products(props) {
     const { triggerScroll } = useContext(GlobalState);
     const productSetting = props.productsData.product_settings;
     const menuItems = props.productsData.fixed_titles;
+    const favIcon = props.productsData.fav_icon_settings;
     const socialMedia = props.productsData.social_media;
     const footerLogos = props.productsData.footer_logos;
     const footerContactIcons = props.productsData.footer_contact_icons;
@@ -77,7 +78,7 @@ export default function Products(props) {
     }, [productsCategories]); // eslint-disable-line react-hooks/exhaustive-deps
 
     return loading ? null : (
-        <Layout activePage="products" productSetting={productSetting} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+        <Layout activePage="products" favIcon={favIcon} productSetting={productSetting} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
             <SeoTags
                 title={props.productsData.page_items.seo.title}
                 description={props.productsData.page_items.seo.description}

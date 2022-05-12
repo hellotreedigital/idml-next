@@ -32,6 +32,7 @@ export default function OurStory(props) {
     const mapPinnedLocations = props.ourStoryData.page_items.map_pinned_locations;
 
     const productSetting = props.ourStoryData.product_settings;
+    const favIcon = props.ourStoryData.fav_icon_settings;
     const menuItems = props.ourStoryData.fixed_titles;
     const socialMedia = props.ourStoryData.social_media;
     const footerLogos = props.ourStoryData.footer_logos;
@@ -110,7 +111,7 @@ export default function OurStory(props) {
 
     return (
 
-        <Layout fixedNav={false} productSetting={productSetting} activePage="our-story" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+        <Layout fixedNav={false} favIcon={favIcon} productSetting={productSetting} activePage="our-story" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
             <SeoTags
                 title={props.ourStoryData.page_items.seo.title}
                 description={props.ourStoryData.page_items.seo.description}

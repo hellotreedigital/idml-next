@@ -15,6 +15,7 @@ export default function Services(props) {
     const serviceCategories = props.servicesData.page_items.services_categories
 
     const menuItems = props.servicesData.fixed_titles;
+    const favIcon = props.servicesData.fav_icon_settings;
     const productSetting = props.servicesData.product_settings;
     const socialMedia = props.servicesData.social_media;
     const footerLogos = props.servicesData.footer_logos;
@@ -28,7 +29,7 @@ export default function Services(props) {
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
-        <Layout activePage="services" productSetting={productSetting} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+        <Layout activePage="services" favIcon={favIcon} productSetting={productSetting} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
             <SeoTags
                 title={props.servicesData.page_items.seo.title}
                 description={props.servicesData.page_items.seo.description}

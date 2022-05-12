@@ -14,6 +14,7 @@ export default function CaseStudies(props) {
 
     const menuItems = props.insightsCaseStudiesData.fixed_titles;
     const productSetting = props.insightsCaseStudiesData.product_settings;
+    const favIcon = props.insightsCaseStudiesData.fav_icon_settings;
     const socialMedia = props.insightsCaseStudiesData.social_media;
     const footerLogos = props.insightsCaseStudiesData.footer_logos;
     const footerContactIcons = props.insightsCaseStudiesData.footer_contact_icons;

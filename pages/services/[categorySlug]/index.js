@@ -14,6 +14,7 @@ export default function Services(props) {
     const categories = props.serviceCategoryData.page_items.single_category.services;
     const singleCat = props.serviceCategoryData.page_items.single_category;
     const serviceTitles = props.serviceCategoryData.services_titles;
+    const favIcon = props.serviceCategoryData.fav_icon_settings;
 
     const productSetting = props.serviceCategoryData.product_settings;
     const menuItems = props.serviceCategoryData.fixed_titles;

@@ -7,6 +7,7 @@ import Link from "next/link";
 import axios from "axios";
 import Typist from 'react-typist';
 
+
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
@@ -32,6 +33,7 @@ export default function Home(props) {
   const serviceTitles = props.homeData.services_titles;
   const industriesTitles = props.homeData.industries_titles;
   const productSetting = props.homeData.product_settings;
+  const favIcon = props.homeData.fav_icon_settings;
 
   const homeSettings = props.homeData.page_items.home_settings;
   const homeProcess = props.homeData.page_items.home_process_list;
@@ -93,7 +95,17 @@ export default function Home(props) {
   }, [youtubePopup]);
 
   return loading ? null : (
-    <Layout activePage="home" productSetting={productSetting} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+    <Layout activePage="home" favIcon={favIcon} productSetting={productSetting} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+
+      {/* <Head>
+        <link rel="apple-touch-icon" sizes="180x180" href={favIcon.apple_touch_icon} />
+        <link rel="icon" type="image/png" sizes="32x32" href={favIcon.icon_32} />
+        <link rel="icon" type="image/png" sizes="16x16" href={favIcon.icon_16} />
+        <link rel="manifest"  href={favIcon.manifest} />
+        <link rel="mask-icon" href={favIcon.mask_icon} color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff"></meta>
+      </Head> */}
 
       <SeoTags
         title={props.homeData.page_items.seo.title}

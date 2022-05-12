@@ -23,6 +23,7 @@ export default function Insights(props) {
     const insightsCaseStudies = props.insightsData.page_items.insights_case_studies;
 
     const productSetting = props.insightsData.product_settings;
+    const favIcon = props.insightsData.fav_icon_settings;
     const menuItems = props.insightsData.fixed_titles;
     const socialMedia = props.insightsData.social_media;
     const footerLogos = props.insightsData.footer_logos;
@@ -36,7 +37,7 @@ export default function Insights(props) {
     }, [insights, loading]); // eslint-disable-line react-hooks/exhaustive-deps
 
     return loading ? null : (
-        <Layout activePage="insights" productSetting={productSetting} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+        <Layout activePage="insights" favIcon={favIcon} productSetting={productSetting} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
 
             <SeoTags
                 title={props.insightsData.page_items.seo.title}

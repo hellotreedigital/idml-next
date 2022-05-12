@@ -18,6 +18,7 @@ export default function News(props) {
     const footerContactIcons = props.insightsNewsData.footer_contact_icons;
     const serviceTitles = props.insightsNewsData.services_titles;
     const industriesTitles = props.insightsNewsData.industries_titles;
+    const favIcon = props.insightsNewsData.fav_icon_settings;
 
     const insightsSettings = props.insightsNewsData.page_items.insights_settings;
     const paginatedNews = props.insightsNewsData.page_items.paginated_news;
@@ -55,7 +56,7 @@ export default function News(props) {
     }, [loading]);
 
     return (
-        <Layout activePage="insights" productSetting={productSetting} fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+        <Layout activePage="insights" favIcon={favIcon} productSetting={productSetting} fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
 
             <SeoTags
                 title={props.insightsNewsData.page_items.seo.title}
