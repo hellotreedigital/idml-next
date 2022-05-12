@@ -607,7 +607,6 @@ a {
     right: 0;
     z-index: -1;
     top: 17%;
-    height: 729px;
 }
 
 .overlay {
@@ -3666,7 +3665,7 @@ div.four:before {
     }
 
     .background-sections img {
-        height: 70%;
+        height: 100%;
     }
 
     .blue-button.visit-mobile,
