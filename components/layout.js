@@ -5,16 +5,34 @@ import { useRouter } from 'next/router';
 
 export default function Layout(props) {
     const [ageVerificationPopup, setAgeVerificationPopup] = useState(null);
+    const [ageVerificationPopupProduct, setAgeVerificationPopupProduct] = useState(null);
     const [headerScroll, setHeaderScroll] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const router = useRouter();
     const popupRef = useRef(null);
+
 
     function burgerClick() {
         setMobileMenuOpen(true)
     }
     function closeMenu() {
         setMobileMenuOpen(false)
+    }
+
+    function ageVerificationProductClick(productSetting) {
+        let underAgePopupProduct = localStorage.getItem('underAgePopupProduct');
+        if (!underAgePopupProduct) {
+            setAgeVerificationPopupProduct(productSetting)
+            localStorage.setItem('underAgePopupProduct', 1);
+        }
+        else {
+            router.push("/products")
+        }
+    }
+
+    function ageClosePopup(productSetting) {
+        setAgeVerificationPopupProduct(null)
+        localStorage.removeItem('underAgePopupProduct', 1);
     }
 
     function ageVerificationClick(industryTitle) {
@@ -38,6 +56,10 @@ export default function Layout(props) {
             setHeaderScroll(window.pageYOffset > 50);
         });
     }, []);
+
+    // useEffect(() => {
+    //     console.log(props.productSetting)
+    // }, [props.productSetting]);
 
     useEffect(() => {
         document.querySelector('body').style.overflow = mobileMenuOpen ? 'hidden' : null;
@@ -72,11 +94,19 @@ export default function Layout(props) {
                             </Link>
                         </div>
                         <div className="me-xl-5 me-lg-4 h-100 d-flex align-items-center">
-                            <Link href="/products">
-                                <a className={"menu " + (props.activePage === "products" ? " active" : "") + (props.activePage === "products" && headerScroll ? "header-scroll active" : "")} >
-                                    {props.menuItems?.products}
-                                </a>
-                            </Link>
+                            {
+                                props.productSetting?.with_popup === 1 ?
+                                    <p className={"menu mb-0" + (props.activePage === "products" ? " active" : "") + (props.activePage === "products" && headerScroll ? "header-scroll active" : "")} onClick={() => ageVerificationProductClick(props.productSetting)}>
+                                        {props.productSetting?.title}
+                                    </p>
+                                    :
+
+                                    <Link href="/products">
+                                        <a className={"menu " + (props.activePage === "products" ? " active" : "") + (props.activePage === "products" && headerScroll ? "header-scroll active" : "")} >
+                                            {props.productSetting?.title}
+                                        </a>
+                                    </Link>
+                            }
                         </div>
                         <div className="dropdown me-xl-5 me-lg-4 h-100 d-flex align-items-center">
                             <Link href="/services">
@@ -501,6 +531,54 @@ export default function Layout(props) {
                     :
                     null
             }
+
+            <div className={" team-popup " + (ageVerificationPopupProduct ? " " : " fade-out")}>
+                {
+                    ageVerificationPopupProduct ?
+                        <div className="modal-window team-member change-color position-relative">
+                            <div className="row ">
+                                <div className="col-lg-10 col-md-10 col-sm-10 col-11">
+                                    <div className="popup-age change-color">
+                                        <div className="close-svg cursor-opposite" onClick={() => ageClosePopup()} >
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="49" height="37" viewBox="0 0 49 37">
+                                                <g id="Group_3342" data-name="Group 3342" transform="translate(-1096 -228)">
+                                                    <path id="Rectangle_267" data-name="Rectangle 267" d="M0,0H12A37,37,0,0,1,49,37v0a0,0,0,0,1,0,0H27.75A27.75,27.75,0,0,1,0,9.25V0A0,0,0,0,1,0,0Z" transform="translate(1096 228)" fill="#14334a" />
+                                                    <g id="Group_3054" data-name="Group 3054" transform="translate(214.465 49.965)">
+                                                        <line id="Line_8" data-name="Line 8" x2="9.07" y2="9.07" transform="translate(900.5 193.5)" fill="none" stroke="#fff" strokeLinecap="round" strokeWidth="2" />
+                                                        <line id="Line_9" data-name="Line 9" x1="9.07" y2="9.07" transform="translate(900.5 193.5)" fill="none" stroke="#fff" strokeLinecap="round" strokeWidth="2" />
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <div className="row justify-content-center py-5 gx-5">
+                                            <div className="col-lg-12 col-md-10 text-center">
+                                                <img src={ageVerificationPopupProduct.popup_image} alt="age" />
+                                                <div className="py-4">
+                                                    <h3 className="mb-2">{ageVerificationPopupProduct.popup_title}</h3>
+                                                    <h4 className="mb-0">{ageVerificationPopupProduct.popup_text}</h4>
+                                                </div>
+                                                <div className="row justify-content-center p-3">
+                                                    <div className="col-lg-4 col-md-4">
+
+                                                        <div onClick={() => ageVerificationProductClick(ageVerificationPopupProduct)} className="button blue-button verification-button  fix-padding shadow cursor-opposite">{ageVerificationPopupProduct.first_popup_button}</div>
+
+                                                    </div>
+                                                    <div className="col-lg-4 col-md-4 pt-md-0 pt-3">
+                                                        <div onClick={() => ageClosePopup()} className="button white-button verification-button add-border shadow cursor-opposite">{ageVerificationPopupProduct.second_popup_button}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        :
+                        null
+                }
+            </div>
+
+
         </>
     )
 }

@@ -31,6 +31,7 @@ export default function Home(props) {
   const footerContactIcons = props.homeData.footer_contact_icons;
   const serviceTitles = props.homeData.services_titles;
   const industriesTitles = props.homeData.industries_titles;
+  const productSetting = props.homeData.product_settings;
 
   const homeSettings = props.homeData.page_items.home_settings;
   const homeProcess = props.homeData.page_items.home_process_list;
@@ -92,7 +93,7 @@ export default function Home(props) {
   }, [youtubePopup]);
 
   return loading ? null : (
-    <Layout activePage="home" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+    <Layout activePage="home" productSetting={productSetting} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
 
       <SeoTags
         title={props.homeData.page_items.seo.title}
@@ -226,7 +227,7 @@ export default function Home(props) {
 
         <div className="position-relative pt-5" id="home-section-1">
           <div className="background-sections">
-            <img src="../img/images/test1.svg" alt="" />
+            <img src="../img/images/home-stripes.svg" alt="" />
           </div>
           <div className="container px-sm-2 px-4 py-5">
             <div className="row justify-content-center text-center ">
@@ -294,7 +295,7 @@ export default function Home(props) {
           }
         </div>
 
-        <div className="py-5">
+        <div className="pb-5">
           <div className="blue-background-section cursor-opposite">
             <div className="container px-sm-2 px-4 py-5">
               <div className="">

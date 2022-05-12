@@ -28,6 +28,7 @@ export default function Contact(props) {
     const footerContactIcons = props.contactData.footer_contact_icons;
     const serviceTitles = props.contactData.services_titles;
     const industriesTitles = props.contactData.industries_titles;
+    const productSetting = props.contactData.product_settings;
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -108,7 +109,7 @@ export default function Contact(props) {
     }
 
     return (
-        <Layout activePage="contact" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+        <Layout activePage="contact" productSetting={productSetting} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
 
             <SeoTags
                 title={props.contactData.page_items.seo.title}

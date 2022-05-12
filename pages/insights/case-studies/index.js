@@ -13,6 +13,7 @@ export default function CaseStudies(props) {
     const [loading, setLoading] = useState(true);
 
     const menuItems = props.insightsCaseStudiesData.fixed_titles;
+    const productSetting = props.insightsCaseStudiesData.product_settings;
     const socialMedia = props.insightsCaseStudiesData.social_media;
     const footerLogos = props.insightsCaseStudiesData.footer_logos;
     const footerContactIcons = props.insightsCaseStudiesData.footer_contact_icons;
@@ -49,7 +50,7 @@ export default function CaseStudies(props) {
 
 
     return loading ? null : (
-        <Layout activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+        <Layout productSetting={productSetting} activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
 
             <SeoTags
                 title={props.insightsCaseStudiesData.page_items.seo.title}

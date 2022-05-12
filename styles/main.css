@@ -606,9 +606,9 @@ a {
     position: absolute;
     right: 0;
     z-index: -1;
-    top: 55%;
-    transform: translateY(-50%);
-    height: 109%;
+    bottom: 0;
+    height: 97%;
+    width: 26%;;
 }
 
 .overlay {
@@ -4760,7 +4760,7 @@ div.four:before {
 }
 
 .our-team-image {
-    background-image: url("../public/img/images/test1.svg");
+    background-image: url("../public/img/images/home-stripes.svg");
     background-repeat: no-repeat;
     background-position: center right;
     background-size: contain;

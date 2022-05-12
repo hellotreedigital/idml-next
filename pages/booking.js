@@ -20,6 +20,7 @@ export default function Booking(props) {
     const footerContactIcons = props.bookingData.footer_contact_icons;
     const serviceTitles = props.bookingData.services_titles;
     const industriesTitles = props.bookingData.industries_titles;
+    const productSetting = props.bookingData.product_settings;
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -101,7 +102,7 @@ export default function Booking(props) {
 
 
     return (
-        <Layout fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+        <Layout fixedNav={true} productSetting={productSetting} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
             <SeoTags
                 title={props.bookingData.page_items.seo.title}
                 description={props.bookingData.page_items.seo.description}

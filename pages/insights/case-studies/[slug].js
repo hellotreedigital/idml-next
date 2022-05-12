@@ -15,6 +15,7 @@ export default function CaseStudies(props) {
     const footerContactIcons = props.insightsCaseStudiesSingleData.footer_contact_icons;
     const serviceTitles = props.insightsCaseStudiesSingleData.services_titles;
     const industriesTitles = props.insightsCaseStudiesSingleData.industries_titles;
+    const productSetting = props.insightsCaseStudiesSingleData.product_setting;
 
     const [loading, setLoading] = useState(true);
     const { triggerScroll } = useContext(GlobalState);
@@ -25,7 +26,7 @@ export default function CaseStudies(props) {
     }, [loading]); // eslint-disable-line react-hooks/exhaustive-deps
 
     return loading ? null : (
-        <Layout activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+        <Layout productSetting={productSetting} activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
 
             <SeoTags
                 title={props.insightsCaseStudiesSingleData.page_items.single_case_study.seo_title}

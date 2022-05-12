@@ -18,6 +18,7 @@ export default function News(props) {
     const singleNew = props.insightsNewsSingleData.page_items.single_news;
     const latestNews = props.insightsNewsSingleData.page_items.latest_news;
 
+    const productSetting = props.insightsNewsSingleData.product_setting;
     const menuItems = props.insightsNewsSingleData.fixed_titles;
     const socialMedia = props.insightsNewsSingleData.social_media;
     const footerLogos = props.insightsNewsSingleData.footer_logos;
@@ -35,7 +36,7 @@ export default function News(props) {
 
 
     return loading ? null : (
-        <Layout activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+        <Layout activePage="insights" productSetting={productSetting} fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
 
             <SeoTags
                 title={props.insightsNewsSingleData.page_items.single_news.seo_title}

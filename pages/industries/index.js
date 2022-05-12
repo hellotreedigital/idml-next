@@ -23,6 +23,7 @@ import ClientsPopup from "../../components/ClientsPopup";
 export default function Industries(props) {
 
     SwiperCore.use([Autoplay])
+    const productSetting= props.industriesData.product_setting;
     const [popupOpen, setPopupOpen] = useState(null);
     const router = useRouter()
     const [ageVerificationPopup, setAgeVerificationPopup] = useState(null);
@@ -152,7 +153,7 @@ export default function Industries(props) {
     }, [popupOpen]);
 
     return loading ? null : (
-        <Layout activePage="industries" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+        <Layout activePage="industries" productSetting={productSetting} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
 
             <SeoTags
                 title={props.industriesData.page_items.seo.title}

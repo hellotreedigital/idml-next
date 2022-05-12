@@ -15,6 +15,7 @@ export default function SingleService(props) {
     const footerLogos = props.serviceCategoryData.footer_logos;
     const footerContactIcons = props.serviceCategoryData.footer_contact_icons;
     const serviceTitles = props.serviceCategoryData.services_titles;
+    const productSetting = props.serviceCategoryData.product_settings;
 
     const serviceSettings = props.serviceCategoryData.page_items.services_setting;
     const singleServiceItems = props.serviceCategoryData.page_items.single_service;
@@ -28,7 +29,7 @@ export default function SingleService(props) {
     }, [loading]); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
-        <Layout fixedNav={true} activePage="services" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+        <Layout fixedNav={true} productSetting={productSetting} activePage="services" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
 
             <SeoTags
                 title={props.serviceCategoryData.page_items.single_service.seo_title}

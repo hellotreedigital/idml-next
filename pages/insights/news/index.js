@@ -11,7 +11,7 @@ export default function News(props) {
 
     const [loading, setLoading] = useState(true);
     const { triggerScroll } = useContext(GlobalState);
-
+    const productSetting = props.insightsNewsData.product_settings;
     const menuItems = props.insightsNewsData.fixed_titles;
     const socialMedia = props.insightsNewsData.social_media;
     const footerLogos = props.insightsNewsData.footer_logos;
@@ -55,7 +55,7 @@ export default function News(props) {
     }, [loading]);
 
     return (
-        <Layout activePage="insights" fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+        <Layout activePage="insights" productSetting={productSetting} fixedNav={true} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
 
             <SeoTags
                 title={props.insightsNewsData.page_items.seo.title}

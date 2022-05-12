@@ -12,6 +12,7 @@ export default function Industries(props) {
     const { triggerScroll } = useContext(GlobalState);
 
     const menuItems = props.industriesData.fixed_titles;
+    const productSetting = props.industriesData.product_settings;
     const socialMedia = props.industriesData.social_media;
     const footerLogos = props.industriesData.footer_logos;
     const footerContactIcons = props.industriesData.footer_contact_icons;
@@ -64,7 +65,7 @@ export default function Industries(props) {
     }, [popupOpen]);
 
     return loading ? null : (
-        <Layout fixedNav={true} activePage="industries" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
+        <Layout fixedNav={true} productSetting={productSetting} activePage="industries" menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
 
             <SeoTags
                 title={props.industriesData.page_items.single_industry.seo_title}
