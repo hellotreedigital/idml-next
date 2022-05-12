@@ -606,9 +606,8 @@ a {
     position: absolute;
     right: 0;
     z-index: -1;
-    bottom: 0;
-    height: 97%;
-    width: 26%;;
+    top: 17%;
+    height: 729px;
 }
 
 .overlay {
