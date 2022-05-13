@@ -49,6 +49,7 @@ export default function Industries(props) {
         function handleClickOutside(event) {
             if (popupRef.current && !popupRef.current.contains(event.target)) {
                 setPopupOpen(false)
+                setClientPopup(false)
             }
         }
 
@@ -58,7 +59,7 @@ export default function Industries(props) {
             // Unbind the event listener on clean up
             document.removeEventListener("mousedown", handleClickOutside);
         };
-    }, [popupRef, setPopupOpen]);
+    }, [popupRef, setPopupOpen, setClientPopup]);
 
     useEffect(() => {
         document.querySelector('body').style.overflow = popupOpen ? 'hidden' : null;
@@ -176,7 +177,7 @@ export default function Industries(props) {
                                         {
                                             clientsList ?
                                                 clientsList.map((clientList, index) =>
-                                                    <div className="col-lg-2 col-md-3 col-sm-4 col-4 my-4 clients-circles cursor-opposite" onClick={() => clientsPopupClick(clientList)} animate=" " key={index}>
+                                                    <div className="col-lg-2 col-md-3 col-sm-4 col-4 my-4 clients-circles cursor-opposite"  ref={popupRef} onClick={() => clientsPopupClick(clientList)} animate=" " key={index}>
                                                         <div className="circle-on-hover position-relative">
                                                             {/* <a href={clientList.url} target="_blank" rel="noreferrer"> */}
                                                             <div className="ratio ratio-1x1">
