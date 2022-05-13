@@ -2469,11 +2469,6 @@ div.part-3:before {
     font-family: 'SF Pro Display' !important;
 } 
 
-.location-select-booking_input-container {
-    font-size: 14px !important;
-    font-weight: 400 !important;
-    font-family: 'SF Pro Display' !important;
-}
 
 .location-select__control {
     background-color: #fff;
@@ -2491,7 +2486,6 @@ div.part-3:before {
 }
 
 .location-select__input-container {
-    font-weight: bold;
     font-size: .875rem;
     color: #14334A !important;
 }
@@ -2696,11 +2690,6 @@ div.part-3:before {
     border-radius: .625rem !important;
 }
 
-.location-select-booking__input-container {
-    font-weight: bold;
-    font-size: .875rem;
-    color: #14334A !important;
-}
 
 .location-select-booking__placeholder {
     color: #14334A !important;
