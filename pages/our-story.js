@@ -146,7 +146,7 @@ export default function OurStory(props) {
                                                         <h4>{story.last_text}</h4>
                                                     </div>
                                                 </div>
-                                                <div className="col-xxl-4 col-lg-5 col-md-5 col-sm-5 pt-sm-0" animate="">
+                                                <div className="col-xxl-4 col-lg-5 col-md-5 col-sm-5 pt-sm-0" animate="" style={{ transitionDelay: '0.2s' }}>
                                                     <div className="ratio story-image cursor-opposite">
                                                         <img src={story.image} alt={story.title} title={story.title} />
                                                     </div>
@@ -390,7 +390,7 @@ export default function OurStory(props) {
                                     <div className="container position-relative px-sm-2 px-4">
                                         <div className=" d-block d-md-none mt-md-5 mt-3"  >
                                             <div className="">
-                                                <div className="ceo-ratio-mobile pt-5" animate="">
+                                                <div className="ceo-ratio-mobile pt-5" animate="" style={{ transitionDelay: '0.001s' }}>
                                                     <img src={storySettings.ceo_image} alt={storySettings.ceo_title} title={storySettings.ceo_title} />
                                                 </div>
                                             </div>
@@ -433,7 +433,7 @@ export default function OurStory(props) {
                                         {
                                             teamList ?
                                                 teamList.map((team, index) =>
-                                                    <div className="col-lg-3 col-md-6 col-sm-6 mb-5" animate="" onClick={() => setPopupOpen(team)} ref={popupRef} key={index}>
+                                                    <div className="col-lg-3 col-md-6 col-sm-6 mb-5" animate="" style={{ transitionDelay: '0.1s' }} onClick={() => setPopupOpen(team)} ref={popupRef} key={index}>
                                                         <div className="team-section shadow position-relative cursor-opposite">
                                                             <div className="ratio team-ratio">
                                                                 <img src={team.image} alt={team.name} title={team.name} />
@@ -537,7 +537,7 @@ export default function OurStory(props) {
                                     <h2 className="mb-4 text-center">{storySettings.operations_title}</h2>
                                     <p className="mb-5 text-center">{storySettings.subtitle}</p>
 
-                                    <div className="row side-map align-items-start d-md-flex d-block " animate="">
+                                    <div className="row side-map align-items-center d-md-flex d-block " animate="">
                                         <div className="col-auto align-items-sm-start d-sm-flex   align-items-lg-center d-lg-block align-items-md-center d-md-block">
                                             {mapLegend ?
                                                 mapLegend.map((map, index) =>

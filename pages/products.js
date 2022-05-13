@@ -17,16 +17,19 @@ import "swiper/css/bundle";
 import "swiper/css/free-mode";
 import "swiper/css/thumbs";
 
+
 // import required modules
 
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import GlobalState from "../GlobalState";
+import * as Scroll from 'react-scroll';
 import SeoTags from "../components/SeoTags";
 
 export default function Products(props) {
 
     SwiperCore.use([Autoplay])
+    let scroll = Scroll.animateScroll;
 
     const { triggerScroll } = useContext(GlobalState);
     const productSetting = props.productsData.product_settings;
@@ -66,6 +69,12 @@ export default function Products(props) {
     //     localStorage.removeItem('underAgePopupProducts', 1);
     //     setAgeVerificationPopup(null)
     // }
+
+    
+  function scrollSection() {
+    const element = document.getElementById("scroll-section2")
+    scroll.scrollTo(element.offsetTop - 81)
+  }
 
     useEffect(() => {
         console.log(productSetting.title)
@@ -107,10 +116,10 @@ export default function Products(props) {
                             <div className="row justify-content-center">
                                 <div className="col-lg-9 ">
                                     <Swiper className="mySwiper1 py-5"
-                                        spaceBetween={0}
+                                        spaceBetween={2}
                                         autoplay={{ delay: 3000 }}
                                         loop={true}
-                                        slidesPerView={2}
+                                        slidesPerView={3}
                                         breakpoints={{
                                             1199.98: {
                                                 slidesPerView: 6,
@@ -127,6 +136,7 @@ export default function Products(props) {
 
                                             575.98: {
                                                 slidesPerView: 4,
+                                                spaceBetween: 20
                                             },
 
                                         }}
@@ -144,7 +154,7 @@ export default function Products(props) {
                                                         //     </div>
                                                         //     :
                                                             <div className="text-center px-3" onClick={() => logoClick(productCategory)}>
-                                                                <div className={"ratio ratio-1x1 category-circle" + (productCategory === productsItems ? " active" : " ")}>
+                                                                <div onClick={scrollSection} className={"ratio ratio-1x1 category-circle" + (productCategory === productsItems ? " active" : " ")}>
                                                                     <img className="brand-image" src={productCategory.logo} alt="brand" />
                                                                 </div>
                                                             </div>
@@ -161,7 +171,7 @@ export default function Products(props) {
                         {
                             productsItems && (
                                 productsItems.products?.length < 0 ? null :
-                                    <div className=" position-relative">
+                                    <div className=" position-relative" id="scroll-section2">
                                         <div className="">
                                             <div className="d-flex justify-content-end">
                                                 <div className="swiper-button-prev">

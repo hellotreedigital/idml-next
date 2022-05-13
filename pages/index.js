@@ -7,7 +7,6 @@ import Link from "next/link";
 import axios from "axios";
 import Typist from 'react-typist';
 
-
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";

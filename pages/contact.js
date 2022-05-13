@@ -137,13 +137,12 @@ export default function Contact(props) {
                                             contactOffices.map((contactOffice, index) =>
                                                 <div className="col-lg-6 col-md-12 justify-content-center mb-5 " key={index}>
                                                     <div className="row mb-4 mb-lg-0">
-                                                        <div className="col-lg-6 col-md-6 justify-content-center pb-md-0 pb-3 ">
-                                                            <h2 className="mb-4 d-md-none d-block">{contactOffice.title}</h2>
+                                                        <div className="col-lg-6 col-md-6 justify-content-center pb-md-0 pb-3 order-lg-1 order-md-1 order-2 pt-md-0 pt-3">
                                                             <iframe title="map" className="maps" src={contactOffice.map_url} loading="lazy" />
                                                         </div>
 
-                                                        <div className="col-lg-6 col-md-6 justify-content-center ">
-                                                            <h2 className="mb-4 d-md-block d-none">{contactOffice.title}</h2>
+                                                        <div className="col-lg-6 col-md-6 justify-content-center order-lg-2 order-md-2 order-1">
+                                                            <h2 className="mb-4">{contactOffice.title}</h2>
                                                             <div className="">
                                                                 <div className="d-flex align-items-center mb-3">
                                                                     <img className="me-3 social-contact-icon" src={contactSettings.office_phone_icon} alt="icon" />
