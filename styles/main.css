@@ -600,7 +600,7 @@ a {
 }
 
 .blue-ciel-button:hover {
-   
+
     color: #fff;
 }
 
@@ -787,6 +787,10 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
     opacity: 1;
     height: 45%;
     transform: translateZ(0);
+}
+
+.team-ratio.services-ratio {
+    position: relative !important;
 }
 
 .news-section:hover .news-on-hover {
@@ -1994,8 +1998,12 @@ div.part-3:before {
     border-radius: 50px;
 }
 
+.team-ratio.services-ratio {
+    padding-top: 80% !important;
+}
+
 .service-title {
-    position: absolute;
+    /* position: absolute; */
     bottom: 0;
     left: 0;
     width: 100%;

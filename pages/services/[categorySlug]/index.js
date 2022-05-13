@@ -111,7 +111,7 @@ export default function Services(props) {
                                         <Link href={"/services/" + singleCat?.slug + "/" + category.slug}>
                                             <a>
                                                 <div className="service-section position-relative">
-                                                    <div className="ratio team-ratio ">
+                                                    <div className="ratio team-ratio services-ratio">
                                                         <img className="industry-image" src={category.image} alt={category.title} title={category.title} />
                                                     </div>
                                                     <div className="service-title py-lg-3 py-2">
