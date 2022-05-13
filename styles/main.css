@@ -2068,6 +2068,7 @@ div.part-3:before {
 
 .service-section:hover .service-title {
     opacity: 0;
+    transition: all 0.5s 0.5s;
 }
 
 .single-service-ratio {
