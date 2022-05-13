@@ -96,16 +96,6 @@ export default function Home(props) {
   return loading ? null : (
     <Layout activePage="home" favIcon={favIcon} productSetting={productSetting} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
 
-      {/* <Head>
-        <link rel="apple-touch-icon" sizes="180x180" href={favIcon.apple_touch_icon} />
-        <link rel="icon" type="image/png" sizes="32x32" href={favIcon.icon_32} />
-        <link rel="icon" type="image/png" sizes="16x16" href={favIcon.icon_16} />
-        <link rel="manifest"  href={favIcon.manifest} />
-        <link rel="mask-icon" href={favIcon.mask_icon} color="#5bbad5" />
-        <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="theme-color" content="#ffffff"></meta>
-      </Head> */}
-
       <SeoTags
         title={props.homeData.page_items.seo.title}
         description={props.homeData.page_items.seo.description}
@@ -414,7 +404,9 @@ export default function Home(props) {
                         <Link href={"/industries/" + industry.slug}>
                           <a>
                             <div className="button blue-ciel-button shadow">
-                              {industry.title}
+                              <p className="position-relative m-0">
+                                {industry.title}
+                              </p>
                             </div>
                           </a>
                         </Link>
