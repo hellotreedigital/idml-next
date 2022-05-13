@@ -18,7 +18,7 @@ export default function News(props) {
     const singleNew = props.insightsNewsSingleData.page_items.single_news;
     const latestNews = props.insightsNewsSingleData.page_items.latest_news;
 
-    const productSetting = props.insightsNewsSingleData.product_setting;
+    const productSetting = props.insightsNewsSingleData.product_settings;
     const favIcon = props.insightsNewsSingleData.fav_icon_settings;
     const menuItems = props.insightsNewsSingleData.fixed_titles;
     const socialMedia = props.insightsNewsSingleData.social_media;
@@ -81,7 +81,7 @@ export default function News(props) {
                                     </div>
                                 </div>
 
-                                <div className="col">
+                                {/* <div className="col">
                                     <div className="d-flex text-center justify-content-center">
                                         <div className="row d-flex align-items-center justify-content-center">
                                             <div className="col-lg-12 col-md-12 col-sm-12 col-8 justify-content-center">
@@ -92,8 +92,23 @@ export default function News(props) {
                                     <div className="text-center mb-4 pt-3">
                                         <h4 className="date ">{singleNew.date_formatted}</h4>
                                     </div>
-                                </div>
+                                </div> */}
                                 <div className="col-1  d-sm-block d-none"></div>
+                            </div>
+
+                            <div className="row pt-3 pt-sm-0">
+                            <div className="col-12">
+                                    <div className="d-flex pt-4">
+                                        <div className="row d-flex align-items-center ">
+                                            <div className="col-12 ">
+                                                <h2 className="mb-0 service-title-page">{singleNew.title}</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className=" mb-4 pt-3">
+                                        <h4 className="date ">{singleNew.date_formatted}</h4>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
@@ -109,6 +124,9 @@ export default function News(props) {
                         </div>
                         <div className="col-lg-7 col-md-6">
                             <div className="mb-3" dangerouslySetInnerHTML={{ __html: singleNew.first_text }} />
+                        </div>
+                        <div className="col-lg-12">
+                            <div className="mb-3" dangerouslySetInnerHTML={{ __html: singleNew.second_text }} />
                         </div>
                         <div className="col-12">
                             <div className="py-4 mb-0" dangerouslySetInnerHTML={{ __html: singleNew.text_between }} />

@@ -14,7 +14,7 @@ export default function ClientsPopup(props) {
                     </svg>
                 </div>
                 <div className="row justify-content-center justify-content-lg-start align-items-center py-lg-5 py-3 gx-5 mx-lg-3 mx-2">
-                    <div className="col-auto p-4 pb-md-0">
+                    <div className="col-auto pb-md-0">
                         <div className="team-image clients cursor-opposite">
                             <img src={props.image} alt="team" />
                         </div>

@@ -23,7 +23,6 @@ import ClientsPopup from "../../components/ClientsPopup";
 export default function Industries(props) {
 
     SwiperCore.use([Autoplay])
-    const productSetting= props.industriesData.product_setting;
     const [popupOpen, setPopupOpen] = useState(null);
     const router = useRouter()
     const [ageVerificationPopup, setAgeVerificationPopup] = useState(null);
@@ -37,6 +36,7 @@ export default function Industries(props) {
     const footerContactIcons = props.industriesData.footer_contact_icons;
     const serviceTitles = props.industriesData.services_titles;
     const industriesTitles = props.industriesData.industries_titles;
+    const productSetting = props.industriesData.product_settings;
     const favIcon = props.industriesData.fav_icon_settings;
 
     const industriesSettings = props.industriesData.page_items.industries_setting;

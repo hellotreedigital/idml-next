@@ -49,19 +49,19 @@ export default function Contact(props) {
          * Alert if clicked on outside of element
          */
         function handleClickOutside(event) {
-          if (popupRef.current && !popupRef.current.contains(event.target)) {
-            setSuccessPopupOpen(false)
-            setErrorPopupOpen(false)
-          }
+            if (popupRef.current && !popupRef.current.contains(event.target)) {
+                setSuccessPopupOpen(false)
+                setErrorPopupOpen(false)
+            }
         }
-    
+
         // Bind the event listener
         document.addEventListener("mousedown", handleClickOutside);
         return () => {
-          // Unbind the event listener on clean up
-          document.removeEventListener("mousedown", handleClickOutside);
+            // Unbind the event listener on clean up
+            document.removeEventListener("mousedown", handleClickOutside);
         };
-      }, [popupRef, setErrorPopupOpen, setSuccessPopupOpen]);
+    }, [popupRef, setErrorPopupOpen, setSuccessPopupOpen]);
 
 
     useEffect(() => {
@@ -138,11 +138,12 @@ export default function Contact(props) {
                                                 <div className="col-lg-6 col-md-12 justify-content-center mb-5 " key={index}>
                                                     <div className="row mb-4 mb-lg-0">
                                                         <div className="col-lg-6 col-md-6 justify-content-center pb-md-0 pb-3 ">
+                                                            <h2 className="mb-4 d-md-none d-block">{contactOffice.title}</h2>
                                                             <iframe title="map" className="maps" src={contactOffice.map_url} loading="lazy" />
                                                         </div>
 
                                                         <div className="col-lg-6 col-md-6 justify-content-center ">
-                                                            <h2 className="mb-4">{contactOffice.title}</h2>
+                                                            <h2 className="mb-4 d-md-block d-none">{contactOffice.title}</h2>
                                                             <div className="">
                                                                 <div className="d-flex align-items-center mb-3">
                                                                     <img className="me-3 social-contact-icon" src={contactSettings.office_phone_icon} alt="icon" />
@@ -263,7 +264,7 @@ export default function Contact(props) {
                                     <div className="col-10">
                                         <h3 className="mb-4">{contactSettings.success_message}</h3>
                                         <div className="">
-                                            <button className="button blue-button color-hover"  ref={popupRef} onClick={() => setSuccessPopupOpen(false)}>{contactSettings.success_popup_button}</button>
+                                            <button className="button blue-button color-hover" ref={popupRef} onClick={() => setSuccessPopupOpen(false)}>{contactSettings.success_popup_button}</button>
                                         </div>
                                     </div>
                                 </div>

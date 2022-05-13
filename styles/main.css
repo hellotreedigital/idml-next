@@ -662,6 +662,7 @@ a {
 .brand-logo-section {
     border-radius: 1.875rem;
     overflow: auto;
+    background-color: #fff;
 }
 
 .view-all {
@@ -2460,6 +2461,18 @@ div.part-3:before {
 
 .css-6j8wv5-Input:after {
     white-space: normal !important;
+}
+
+.location-select__input-container{
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    font-family: 'SF Pro Display' !important;
+} 
+
+.location-select-booking_input-container {
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    font-family: 'SF Pro Display' !important;
 }
 
 .location-select__control {

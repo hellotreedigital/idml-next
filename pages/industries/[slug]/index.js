@@ -139,13 +139,23 @@ export default function Industries(props) {
                             <div className="row justify-content-center">
                                 {
                                     singleIndustry?.products_list?.map((product, index) =>
+
                                         <div className="col-lg-2 col-md-4 col-sm-6 pb-5" key={index}>
-                                            <div className="single-industry position-relative cursor-opposite" onClick={() => popupClick(product)}  ref={popupRef}>
-                                                <div className="ratio industy-square">
-                                                    <div className="square"></div>
+                                            { !product.description ?
+                                             <div className="single-industry position-relative cursor-opposite" >
+                                             <div className="ratio industy-square">
+                                                 <div className="square"></div>
+                                             </div>
+                                             <img className="industry-icon" src={product.full_path_icon} alt={product.title} title={product.title} />
+                                         </div>
+                                         :
+                                                <div className="single-industry position-relative cursor-opposite" onClick={() => popupClick(product)} ref={popupRef}>
+                                                    <div className="ratio industy-square">
+                                                        <div className="square"></div>
+                                                    </div>
+                                                    <img className="industry-icon" src={product.full_path_icon} alt={product.title} title={product.title} />
                                                 </div>
-                                                <img className="industry-icon" src={product.full_path_icon} alt={product.title} title={product.title} />
-                                            </div>
+                                            }
                                             <div className="text-center pt-3">
                                                 <h3 className="title-industry">{product.title}</h3>
                                             </div>
@@ -210,6 +220,7 @@ export default function Industries(props) {
                             )
                             }
                         </div>
+
 
                         <div className={" team-popup " + (popupOpen ? " " : " fade-out")}>
                             <div className=" team-member position-relative">

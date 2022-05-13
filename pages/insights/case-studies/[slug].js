@@ -16,7 +16,7 @@ export default function CaseStudies(props) {
     const footerContactIcons = props.insightsCaseStudiesSingleData.footer_contact_icons;
     const serviceTitles = props.insightsCaseStudiesSingleData.services_titles;
     const industriesTitles = props.insightsCaseStudiesSingleData.industries_titles;
-    const productSetting = props.insightsCaseStudiesSingleData.product_setting;
+    const productSetting = props.insightsCaseStudiesSingleData.product_settings;
 
     const [loading, setLoading] = useState(true);
     const { triggerScroll } = useContext(GlobalState);
