@@ -165,10 +165,10 @@ export default function News(props) {
                             <a target="_blank" rel="noreferrer" href={'https://www.facebook.com/sharer.php?u=' + window.location}>
                                 <img className=" social-icon mx-2 cursor-opposite" src={insightsSettings.share_facebook} alt={insightsSettings.share_facebook} title={insightsSettings.share_facebook} />
                             </a>
-                            <a target="_blank" rel="noreferrer" href={'https://www.linkedin.com/sharing/share-offsite/?url=' + window.location}>
+                            <a target="_blank" rel="noreferrer" href={'https://twitter.com/intent/tweet?url=' + window.location}>
                                 <img className=" social-icon mx-2 cursor-opposite" src={insightsSettings.share_twitter} alt={insightsSettings.share_twitter} title={insightsSettings.share_twitter} />
                             </a>
-                            <a target="_blank" rel="noreferrer" href={'https://twitter.com/intent/tweet?url=' + window.location}>
+                            <a target="_blank" rel="noreferrer" href={'https://www.linkedin.com/sharing/share-offsite/?url=' + window.location}>
                                 <img className=" social-icon mx-2 cursor-opposite" src={insightsSettings.share_linkedin} alt={insightsSettings.share_linkedin} title={insightsSettings.share_linkedin} />
                             </a>
                         </div>

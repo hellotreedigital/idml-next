@@ -108,7 +108,7 @@ export default function CaseStudies(props) {
 
                             <div className="col-lg-5 col-md-5 oder-lg-1 order-2 pb-4">
                                 <div className="ratio single-news cursor-opposite">
-                                    <img src={singleCase.image} alt={singleCase.section_title}  title={singleCase.section_title} />
+                                    <img src={singleCase.image} alt={singleCase.section_title} title={singleCase.section_title} />
                                 </div>
                             </div>
                         </div>
@@ -121,6 +121,30 @@ export default function CaseStudies(props) {
                     </div>
                 )
             }
+            <div className="container single-news-page px-sm-2 px-4">
+                <div className="row  align-items-center mb-4 pb-5"  >
+                    <div className="text-center latest">
+                        <h3>{insightsSettings.share_text}</h3>
+                    </div>
+                    <div className="col">
+                        <hr className="social-line" />
+                    </div>
+                    <div className="col-auto">
+                        <a target="_blank" rel="noreferrer" href={'https://www.facebook.com/sharer.php?u=' + window.location}>
+                            <img className=" social-icon mx-2 cursor-opposite" src={insightsSettings.share_facebook} alt={insightsSettings.share_facebook} title={insightsSettings.share_facebook} />
+                        </a>
+                        <a target="_blank" rel="noreferrer" href={'https://twitter.com/intent/tweet?url=' + window.location}>
+                            <img className=" social-icon mx-2 cursor-opposite" src={insightsSettings.share_twitter} alt={insightsSettings.share_twitter} title={insightsSettings.share_twitter} />
+                        </a>
+                        <a target="_blank" rel="noreferrer" href={'https://www.linkedin.com/sharing/share-offsite/?url=' + window.location}>
+                            <img className=" social-icon mx-2 cursor-opposite" src={insightsSettings.share_linkedin} alt={insightsSettings.share_linkedin} title={insightsSettings.share_linkedin} />
+                        </a>
+                    </div>
+                    <div className="col">
+                        <hr className="social-line" />
+                    </div>
+                </div>
+            </div>
 
         </Layout>
     )
