@@ -2087,6 +2087,10 @@ div.part-3:before {
 
 /* industries */
 
+.team-image.clients img {
+    object-fit: contain;
+}
+
 
 .industries-swiper .swiper-slide {
     padding-top: 60px;

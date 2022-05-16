@@ -42,24 +42,13 @@ export default function Industries(props) {
         triggerScroll();
     }, [loading]); // eslint-disable-line react-hooks/exhaustive-deps
 
-    useEffect(() => {
-        /**
-         * Alert if clicked on outside of element
-         */
-        function handleClickOutside(event) {
-            if (popupRef.current && !popupRef.current.contains(event.target)) {
-                setPopupOpen(false)
-                setClientPopup(false)
-            }
+    function handleClickOutside(event) {
+        if (!event.target.closest('.popup-team')) {
+          setClientPopup(false)
+          setPopupOpen(false)
         }
+      }
 
-        // Bind the event listener
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            // Unbind the event listener on clean up
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, [popupRef, setPopupOpen, setClientPopup]);
 
     useEffect(() => {
         document.querySelector('body').style.overflow = popupOpen ? 'hidden' : null;
@@ -208,7 +197,7 @@ export default function Industries(props) {
                             </div>
                         </div>
 
-                        <div className={"team-popup " + (clientPopup ? " " : " fade-out")}>
+                        <div className={"team-popup " + (clientPopup ? " " : " fade-out")} onClick={(e) => handleClickOutside(e)}>
                             {clientPopup && (
                                 <ClientsPopup
                                     setClientPopup={setClientPopup}
@@ -223,7 +212,7 @@ export default function Industries(props) {
                         </div>
 
 
-                        <div className={" team-popup " + (popupOpen ? " " : " fade-out")}>
+                        <div className={" team-popup " + (popupOpen ? " " : " fade-out")} onClick={(e) => handleClickOutside(e)}>
                             <div className=" team-member position-relative">
                                 <div className="popup-team popup-single-industry">
                                     <div className="close-svg cursor-opposite" onClick={() => setPopupOpen(false)}>

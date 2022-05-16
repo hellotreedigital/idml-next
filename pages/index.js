@@ -63,25 +63,14 @@ export default function Home(props) {
   function clientsPopupClick(clientList) {
     setClientPopup(clientList);
   }
-
-  useEffect(() => {
-    /**
-     * Alert if clicked on outside of element
-     */
-    function handleClickOutside(event) {
-      if (popupRef.current && !popupRef.current.contains(event.target)) {
-        setClientPopup(false)
-        setYoutubePopup(false)
-      }
+  
+  function handleClickOutside(event) {
+    if (!event.target.closest('.popup-team')) {
+      setClientPopup(false)
+      // setYoutubePopup(false)
     }
+  }
 
-    // Bind the event listener
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      // Unbind the event listener on clean up
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [popupRef, setClientPopup, setYoutubePopup]);
 
   useEffect(() => {
     document.querySelector('body').style.overflow = clientPopup ? 'hidden' : null;
@@ -601,7 +590,7 @@ export default function Home(props) {
           )
         }
 
-        <div className={"team-popup " + (clientPopup ? " " : " fade-out")}>
+        <div className={"team-popup " + (clientPopup ? " " : " fade-out")} onClick={(e) => handleClickOutside(e)}>
           {clientPopup && (
             <ClientsPopup
               setClientPopup={setClientPopup}

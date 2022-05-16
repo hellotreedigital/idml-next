@@ -49,7 +49,15 @@ export default function Industries(props) {
     const [currentFilter, setCurrentFilter] = useState();
     const [clientPopup, setClientPopup] = useState(null);
     const popupRef = useRef(null);
-    const testimonialRef = useRef(null);
+    // const testimonialRef = useRef(null);
+
+    function handleClickOutside(event) {
+        if (!event.target.closest('.popup-team')) {
+          setClientPopup(false)
+          setPopupOpen(false)
+          setAgeVerificationPopup(false)
+        }
+      }
 
     function ageVerificationClick(industry) {
         let underAgePopup = localStorage.getItem('underAgePopup');
@@ -129,24 +137,24 @@ export default function Industries(props) {
 
     
 
-    useEffect(() => {
-        /**
-         * Alert if clicked on outside of element
-         */
-        function handleClickOutside(event) {
-            if (testimonialRef.current && !testimonialRef.current.contains(event.target)) {
-                setPopupOpen(false)
-                setClientPopup(false)
-            }
-        }
+    // useEffect(() => {
+    //     /**
+    //      * Alert if clicked on outside of element
+    //      */
+    //     function handleClickOutside(event) {
+    //         if (testimonialRef.current && !testimonialRef.current.contains(event.target)) {
+    //             setPopupOpen(false)
+    //             setClientPopup(false)
+    //         }
+    //     }
 
-        // Bind the event listener
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            // Unbind the event listener on clean up
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, [testimonialRef, setPopupOpen, setClientPopup]);
+    //     // Bind the event listener
+    //     document.addEventListener("mousedown", handleClickOutside);
+    //     return () => {
+    //         // Unbind the event listener on clean up
+    //         document.removeEventListener("mousedown", handleClickOutside);
+    //     };
+    // }, [testimonialRef, setPopupOpen, setClientPopup]);
 
     useEffect(() => {
         document.querySelector('body').style.overflow = popupOpen ? 'hidden' : null;
@@ -196,7 +204,7 @@ export default function Industries(props) {
                                                                 {
                                                                     industry.with_popup === 1 ?
 
-                                                                        <div className="card-button " onClick={() => ageVerificationClick(industry)} >
+                                                                        <div className="card-button " onClick={() => ageVerificationClick(industry)} ref={popupRef} >
                                                                             <div className="button white-button hover-effect add-padding shadow ">{industriesSettings.read_more}</div>
                                                                         </div>
                                                                         :
@@ -226,7 +234,7 @@ export default function Industries(props) {
                                 {
                                     clientsTagsTitles ?
                                         clientsTagsTitles.map((clientTag, index) =>
-                                            <div className="col-auto" onClick={() => clientClick(clientTag.slug)} key={index}>
+                                            <div className="col-auto" onClick={() => clientClick(clientTag.slug)} ref={popupRef} key={index}>
                                                 <p className={"filter-pills cursor-opposite" + ((clientTag.slug === currentFilter) ? ' active' : '')}>{clientTag.title}</p>
                                             </div>
                                         )
@@ -241,7 +249,7 @@ export default function Industries(props) {
                                         {
                                             clientsListFilter?.length > 0 ?
                                                 clientsListFilter.map((clientList, index) => (
-                                                    <div className="col-lg-2 col-md-3 col-sm-4 col-4 my-4 clients-circles cursor-opposite" ref={testimonialRef} onClick={() => clientsPopupClick(clientList)} animate=" " style={{ transitionDelay: '0.1s' }} key={`${currentFilter}-${index}`}>
+                                                    <div className="col-lg-2 col-md-3 col-sm-4 col-4 my-4 clients-circles cursor-opposite" ref={popupRef} onClick={() => clientsPopupClick(clientList)} animate=" " style={{ transitionDelay: '0.1s' }} key={`${currentFilter}-${index}`}>
                                                         <div className="circle-on-hover position-relative">
                                                             <div className="ratio ratio-1x1">
                                                                 <img className="brand-image-industry" src={clientList.full_path_logo} alt={clientList.title} title={clientList.title} />
@@ -327,7 +335,7 @@ export default function Industries(props) {
                                                             </div>
                                                         </div>
                                                         {/* {testimonial.text.length >= 2 ? */}
-                                                        <div className="text-center" onClick={() => setPopupOpen(testimonial)} ref={testimonialRef}>
+                                                        <div className="text-center" onClick={() => setPopupOpen(testimonial)} ref={popupRef}>
                                                             <div className="button white-button hover-effect add-padding shadow">{industriesSettings.read_more}</div>
                                                         </div>
                                                         {/* : */}
@@ -342,7 +350,7 @@ export default function Industries(props) {
                             </div>
                         </div>
 
-                        <div className={" team-popup " + (ageVerificationPopup ? " " : " fade-out")}>
+                        <div className={" team-popup " + (ageVerificationPopup ? " " : " fade-out")} onClick={(e) => handleClickOutside(e)} >
                             {
                                 ageVerificationPopup ?
                                     <div className="modal-window team-member change-color position-relative">
@@ -365,7 +373,7 @@ export default function Industries(props) {
                 )
             }
 
-            <div className={"team-popup " + (popupOpen ? " " : " fade-out")}>
+            <div className={"team-popup " + (popupOpen ? " " : " fade-out")} onClick={(e) => handleClickOutside(e)}>
                 <div className="modal-window team-member position-relative">
                     <div className="popup-team">
                         <div className="close-svg cursor-opposite cursor-opposite" onClick={() => setPopupOpen(null)}>
@@ -405,7 +413,7 @@ export default function Industries(props) {
                 </div>
             </div>
 
-            <div className={"team-popup " + (clientPopup ? " " : " fade-out")}>
+            <div className={"team-popup " + (clientPopup ? " " : " fade-out")} onClick={(e) => handleClickOutside(e)}>
                 {clientPopup && (
                     <ClientsPopup
                         setClientPopup={setClientPopup}
