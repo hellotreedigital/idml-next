@@ -47,12 +47,13 @@ export default function OurStory(props) {
     const getNode = (node) => {
         // console.log(node)
         var nodeChildren = [];
-        if (node.children_companies) {
-            node.children_companies.forEach(node => {
-                nodeChildren.push(getNode(node));
-            });
-        } 
-        else { null }
+        // if (node.children_companies) {
+        node.children_companies?.forEach(node => {
+            nodeChildren.push(getNode(node));
+        });
+        // }
+        // else 
+        // { null }
 
         return {
             id: node.id,
@@ -358,6 +359,7 @@ export default function OurStory(props) {
 
                         {
                             !storySettings.group_title && !storySettings.group_text ? null :
+                            props.ourStoryData.page_items.companies_chart_list[0] ?
                                 <div className="table-responsive pb-5 mb-5">
                                     <div className="container-fluid company-history px-sm-2 px-4">
                                         <div className="row justify-content-center text-center py-5" >
@@ -372,20 +374,25 @@ export default function OurStory(props) {
                                                 <OrgChart
                                                     tree={tree}
                                                     NodeComponent={({ node }) => (
-                                                        <div className={`custom-chart-node ${node.companies_chart_list_id ? '' : 'first-chart-node'}`} onClick={() => nodeClick(node)}> {node.title}</div >
+                                                        node ?
+                                                            <div className={`custom-chart-node ${node.companies_chart_list_id ? ' d-none' : 'first-chart-node'}`} onClick={() => nodeClick(node)}> {node.title}</div >
+                                                            :
+                                                            null
+
                                                     )}
                                                 />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                : null
                         }
 
                         <div className="py-lg-5 pb-5">
                             <div className="py-lg-5">
                                 <div className="blue-bg-ceo position-relative">
                                     <div className="ceo-ratio d-md-block d-none cursor-opposite" animate="">
-                                        <img src={storySettings.ceo_image}  alt={storySettings.ceo_title} title={storySettings.ceo_title} />
+                                        <img src={storySettings.ceo_image} alt={storySettings.ceo_title} title={storySettings.ceo_title} />
                                     </div>
                                     <div className="container position-relative px-sm-2 px-4">
                                         <div className=" d-block d-md-none mt-md-5 mt-3"  >
@@ -541,16 +548,16 @@ export default function OurStory(props) {
                                         <div className="col-auto align-items-sm-start d-sm-flex   align-items-lg-center d-lg-block align-items-md-center d-md-block">
                                             {mapLegend ?
                                                 mapLegend.map((map, index) =>
-                                                map.id === 5 ?   null :
-                                                    <div className="row align-items-center pb-4" key={index}>
-                                                        
-                                                        <div className="col-md-4 col-auto justify-content-md-center justify-content-start d-flex pb-sm-3">
-                                                            <img className="side-icon" src={map.full_path_icon} alt={map.title} title={map.title} />
+                                                    map.id === 5 ? null :
+                                                        <div className="row align-items-center pb-4" key={index}>
+
+                                                            <div className="col-md-4 col-auto justify-content-md-center justify-content-start d-flex pb-sm-3">
+                                                                <img className="side-icon" src={map.full_path_icon} alt={map.title} title={map.title} />
+                                                            </div>
+                                                            <div className="col-md-8 col-auto">
+                                                                <p className="mb-0">{map.title}</p>
+                                                            </div>
                                                         </div>
-                                                        <div className="col-md-8 col-auto">
-                                                            <p className="mb-0">{map.title}</p>
-                                                        </div>
-                                                    </div>
                                                 )
                                                 :
                                                 null
@@ -559,7 +566,7 @@ export default function OurStory(props) {
                                         <div className="col pb-4">
                                             <div className="position-relative">
                                                 <div className="ratio map-ratio">
-                                                    <img src={storySettings.map_image} alt="map"  />
+                                                    <img src={storySettings.map_image} alt="map" />
                                                 </div>
                                                 {
                                                     mapPinnedLocations ?
