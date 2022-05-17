@@ -1597,7 +1597,7 @@ div.part-3:before {
 }
 
 .map-ratio img {
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .team-popup {
