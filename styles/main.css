@@ -584,7 +584,7 @@ a {
     padding: 2.5rem;
     border-radius: 3.125rem;
     font-size: 1.25rem;
-
+    transform: translateZ(0);
 }
 
 .blue-ciel-button::before {
