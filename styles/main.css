@@ -1686,6 +1686,7 @@ div.part-3:before {
 /* story */
 
 /* products */
+
 .products-swiper .swiper-wrapper {
     align-items: center;
 }
@@ -1693,12 +1694,6 @@ div.part-3:before {
 .mySwiper4 {
     justify-content: center;
 }
-
-
-/* .mySwiper4 .swiper-wrapper {
-    margin-left: 5px !important;
-    margin-right: 5px;
-} */
 
 .play-btn {
     position: absolute;
@@ -1785,9 +1780,19 @@ div.part-3:before {
 }
 
 .product-bg {
-    background-color: #ccd7e02e;
+    padding-top: 60% !important;
+    /* background-color: #ccd7e02e; */
     border-top-right-radius: 60px;
     border-bottom-right-radius: 60px;
+    overflow: hidden;
+}
+
+.product-bg.border-radius-product {
+    border-radius: 60px;
+}
+
+.product-bg img {
+    object-fit: cover;
 }
 
 .color-1 {
@@ -2688,14 +2693,14 @@ div.part-3:before {
     border-radius: 7px;
     border: 1px solid #CCD7E0;
     color: #14334A;
-    font-size: 14px;
+    font-size: 1.25rem;
     padding: 0.85rem;
     outline: none;
 }
 
 .booking-form::placeholder {
     color: #14334A;
-    font-size: 14px;
+    font-size: 1.25rem;
     font-style: italic;
 }
 
@@ -2719,7 +2724,26 @@ div.part-3:before {
     font-size: 14px;
     outline: none;
     border-color: #CCD7E0 !important;
-    padding: .1875rem;
+    line-height: 1.742 !important;
+    padding: 0.625rem;
+
+}
+
+.location-select-booking__input-container {
+    margin: 0px !important;
+    padding-bottom: 0px !important;
+    padding-top: 0px !important;
+    font-size: 14px;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+.location-select-booking__value-container {
+    padding: 0 !important;
+}
+
+.location-select-booking__indicator {
+    padding: 0 !important;
 }
 
 .location-select-booking__menu {
@@ -2755,7 +2779,7 @@ div.part-3:before {
 
 .booking-phone input {
     background-color: #CCD7E0 !important;
-    border-radius: 7px !important;
+    border-radius: 10px !important;
     border: 1px solid #CCD7E0 !important;
     color: #14334A !important;
     font-size: 14px;
@@ -2766,9 +2790,13 @@ div.part-3:before {
     border-bottom-left-radius: 0 !important;
 }
 
+.booking-phone input::placeholder {
+    font-size: 14px !important;
+}
+
 .booking-phone select {
     background-color: #CCD7E0 !important;
-    border-radius: 7px !important;
+    border-radius: 10px !important;
     border: 1px solid #CCD7E0 !important;
     color: #14334A !important;
     font-size: 14px;
@@ -2779,7 +2807,7 @@ div.part-3:before {
 
 .booking-phone .PhoneInputCountry {
     background-color: #CCD7E0 !important;
-    border-radius: 7px !important;
+    border-radius: 10px !important;
     border-top-right-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
     border: 1px solid #CCD7E0 !important;

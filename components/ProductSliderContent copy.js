@@ -19,10 +19,71 @@ export default function ProductSliderContent(props) {
         <>
             <div className={(props.product.product_images.length === 0 ? "row justify-content-center" : "row align-items-center")} >
                 {
-                    props.product.full_path_image === 0 ? null :
+                    props.product.product_images.length === 0 ? null :
                         <div className="col-lg-6 col-md-5">
-                            <div className={"ratio product-bg cursor-opposite" + (!props.product.website_url && !props.product.product_button  ? " border-radius-product" : " " )}>
-                               <img src={props.product.full_path_image} alt="product" />
+                            <div className="product-bg position-relative py-5 cursor-opposite">
+                                <div className="row">
+                                    <div className="col-lg-6"></div>
+                                    <div className="col-lg-5">
+                                        <div className="pagination-thumbs">
+                                            <Swiper
+                                                spaceBetween={10}
+                                                navigation={false}
+                                                modules={[Navigation]}
+                                                className="mySwiper2 pe-lg-2"
+                                                onSwiper={setMainSwiper}
+                                                onSlideChange={(r) => thumbsSwiper.slideTo(r.activeIndex)}
+                                            >
+                                                {
+                                                    props.product.product_images?.map((imageProduct, x) =>
+                                                        <SwiperSlide key={`product-images-${x}`}>
+                                                            <div className="ratio product-ratio">
+                                                                <img className="pb-4" src={imageProduct.image} alt="product" />
+                                                            </div>
+                                                        </SwiperSlide>
+                                                    )
+                                                }
+                                            </Swiper>
+                                            <Swiper
+                                                spaceBetween={10}
+                                                slidesPerView={5}
+                                                centeredSlides={true}
+                                                slideToClickedSlide={true}
+                                                watchSlidesProgress={true}
+                                                modules={[Navigation]}
+                                                onSlideChange={(r) => mainSwiper.slideTo(r.activeIndex)}
+                                                onSwiper={setThumbsSwiper}
+                                                breakpoints={{
+                                                    1199.98: {
+                                                        slidesPerView: 7,
+                                                        spaceBetween: 10,
+                                                    },
+
+
+                                                    // when window width is >= 767.98px
+                                                    767.98: {
+                                                        slidesPerView: 6,
+                                                    },
+
+                                                    575.98: {
+                                                        slidesPerView: 10,
+                                                    },
+
+                                                }}
+                                            >
+                                                {
+                                                    props.product.product_images?.map((imageProduct, x) =>
+                                                        <SwiperSlide key={`product-images-${x}`}>
+                                                            <div className="d-flex justify-content-center w-auto h-auto mb-2">
+                                                                <div style={{ color: imageProduct.color, backgroundColor: imageProduct.color, width: 30, height: 30, borderRadius: 6 }}></div>
+                                                            </div>
+                                                        </SwiperSlide>
+                                                    )
+                                                }
+                                            </Swiper>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                 }
