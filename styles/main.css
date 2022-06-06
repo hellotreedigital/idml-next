@@ -1732,47 +1732,57 @@ div.part-3:before {
 
 .brand-image {
     /* box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9); */
-    height: 100%;
-    width: 100%;
-    border: 1px solid #fff;
-    border-radius: 100px;
+    border: 1px solid transparent;
+    /* border-radius: 100px; */
     transition: all 0.5s;
     position: relative;
     z-index: -200;
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+    /* box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15); */
     object-fit: scale-down;
+    position: absolute !important;
+    width: 80px !important;
+    height: 80px !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
 }
+
 
 .category-circle {
     transition: all 0.5s;
-}
-
-.category-circle:hover,
-.category-circle.active {
-    -webkit-box-shadow: inset 0px 0px 10px 9px rgba(0, 0, 0, 5%);
-    -moz-box-shadow: inset 0px 0px 10px 9px rgba(0, 0, 0, 5%);
-    box-shadow: inset 0px 0px 10px 9px rgba(0, 0, 0, 5%);
     border-radius: 100px;
 }
+
+.category-circle:hover {
+    background: #14334a;
+
+}
+
+.brand-image {
+    z-index: 111;
+}
+
+.brand-image.active,
+.brand-image:hover {
+    filter: invert(99%) sepia(99%) saturate(2%) hue-rotate(66deg) brightness(110%) contrast(100%);
+    overflow: hidden;
+    border: 1px solid transparent;
+}
+
 
 .brand-image-swiper img {
     height: 150px;
     width: 150px;
 }
 
-.brand-image:hover,
-.brand-image.active {
-    box-shadow: inset 0 .5rem 1rem rgba(0, 0, 0, .15);
-    transform: scale(1.05);
-}
 
 .product-ratio {
     padding-top: 115%;
 }
 
 .logo-product img {
-    width: 110px;
-    height: 110px;
+    width: 130px;
+    height: 130px;
 }
 
 .product-ratio img {
@@ -1857,30 +1867,53 @@ div.part-3:before {
     color: #14334A;
 }
 
-.swiper-button-next img,
-.swiper-button-prev img {
+.swiper-button-next.swiper-products img,
+.swiper-button-prev.swiper-products img {
     width: 80px;
     height: 80px;
 }
 
-.swiper-button-next:after,
-.swiper-container-rtl .swiper-button-prev:after {
+.swiper-button-next.swiper-products:after,
+.swiper-container-rtl .swiper-button-prev.swiper-products:after {
     content: '' !important;
 }
 
-.swiper-button-prev:after,
-.swiper-container-rtl .swiper-button-next:after {
+.swiper-button-prev.swiper-products:after,
+.swiper-container-rtl .swiper-button-next.swiper-products:after {
     content: '' !important;
 }
 
-.swiper-button-prev,
-.swiper-rtl .swiper-button-next {
+.swiper-button-prev.swiper-products,
+.swiper-rtl .swiper-button-next.swiper-products {
     left: 170px !important;
 }
 
-.swiper-button-next,
-.swiper-rtl .swiper-button-prev {
+.swiper-button-next.swiper-products,
+.swiper-rtl .swiper-button-prev.swiper-products {
     right: 170px !important;
+}
+
+.swiper-button-prev.swiper-cat.swiper-button-lock.swiper-button-disabled {
+    pointer-events: all !important;
+    opacity: 1 !important;
+    left: -30px;
+}
+
+.swiper-button-prev.swiper-cat:after,
+.swiper-rtl .swiper-button-next.swiper-cat:after,
+.swiper-button-next.swiper-cat:after,
+.swiper-rtl .swiper-button-next.swiper-cat:after {
+    display: none !important;
+}
+
+.swiper-cat.swiper-button-lock {
+    display: block !important;
+}
+
+.swiper-button-next.swiper-button-disabled {
+    pointer-events: all !important;
+    opacity: 1 !important;
+    right: -30px;
 }
 
 /* products */
@@ -2505,30 +2538,35 @@ div.part-3:before {
 }
 
 .location-select__input-container {
-    font-size: 14px !important;
+    font-size: 1.25rem !important;
     font-weight: 400 !important;
     font-family: 'SF Pro Display' !important;
+    margin: 0px !important;
+    padding-bottom: 0px !important;
+    padding-top: 0px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
 }
 
+.location-select__value-container {
+    padding: 0 !important;
+}
 
 .location-select__control {
+    padding-left: 8px !important;
     background-color: #fff;
-    border-radius: 7px;
+    border-radius: 7px !important;
     border: 1px solid #CCD7E0;
     color: #14334A !important;
-    font-size: 14px;
+    font-size: 1.25rem;
     outline: none;
     border-color: #fff !important;
-    padding: .1875rem;
+    padding: 0.403rem 0.7rem !important;
+    box-shadow: none !important;
 }
 
 .location-select__menu {
     border-radius: .625rem !important;
-}
-
-.location-select__input-container {
-    font-size: .875rem;
-    color: #14334A !important;
 }
 
 .location-select__placeholder {
@@ -2550,16 +2588,11 @@ div.part-3:before {
     border-radius: .625rem;
 }
 
-.location-select__option--is-focused {
-    /* background-color: transparent !important; */
-}
-
 .location-select__option:hover {
     color: #fff !important;
     background-color: #14334A !important;
     border-radius: .625rem;
 }
-
 
 .location-input {
     z-index: 2000;
@@ -2569,17 +2602,21 @@ div.part-3:before {
 .PhoneInputInput {
     border: 1px solid #CCD7E0;
     outline: none;
-    padding: 0.72rem;
+    padding: 0.625rem !important;
     color: #14334A !important;
-    font-size: 14px;
+    font-size: 1.25rem !important;
     border-radius: 7px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     background-color: #fff;
 }
 
+.contact-phone .PhoneInputInput {
+    padding: 0.85rem !important;
+}
+
 .PhoneInputInput::placeholder {
-    font-size: 14px;
+    font-size: 1.25rem !important;
     font-style: italic;
     color: #14334A !important;
 }
@@ -2593,7 +2630,7 @@ div.part-3:before {
     outline: none;
     padding: 0.72rem;
     color: #14334A !important;
-    font-size: 14px;
+    font-size: 1.25rem !important;
     font-style: italic;
     margin-right: 0 !important;
     font-style: italic;
@@ -2630,7 +2667,6 @@ div.part-3:before {
     height: 100%;
     background: #143148cc;
     z-index: 4000;
-    /* overflow-Y: auto; */
     overflow-x: hidden;
     opacity: 1;
     transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s;
@@ -2678,7 +2714,6 @@ div.part-3:before {
 }
 
 /* booking */
-
 .booking-bg {
     background-color: #537289;
     border-radius: 3.125rem;
@@ -2718,22 +2753,21 @@ div.part-3:before {
 
 .location-select-booking__control {
     background-color: #CCD7E0 !important;
-    border-radius: 7px !important;
+    border-radius: 10px !important;
     border: 1px solid #CCD7E0 !important;
     color: #14334A !important;
-    font-size: 14px;
+    font-size: 1.25rem;
     outline: none;
     border-color: #CCD7E0 !important;
-    line-height: 1.742 !important;
     padding: 0.625rem;
-
+    box-shadow: none !important;
 }
 
 .location-select-booking__input-container {
     margin: 0px !important;
     padding-bottom: 0px !important;
     padding-top: 0px !important;
-    font-size: 14px;
+    font-size: 1.25rem;
     margin-left: 0px !important;
     margin-right: 0px !important;
 }
@@ -2750,10 +2784,10 @@ div.part-3:before {
     border-radius: .625rem !important;
 }
 
-
 .location-select-booking__placeholder {
     color: #14334A !important;
     font-style: italic !important;
+    font-size: 1.25rem !important;
 }
 
 .location-select-booking__control:hover {
@@ -2770,7 +2804,6 @@ div.part-3:before {
     border-radius: .625rem;
 }
 
-
 .location-select-booking__option:hover {
     color: #fff !important;
     background-color: #14334A !important;
@@ -2782,16 +2815,16 @@ div.part-3:before {
     border-radius: 10px !important;
     border: 1px solid #CCD7E0 !important;
     color: #14334A !important;
-    font-size: 14px;
+    font-size: 1.25rem !important;
     outline: none;
     border-color: #CCD7E0 !important;
-    padding: 0.755rem !important;
     border-top-left-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
+    padding: 0.625rem !important;
 }
 
 .booking-phone input::placeholder {
-    font-size: 14px !important;
+    font-size: 1.25rem !important;
 }
 
 .booking-phone select {
@@ -2799,7 +2832,7 @@ div.part-3:before {
     border-radius: 10px !important;
     border: 1px solid #CCD7E0 !important;
     color: #14334A !important;
-    font-size: 14px;
+    font-size: 1.25rem !important;
     outline: none;
     border-color: #CCD7E0 !important;
     padding: .1875rem;
@@ -2812,11 +2845,10 @@ div.part-3:before {
     border-bottom-right-radius: 0 !important;
     border: 1px solid #CCD7E0 !important;
     color: #14334A !important;
-    font-size: 14px;
+    font-size: 1.25rem !important;
     font-style: italic;
     outline: none;
     border-color: #CCD7E0 !important;
-    padding: .1875rem;
 }
 
 
@@ -3169,11 +3201,11 @@ div.four:before {
 /* X-Large devices (large desktops, less than 1400px) */
 
 @media (max-width: 1399.98px) {
-    .swiper-button-next {
+    .swiper-button-next.swiper-products {
         right: 90px !important;
     }
 
-    .swiper-button-prev {
+    .swiper-button-prev.swiper-products {
         left: 90px !important;
     }
 
@@ -3444,18 +3476,18 @@ div.four:before {
         font-size: .8125rem;
     }
 
-    .swiper-button-prev,
-    .swiper-rtl .swiper-button-next {
+    .swiper-button-prev.swiper-products,
+    .swiper-rtl .swiper-button-next.swiper-products {
         left: 90px !important;
     }
 
-    .swiper-button-next,
-    .swiper-rtl .swiper-button-prev {
+    .swiper-button-next.swiper-products,
+    .swiper-rtl .swiper-button-prev.swiper-products {
         right: 90px !important;
     }
 
-    .swiper-button-next img,
-    .swiper-button-prev img {
+    .swiper-button-next.swiper-products img,
+    .swiper-button-prev.swiper-products img {
         width: 50px;
         height: 50px;
     }
@@ -3517,16 +3549,16 @@ div.four:before {
         padding: 0;
     }
 
-    .swiper-button-prev {
+    .swiper-button-prev.swiper-products {
         left: 3px !important;
     }
 
-    .swiper-button-next {
+    .swiper-button-next.swiper-products {
         right: 3px !important;
     }
 
-    .swiper-button-next img,
-    .swiper-button-prev img {
+    .swiper-button-next.swiper-products img,
+    .swiper-button-prev.swiper-products img {
         width: 30px;
         height: 30px;
     }
@@ -3758,6 +3790,10 @@ div.four:before {
 /* Small devices (landscape phones, less than 768px) */
 
 @media (max-width: 767.98px) {
+    .brand-image {
+        width: 60px !important;
+        height: 60px !important;
+    }
 
     .blue-ciel-button::before {
         background-color: #CCD7E0;
@@ -3992,13 +4028,13 @@ div.four:before {
         font-size: 1rem;
     }
 
-    .swiper-button-prev,
-    .swiper-rtl .swiper-button-next {
+    .swiper-button-prev.swiper-products,
+    .swiper-rtl .swiper-button-next.swiper-products {
         left: 70px !important;
     }
 
-    .swiper-button-next,
-    .swiper-rtl .swiper-button-prev {
+    .swiper-button-next.swiper-products,
+    .swiper-rtl .swiper-button-prev.swiper-products {
         right: 70px !important;
     }
 
@@ -4236,6 +4272,10 @@ div.four:before {
 /* X-Small devices (portrait phones, less than 576px) */
 
 @media (max-width: 575.98px) {
+    .brand-image {
+        width: 60px !important;
+        height: 60px !important;
+    }
 
     .background-sections img {
         display: none;
@@ -4461,8 +4501,6 @@ div.four:before {
         border: 4px solid #fff;
     }
 
-
-
     .start {
         justify-content: start;
     }
@@ -4479,23 +4517,21 @@ div.four:before {
         padding-top: 60% !important;
     }
 
-    .swiper-button-prev,
-    .swiper-rtl .swiper-button-next {
+    .swiper-button-prev.swiper-products,
+    .swiper-rtl .swiper-button-next.swiper-products {
         left: 8px !important;
     }
 
-    .swiper-button-next,
-    .swiper-rtl .swiper-button-prev {
+    .swiper-button-next.swiper-products,
+    .swiper-rtl .swiper-button-prev.swiper-products {
         right: 8px !important;
     }
 
-    .swiper-button-next img,
-    .swiper-button-prev img {
+    .swiper-button-next.swiper-products img,
+    .swiper-button-prev.swiper-products img {
         width: 40px !important;
         height: 40px !important;
     }
-
-
 
     .tips-home {
         font-size: 1.1rem;
@@ -4578,6 +4614,24 @@ div.four:before {
 
     .modal-window.success-booking {
         width: 86% !important;
+    }
+
+    .swiper-button-prev.swiper-cat.swiper-button-lock.swiper-button-disabled {
+        left: -4px;
+    }
+
+    .swiper-button-next.swiper-cat.swiper-button-lock.swiper-button-disabled {
+        right: -14px;
+    }
+
+    .swiper-button-prev.swiper-cat.swiper-button-lock.swiper-button-disabled svg{
+        width: 15px;
+        height: 15px;
+    }
+
+    .swiper-button-next.swiper-cat.swiper-button-lock.swiper-button-disabled svg{
+        width: 15px;
+        height: 15px;
     }
 }
 

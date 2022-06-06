@@ -187,7 +187,7 @@ export default function Contact(props) {
                                                         </div>
                                                     </div>
                                                     <div className="col-lg-6"  >
-                                                        <div className="mb-4 text-start">
+                                                        <div className="mb-4 text-start contact-phone">
                                                             <PhoneInput
                                                                 placeholder={contactSettings.phone_placeholder}
                                                                 value={phoneNumber}

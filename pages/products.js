@@ -2,24 +2,12 @@ import Banner from "../components/Banner";
 import Layout from "../components/layout";
 import SideButton from "../components/SideButton";
 import ProductSliderContent from "../components/ProductSliderContent";
-import Link from "next/link";
-import VerificationPopup from "../components/VerificationPopup";
-
 import React, { useRef } from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
-import SwiperCore, { Autoplay, FreeMode, Navigation, Thumbs, Pagination } from 'swiper';
+import SwiperCore, { Autoplay, Navigation } from 'swiper';
 import "swiper/css/bundle";
-import "swiper/css/free-mode";
-import "swiper/css/thumbs";
-
-
-// import required modules
-
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import GlobalState from "../GlobalState";
@@ -27,8 +15,6 @@ import * as Scroll from 'react-scroll';
 import SeoTags from "../components/SeoTags";
 
 export default function Products(props) {
-
-    SwiperCore.use([Autoplay])
     let scroll = Scroll.animateScroll;
 
     const { triggerScroll } = useContext(GlobalState);
@@ -70,11 +56,11 @@ export default function Products(props) {
     //     setAgeVerificationPopup(null)
     // }
 
-    
-  function scrollSection() {
-    const element = document.getElementById("scroll-section2")
-    scroll.scrollTo(element.offsetTop - 81)
-  }
+
+    function scrollSection() {
+        const element = document.getElementById("scroll-section2")
+        scroll.scrollTo(element.offsetTop - 81)
+    }
 
     useEffect(() => {
         console.log(productSetting.title)
@@ -115,55 +101,65 @@ export default function Products(props) {
                         <div className="container py-5" >
                             <div className="row justify-content-center">
                                 <div className="col-lg-9 ">
-                                    <Swiper className="mySwiper1 py-5"
-                                        spaceBetween={2}
-                                        autoplay={{ delay: 3000 }}
-                                        loop={true}
-                                        slidesPerView={3}
-                                        breakpoints={{
-                                            1199.98: {
-                                                slidesPerView: 6,
-                                            },
+                                    <div className="position-relative px-sm-0 px-3">
+                                        <Swiper className="swiper-cat py-5"
+                                            spaceBetween={2}
+                                            loop={true}
+                                            modules={[Navigation]}
+                                            navigation={{
+                                                nextEl: '.swiper-button-next',
+                                                prevEl: '.swiper-button-prev'
+                                            }}
+                                            slidesPerView={2.5}
+                                            centeredSlides={true}
+                                            breakpoints={{
+                                                1199.98: {
+                                                    slidesPerView: 6,
+                                                    centeredSlides: false
+                                                },
 
-                                            991.98: {
-                                                slidesPerView: 4,
-                                            },
+                                                991.98: {
+                                                    slidesPerView: 4,
+                                                    centeredSlides: false
+                                                },
 
-                                            // when window width is >= 767.98px
-                                            767.98: {
-                                                slidesPerView: 4,
-                                            },
+                                                767.98: {
+                                                    slidesPerView: 4,
+                                                },
 
-                                            575.98: {
-                                                slidesPerView: 4,
-                                                spaceBetween: 20
-                                            },
-
-                                        }}
-                                    >
-                                        {
-                                            productsCategories?.map((productCategory, index) =>
-
-                                                <SwiperSlide key={index} >
-                                                    {
-                                                        // productCategory.with_popup === 1 ?
-                                                        //     <div className="text-center px-3" onClick={() => ageVerificationClick(productCategory)}>
-                                                        //         <div className={"ratio ratio-1x1 category-circle" + (productCategory === productsItems ? " active" : " ")}>
-                                                        //             <img className="brand-image" src={productCategory.logo} alt="brand" />
-                                                        //         </div>
-                                                        //     </div>
-                                                        //     :
+                                                575.98: {
+                                                    slidesPerView: 4,
+                                                    spaceBetween: 20,
+                                                    centeredSlides: true
+                                                },
+                                            }}
+                                        >
+                                            {
+                                                productsCategories?.map((productCategory, index) =>
+                                                    <SwiperSlide key={index} >
+                                                        {
                                                             <div className="text-center px-3" onClick={() => logoClick(productCategory)}>
-                                                                <div onClick={scrollSection} className={"ratio ratio-1x1 category-circle" + (productCategory === productsItems ? " active" : " ")}>
+                                                                <div onClick={scrollSection} className={"ratio ratio-1x1 category-circle shadow" + (productCategory === productsItems ? " active" : " ")}>
                                                                     <img className="brand-image" src={productCategory.logo} alt="brand" />
                                                                 </div>
                                                             </div>
-                                                    }
-                                                </SwiperSlide>
+                                                        }
+                                                    </SwiperSlide>
+                                                )
+                                            }
+                                        </Swiper>
 
-                                            )
-                                        }
-                                    </Swiper>
+                                        <div className="swiper-button-prev swiper-cat">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="19.295" height="19.305" viewBox="0 0 19.295 19.305">
+                                                <path id="Path_4689" data-name="Path 4689" d="M3041.406,743h-10.812l-.02,10.461" transform="matrix(0.695, -0.719, 0.719, 0.695, -2637.56, 1673.794)" fill="none" stroke="#14334a" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+                                            </svg>
+                                        </div>
+                                        <div className="swiper-button-next swiper-cat">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="19.295" height="19.305" viewBox="0 0 19.295 19.305">
+                                                <path id="Path_4689" data-name="Path 4689" d="M10.832,10.461H.02L0,0" transform="matrix(-0.695, -0.719, 0.719, -0.695, 9.648, 17.18)" fill="none" stroke="#14334a" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+                                            </svg>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -174,10 +170,10 @@ export default function Products(props) {
                                     <div className=" position-relative" id="scroll-section2">
                                         <div className="">
                                             <div className="d-flex justify-content-end">
-                                                <div className="swiper-button-prev">
+                                                <div className="swiper-button-prev swiper-products">
                                                     <img src="../img/images/prev-arrow.svg" alt="prev" />
                                                 </div>
-                                                <div className="swiper-button-next ">
+                                                <div className="swiper-button-next swiper-products">
                                                     <img src="../img/images/next-arrow.svg" alt="next" />
                                                 </div>
                                             </div>
@@ -233,7 +229,7 @@ export default function Products(props) {
                     null
             }
 
-           
+
         </Layout >
     )
 }
