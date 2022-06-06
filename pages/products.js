@@ -151,12 +151,12 @@ export default function Products(props) {
 
                                         <div className="swiper-button-prev swiper-cat">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="19.295" height="19.305" viewBox="0 0 19.295 19.305">
-                                                <path id="Path_4689" data-name="Path 4689" d="M3041.406,743h-10.812l-.02,10.461" transform="matrix(0.695, -0.719, 0.719, 0.695, -2637.56, 1673.794)" fill="none" stroke="#14334a" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+                                                <path id="Path_4689" data-name="Path 4689" d="M3041.406,743h-10.812l-.02,10.461" transform="matrix(0.695, -0.719, 0.719, 0.695, -2637.56, 1673.794)" fill="none" stroke="#14334a" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
                                             </svg>
                                         </div>
                                         <div className="swiper-button-next swiper-cat">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="19.295" height="19.305" viewBox="0 0 19.295 19.305">
-                                                <path id="Path_4689" data-name="Path 4689" d="M10.832,10.461H.02L0,0" transform="matrix(-0.695, -0.719, 0.719, -0.695, 9.648, 17.18)" fill="none" stroke="#14334a" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+                                                <path id="Path_4689" data-name="Path 4689" d="M10.832,10.461H.02L0,0" transform="matrix(-0.695, -0.719, 0.719, -0.695, 9.648, 17.18)" fill="none" stroke="#14334a" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
                                             </svg>
                                         </div>
                                     </div>
