@@ -1745,6 +1745,7 @@ div.part-3:before {
     top: 50% !important;
     left: 50% !important;
     transform: translate(-50%, -50%) !important;
+    z-index: 1;
 }
 
 
@@ -1758,12 +1759,13 @@ div.part-3:before {
 
 }
 
-.brand-image {
-    z-index: 111;
+.category-circle.active {
+    background: #14334a;
+
 }
 
 .brand-image.active,
-.brand-image:hover {
+.category-circle:hover .brand-image {
     filter: invert(99%) sepia(99%) saturate(2%) hue-rotate(66deg) brightness(110%) contrast(100%);
     overflow: hidden;
     border: 1px solid transparent;
@@ -2556,7 +2558,7 @@ div.part-3:before {
     padding-left: 8px !important;
     background-color: #fff;
     border-radius: 7px !important;
-    border: 1px solid #CCD7E0;
+    border: 0;
     color: #14334A !important;
     font-size: 1.25rem;
     outline: none;
@@ -2600,7 +2602,7 @@ div.part-3:before {
 }
 
 .PhoneInputInput {
-    border: 1px solid #CCD7E0;
+    border: 1px solid transparent;
     outline: none;
     padding: 0.625rem !important;
     color: #14334A !important;
@@ -2626,7 +2628,8 @@ div.part-3:before {
 }
 
 .PhoneInputCountry {
-    border: 1px solid #CCD7E0;
+    border: 1px solid transparent;
+    border-right: 1px solid;
     outline: none;
     padding: 0.72rem;
     color: #14334A !important;
@@ -2726,7 +2729,7 @@ div.part-3:before {
 .booking-form {
     background-color: #fff;
     border-radius: 7px;
-    border: 1px solid #CCD7E0;
+    border:0;
     color: #14334A;
     font-size: 1.25rem;
     padding: 0.85rem;

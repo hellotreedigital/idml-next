@@ -140,7 +140,7 @@ export default function Products(props) {
                                                         {
                                                             <div className="text-center px-3" onClick={() => logoClick(productCategory)}>
                                                                 <div onClick={scrollSection} className={"ratio ratio-1x1 category-circle shadow" + (productCategory === productsItems ? " active" : " ")}>
-                                                                    <img className="brand-image" src={productCategory.logo} alt="brand" />
+                                                                    <img className={"brand-image" + (productCategory === productsItems ? " active" : " ")} src={productCategory.logo} alt="brand" />
                                                                 </div>
                                                             </div>
                                                         }
