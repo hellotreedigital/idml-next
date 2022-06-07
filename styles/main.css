@@ -1740,8 +1740,8 @@ div.part-3:before {
     /* box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15); */
     object-fit: scale-down;
     position: absolute !important;
-    width: 80px !important;
-    height: 80px !important;
+    width: 100px !important;
+    height: 100px !important;
     top: 50% !important;
     left: 50% !important;
     transform: translate(-50%, -50%) !important;
@@ -1756,7 +1756,6 @@ div.part-3:before {
 
 .category-circle:hover {
     background: #14334a;
-
 }
 
 .category-circle.active {
@@ -1784,7 +1783,7 @@ div.part-3:before {
 
 .logo-product img {
     width: 130px;
-    height: 130px;
+    /* height: 130px; */
 }
 
 .product-ratio img {
@@ -3311,6 +3310,10 @@ div.four:before {
     .bg-color:hover {
         height: 77%;
     }
+    .brand-image {
+        width: 90px !important;
+        height: 90px !important;
+    }
 
 }
 
@@ -3794,8 +3797,8 @@ div.four:before {
 
 @media (max-width: 767.98px) {
     .brand-image {
-        width: 60px !important;
-        height: 60px !important;
+        width: 85px !important;
+        height: 85px !important;
     }
 
     .blue-ciel-button::before {

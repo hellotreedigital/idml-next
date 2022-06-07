@@ -98,7 +98,7 @@ export default function Products(props) {
             {
                 productsCategories?.length > 0 ?
                     <>
-                        <div className="container py-5" >
+                        <div className="container py-5" id="scroll-section2" >
                             <div className="row justify-content-center">
                                 <div className="col-lg-9 ">
                                     <div className="position-relative px-sm-0 px-3">
@@ -114,7 +114,7 @@ export default function Products(props) {
                                             centeredSlides={true}
                                             breakpoints={{
                                                 1199.98: {
-                                                    slidesPerView: 6,
+                                                    slidesPerView: 5,
                                                     centeredSlides: false
                                                 },
 
@@ -128,7 +128,7 @@ export default function Products(props) {
                                                 },
 
                                                 575.98: {
-                                                    slidesPerView: 4,
+                                                    slidesPerView: 3,
                                                     spaceBetween: 20,
                                                     centeredSlides: true
                                                 },
@@ -167,7 +167,7 @@ export default function Products(props) {
                         {
                             productsItems && (
                                 productsItems.products?.length < 0 ? null :
-                                    <div className=" position-relative" id="scroll-section2">
+                                    <div className=" position-relative" >
                                         <div className="">
                                             <div className="d-flex justify-content-end">
                                                 <div className="swiper-button-prev swiper-products">
@@ -200,7 +200,7 @@ export default function Products(props) {
                         {
                             productsItems?.description ?
                                 <div className="container py-lg-5">
-                                    <div className="row justify-content-center text-center py-5">
+                                    <div className="row justify-content-center text-center pb-5 ">
                                         <div className="col-lg-10 disclaimer mx-lg-5 px-xxl-5">
                                             <p>{productsItems?.description}</p>
                                         </div>
