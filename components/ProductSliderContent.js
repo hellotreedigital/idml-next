@@ -17,7 +17,7 @@ export default function ProductSliderContent(props) {
 
     return (
         <>
-            <div className={(props.product.product_images.length === 0 ? "row justify-content-center" : "row align-items-center")} >
+            <div className={(props.product.product_images.length === 0 ? "row justify-content-center align-items-center" : "row align-items-center")} >
                 {
                     props.product.full_path_image === 0 ? "" :
                         <div className={"col-lg-6 col-md-5" + (!props.product.full_path_image ? " d-none" : " ")}>
