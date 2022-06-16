@@ -15,6 +15,10 @@ html {
     cursor: inherit !important;
 }
 
+.pointer-none {
+    pointer-events: none;
+}
+
 .cursor-dot,
 .cursor-dot-outline {
     pointer-events: none;
@@ -2728,7 +2732,7 @@ div.part-3:before {
 .booking-form {
     background-color: #fff;
     border-radius: 7px;
-    border:0;
+    border: 0;
     color: #14334A;
     font-size: 1.25rem;
     padding: 0.85rem;
@@ -3310,6 +3314,7 @@ div.four:before {
     .bg-color:hover {
         height: 77%;
     }
+
     .brand-image {
         width: 90px !important;
         height: 90px !important;
@@ -3796,6 +3801,11 @@ div.four:before {
 /* Small devices (landscape phones, less than 768px) */
 
 @media (max-width: 767.98px) {
+
+    .pointer-none {
+        pointer-events: all;
+    }
+
     .brand-image {
         width: 85px !important;
         height: 85px !important;
@@ -4630,12 +4640,12 @@ div.four:before {
         right: -14px;
     }
 
-    .swiper-button-prev.swiper-cat.swiper-button-lock.swiper-button-disabled svg{
+    .swiper-button-prev.swiper-cat.swiper-button-lock.swiper-button-disabled svg {
         width: 15px;
         height: 15px;
     }
 
-    .swiper-button-next.swiper-cat.swiper-button-lock.swiper-button-disabled svg{
+    .swiper-button-next.swiper-cat.swiper-button-lock.swiper-button-disabled svg {
         width: 15px;
         height: 15px;
     }

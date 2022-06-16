@@ -337,23 +337,36 @@ export default function Layout(props) {
 
 
                                     <div className="col-lg-6 col-md-5 col-sm-8 col-9 ">
+                                        <div className="pt-3 d-none d-lg-block">
+                                            <p className="mb-5">{props.menuItems ? props.menuItems['footer-text'] : ''}</p>
+                                        </div>
                                         <div className="d-none d-lg-block pb-3">
                                             {
                                                 props?.footerContactIcons ?
                                                     props.footerContactIcons.map((footerContactIcon, index) =>
-
-                                                        <a href={footerContactIcon.url} target="_blank" rel="noreferrer" key={index}>
+                                                    
+                                                        <a className={"d-flex align-items-center pb-3" + (footerContactIcon.id === 1 ? " pointer-none" : " ")}  href={footerContactIcon.url} key={index}>
                                                             <img className="social-icon me-3" src={footerContactIcon.icon} alt="icon" />
+                                                            <p className="mb-0">{footerContactIcon.url.replace("tel:", "").replace("mailto:", "")}</p>
                                                         </a>
                                                     )
                                                     :
                                                     null
                                             }
                                         </div>
-                                        <div className="pt-3 d-none d-lg-block">
-                                            <p>{props.menuItems ? props.menuItems['footer-text'] : ''}</p>
-                                        </div>
-                                        <div className="d-block d-md-none d-sm-none d-lg-none pb-3">
+                                        {/* <div className="d-block  d-lg-none pb-3">
+                                            {
+                                                props?.footerContactIcons ?
+                                                    props.footerContactIcons.map((footerContactIcon, index) =>
+                                                        <a target="_blank" rel="noreferrer" href={footerContactIcon.url} key={index}>
+                                                            <img className="social-icon me-3" src={footerContactIcon.icon} alt="icon" />
+                                                        </a>
+                                                    )
+                                                    :
+                                                    null
+                                            }
+                                        </div> */}
+                                        <div className="d-block d-lg-none pb-3">
                                             {
                                                 props?.footerContactIcons ?
                                                     props.footerContactIcons.map((footerContactIcon, index) =>
