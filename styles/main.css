@@ -1902,6 +1902,7 @@ div.part-3:before {
     pointer-events: all !important;
     opacity: 1 !important;
     left: -30px;
+    transform: rotate(181deg) translateY(50%) !important;
 }
 
 .swiper-button-prev.swiper-cat:after,
