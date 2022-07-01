@@ -1,12 +1,12 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import Layout from "../components/layout";
+import Layout from "../../components/layout";
 
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
 import Select from 'react-select';
 import axios from "axios";
-import GlobalState from "../GlobalState";
-import SeoTags from "../components/SeoTags";
+import GlobalState from "../../GlobalState";
+import SeoTags from "../../components/SeoTags";
 
 export default function Booking(props) {
 

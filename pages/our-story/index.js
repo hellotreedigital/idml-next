@@ -1,7 +1,7 @@
-import Layout from "../components/layout";
-import SideButton from "../components/SideButton";
-import Banner from "../components/Banner";
-import SeoTags from "../components/SeoTags";
+import Layout from "../../components/layout";
+import SideButton from "../../components/SideButton";
+import Banner from "../../components/Banner";
+import SeoTags from "../../components/SeoTags";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import VisibilitySensor from 'react-visibility-sensor';
@@ -11,8 +11,8 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import { useContext, useEffect, useRef, useState } from "react";
 import axios from "axios";
-import GlobalState from "../GlobalState";
-import LocationMap from "../components/LocationMap";
+import GlobalState from "../../GlobalState";
+import LocationMap from "../../components/LocationMap";
 import OrgChart from 'react-orgchart';
 
 export default function OurStory(props) {
