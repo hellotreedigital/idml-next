@@ -6,7 +6,7 @@ import Router from 'next/router';
 import axios from 'axios';
 import 'react-orgchart/index.css';
 
-axios.defaults.baseURL = 'https://idml-backend.hellotree.dev/api';
+axios.defaults.baseURL = 'https://admin.idmlproducts.com/api';
 
 function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState(false);
