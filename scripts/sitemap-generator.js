@@ -37,20 +37,20 @@ async function generateSitemap() {
     
     const products1 = await axios.get("https://admin.idmlproducts.com/api/insights/case-studies");
     const dynamicPaths2 = products1.data.page_items.paginated_case_studies.data.map(singleProduct => {
-        return `/insights/case-studies/${singleProduct.slug}`
+        return `insights/case-studies/${singleProduct.slug}`
     })
 
 
     const products2 = await axios.get("https://admin.idmlproducts.com/api/insights/news");
     const dynamicPaths3 = products2.data.page_items.paginated_news.data.map(singleProduct => {
-        return `/insights/news/${singleProduct.slug}`
+        return `insights/news/${singleProduct.slug}`
     })
 
 
     
     const products3 = await axios.get("https://admin.idmlproducts.com/api/services");
     const dynamicPaths4 = products3.data.page_items.services_categories.map(singleProduct => {
-        return `/services/${singleProduct.slug}`
+        return `services/${singleProduct.slug}`
     })
 
 
