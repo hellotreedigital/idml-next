@@ -33,7 +33,9 @@ export default function SeoTags(props) {
                     gtag('config', 'G-BTVSZ6HJHD');`,
                 }}
             />
+
             <meta name="google-site-verification" content="fk70t976Le28xv3Fe9p6qFejKO_mv7LcVTvhuSO0LFU" />
+
         </Head>
     )
 }
