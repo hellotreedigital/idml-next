@@ -19,7 +19,6 @@ export default function SeoTags(props) {
             <meta property="twitter:image" content={props.image} />
 
 
-            <meta name="google-site-verification" content="fk70t976Le28xv3Fe9p6qFejKO_mv7LcVTvhuSO0LFU" />
 
             {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
             <script
@@ -29,11 +28,12 @@ export default function SeoTags(props) {
             <script
                 dangerouslySetInnerHTML={{
                     __html: `window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'G-BTVSZ6HJHD');`,
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'G-BTVSZ6HJHD');`,
                 }}
             />
+            <meta name="google-site-verification" content="fk70t976Le28xv3Fe9p6qFejKO_mv7LcVTvhuSO0LFU" />
         </Head>
     )
 }
