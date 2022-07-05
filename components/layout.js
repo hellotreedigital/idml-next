@@ -74,7 +74,7 @@ export default function Layout(props) {
                 <link rel="icon" type="image/png" sizes="32x32" href={props.favIcon?.icon_32} />
                 <link rel="icon" type="image/png" sizes="16x16" href={props.favIcon?.icon_16} />
                 <link rel="manifest" href={props.favIcon?.manifest} />
-                <link rel="mask-icon" href={props.favIcon?.mask_icon} color="#5bbad5" />
+                {/* <link rel="mask-icon" href={props.favIcon?.mask_icon} color="#5bbad5" /> */}
                 <meta name="msapplication-TileColor" content="#da532c" />
                 <meta name="theme-color" content="#ffffff"></meta>
             </Head>
