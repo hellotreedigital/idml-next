@@ -390,7 +390,7 @@ export default function OurStory(props) {
 
                         <div className="py-lg-5 pb-5">
                             <div className="py-lg-5">
-                                <div className="blue-bg-ceo position-relative" animate="" style={{ transitionDelay: '0.001s' }}>
+                                <div className="blue-bg-ceo position-relative" animate="">
                                     <div className="ceo-ratio d-md-block d-none cursor-opposite" >
                                         <img src={storySettings.ceo_image} alt={storySettings.ceo_title} title={storySettings.ceo_title} />
                                     </div>
