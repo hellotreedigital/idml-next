@@ -186,6 +186,11 @@ a {
     text-decoration: none !important;
 }
 
+.logo-header {
+    width: 122px;
+    height: 55px;
+}
+
 .fix-alignment {
     justify-content: start !important;
 }
@@ -614,7 +619,7 @@ a {
 
 .home-paragraph {
     font-size: 1.5625rem;
-    line-height: 1.2;
+    /* line-height: 1.2; */
     color: #14334A;
 }
 
@@ -5808,17 +5813,6 @@ div.four:before {
     flex-wrap: wrap;
     justify-content: center;
 }
-
-/* .cursor.round {
-    position: fixed;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: #365064;
-    opacity: 0.5;
-    mix-blend-mode: difference;
-    z-index: 9999;
-} */
 
 .cursor-opposite {
     cursor: url('../public/img/images/white-cursor.png') 7.5 7.5, auto !important;

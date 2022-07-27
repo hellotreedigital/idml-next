@@ -84,7 +84,7 @@ export default function Layout(props) {
                     <div className="col ">
                         <Link href="/">
                             <a>
-                                <img className="cursor-opposite" src="/img/images/logo.svg" alt="logo" />
+                                <img className="cursor-opposite logo-header" src="/img/images/logo.svg" alt="logo" />
                             </a>
                         </Link>
                     </div>

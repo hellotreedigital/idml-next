@@ -237,6 +237,7 @@ export default function Booking(props) {
                                 <div className="col-12 bg-popup-top">
                                     <div className="py-5">
                                         <Image
+                                            layout='fill'
                                             src="../img/images/error.svg"
                                             alt="Picture of the author"
                                         />
@@ -310,6 +311,7 @@ export default function Booking(props) {
                                 <div className="col-md-12 bg-popup-top">
                                     <div className="py-5">
                                         <Image
+                                            layout='fill'
                                             src="../img/images/success.svg"
                                             alt="../img/images/success.svg"
                                         />
