@@ -235,7 +235,11 @@ export default function Booking(props) {
                             <div className="row justify-content-center text-center  gx-5 mx-3">
                                 <div className="col-12 bg-popup-top">
                                     <div className="py-5">
-                                        <img className="popup-form-icon" src="../img/images/error.svg" alt="error" />
+                                        <Image
+                                            loader={myLoader}
+                                            src="../img/images/error.svg"
+                                            alt="Picture of the author"
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -306,6 +310,11 @@ export default function Booking(props) {
                                 <div className="col-md-12 bg-popup-top">
                                     <div className="py-5">
                                         <img className="popup-form-icon" src="../img/images/success.svg" alt="success" />
+                                        <Image
+                                            loader={myLoader}
+                                            src="../img/images/success.svg"
+                                            alt="../img/images/success.svg"
+                                        />
                                     </div>
                                 </div>
                             </div>

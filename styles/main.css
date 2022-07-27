@@ -413,7 +413,7 @@ a {
 }
 
 .button {
-    transition: all 0.5s;
+    transition: all 0.5s !important;
     border-radius: 3.125rem;
     font-family: 'SF Pro Display' !important;
     font-weight: bold;
