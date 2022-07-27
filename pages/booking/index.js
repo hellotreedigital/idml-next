@@ -6,6 +6,7 @@ import PhoneInput from 'react-phone-number-input';
 import Select from 'react-select';
 import axios from "axios";
 import GlobalState from "../../GlobalState";
+import Image from 'next/image'
 import SeoTags from "../../components/SeoTags";
 
 export default function Booking(props) {
@@ -236,7 +237,6 @@ export default function Booking(props) {
                                 <div className="col-12 bg-popup-top">
                                     <div className="py-5">
                                         <Image
-                                            loader={myLoader}
                                             src="../img/images/error.svg"
                                             alt="Picture of the author"
                                         />
@@ -309,9 +309,7 @@ export default function Booking(props) {
                             <div className="row justify-content-center text-center  gx-5 mx-3">
                                 <div className="col-md-12 bg-popup-top">
                                     <div className="py-5">
-                                        <img className="popup-form-icon" src="../img/images/success.svg" alt="success" />
                                         <Image
-                                            loader={myLoader}
                                             src="../img/images/success.svg"
                                             alt="../img/images/success.svg"
                                         />
