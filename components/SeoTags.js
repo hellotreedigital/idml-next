@@ -4,17 +4,17 @@ export default function SeoTags(props) {
     return (
         <Head>
             {/* Primary Meta Tags */}
-            {/* <title>{props.title}</title> */}
-            <meta name="title" content={props.title} />
+            <title key={props.title}>{props.title}</title>
+            <meta name="title" content={props.title} key={props.title} />
             <meta name="description" content={props.description} />
             {/* <!-- Open Graph / Facebook --> */}
             <meta property="og:type" content="website" />
-            <meta property="og:title" content={props.title} />
+            <meta property="og:title" content={props.title} key={props.title} />
             <meta property="og:description" content={props.description} />
             <meta property="og:image" content={props.image} />
             {/* <!-- Twitter --> */}
             <meta property="twitter:card" content="summary_large_image" />
-            <meta property="twitter:title" content={props.title} />
+            <meta property="twitter:title" content={props.title} key={props.title} />
             <meta property="twitter:description" content={props.description} />
             <meta property="twitter:image" content={props.image} />
 
