@@ -4,7 +4,7 @@ export default function SeoTags(props) {
     return (
         <Head>
             {/* Primary Meta Tags */}
-            <title>{props.title}</title>
+            {/* <title>{props.title}</title> */}
             <meta name="title" content={props.title} />
             <meta name="description" content={props.description} />
             {/* <!-- Open Graph / Facebook --> */}
