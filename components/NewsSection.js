@@ -8,8 +8,8 @@ export default function NewsSection(props) {
                 <img src={props.image} alt="news" />
             </div>
             <div className=" ">
-                <div className="news-on-hover d-flex align-items-center  p-4 px-4">
-                    <h3 className="me-3 mb-0">{props.title}</h3>
+                <div className="news-on-hover d-flex align-items-center p-4 px-4">
+                    <h3 className="me-3 mb-0 text-start">{props.title}</h3>
                     <h4 className="date mb-0">{props.date}</h4>
                 </div>
                 <div className="content-news p-4 px-4 d-flex flex-column justify-content-center">

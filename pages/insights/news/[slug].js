@@ -97,7 +97,7 @@ export default function News(props) {
                             </div>
 
                             <div className="row pt-3 pt-sm-0">
-                            <div className="col-12">
+                                <div className="col-12">
                                     <div className="d-flex pt-4">
                                         <div className="row d-flex align-items-center ">
                                             <div className="col-12 ">
@@ -132,27 +132,29 @@ export default function News(props) {
                             <div className="py-4 mb-0" dangerouslySetInnerHTML={{ __html: singleNew.text_between }} />
                         </div>
                     </div>
-                    {singleNew.second_image.length && singleNew.third_image.length < 0 ? null :
-                        <div className="row  align-items-center mb-4"  >
-                            {singleNew.second_image.length < 0 ? null :
-                                <div className="col-lg-6 col-md-6 col-sm-6 pb-4 " animate="">
-                                    <div className="ratio single-news-image cursor-opposite">
-                                        <img src={singleNew.second_image} alt={singleNew.title} title={singleNew.title} />
-                                    </div>
+                    <div className="row  align-items-center mb-4"  >
+                        {singleNew.second_image ?
+                            < div className="col-lg-6 col-md-6 col-sm-6 pb-4 " animate="">
+                                {console.log(singleNew.second_image)}
+                                <div className="ratio single-news-image cursor-opposite">
+                                    <img src={singleNew.second_image} alt={singleNew.title} title={singleNew.title} />
                                 </div>
-                            }
-                            {singleNew.third_image.length < 0 ? null :
-                                <div className="col-lg-6 col-md-6 col-sm-6 pb-4" animate="">
-                                    <div className="ratio single-news-image cursor-opposite">
-                                        <img src={singleNew.third_image} alt={singleNew.title} title={singleNew.title} />
-                                    </div>
-                                </div>
-                            }
-                            <div className="col-12 pb-4">
-                                <div dangerouslySetInnerHTML={{ __html: singleNew.last_text }} />
                             </div>
+                            :
+                            null
+                        }
+                        {singleNew.third_image ?
+                            <div className="col-lg-6 col-md-6 col-sm-6 pb-4" animate="">
+                                <div className="ratio single-news-image cursor-opposite">
+                                    <img src={singleNew.third_image} alt={singleNew.title} title={singleNew.title} />
+                                </div>
+                            </div>
+                            :
+                            null}
+                        <div className="col-12 pb-4">
+                            <div dangerouslySetInnerHTML={{ __html: singleNew.last_text }} />
                         </div>
-                    }
+                    </div>
 
                     <div className="row  align-items-center mb-4 pb-5"  >
                         <div className="text-center latest">
