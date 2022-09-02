@@ -127,7 +127,7 @@ export default function News(props) {
                                 <div className="col-lg-4 col-md-6 col-sm-6 pb-5" key={index}>
                                     <Link href={"/insights/news/" + paginatedNew.slug}>
                                         <a>
-                                            {/* <> */}
+                                            <>
                                                 <NewsSection
                                                     title={paginatedNew.title}
                                                     date={paginatedNew.date_formatted}
@@ -135,7 +135,7 @@ export default function News(props) {
                                                     description={paginatedNew.small_description}
                                                     button={insightsSettings?.read_more}
                                                 />
-                                            {/* </> */}
+                                            </>
                                         </a>
                                     </Link>
                                 </div>
