@@ -8,6 +8,9 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "engines": {
+    "node": "18.16.0"
+  },
   "dependencies": {
     "axios": "^0.26.1",
     "next": "12.1.4",
