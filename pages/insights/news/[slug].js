@@ -219,7 +219,6 @@ export default function News(props) {
                                     latestNews.map((latestNew, index) =>
                                         <SwiperSlide key={index}>
                                             <Link href={"/insights/news/" + latestNew.slug}>
-                                                <a>
                                                     <div className="pb-5 cursor-opposite">
                                                         <div className="latest-news-section position-relative">
                                                             <div className="ratio ratio-1x1 lastest-news">
@@ -238,7 +237,6 @@ export default function News(props) {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </a>
                                             </Link>
                                         </SwiperSlide>
                                     )
@@ -253,30 +251,35 @@ export default function News(props) {
     )
 }
 
-export async function getStaticPaths() {
-    let insights = await axios.get("/insights/news");
-    const paths = [];
-    // Get the paths we want to pre-render based on posts
+// export async function getStaticPaths() {
+//     let insights = await axios.get("/insights/news");
+//     const paths = [];
+//     // Get the paths we want to pre-render based on posts
 
-    insights.data.page_items.paginated_news.data.forEach((insight) => {
-        paths.push({
-            params: { slug: insight.slug.toString() },
-        });
-    });
-    // We'll pre-render only these paths at build time.
-    // { fallback: false } means other routes should 404.
-    return { paths, fallback: false };
-}
+//     insights.data.page_items.paginated_news.data.forEach((insight) => {
+//         paths.push({
+//             params: { slug: insight.slug.toString() },
+//         });
+//     });
+//     // We'll pre-render only these paths at build time.
+//     // { fallback: false } means other routes should 404.
+//     return { paths, fallback: false };
+// }
 
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
     const { slug } = context.params;
     const insightsNewsSingleData = await axios.get("/insights/news/" + slug);
 
+    if (!insightsNewsSingleData?.data?.page_items?.single_news) {
+        return {
+          notFound: true,
+        }
+    }
+    
     return {
         props: {
             insightsNewsSingleData: insightsNewsSingleData.data,
         },
-        revalidate: 10,
     };
 }
