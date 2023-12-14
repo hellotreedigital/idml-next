@@ -150,30 +150,35 @@ export default function CaseStudies(props) {
     )
 }
 
-export async function getStaticPaths() {
-    let insights = await axios.get("/insights/case-studies");
-    const paths = [];
-    // Get the paths we want to pre-render based on posts
+// export async function getStaticPaths() {
+//     let insights = await axios.get("/insights/case-studies");
+//     const paths = [];
+//     // Get the paths we want to pre-render based on posts
 
-    insights.data.page_items.paginated_case_studies.data.forEach((insight) => {
-        paths.push({
-            params: { slug: insight.slug.toString() },
-        });
-    });
-    // We'll pre-render only these paths at build time.
-    // { fallback: false } means other routes should 404.
-    return { paths, fallback: false };
-}
+//     insights.data.page_items.paginated_case_studies.data.forEach((insight) => {
+//         paths.push({
+//             params: { slug: insight.slug.toString() },
+//         });
+//     });
+//     // We'll pre-render only these paths at build time.
+//     // { fallback: false } means other routes should 404.
+//     return { paths, fallback: false };
+// }
 
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
     const { slug } = context.params;
     const insightsCaseStudiesSingleData = await axios.get("/insights/case-studies/" + slug);
 
+    if (!insightsCaseStudiesSingleData?.data?.page_items?.single_case_study) {
+        return {
+          notFound: true,
+        }
+    }
+    
     return {
         props: {
             insightsCaseStudiesSingleData: insightsCaseStudiesSingleData.data,
         },
-        revalidate: 10,
     };
 }
