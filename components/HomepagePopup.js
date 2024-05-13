@@ -13,8 +13,8 @@ export default function HomepagePopup(props) {
                         </g>
                     </svg>
                 </div>
-                <div className="row justify-content-center justify-content-lg-start align-items-center py-lg-5 py-3 gx-5 mx-lg-3 mx-2">
-                    <div className="col-12 pb-md-0">
+                <div className="row justify-content-center  align-items-center py-lg-5 py-3 gx-5 mx-lg-3 mx-2">
+                    <div className="col-12 pt-4 pt-lg-0">
                         <div className="position-relative home-popup-image mb-3">
                                 <img src={props.image} alt="team" className="position-absolute top-0 left-0 w-100 h-100" />
                         </div>
