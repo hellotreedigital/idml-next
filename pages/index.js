@@ -19,6 +19,7 @@ import GlobalState from "../GlobalState";
 import * as Scroll from 'react-scroll';
 import ClientsPopup from "../components/ClientsPopup";
 import VisibilitySensor from 'react-visibility-sensor';
+import HomepagePopup from "../components/HomepagePopup";
 
 
 let scroll = Scroll.animateScroll;
@@ -44,6 +45,7 @@ export default function Home(props) {
   const [loading, setLoading] = useState(true);
   const [youtubePopup, setYoutubePopup] = useState(null);
   const [clientPopup, setClientPopup] = useState(null);
+  const [homePopup, setHomePopup] = useState(null)
   const [typistVisible, setTypistVisible] = useState(false);
   const popupRef = useRef(null);
 
@@ -67,6 +69,7 @@ export default function Home(props) {
   function handleClickOutside(event) {
     if (!event.target.closest('.popup-team')) {
       setClientPopup(false)
+      setHomePopup(false)
       // setYoutubePopup(false)
     }
   }
@@ -81,6 +84,21 @@ export default function Home(props) {
     document.querySelector('body').style.overflow = youtubePopup ? 'hidden' : null;
     document.querySelector('html').style.overflow = youtubePopup ? 'hidden' : null;
   }, [youtubePopup]);
+
+  useEffect(() => {
+    document.querySelector('body').style.overflow = homePopup ? 'hidden' : null;
+    document.querySelector('html').style.overflow = homePopup ? 'hidden' : null;
+  }, [homePopup]);
+
+
+  //Show Homepopup after 3 seconds
+  useEffect(() => {
+
+    setTimeout(() => {
+      setHomePopup(true)
+    }, 1000)
+
+  }, [])
 
   return (
     <Layout activePage="home" favIcon={favIcon} productSetting={productSetting} menuItems={menuItems} socialMedia={socialMedia} footerLogos={footerLogos} footerContactIcons={footerContactIcons} serviceTitles={serviceTitles} industriesTitles={industriesTitles}>
@@ -605,6 +623,21 @@ export default function Home(props) {
                     label={homeSettings.visit_button}
                   />
                 )
+                }
+              </div>
+
+              <div className={"home-popup " + (homePopup ? " " : " fade-out")} onClick={(e) => handleClickOutside(e)}>
+                {
+                  homePopup && (
+                    <HomepagePopup
+                      setHomePopup={setHomePopup}
+                      image={homeSettings?.home_popup_image}
+                      title={homeSettings?.home_popup_title}
+                      description={homeSettings?.home_popup_description}
+                      url={homeSettings?.home_popup_btn_url}
+                      label={homeSettings?.home_popup_btn_text}
+                    />
+                  )
                 }
               </div>
 
