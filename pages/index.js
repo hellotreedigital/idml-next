@@ -94,7 +94,7 @@ export default function Home(props) {
   //Show Homepopup after 3 seconds
   useEffect(() => {
 
-    homeSettings.hide_popup !== 1 &&
+    homeSettings?.hide_popup !== 1 &&
       setTimeout(() => {
         setHomePopup(true)
       }, 1000)
