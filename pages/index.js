@@ -94,9 +94,10 @@ export default function Home(props) {
   //Show Homepopup after 3 seconds
   useEffect(() => {
 
-    setTimeout(() => {
-      setHomePopup(true)
-    }, 1000)
+    homeSettings.hide_popup !== 1 &&
+      setTimeout(() => {
+        setHomePopup(true)
+      }, 1000)
 
   }, [])
 
@@ -626,21 +627,24 @@ export default function Home(props) {
                 }
               </div>
 
-              <div className={"home-popup " + (homePopup ? " " : " fade-out")} onClick={(e) => handleClickOutside(e)}>
-                {
-                  homePopup && (
-                    <HomepagePopup
-                      setHomePopup={setHomePopup}
-                      image={homeSettings?.home_popup_image}
-                      title={homeSettings?.home_popup_title}
-                      description={homeSettings?.home_popup_description}
-                      url={homeSettings?.home_popup_btn_url}
-                      label={homeSettings?.home_popup_btn_text}
-                    />
-                  )
-                }
-              </div>
+              {
+                homeSettings?.hide_popup !== 1 &&
 
+                < div className={"home-popup " + (homePopup ? " " : " fade-out")} onClick={(e) => handleClickOutside(e)}>
+                  {
+                    homePopup && (
+                      <HomepagePopup
+                        setHomePopup={setHomePopup}
+                        image={homeSettings?.home_popup_image}
+                        title={homeSettings?.home_popup_title}
+                        description={homeSettings?.home_popup_description}
+                        url={homeSettings?.home_popup_btn_url}
+                        label={homeSettings?.home_popup_btn_text}
+                      />
+                    )
+                  }
+                </div>
+              }
             </>
           </>
       }
