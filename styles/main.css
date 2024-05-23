@@ -1625,7 +1625,24 @@ div.part-3:before {
     z-index: 4000;
 }
 
-.team-popup.fade-out {
+.home-popup {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    background-color: #14314899;
+    transition: 0.5s;
+    opacity: 1;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    z-index: 2000;
+    transition: opacity 0.5s;
+    z-index: 4000;
+}
+
+.team-popup.fade-out,
+.home-popup.fade-out {
     overflow: hidden;
     width: 0;
     height: 0;
@@ -1647,6 +1664,26 @@ div.part-3:before {
     top: 50%;
     transform: translate(-50%, -50%);
     width: 65%;
+}
+
+.home-popup-content{
+    width: 40% !important;
+}
+.home-popup-image{
+    min-height: 250px;
+    width:100%;
+    border-radius: 20px;
+}
+
+.home-popup-image img{
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.homepopup-link{
+    color: #14334A;
+    font-weight: bold;
+    text-decoration: underline !important;
 }
 
 .team-member {
@@ -3807,6 +3844,9 @@ div.four:before {
 /* Small devices (landscape phones, less than 768px) */
 
 @media (max-width: 767.98px) {
+    .home-popup-content{
+        width: 80% !important;
+    }
 
     .pointer-none {
         pointer-events: all;
