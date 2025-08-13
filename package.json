@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "engines": {
-    "node": "18.16.0"
+    "node": ">=22.0.0"
   },
   "dependencies": {
     "axios": "^0.26.1",
